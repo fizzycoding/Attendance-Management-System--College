@@ -1,0 +1,17 @@
+#rightBoxPannel {
+    background: qlineargradient(
+        x1:0, y1:0,
+        x2:0, y2:1,
+            stop:0 #50d5b7,
+        stop:1 #067d68
+    );
+}
+
+#inputLabel{
+	color : rgb(0,0,0);
+	font: 600 8pt "Segoe UI";
+}
+
+colors
+#2ab79d
+hover #159079   

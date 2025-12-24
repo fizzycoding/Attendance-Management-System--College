@@ -1,0 +1,75 @@
+import datetime
+import sys
+
+from PySide6.QtWidgets import QApplication, QMainWindow, QStackedWidget
+
+from controllers.home_controller import HomeController
+from controllers.login_controller import LoginController
+from controllers.signup_controller import SignupController
+from database.seed import init_db
+
+dummyUser = {
+    "id": 1,
+    "name": "Sanju Patel",
+    "username": "sanjupatel",
+    "role": "teacher ",
+    "created_at": datetime.datetime(2025, 12, 22, 14, 56, 34),
+}
+
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        # Some setup
+        super().__init__()
+        self.home = None
+        self.setMinimumSize(850, 580)
+        self.setWindowTitle("Academic Tracker")
+        self.stack = QStackedWidget()
+        self.setCentralWidget(self.stack)
+
+        # Controllers ka instance
+        self.login = LoginController(self)
+        self.signup = SignupController(self)
+
+        # Sare pages ko add kr diya
+        self.stack.addWidget(self.login)
+        self.stack.addWidget(self.signup)
+        self.stack.setCurrentWidget(self.login)
+
+        # TEMP
+        self.setMinimumSize(1200, 720)
+        self.showHome(dummyUser)
+        # TEMP-END
+
+    def showLogin(self):
+        self.stack.setCurrentWidget(self.login)
+
+    def showSignup(self):
+        self.stack.setCurrentWidget(self.signup)
+
+    def showHome(self, user):
+        self.home = HomeController(self, user)
+        self.stack.addWidget(self.home)
+        self.resize(1200, 720)
+        self.centerWindow()
+        self.stack.setCurrentWidget(self.home)
+
+    def centerWindow(self):
+        qr = self.frameGeometry()
+        cp = self.screen().availableGeometry().center()
+        qr.moveCenter(cp)
+        self.move(qr.topLeft())
+
+
+def main():
+    # Initiate database
+    # init_db()
+    # Main window ka UI
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
+
+
+if __name__ == "__main__":
+    main()

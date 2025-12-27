@@ -1,7 +1,8 @@
 import random
+import sqlite3
 import string
 
-import mysql.connector
+from PySide6.QtCore import Signal, QDate
 from PySide6.QtWidgets import QWidget, QSpacerItem, QSizePolicy
 
 from controllers.class_card_controller import ClassCardController
@@ -11,12 +12,18 @@ from ui.classes_teacher_ui import Ui_classes_teacher
 
 
 class ClassesTeacherController(QWidget):
+    classModified = Signal()
+
     def __init__(self, user):
         super().__init__()
         self.ui = Ui_classes_teacher()
         self.ui.setupUi(self)
         self.user = user
         self.ui.btn_new_class.clicked.connect(self.showCreateClassPopup)
+        self.loadClasses()
+        self.ui.refresh_class.clicked.connect(self.refresh)
+
+    def refresh(self):
         self.loadClasses()
 
     def showCreateClassPopup(self):
@@ -35,27 +42,32 @@ class ClassesTeacherController(QWidget):
         while True:
             code = self.generateInviteCode()
             try:
-                query = "INSERT INTO classes(class_name, invite_code, created_by) VALUES (%s, %s, %s)"
+                query = "INSERT INTO classes(class_name, invite_code, created_by) VALUES (?, ?, ?)"
                 print(code)
                 cursor.execute(query, (name, code, user_id))
                 db.commit()
                 new_class_id = cursor.lastrowid
                 break
-            except mysql.connector.IntegrityError as e:
-                if e.errno == 1062:
+            except sqlite3.IntegrityError as e:
+                if "UNIQUE constraint failed: classes.invite_code" in str(e):
                     continue
+                else:
+                    print("Integrity error:", e)
+                    break
+
             except Exception as e:
                 db.rollback()
                 print(e)
 
-        db.close()
         cursor.close()
+        db.close()
 
         if new_class_id:
             self.insertClassToUi(new_class_id, name, 0, 0, 0)
+            self.classModified.emit()
 
     def generateInviteCode(self, length=6):
-        chars = string.ascii_uppercase + string.digits
+        chars = string.digits
         code = "".join(random.choices(chars, k=length))
         return code
 
@@ -63,17 +75,41 @@ class ClassesTeacherController(QWidget):
         # ---- DELETE the prev elements -----
         while self.ui.classesLayout.count():
             item = self.ui.classesLayout.takeAt(0)
-            if (item.widget()):
+            if item.widget():
                 item.widget().deleteLater()
 
         # --- Main code ---
+        date_str = QDate.currentDate().toString("yyyy-MM-dd")
         db = getDB()
-        cursor = db.cursor(dictionary=True)
+        cursor = db.cursor()
         try:
-            query = "SELECT id, class_name, invite_code FROM classes WHERE created_by=%s"
-            cursor.execute(query, (self.user["id"],))
+            query = """
+                SELECT 
+                    c.id,
+                    c.class_name,
+                    c.invite_code ,
+                    
+                    (SELECT COUNT(*) FROM class_members WHERE class_id = c.id) as total_students,
+                    
+                    (SELECT COUNT(*)
+                        FROM attendance_records r
+                        JOIN attendance_sessions s ON r.session_id = s.id
+                        WHERE s.class_id = c.id AND s.date = ? AND r.status = 'present'
+                    ) as total_present,
+                    
+                    (SELECT COUNT(*) 
+                     FROM attendance_records r 
+                     JOIN attendance_sessions s ON r.session_id = s.id 
+                     WHERE s.class_id = c.id AND s.date = ? AND r.status = 'absent'
+                    ) as total_absent
+                    
+                FROM classes c
+                WHERE created_by=?
+            """
+            cursor.execute(query, (date_str, date_str, self.user["id"]))
             rows = cursor.fetchall()
 
+            print(rows)
             if len(rows) <= 0:
                 self.ui.classes_stacked.setCurrentWidget(self.ui.no_class)
             else:
@@ -82,7 +118,10 @@ class ClassesTeacherController(QWidget):
             for row in rows[0:3]:
                 classId = row["id"]
                 name = row["class_name"]
-                self.insertClassToUi(classId, name)
+                total = row["total_students"]
+                present = row["total_present"]
+                absent = row["total_absent"]
+                self.insertClassToUi(classId, name, total, present, absent)
 
             # ---- spacer -----
             spacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
@@ -90,14 +129,19 @@ class ClassesTeacherController(QWidget):
         except Exception as e:
             db.rollback()
             print(e)
-
-        db.close()
-        cursor.close()
+        finally:
+            cursor.close()
+            db.close()
 
     def insertClassToUi(self, id, name, total=0, present=0, absent=0):
-        card = ClassCardController(str(id), name, total, present, absent)
+        card = ClassCardController(str(id), name, total, present, absent, user=self.user)
         card.clicked.connect(self.openClass)
+        card.deleted.connect(self.deleteClass)
         self.ui.classesLayout.insertWidget(0, card)
 
     def openClass(self, id):
         print(id)
+
+    def deleteClass(self):
+        self.loadClasses()
+        self.classModified.emit()

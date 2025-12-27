@@ -21,9 +21,9 @@ class LoginController(QWidget):
             return None
 
         db = getDB()
-        cursor = db.cursor(dictionary=True)
+        cursor = db.cursor()
         try:
-            query = "SELECT id, name, username, role, created_at FROM users WHERE username = %s AND password = %s"
+            query = "SELECT id, name, username, role, created_at FROM users WHERE username = ? AND password = ?"
             cursor.execute(query, (username, password))
 
             user = cursor.fetchone()
@@ -39,9 +39,8 @@ class LoginController(QWidget):
             self.setError("Failed to login")
             print(f"Database error {e}")
         finally:
-            if db and db.is_connected():
-                db.close()
-                cursor.close()
+            cursor.close()
+            db.close()
         return None
 
     def validateLogin(self):

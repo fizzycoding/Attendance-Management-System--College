@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>842</width>
+    <width>871</width>
     <height>562</height>
    </rect>
   </property>
@@ -33,7 +33,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QPushButton" name="refresh_classes">
         <property name="styleSheet">
          <string notr="true">color: rgb(34, 34, 34);
 font: 600 18pt &quot;Segoe UI&quot;;</string>
@@ -152,8 +152,8 @@ border-radius: 7px</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>820</width>
-            <height>477</height>
+            <width>849</width>
+            <height>474</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="classesLayout">

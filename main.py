@@ -1,6 +1,7 @@
 import datetime
 import sys
 
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMainWindow, QStackedWidget
 
 from controllers.home_controller import HomeController
@@ -12,7 +13,7 @@ dummyUser = {
     "id": 1,
     "name": "Sanju Patel",
     "username": "sanjupatel",
-    "role": "teacher ",
+    "role": "teacher",
     "created_at": datetime.datetime(2025, 12, 22, 14, 56, 34),
 }
 
@@ -24,6 +25,7 @@ class MainWindow(QMainWindow):
         self.home = None
         self.setMinimumSize(850, 580)
         self.setWindowTitle("Academic Tracker")
+        self.icon = QIcon("icons/loho.png")
         self.stack = QStackedWidget()
         self.setCentralWidget(self.stack)
 
@@ -36,15 +38,17 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(self.signup)
         self.stack.setCurrentWidget(self.login)
 
-        # TEMP
-        self.setMinimumSize(1200, 720)
-        self.showHome(dummyUser)
-        # TEMP-END
+        # # TEMP
+        # self.setMinimumSize(1200, 720)
+        # self.showHome(dummyUser)
+        # # TEMP-END
 
     def showLogin(self):
+        self.resize(850, 580)
         self.stack.setCurrentWidget(self.login)
 
     def showSignup(self):
+        self.resize(850, 580)
         self.stack.setCurrentWidget(self.signup)
 
     def showHome(self, user):
@@ -63,7 +67,7 @@ class MainWindow(QMainWindow):
 
 def main():
     # Initiate database
-    # init_db()
+    init_db()
     # Main window ka UI
     app = QApplication(sys.argv)
     window = MainWindow()

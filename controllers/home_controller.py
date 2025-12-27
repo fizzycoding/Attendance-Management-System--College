@@ -49,10 +49,13 @@ class HomeController(QWidget):
             "attendance": AttendanceController(self.user),
             "reports": ReportsController(self.user),
         }
+        self.pages["classesT"].classModified.connect(self.pages["attendance"].loadClasses)
+        self.pages["classesT"].classModified.connect(self.pages["classesS"].refreshCass)
 
         for page in self.pages.values():
             self.ui.mainContentStack.addWidget(page)
 
+        print(self.user)
         if self.user and self.user["role"] == ROLE.STUDENT:
             self.show("dashboardS")
         else:
@@ -66,6 +69,7 @@ class HomeController(QWidget):
         self.ui.btn_teach_classes.clicked.connect(lambda: self.show("classesT"))
         self.ui.btn_teach_attendance.clicked.connect(lambda: self.show("attendance"))
         self.ui.btn_teach_reports.clicked.connect(lambda: self.show("reports"))
+        self.ui.logoutButton.clicked.connect(lambda: self.mainWindow.showLogin())
 
     def show(self, key):
         self.ui.mainContentStack.setCurrentWidget(self.pages[key])

@@ -15,15 +15,15 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QLabel,
-    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
-    QStackedWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
+    QLabel, QPushButton, QScrollArea, QSizePolicy,
+    QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_attendance_page(object):
     def setupUi(self, attendance_page):
         if not attendance_page.objectName():
             attendance_page.setObjectName(u"attendance_page")
-        attendance_page.resize(842, 562)
+        attendance_page.resize(842, 556)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -31,6 +31,7 @@ class Ui_attendance_page(object):
         attendance_page.setSizePolicy(sizePolicy)
         attendance_page.setStyleSheet(u"background-color: rgb(240, 240, 240);")
         self.verticalLayout = QVBoxLayout(attendance_page)
+        self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.widget = QWidget(attendance_page)
         self.widget.setObjectName(u"widget")
@@ -51,7 +52,6 @@ class Ui_attendance_page(object):
 "    font-size: 14px;\n"
 "    color: #333;\n"
 "}\n"
-"\n"
 "QComboBox::down-arrow {\n"
 "    image: url(icons/arrow_down.png); \n"
 "    width: 12px;\n"
@@ -68,20 +68,70 @@ class Ui_attendance_page(object):
 "    border-bottom-right-radius: 5px;\n"
 "    background: #f0f0f0; \n"
 "}\n"
-"\n"
 "QComboBox QAbstractItemView {\n"
 "    background-color: white;\n"
 "    border: 1px solid #ccc;\n"
 "    selection-color: #159079;\n"
 "    outline: 0;\n"
-"	color: rgb(0, 0, 0);\n"
+"    color: rgb(0, 0, 0);\n"
 "}")
 
         self.horizontalLayout_2.addWidget(self.dropdown_classes)
 
-        self.horizontalSpacer = QSpacerItem(587, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_Left = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_Left)
+
+        self.date_control_container = QWidget(self.widget)
+        self.date_control_container.setObjectName(u"date_control_container")
+        self.date_control_container.setStyleSheet(u"")
+        self.horizontalLayout_3 = QHBoxLayout(self.date_control_container)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.btn_prev_date = QPushButton(self.date_control_container)
+        self.btn_prev_date.setObjectName(u"btn_prev_date")
+        self.btn_prev_date.setMinimumSize(QSize(15, 15))
+        self.btn_prev_date.setMaximumSize(QSize(15, 15))
+        self.btn_prev_date.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon = QIcon()
+        icon.addFile(u"icons/prev.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_prev_date.setIcon(icon)
+        self.btn_prev_date.setIconSize(QSize(12, 12))
+        self.btn_prev_date.setProperty(u"fixedSize", QSize(30, 30))
+
+        self.horizontalLayout_3.addWidget(self.btn_prev_date)
+
+        self.btn_date_picker = QPushButton(self.date_control_container)
+        self.btn_date_picker.setObjectName(u"btn_date_picker")
+        sizePolicy.setHeightForWidth(self.btn_date_picker.sizePolicy().hasHeightForWidth())
+        self.btn_date_picker.setSizePolicy(sizePolicy)
+        self.btn_date_picker.setMinimumSize(QSize(10, 10))
+        self.btn_date_picker.setMaximumSize(QSize(48544, 54545))
+        self.btn_date_picker.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_date_picker.setStyleSheet(u"font: 600 12pt \"Segoe UI\";\n"
+"color: rgb(0, 0, 0);")
+
+        self.horizontalLayout_3.addWidget(self.btn_date_picker)
+
+        self.btn_next_date = QPushButton(self.date_control_container)
+        self.btn_next_date.setObjectName(u"btn_next_date")
+        self.btn_next_date.setMinimumSize(QSize(15, 15))
+        self.btn_next_date.setMaximumSize(QSize(15, 15))
+        self.btn_next_date.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon1 = QIcon()
+        icon1.addFile(u"icons/next.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_next_date.setIcon(icon1)
+        self.btn_next_date.setIconSize(QSize(12, 12))
+        self.btn_next_date.setProperty(u"fixedSize", QSize(30, 30))
+
+        self.horizontalLayout_3.addWidget(self.btn_next_date)
+
+
+        self.horizontalLayout_2.addWidget(self.date_control_container)
+
+        self.horizontalSpacer_Right = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_Right)
 
         self.label = QLabel(self.widget)
         self.label.setObjectName(u"label")
@@ -98,7 +148,7 @@ class Ui_attendance_page(object):
 "background : qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(42, 183, 157), stop:1 #067d68);;\n"
 "border: none;\n"
 "padding: 5px 10px;\n"
-"font: 700 16px \"Segoe UI\";\n"
+"font: 700 15px \"Segoe UI\";\n"
 "border-radius: 5px")
         self.invteCode_box.setIconSize(QSize(15, 15))
 
@@ -142,22 +192,78 @@ class Ui_attendance_page(object):
         self.verticalLayout_3 = QVBoxLayout(self.all_student)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.students_list_container = QScrollArea(self.all_student)
-        self.students_list_container.setObjectName(u"students_list_container")
-        self.students_list_container.setWidgetResizable(True)
-        self.students_list_container.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
-        self.scrollAreaWidgetContents_3 = QWidget()
-        self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 820, 483))
-        self.classesLayout = QVBoxLayout(self.scrollAreaWidgetContents_3)
-        self.classesLayout.setObjectName(u"classesLayout")
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.frame = QFrame(self.all_student)
+        self.frame.setObjectName(u"frame")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Minimum)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy3)
+        self.frame.setStyleSheet(u"QLabel{\n"
+"	color: #383838;\n"
+"	font: 600 9pt \"Segoe UI\";\n"
+"}\n"
+"")
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout = QHBoxLayout(self.frame)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(-1, 9, -1, 0)
+        self.label_3 = QLabel(self.frame)
+        self.label_3.setObjectName(u"label_3")
+        sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
+        self.label_3.setSizePolicy(sizePolicy)
+        self.label_3.setMinimumSize(QSize(70, 0))
+        self.label_3.setStyleSheet(u"")
+        self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.classesLayout.addItem(self.verticalSpacer)
+        self.horizontalLayout.addWidget(self.label_3)
 
-        self.students_list_container.setWidget(self.scrollAreaWidgetContents_3)
+        self.label_4 = QLabel(self.frame)
+        self.label_4.setObjectName(u"label_4")
 
-        self.verticalLayout_3.addWidget(self.students_list_container)
+        self.horizontalLayout.addWidget(self.label_4)
+
+        self.label_5 = QLabel(self.frame)
+        self.label_5.setObjectName(u"label_5")
+        sizePolicy2.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
+        self.label_5.setSizePolicy(sizePolicy2)
+        self.label_5.setMaximumSize(QSize(400, 400))
+        self.label_5.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout.addWidget(self.label_5)
+
+        self.label_6 = QLabel(self.frame)
+        self.label_6.setObjectName(u"label_6")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.label_6.sizePolicy().hasHeightForWidth())
+        self.label_6.setSizePolicy(sizePolicy4)
+        self.label_6.setMinimumSize(QSize(130, 0))
+        self.label_6.setMaximumSize(QSize(130, 16777215))
+
+        self.horizontalLayout.addWidget(self.label_6)
+
+
+        self.verticalLayout_3.addWidget(self.frame)
+
+        self.scrollArea = QScrollArea(self.all_student)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setWidgetResizable(True)
+        self.widget_3 = QWidget()
+        self.widget_3.setObjectName(u"widget_3")
+        self.widget_3.setGeometry(QRect(0, 0, 820, 448))
+        self.studentsLayout = QVBoxLayout(self.widget_3)
+        self.studentsLayout.setObjectName(u"studentsLayout")
+        self.studentsLayout.setContentsMargins(9, 4, 9, 9)
+        self.verticalSpacer = QSpacerItem(20, 418, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.studentsLayout.addItem(self.verticalSpacer)
+
+        self.scrollArea.setWidget(self.widget_3)
+
+        self.verticalLayout_3.addWidget(self.scrollArea)
 
         self.students_stacked.addWidget(self.all_student)
 
@@ -166,7 +272,7 @@ class Ui_attendance_page(object):
 
         self.retranslateUi(attendance_page)
 
-        self.students_stacked.setCurrentIndex(0)
+        self.students_stacked.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(attendance_page)
@@ -174,8 +280,15 @@ class Ui_attendance_page(object):
 
     def retranslateUi(self, attendance_page):
         attendance_page.setWindowTitle(QCoreApplication.translate("attendance_page", u"Form", None))
+        self.btn_prev_date.setText("")
+        self.btn_date_picker.setText(QCoreApplication.translate("attendance_page", u"Today", None))
+        self.btn_next_date.setText("")
         self.label.setText(QCoreApplication.translate("attendance_page", u"Invite Code: ", None))
         self.invteCode_box.setText(QCoreApplication.translate("attendance_page", u"AWJDK", None))
         self.label_2.setText(QCoreApplication.translate("attendance_page", u"No students, Invite some!", None))
+        self.label_3.setText(QCoreApplication.translate("attendance_page", u"S. No.", None))
+        self.label_4.setText(QCoreApplication.translate("attendance_page", u"Name", None))
+        self.label_5.setText(QCoreApplication.translate("attendance_page", u"Attendance Rate (in %)", None))
+        self.label_6.setText("")
     # retranslateUi
 

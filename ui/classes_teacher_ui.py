@@ -41,12 +41,12 @@ class Ui_classes_teacher(object):
         self.widget.setSizePolicy(sizePolicy1)
         self.horizontalLayout_2 = QHBoxLayout(self.widget)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.label = QLabel(self.widget)
-        self.label.setObjectName(u"label")
-        self.label.setStyleSheet(u"color: rgb(34, 34, 34);\n"
+        self.refresh_class = QPushButton(self.widget)
+        self.refresh_class.setObjectName(u"refresh_class")
+        self.refresh_class.setStyleSheet(u"color: rgb(34, 34, 34);\n"
 "font: 600 18pt \"Segoe UI\";")
 
-        self.horizontalLayout_2.addWidget(self.label)
+        self.horizontalLayout_2.addWidget(self.refresh_class)
 
         self.horizontalSpacer = QSpacerItem(587, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -112,7 +112,7 @@ class Ui_classes_teacher(object):
         self.class_list_container.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 820, 477))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 820, 474))
         self.classesLayout = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.classesLayout.setObjectName(u"classesLayout")
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
@@ -130,7 +130,7 @@ class Ui_classes_teacher(object):
 
         self.retranslateUi(classes_teacher)
 
-        self.classes_stacked.setCurrentIndex(0)
+        self.classes_stacked.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(classes_teacher)
@@ -138,7 +138,7 @@ class Ui_classes_teacher(object):
 
     def retranslateUi(self, classes_teacher):
         classes_teacher.setWindowTitle(QCoreApplication.translate("classes_teacher", u"Form", None))
-        self.label.setText(QCoreApplication.translate("classes_teacher", u"Classes", None))
+        self.refresh_class.setText(QCoreApplication.translate("classes_teacher", u"Classes", None))
         self.btn_new_class.setText(QCoreApplication.translate("classes_teacher", u"New Class", None))
         self.label_2.setText(QCoreApplication.translate("classes_teacher", u"No Class Created!", None))
     # retranslateUi

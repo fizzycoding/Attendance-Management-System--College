@@ -6,7 +6,6 @@ class ROLE(StrEnum):
     STUDENT = "student"
 
 
-class REQUEST_STATUS(StrEnum):
-    PENDING = "pending"
-    APPROVED = "approved"
-    REJECTED = "rejected"
+class ATTENDANCE_STATUS(StrEnum):
+    PRESENT = "present"
+    ABSENT = "absent"

@@ -23,7 +23,7 @@ class Ui_classes_student(object):
     def setupUi(self, classes_student):
         if not classes_student.objectName():
             classes_student.setObjectName(u"classes_student")
-        classes_student.resize(842, 562)
+        classes_student.resize(871, 562)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -41,12 +41,12 @@ class Ui_classes_student(object):
         self.widget.setSizePolicy(sizePolicy1)
         self.horizontalLayout_2 = QHBoxLayout(self.widget)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.label = QLabel(self.widget)
-        self.label.setObjectName(u"label")
-        self.label.setStyleSheet(u"color: rgb(34, 34, 34);\n"
+        self.refresh_classes = QPushButton(self.widget)
+        self.refresh_classes.setObjectName(u"refresh_classes")
+        self.refresh_classes.setStyleSheet(u"color: rgb(34, 34, 34);\n"
 "font: 600 18pt \"Segoe UI\";")
 
-        self.horizontalLayout_2.addWidget(self.label)
+        self.horizontalLayout_2.addWidget(self.refresh_classes)
 
         self.horizontalSpacer = QSpacerItem(587, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -62,7 +62,7 @@ class Ui_classes_student(object):
 "font: 800 14px \"Segoe UI\";\n"
 "border-radius: 7px")
         icon = QIcon()
-        icon.addFile(u"icons/join.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"../icons/join.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_join_class.setIcon(icon)
         self.btn_join_class.setIconSize(QSize(15, 15))
 
@@ -112,7 +112,7 @@ class Ui_classes_student(object):
         self.class_list_container.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 820, 477))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 849, 474))
         self.classesLayout = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.classesLayout.setObjectName(u"classesLayout")
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
@@ -138,7 +138,7 @@ class Ui_classes_student(object):
 
     def retranslateUi(self, classes_student):
         classes_student.setWindowTitle(QCoreApplication.translate("classes_student", u"Form", None))
-        self.label.setText(QCoreApplication.translate("classes_student", u"All Classes", None))
+        self.refresh_classes.setText(QCoreApplication.translate("classes_student", u"All Classes", None))
         self.btn_join_class.setText(QCoreApplication.translate("classes_student", u"Join Class", None))
         self.label_2.setText(QCoreApplication.translate("classes_student", u"No Class Joined!", None))
     # retranslateUi

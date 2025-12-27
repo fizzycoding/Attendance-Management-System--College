@@ -31,21 +31,24 @@ class SignupController(QWidget):
 
         # --------- SIGNUP DATABASE ----------
         db = getDB()
-        cursor = db.cursor(dictionary=True)
+        cursor = db.cursor()
         try:
-            query = "SELECT 1 FROM users WHERE username = %s LIMIT 1"
+            query = "SELECT 1 FROM users WHERE username = ? LIMIT 1"
             cursor.execute(query, (username,))
             if cursor.fetchone():
                 self.setError("Username already taken!")
                 return
             else:
-                insertQuery = "INSERT INTO users(name, username, password, role) VALUES (%s, %s, %s, %s)"
+                insertQuery = "INSERT INTO users(name, username, password, role) VALUES (?, ?, ?, ?)"
                 userData = (name, username, password, role)
                 cursor.execute(insertQuery, userData)
                 id = cursor.lastrowid
                 db.commit()
 
-                cursor.execute("SELECT id, name, username, role, created_at  FROM users WHERE id = %s", (id,))
+                cursor.execute(
+                    "SELECT id, name, username, role, created_at  FROM users WHERE id = ?",
+                    (id,),
+                )
                 newUserData = cursor.fetchone()
                 self.signupSuccess(newUserData)
                 # --------- SIGNUP SUCCESS ----------
@@ -56,9 +59,8 @@ class SignupController(QWidget):
             print(f"Database error {e}")
             return None
         finally:
-            if db and db.is_connected():
-                db.close()
-                cursor.close()
+            cursor.close()
+            db.close()
 
     def validateSignup(self):
         name = self.ui.nameInputBox.text()
@@ -96,4 +98,4 @@ class SignupController(QWidget):
         error.setText(errorMessage)
 
     def signupSuccess(self, user):
-        pass
+        self.mainWindow.showHome(user)

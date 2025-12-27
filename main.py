@@ -25,7 +25,8 @@ class MainWindow(QMainWindow):
         self.home = None
         self.setMinimumSize(850, 580)
         self.setWindowTitle("Academic Tracker")
-        self.icon = QIcon("icons/loho.png")
+        self.icon = QIcon("icons/logo.png")
+        self.setWindowIcon(self.icon)
         self.stack = QStackedWidget()
         self.setCentralWidget(self.stack)
 

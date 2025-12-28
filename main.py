@@ -1,4 +1,3 @@
-import datetime
 import sys
 
 from PySide6.QtGui import QIcon
@@ -8,14 +7,6 @@ from controllers.home_controller import HomeController
 from controllers.login_controller import LoginController
 from controllers.signup_controller import SignupController
 from database.seed import init_db
-
-dummyUser = {
-    "id": 1,
-    "name": "Sanju Patel",
-    "username": "sanjupatel",
-    "role": "teacher",
-    "created_at": datetime.datetime(2025, 12, 22, 14, 56, 34),
-}
 
 
 class MainWindow(QMainWindow):
@@ -38,11 +29,6 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(self.login)
         self.stack.addWidget(self.signup)
         self.stack.setCurrentWidget(self.login)
-
-        # # TEMP
-        # self.setMinimumSize(1200, 720)
-        # self.showHome(dummyUser)
-        # # TEMP-END
 
     def showLogin(self):
         self.resize(850, 580)

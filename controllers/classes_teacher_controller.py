@@ -14,10 +14,11 @@ from ui.classes_teacher_ui import Ui_classes_teacher
 class ClassesTeacherController(QWidget):
     classModified = Signal()
 
-    def __init__(self, user):
+    def __init__(self, user, home):
         super().__init__()
         self.ui = Ui_classes_teacher()
         self.ui.setupUi(self)
+        self.home = home
         self.user = user
         self.ui.btn_new_class.clicked.connect(self.showCreateClassPopup)
         self.loadClasses()
@@ -115,7 +116,7 @@ class ClassesTeacherController(QWidget):
             else:
                 self.ui.classes_stacked.setCurrentWidget(self.ui.all_class)
 
-            for row in rows[0:3]:
+            for row in rows:
                 classId = row["id"]
                 name = row["class_name"]
                 total = row["total_students"]
@@ -140,7 +141,7 @@ class ClassesTeacherController(QWidget):
         self.ui.classesLayout.insertWidget(0, card)
 
     def openClass(self, id):
-        print(id)
+        self.home.classOpen(id)
 
     def deleteClass(self):
         self.loadClasses()

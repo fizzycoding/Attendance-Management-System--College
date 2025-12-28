@@ -9,11 +9,11 @@ from utils.constants import ATTENDANCE_STATUS
 class StudentAttendanceBlockController(QFrame, Ui_student_block):
     attendanceChanged = Signal(int, str)
 
-    def __init__(self, id, sNo, name, student_id, attendanceRate=0, status=None):
+    def __init__(self, id, sNo, name, member_id, attendanceRate=0, status=None):
         super().__init__()
         self.setupUi(self)
         self.id = id
-        self.student_id = student_id
+        self.member_id = member_id
         self.serial_number.setText(str(sNo))
         self.name.setText(name)
 
@@ -48,7 +48,7 @@ class StudentAttendanceBlockController(QFrame, Ui_student_block):
         elif status == ATTENDANCE_STATUS.ABSENT:
             self.btn_present.setIcon(self.presentUncheckedIcon)
             self.btn_absent.setIcon(self.absentIcon)
-        self.attendanceChanged.emit(self.student_id, status)
+        self.attendanceChanged.emit(self.member_id, status)
 
     def colorProgressBar(self, rate):
         # 1. Determine the color based on the rate

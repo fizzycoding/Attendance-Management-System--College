@@ -60,14 +60,37 @@ ATTENDANCE_RECORDS_TABLE_QUERY = """
 CREATE TABLE IF NOT EXISTS attendance_records (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     session_id INTEGER,
-    student_id INTEGER,
+    member_id INTEGER,
     status TEXT CHECK(status IN ('present', 'absent')) NOT NULL,
     FOREIGN KEY (session_id) REFERENCES attendance_sessions(id) ON DELETE CASCADE,
-    FOREIGN KEY (student_id) REFERENCES users(id) ON DELETE CASCADE,
-    UNIQUE (session_id, student_id)
+    FOREIGN KEY (member_id) REFERENCES class_members(id) ON DELETE CASCADE,
+    UNIQUE (session_id, member_id)
 );
 """
 
+TESTS_TABLE_QUERY = """
+CREATE TABLE IF NOT EXISTS tests (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    class_id INTEGER NOT NULL,
+    test_name TEXT NOT NULL,
+    max_marks INTEGER NOT NULL,
+    passing_marks INTEGER NOT NULL,
+    created_at TEXT DEFAULT (datetime('now')),
+    FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE
+);
+"""
+
+TEST_RESULTS_TABLE_QUERY = """
+CREATE TABLE IF NOT EXISTS test_results (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    test_id INTEGER NOT NULL,
+    member_id INTEGER NOT NULL,
+    marks_obtained REAL DEFAULT 0,
+    FOREIGN KEY (test_id) REFERENCES tests(id) ON DELETE CASCADE,
+    FOREIGN KEY (member_id) REFERENCES class_members(id) ON DELETE CASCADE,
+    UNIQUE(test_id, member_id) 
+);
+"""
 queries = [
     USER_TABLE_QUERY,
     CLASSES_TABLE_QUERY,
@@ -75,6 +98,8 @@ queries = [
     CLASS_REQUEST_TABLE_QUERY,
     ATTENDANCE_SESSIONS_TABLE_QUERY,
     ATTENDANCE_RECORDS_TABLE_QUERY,
+    TESTS_TABLE_QUERY,
+    TEST_RESULTS_TABLE_QUERY
 ]
 
 

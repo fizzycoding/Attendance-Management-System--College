@@ -62,7 +62,7 @@ class Ui_classes_teacher(object):
 "font: 800 14px \"Segoe UI\";\n"
 "border-radius: 7px")
         icon = QIcon()
-        icon.addFile(u"../icons/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"icons/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_new_class.setIcon(icon)
         self.btn_new_class.setIconSize(QSize(15, 15))
 

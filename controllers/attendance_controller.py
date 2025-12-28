@@ -68,7 +68,7 @@ class AttendanceController(QWidget):
         try:
             attendance_map = {}
             mapQuery = """
-                SELECT r.student_id, r.status 
+                SELECT r.member_id, r.status 
                 FROM attendance_records r
                 JOIN attendance_sessions s ON r.session_id = s.id
                 WHERE s.class_id = ? AND s.date = ?
@@ -80,16 +80,21 @@ class AttendanceController(QWidget):
                 attendance_map[row[0]] = row[1]
 
             query = """
-                SELECT c.id, u.name, u.id AS student_id,
-                (SELECT COUNT(*) FROM attendance_sessions WHERE class_id = ?) AS total_session,
-                (SELECT COUNT(*)
-                    FROM attendance_records ar
-                    JOIN attendance_sessions s ON ar.session_id = s.id
-                    WHERE s.class_id = ? AND ar.student_id = u.id AND ar.status = 'present'
-                ) AS total_present
+                SELECT 
+                    c.id AS member_id,
+                    u.name,
+                    u.id AS student_id,
+                 
+                    (SELECT COUNT(*) FROM attendance_sessions WHERE class_id = ?) AS total_session,
+                    (SELECT COUNT(*)
+                        FROM attendance_records ar
+                        JOIN attendance_sessions s ON ar.session_id = s.id
+                        WHERE s.class_id = ? AND ar.member_id = c.id AND ar.status = 'present'
+                    ) AS total_present
                 FROM class_members c 
                 JOIN users u ON c.student_id = u.id 
                 WHERE c.class_id = ?
+                ORDER BY u.name ASC
             """
             cursor.execute(query, (classId, classId, classId))
             data = cursor.fetchall()
@@ -101,7 +106,7 @@ class AttendanceController(QWidget):
                 self.ui.students_stacked.setCurrentWidget(self.ui.all_student)
                 for i, d in enumerate(data):
                     user = dict(d)
-                    s_id = user['student_id']
+                    member_id = user['member_id']
 
                     totalClasses = user.get("total_session", 0)
                     totalPresent = user.get("total_present", 0)
@@ -111,13 +116,13 @@ class AttendanceController(QWidget):
                     else:
                         rate = 0
 
-                    currentStatus = attendance_map.get(s_id, None)
+                    currentStatus = attendance_map.get(member_id, None)
 
                     self.insertIntoUi(
-                        id=user["id"],
+                        id=member_id,
                         sNo=i + 1,
                         name=user["name"],
-                        student_id=user["student_id"],
+                        student_id=member_id,
                         attendanceRate=rate,
                         status=currentStatus
                     )
@@ -129,7 +134,7 @@ class AttendanceController(QWidget):
             cursor.close()
             db.close()
 
-    def markAttendance(self, student_id, status):
+    def markAttendance(self, member_id, status):
         data = self.ui.dropdown_classes.currentData()
         if not data: return
         class_id = data['id']
@@ -153,12 +158,12 @@ class AttendanceController(QWidget):
 
             # 2. Upsert Record
             usertQuery = """
-                    INSERT INTO attendance_records (session_id, student_id, status) 
+                    INSERT INTO attendance_records (session_id, member_id, status) 
                     VALUES (?, ?, ?)
-                    ON CONFLICT(session_id, student_id)
+                    ON CONFLICT(session_id, member_id)
                     DO UPDATE SET status=excluded.status
                 """
-            cursor.execute(usertQuery, (session_id, student_id, status))
+            cursor.execute(usertQuery, (session_id, member_id, status))
             db.commit()
 
         except Exception as e:
@@ -174,7 +179,7 @@ class AttendanceController(QWidget):
         self.loadStudents()
 
     def insertIntoUi(self, id, sNo, name, student_id, attendanceRate, status):
-        block = StudentAttendanceBlockController(id=id, sNo=sNo, name=name, student_id=student_id,
+        block = StudentAttendanceBlockController(id=id, sNo=sNo, name=name, member_id=student_id,
                                                  attendanceRate=attendanceRate, status=status)
         block.attendanceChanged.connect(self.markAttendance)
         self.ui.studentsLayout.addWidget(block)
@@ -236,3 +241,20 @@ class AttendanceController(QWidget):
         if dialog.exec():
             self.view_date = calendar.selectedDate()
             self.updateDateLabel()
+            self.loadStudents()
+
+    def refresh(self):
+        current_data = self.ui.dropdown_classes.currentData()
+        current_id = current_data["id"] if current_data else None
+
+        self.ui.dropdown_classes.blockSignals(True)
+        self.loadClasses()
+        if current_id:
+            for i in range(self.ui.dropdown_classes.count()):
+                if current_id == self.ui.dropdown_classes.itemData(i)["id"]:
+                    self.ui.dropdown_classes.setCurrentIndex(i)
+                    break
+
+        self.ui.dropdown_classes.blockSignals(False)
+        self.updateInviteCodeUI()
+        self.loadStudents()

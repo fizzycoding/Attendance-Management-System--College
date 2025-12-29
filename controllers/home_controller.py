@@ -7,6 +7,8 @@ from controllers.classes_teacher_controller import ClassesTeacherController
 from controllers.dashboard_student_controller import DashboardStudentController
 from controllers.dashboard_teacher_controller import DashboardTeacherController
 from controllers.reports_controller import ReportsController
+from controllers.test_details_controller import TestDetailsController
+from controllers.test_result_controller import TestResultController
 from ui.home_ui import Ui_HomeWindow
 from utils.constants import ROLE
 
@@ -19,6 +21,7 @@ class HomeController(QWidget):
         self.ui.setupUi(self)
         self.user = user
         self.currentClassWidget = None
+        self.currentTestDetailed = None
 
         self.setProfiles()
         self.setupSidebars()
@@ -28,7 +31,6 @@ class HomeController(QWidget):
     # ------- Set Profile ---------
     def setProfiles(self):
         if self.user:
-            print(self.user)
             self.ui.nameLabel.setText(self.user["name"])
             self.ui.usernameLabel.setText(self.user["username"])
         else:
@@ -50,6 +52,7 @@ class HomeController(QWidget):
             "classesT": ClassesTeacherController(self.user, self),
             "classesS": ClassesStudentController(self.user),
             "attendance": AttendanceController(self.user),
+            "testResults": TestResultController(self.user, self.testDetailsOpen),
             "reports": ReportsController(self.user),
         }
         self.pages["classesT"].classModified.connect(self.pages["attendance"].loadClasses)
@@ -71,6 +74,7 @@ class HomeController(QWidget):
         self.ui.btn_teach_dashboard.clicked.connect(lambda: self.show("dashboardT"))
         self.ui.btn_teach_classes.clicked.connect(self.showClassesTeacher)
         self.ui.btn_teach_attendance.clicked.connect(self.showAttendance)
+        self.ui.btn_results.clicked.connect(self.showTestResults)
         self.ui.btn_teach_reports.clicked.connect(lambda: self.show("reports"))
         self.ui.logoutButton.clicked.connect(lambda: self.mainWindow.showLogin())
 
@@ -92,6 +96,19 @@ class HomeController(QWidget):
         else:
             self.show("classesS")
 
+    def testDetailsOpen(self, testId):
+        self.currentTestDetailed = TestDetailsController(self.user, testId, self.closeTestDetails)
+        self.ui.mainContentStack.addWidget(self.currentTestDetailed)
+        self.ui.mainContentStack.setCurrentWidget(self.currentTestDetailed)
+
+    def closeTestDetails(self):
+        if self.currentTestDetailed:
+            self.ui.mainContentStack.removeWidget(self.currentTestDetailed)
+            self.currentTestDetailed.deleteLater()
+            self.currentTestDetailed = None
+
+        self.showTestResults()
+
     def show(self, key):
         self.ui.mainContentStack.setCurrentWidget(self.pages[key])
 
@@ -101,4 +118,8 @@ class HomeController(QWidget):
 
     def showAttendance(self):
         self.show("attendance")
+        self.pages["attendance"].refresh()
+
+    def showTestResults(self):
+        self.show("testResults")
         self.pages["attendance"].refresh()

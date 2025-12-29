@@ -1,7 +1,16 @@
 from PySide6.QtCore import QDate
-from PySide6.QtWidgets import QWidget, QSpacerItem, QSizePolicy, QVBoxLayout, QDialog, QCalendarWidget
+from PySide6.QtWidgets import (
+    QWidget,
+    QSpacerItem,
+    QSizePolicy,
+    QVBoxLayout,
+    QDialog,
+    QCalendarWidget,
+)
 
-from controllers.student_attendance_block_controller import StudentAttendanceBlockController
+from controllers.student_attendance_block_controller import (
+    StudentAttendanceBlockController,
+)
 from database.database import getDB
 from ui.attendance_ui import Ui_attendance_page
 
@@ -59,7 +68,8 @@ class AttendanceController(QWidget):
                 item.widget().deleteLater()
 
         data = self.ui.dropdown_classes.currentData()
-        if not data: return
+        if not data:
+            return
 
         classId = data["id"]
         date_str = self.view_date.toString("yyyy-MM-dd")
@@ -98,15 +108,13 @@ class AttendanceController(QWidget):
             """
             cursor.execute(query, (classId, classId, classId))
             data = cursor.fetchall()
-            print(data)
-            print(len(data))
             if len(data) <= 0:
                 self.ui.students_stacked.setCurrentWidget(self.ui.no_student)
             else:
                 self.ui.students_stacked.setCurrentWidget(self.ui.all_student)
                 for i, d in enumerate(data):
                     user = dict(d)
-                    member_id = user['member_id']
+                    member_id = user["member_id"]
 
                     totalClasses = user.get("total_session", 0)
                     totalPresent = user.get("total_present", 0)
@@ -124,9 +132,11 @@ class AttendanceController(QWidget):
                         name=user["name"],
                         student_id=member_id,
                         attendanceRate=rate,
-                        status=currentStatus
+                        status=currentStatus,
                     )
-            spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+            spacer = QSpacerItem(
+                20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
             self.ui.studentsLayout.addItem(spacer)
         except Exception as e:
             print(e)
@@ -136,8 +146,9 @@ class AttendanceController(QWidget):
 
     def markAttendance(self, member_id, status):
         data = self.ui.dropdown_classes.currentData()
-        if not data: return
-        class_id = data['id']
+        if not data:
+            return
+        class_id = data["id"]
 
         date_str = self.view_date.toString("yyyy-MM-dd")
 
@@ -145,7 +156,9 @@ class AttendanceController(QWidget):
         cursor = db.cursor()
         try:
             # 1. Get Session ID
-            checkSessionQuery = "SELECT id FROM attendance_sessions WHERE class_id=? AND date=?"
+            checkSessionQuery = (
+                "SELECT id FROM attendance_sessions WHERE class_id=? AND date=?"
+            )
             cursor.execute(checkSessionQuery, (class_id, date_str))
             session = cursor.fetchone()
 
@@ -153,7 +166,9 @@ class AttendanceController(QWidget):
                 session_id = session[0]
             else:
                 createSessionQuery = "INSERT INTO attendance_sessions (class_id, date, created_by) VALUES (?, ?, ?)"
-                cursor.execute(createSessionQuery, (class_id, date_str, self.user["id"]))
+                cursor.execute(
+                    createSessionQuery, (class_id, date_str, self.user["id"])
+                )
                 session_id = cursor.lastrowid
 
             # 2. Upsert Record
@@ -179,8 +194,14 @@ class AttendanceController(QWidget):
         self.loadStudents()
 
     def insertIntoUi(self, id, sNo, name, student_id, attendanceRate, status):
-        block = StudentAttendanceBlockController(id=id, sNo=sNo, name=name, member_id=student_id,
-                                                 attendanceRate=attendanceRate, status=status)
+        block = StudentAttendanceBlockController(
+            id=id,
+            sNo=sNo,
+            name=name,
+            member_id=student_id,
+            attendanceRate=attendanceRate,
+            status=status,
+        )
         block.attendanceChanged.connect(self.markAttendance)
         self.ui.studentsLayout.addWidget(block)
 
@@ -212,7 +233,8 @@ class AttendanceController(QWidget):
         calendar = QCalendarWidget()
         calendar.setSelectedDate(self.view_date)
         calendar.setGridVisible(True)
-        calendar.setStyleSheet("""
+        calendar.setStyleSheet(
+            """
     QCalendarWidget QWidget {
         background-color: white; 
         color: black;
@@ -233,7 +255,8 @@ class AttendanceController(QWidget):
         background-color: white;
         selection-background-color: #009688;
     }
-                    """)
+                    """
+        )
         calendar.clicked.connect(lambda: dialog.accept())
 
         layout.addWidget(calendar)

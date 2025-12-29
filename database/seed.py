@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS tests (
     test_name TEXT NOT NULL,
     max_marks INTEGER NOT NULL,
     passing_marks INTEGER NOT NULL,
+    test_date TEXT,
     created_at TEXT DEFAULT (datetime('now')),
     FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE
 );

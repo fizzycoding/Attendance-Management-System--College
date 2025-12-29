@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>classes_teacher</class>
- <widget class="QWidget" name="classes_teacher">
+ <class>tests_page</class>
+ <widget class="QWidget" name="tests_page">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,21 +10,15 @@
     <height>562</height>
    </rect>
   </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Tests Dashboard</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(240, 240, 240);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QWidget" name="widget" native="true">
+    <widget class="QWidget" name="header_widget" native="true">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -33,13 +27,54 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QPushButton" name="refresh_class">
-        <property name="styleSheet">
-         <string notr="true">color: rgb(34, 34, 34);
-font: 600 18pt &quot;Segoe UI&quot;;</string>
+       <widget class="QComboBox" name="dropdown_classes">
+        <property name="enabled">
+         <bool>true</bool>
         </property>
-        <property name="text">
-         <string>Classes</string>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #333;
+}
+QComboBox::down-arrow {
+    image: url(icons/arrow_down.png); 
+    width: 12px;
+    height: 12px;
+}
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 30px;
+    border-left-width: 1px;
+    border-left-color: #ccc;
+    border-left-style: solid; 
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #f0f0f0; 
+}
+QComboBox QAbstractItemView {
+    background-color: white;
+    border: 1px solid #ccc;
+    selection-color: #159079;
+    outline: 0;
+    color: rgb(0, 0, 0);
+}</string>
         </property>
        </widget>
       </item>
@@ -50,14 +85,14 @@ font: 600 18pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>587</width>
+          <width>40</width>
           <height>20</height>
          </size>
         </property>
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="btn_new_class">
+       <widget class="QPushButton" name="btn_new_test">
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
@@ -70,17 +105,11 @@ font: 800 14px &quot;Segoe UI&quot;;
 border-radius: 7px</string>
         </property>
         <property name="text">
-         <string>New Class</string>
+         <string>Create New Test</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../icons/add.png</normaloff>../icons/add.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>15</width>
-          <height>15</height>
-         </size>
+          <normaloff>../../icons/add.png</normaloff>../../icons/add.png</iconset>
         </property>
        </widget>
       </item>
@@ -88,45 +117,29 @@ border-radius: 7px</string>
     </widget>
    </item>
    <item>
-    <widget class="QStackedWidget" name="classes_stacked">
+    <widget class="QStackedWidget" name="content_stack">
      <property name="currentIndex">
       <number>1</number>
      </property>
-     <widget class="QWidget" name="no_class">
-      <layout class="QVBoxLayout" name="verticalLayout_5">
+     <widget class="QWidget" name="page_no_test">
+      <layout class="QVBoxLayout" name="verticalLayout_empty">
        <item>
-        <widget class="QWidget" name="widget_2" native="true">
+        <widget class="QLabel" name="label_no_test">
          <property name="styleSheet">
-          <string notr="true">QLabel{
-  
-  font: 15pt &quot;Segoe UI&quot;;
-  color: rgb(0, 0, 0);
-}</string>
+          <string notr="true">font: 15pt &quot;Segoe UI&quot;; color: rgb(100, 100, 100);</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>No Class Created!</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <property name="text">
+          <string>No Tests Created Yet!</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
         </widget>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="all_class">
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+     <widget class="QWidget" name="page_list">
+      <layout class="QVBoxLayout" name="verticalLayout_list">
        <property name="leftMargin">
         <number>0</number>
        </property>
@@ -140,23 +153,23 @@ border-radius: 7px</string>
         <number>0</number>
        </property>
        <item>
-        <widget class="QScrollArea" name="class_list_container">
+        <widget class="QScrollArea" name="test_list_container">
+         <property name="frameShape">
+          <enum>QFrame::Shape::NoFrame</enum>
+         </property>
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
-         </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents_3">
+         <widget class="QWidget" name="scrollAreaWidgetContents">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>820</width>
-            <height>474</height>
+            <width>824</width>
+            <height>481</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="classesLayout">
+          <layout class="QVBoxLayout" name="testsLayout">
            <item>
             <spacer name="verticalSpacer">
              <property name="orientation">

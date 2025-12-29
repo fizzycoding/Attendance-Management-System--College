@@ -1,20 +1,23 @@
 pip install pyside6 mysql-connector-python openpyxl reportlab
 
-pyside6-uic ui/login.ui -o ui/login_ui.py
-pyside6-uic ui/signup.ui -o ui/signup_ui.py
-pyside6-uic ui/home.ui -o ui/home_ui.py
-pyside6-uic ui/dashboardTeacher.ui -o ui/dashboard_teacher_ui.py
-pyside6-uic ui/dashboardStudent.ui -o ui/dashboard_student_ui.py
-pyside6-uic ui/classesStudent.ui -o ui/classes_student_ui.py
-pyside6-uic ui/classesTeacher.ui -o ui/classes_teacher_ui.py
-pyside6-uic ui/viewReports.ui -o ui/view_reports_ui.py
-pyside6-uic ui/attendance.ui -o ui/attendance_ui.py
+pyside6-uic ui/QTFiles/login.ui -o ui/login_ui.py
+pyside6-uic ui/QTFiles/signup.ui -o ui/signup_ui.py
+pyside6-uic ui/QTFiles/home.ui -o ui/home_ui.py
+pyside6-uic ui/QTFiles/dashboardTeacher.ui -o ui/dashboard_teacher_ui.py
+pyside6-uic ui/QTFiles/dashboardStudent.ui -o ui/dashboard_student_ui.py
+pyside6-uic ui/QTFiles/classesStudent.ui -o ui/classes_student_ui.py
+pyside6-uic ui/QTFiles/classesTeacher.ui -o ui/classes_teacher_ui.py
+pyside6-uic ui/QTFiles/viewReports.ui -o ui/view_reports_ui.py
+pyside6-uic ui/QTFiles/attendance.ui -o ui/attendance_ui.py
+pyside6-uic ui/QTFiles/classOpen.ui -o ui/classopen_ui.py
+pyside6-uic ui/QTFiles/testResults.ui -o ui/test_results_ui.py
+pyside6-uic ui/QTFiles/test_details_page.ui -o ui/test_details_page.py
 
-pyside6-uic ui/classOpen.ui -o ui/classopen_ui.py
-
-
-pyside6-uic ui/components/classCard.ui -o ui/components/class_card_ui.py
-pyside6-uic ui/components/newClassPopup.ui -o ui/components/new_class_popup_ui.py
-pyside6-uic ui/components/joinClassPopup.ui -o ui/components/join_class_popup_ui.py
-pyside6-uic ui/components/studentAttendance.ui -o ui/components/student_attendance_block.py
-pyside6-uic ui/components/studentClass.ui -o ui/components/student_class_block.py
+pyside6-uic ui/QTFiles/components/classCard.ui -o ui/components/class_card_ui.py
+pyside6-uic ui/QTFiles/components/newClassPopup.ui -o ui/components/new_class_popup_ui.py
+pyside6-uic ui/QTFiles/components/joinClassPopup.ui -o ui/components/join_class_popup_ui.py
+pyside6-uic ui/QTFiles/components/studentAttendance.ui -o ui/components/student_attendance_block.py
+pyside6-uic ui/QTFiles/components/studentClass.ui -o ui/components/student_class_block.py
+pyside6-uic ui/QTFiles/components/createTestPopup.ui -o ui/components/create_test_popup.py
+pyside6-uic ui/QTFiles/components/testCard.ui -o ui/components/test_card.py
+pyside6-uic ui/QTFiles/components/studentMarksRow.ui -o ui/components/student_marks_row.py

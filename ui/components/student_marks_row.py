@@ -89,7 +89,7 @@ class Ui_student_marks_row(object):
 
         self.btn_status = QPushButton(student_marks_row)
         self.btn_status.setObjectName(u"btn_status")
-        self.btn_status.setEnabled(False)
+        self.btn_status.setEnabled(True)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -102,20 +102,9 @@ class Ui_student_marks_row(object):
 "        padding: 4px 8px;\n"
 "        font-weight: bold;\n"
 "        font-size: 11px;\n"
-"        background-color: ; \n"
-"	color: rgb(181, 181, 181);\n"
-"        color: #9E9E9E;\n"
+"        background-color: rgb(176, 176, 176);\n"
+"        color: rgb(104, 104, 104);\n"
 "       }\n"
-"\n"
-"	#pass{\n"
-"                background-color: rgb(184, 242, 210); \n"
-"                color: #009688; \n"
-"}\n"
-"\n"
-"#fail{\n"
-"	 background-color: rgb(255, 202, 210); \n"
-"                color: #D32F2F; \n"
-"}\n"
 "      ")
         self.btn_status.setProperty(u"fixedSize", QSize(110, 28))
 

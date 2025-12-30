@@ -115,19 +115,18 @@ class TestDetailsController(QWidget):
             for i in range(layout.count()):
                 item = layout.itemAt(i)
                 widget = item.widget()
-
-
                 if isinstance(widget, StudentMarksRowController):
-                    marks = widget.getMarks()
-                    member_id = widget.member_id
+                    if widget.isAttempted():
+                        marks = widget.getMarks()
+                        member_id = widget.member_id
 
-                    query = """
-                        INSERT INTO test_results (test_id, member_id, marks_obtained)
-                        VALUES (?, ?, ?)
-                        ON CONFLICT(test_id, member_id) 
-                        DO UPDATE SET marks_obtained=excluded.marks_obtained
-                    """
-                    cursor.execute(query, (self.test_id, member_id, marks))
+                        query = """
+                            INSERT INTO test_results (test_id, member_id, marks_obtained)
+                            VALUES (?, ?, ?)
+                            ON CONFLICT(test_id, member_id) 
+                            DO UPDATE SET marks_obtained=excluded.marks_obtained
+                        """
+                        cursor.execute(query, (self.test_id, member_id, marks))
 
             db.commit()
             showMessage(self, "Success", "Marks saved successfully!")

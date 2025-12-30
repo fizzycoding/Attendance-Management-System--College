@@ -21,3 +21,5 @@ pyside6-uic ui/QTFiles/components/studentClass.ui -o ui/components/student_class
 pyside6-uic ui/QTFiles/components/createTestPopup.ui -o ui/components/create_test_popup.py
 pyside6-uic ui/QTFiles/components/testCard.ui -o ui/components/test_card.py
 pyside6-uic ui/QTFiles/components/studentMarksRow.ui -o ui/components/student_marks_row.py
+pyside6-uic ui/QTFiles/components/testReportRow.ui -o ui/components/test_report_row.py
+pyside6-uic ui/QTFiles/components/reportStudentNamesRow.ui -o ui/components/report_student_names_row.py

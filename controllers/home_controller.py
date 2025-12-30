@@ -75,7 +75,7 @@ class HomeController(QWidget):
         self.ui.btn_teach_classes.clicked.connect(self.showClassesTeacher)
         self.ui.btn_teach_attendance.clicked.connect(self.showAttendance)
         self.ui.btn_results.clicked.connect(self.showTestResults)
-        self.ui.btn_teach_reports.clicked.connect(lambda: self.show("reports"))
+        self.ui.btn_teach_reports.clicked.connect(self.showReports)
         self.ui.logoutButton.clicked.connect(lambda: self.mainWindow.showLogin())
 
     def classOpen(self, classId):
@@ -90,7 +90,6 @@ class HomeController(QWidget):
             self.currentClassWidget.deleteLater()
             self.currentClassWidget = None
 
-        # Return to classes list
         if self.user["role"] == ROLE.TEACHER:
             self.show("classesT")
         else:
@@ -122,4 +121,8 @@ class HomeController(QWidget):
 
     def showTestResults(self):
         self.show("testResults")
-        self.pages["attendance"].refresh()
+        self.pages["testResults"].refresh()
+
+    def showReports(self):
+        self.show("reports")
+        self.pages["reports"].refresh()

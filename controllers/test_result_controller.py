@@ -27,7 +27,6 @@ class TestResultController(QWidget):
             self.ui.btn_new_test.clicked.connect(self.showCreateTestPopup)
         self.ui.dropdown_classes.currentIndexChanged.connect(self.loadTests)
 
-
     def loadClasses(self):
         self.ui.dropdown_classes.blockSignals(True)  # Prevent reload while adding items
         self.ui.dropdown_classes.clear()
@@ -82,9 +81,9 @@ class TestResultController(QWidget):
                 """
                 cursor.execute(query, (classId, name, max_marks, pass_marks, date))
                 db.commit()
-
-                showMessage(self, "Success", f"Test '{name}' created successfully!")
+                testId = cursor.lastrowid
                 self.loadTests()
+                self.testDetailOpenFn(testId)
 
             except Exception as e:
                 db.rollback()

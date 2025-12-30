@@ -38,15 +38,22 @@ class StudentMarksRowController(QFrame, Ui_student_marks_row):
         if status == "Pass":
             self.btn_status.setStyleSheet("""
                 background-color: rgb(184, 242, 210); 
-                color: #009688; """)
+                color: #009688;
+                font-weight: bold;
+                font-size: 11px;""")
         elif status == "Fail":
             self.btn_status.setStyleSheet("""
-	 background-color: rgb(255, 202, 210); 
-                color: #D32F2F; """)
+                background-color: rgb(255, 202, 210); 
+                color: #D32F2F; 
+                font-weight: bold;
+                font-size: 11px;""")
         else:
             self.btn_status.setStyleSheet("""
-        background-color: rgb(176, 176, 176);
+        background-color: rgb(220, 220, 220);
         color: rgb(104, 104, 104);""")
+
+    def isAttempted(self):
+        return self.btn_status.text() != "Not Attempted"
 
     def getMarks(self):
         return self.input_marks.value()

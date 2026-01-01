@@ -116,9 +116,9 @@ class TestDetailsController(QWidget):
                 item = layout.itemAt(i)
                 widget = item.widget()
                 if isinstance(widget, StudentMarksRowController):
+                    member_id = widget.member_id
                     if widget.isAttempted():
                         marks = widget.getMarks()
-                        member_id = widget.member_id
 
                         query = """
                             INSERT INTO test_results (test_id, member_id, marks_obtained)
@@ -127,6 +127,9 @@ class TestDetailsController(QWidget):
                             DO UPDATE SET marks_obtained=excluded.marks_obtained
                         """
                         cursor.execute(query, (self.test_id, member_id, marks))
+                    else:
+                        query = "DELETE FROM test_results WHERE test_id = ? AND member_id = ?"
+                        cursor.execute(query, (self.test_id, member_id))
 
             db.commit()
             showMessage(self, "Success", "Marks saved successfully!")

@@ -1,4 +1,4 @@
-pip install pyside6 mysql-connector-python openpyxl reportlab
+pip install pandas pyside6 openpyxl reportlab
 
 pyside6-uic ui/QTFiles/login.ui -o ui/login_ui.py
 pyside6-uic ui/QTFiles/signup.ui -o ui/signup_ui.py
@@ -23,3 +23,4 @@ pyside6-uic ui/QTFiles/components/testCard.ui -o ui/components/test_card.py
 pyside6-uic ui/QTFiles/components/studentMarksRow.ui -o ui/components/student_marks_row.py
 pyside6-uic ui/QTFiles/components/testReportRow.ui -o ui/components/test_report_row.py
 pyside6-uic ui/QTFiles/components/reportStudentNamesRow.ui -o ui/components/report_student_names_row.py
+pyside6-uic ui/QTFiles/components/exportReportPopup.ui -o ui/components/export_report_popup.py

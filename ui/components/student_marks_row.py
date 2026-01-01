@@ -96,6 +96,7 @@ class Ui_student_marks_row(object):
         sizePolicy.setHeightForWidth(self.btn_status.sizePolicy().hasHeightForWidth())
         self.btn_status.setSizePolicy(sizePolicy)
         self.btn_status.setMinimumSize(QSize(100, 0))
+        self.btn_status.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_status.setStyleSheet(u"       QPushButton {\n"
 "        border: none;\n"
 "        border-radius: 4px;\n"

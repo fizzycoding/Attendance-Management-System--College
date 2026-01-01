@@ -78,17 +78,16 @@ class Ui_view_reports_page(object):
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer)
 
-        self.btn_new_test = QPushButton(self.header_widget)
-        self.btn_new_test.setObjectName(u"btn_new_test")
-        self.btn_new_test.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_new_test.setStyleSheet(u"color: #fff;\n"
-"background : qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(42, 183, 157), stop:1 #067d68);;\n"
+        self.btn_export = QPushButton(self.header_widget)
+        self.btn_export.setObjectName(u"btn_export")
+        self.btn_export.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_export.setStyleSheet(u"color :  #067d68;\n"
 "border: none;\n"
 "padding: 10px 20px;\n"
 "font: 800 14px \"Segoe UI\";\n"
 "border-radius: 7px")
 
-        self.horizontalLayout_2.addWidget(self.btn_new_test)
+        self.horizontalLayout_2.addWidget(self.btn_export)
 
 
         self.verticalLayout.addWidget(self.header_widget)
@@ -180,7 +179,7 @@ class Ui_view_reports_page(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 464, 432))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 438, 432))
         self.all_students_container = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.all_students_container.setSpacing(0)
         self.all_students_container.setObjectName(u"all_students_container")
@@ -222,7 +221,7 @@ class Ui_view_reports_page(object):
 "  background-color: transparent;\n"
 "  color: rgb(88, 88, 88);\n"
 "  font: 600 11pt \"Segoe UI\";\n"
-"  border: none\n"
+"text-align: left\n"
 "}\n"
 "QLabel{\n"
 "  background-color: transparent;\n"
@@ -235,6 +234,7 @@ class Ui_view_reports_page(object):
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.card1 = QWidget(self.top_cards_container)
         self.card1.setObjectName(u"card1")
+        self.card1.setMaximumSize(QSize(16777215, 120))
         self.verticalLayout_4 = QVBoxLayout(self.card1)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.pushButton = QPushButton(self.card1)
@@ -248,7 +248,7 @@ class Ui_view_reports_page(object):
         self.classes_attended_count = QLabel(self.card1)
         self.classes_attended_count.setObjectName(u"classes_attended_count")
         self.classes_attended_count.setStyleSheet(u"color: rgb(28, 164, 255);")
-        self.classes_attended_count.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.classes_attended_count.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing)
 
         self.verticalLayout_4.addWidget(self.classes_attended_count)
 
@@ -257,6 +257,7 @@ class Ui_view_reports_page(object):
 
         self.card3 = QWidget(self.top_cards_container)
         self.card3.setObjectName(u"card3")
+        self.card3.setMaximumSize(QSize(16777215, 120))
         self.verticalLayout_5 = QVBoxLayout(self.card3)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.pushButton_2 = QPushButton(self.card3)
@@ -270,7 +271,7 @@ class Ui_view_reports_page(object):
         self.present_count = QLabel(self.card3)
         self.present_count.setObjectName(u"present_count")
         self.present_count.setStyleSheet(u"color: rgb(86, 213, 86);")
-        self.present_count.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.present_count.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing)
 
         self.verticalLayout_5.addWidget(self.present_count)
 
@@ -279,6 +280,7 @@ class Ui_view_reports_page(object):
 
         self.card2 = QWidget(self.top_cards_container)
         self.card2.setObjectName(u"card2")
+        self.card2.setMaximumSize(QSize(16777215, 120))
         self.verticalLayout_6 = QVBoxLayout(self.card2)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.pushButton_3 = QPushButton(self.card2)
@@ -292,7 +294,7 @@ class Ui_view_reports_page(object):
         self.absent_count = QLabel(self.card2)
         self.absent_count.setObjectName(u"absent_count")
         self.absent_count.setStyleSheet(u"color:rgb(255, 82, 52)")
-        self.absent_count.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.absent_count.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing)
 
         self.verticalLayout_6.addWidget(self.absent_count)
 
@@ -338,7 +340,7 @@ class Ui_view_reports_page(object):
         self.scrollArea_tests.setWidgetResizable(True)
         self.scrollAreaWidgetContents_tests = QWidget()
         self.scrollAreaWidgetContents_tests.setObjectName(u"scrollAreaWidgetContents_tests")
-        self.scrollAreaWidgetContents_tests.setGeometry(QRect(0, 0, 304, 282))
+        self.scrollAreaWidgetContents_tests.setGeometry(QRect(0, 0, 330, 292))
         self.test_results_layout = QVBoxLayout(self.scrollAreaWidgetContents_tests)
         self.test_results_layout.setSpacing(10)
         self.test_results_layout.setObjectName(u"test_results_layout")
@@ -358,8 +360,6 @@ class Ui_view_reports_page(object):
 
         self.verticalLayout_3.addWidget(self.test_conttainer)
 
-        self.verticalLayout_3.setStretch(1, 2)
-        self.verticalLayout_3.setStretch(2, 6)
 
         self.horizontalLayout.addWidget(self.right_container)
 
@@ -384,7 +384,7 @@ class Ui_view_reports_page(object):
 
     def retranslateUi(self, view_reports_page):
         view_reports_page.setWindowTitle(QCoreApplication.translate("view_reports_page", u"Tests Dashboard", None))
-        self.btn_new_test.setText(QCoreApplication.translate("view_reports_page", u"Download", None))
+        self.btn_export.setText(QCoreApplication.translate("view_reports_page", u"Export", None))
         self.label_no_test.setText(QCoreApplication.translate("view_reports_page", u"Select Any Class Or Create A New class", None))
         self.label_2.setText(QCoreApplication.translate("view_reports_page", u"No Students, Invite some", None))
         self.label_3.setText(QCoreApplication.translate("view_reports_page", u"S. No.", None))

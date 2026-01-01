@@ -1,9 +1,14 @@
-from PySide6.QtWidgets import QWidget, QSpacerItem, QSizePolicy
+from datetime import date
 
+from PySide6.QtWidgets import QWidget, QSpacerItem, QSizePolicy, QFileDialog
+
+from controllers.export_report_popup_controller import ExportReportPopupController
 from controllers.report_student_names_row_controller import ReportStudentNamesRowController
 from controllers.test_report_row_controller import TestReportRowController
 from database.database import getDB
 from ui.view_reports_ui import Ui_view_reports_page
+from utils.excelExporter import ExcelExporter  # <--- IMPORT THE EXPORTER
+from utils.message import showMessage
 
 
 class ReportsController(QWidget):
@@ -19,6 +24,7 @@ class ReportsController(QWidget):
         self.loadClasses()
 
         self.ui.dropdown_classes.currentIndexChanged.connect(self.loadStudents)
+        self.ui.btn_export.clicked.connect(self.openExportPopup)
 
     def loadClasses(self):
         self.ui.dropdown_classes.blockSignals(True)
@@ -208,6 +214,62 @@ class ReportsController(QWidget):
                 item = self.ui.test_results_layout.takeAt(0)
                 if item.widget():
                     item.widget().deleteLater()
+
+    def openExportPopup(self):
+        className = self.ui.dropdown_classes.currentText()
+        if not className:
+            return
+
+        popup = ExportReportPopupController(className, self)
+
+        if popup.exec():
+            data = popup.getExportData()
+            print("User Selected:", data['action'])
+            print("Date Range:", data['from_date'], "to", data['to_date'])
+
+            if data["action"] == "excel":
+                self.exportExcel(data)
+            else:
+                self.exportPdf(data)
+
+    def exportExcel(self, data):
+        # 1. Ask where to save
+        filename = f"Report_{data['from_date']}_to_{data['to_date']}.xlsx"
+        path, _ = QFileDialog.getSaveFileName(self, "Save Excel", filename, "Excel Files (*.xlsx)")
+
+        if not path:
+            return
+
+        # 2. Get Class Info
+        class_data = self.ui.dropdown_classes.currentData()
+        if not class_data: return
+        class_id = class_data['id']
+        class_name = self.ui.dropdown_classes.currentText()
+
+        # 3. Convert string dates to Date objects
+        y1, m1, d1 = map(int, data['from_date'].split('-'))
+        start_date = date(y1, m1, d1)
+
+        y2, m2, d2 = map(int, data['to_date'].split('-'))
+        end_date = date(y2, m2, d2)
+
+        try:
+            # 4. Generate
+            exporter = ExcelExporter(class_id, class_name, start_date, end_date)
+            exporter.generate(
+                filepath=path,
+                include_attendance=data['include_attendance'],
+                include_tests=data['include_tests']
+            )
+
+            showMessage(self, "Success", "Excel exported successfully!")
+
+        except Exception as e:
+            print("Export Error:", e)
+            showMessage(self, "Error", f"Failed to export excel.\n{e}")
+
+    def exportPdf(self, data):
+        print("Generating PDF...")
 
     def refresh(self):
         current_data = self.ui.dropdown_classes.currentData()

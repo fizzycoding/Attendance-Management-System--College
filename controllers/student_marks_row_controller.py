@@ -15,7 +15,7 @@ class StudentMarksRowController(QFrame, Ui_student_marks_row):
         self.student_name.setText(name)
 
         self.input_marks.setMaximum(int(max_marks))
-
+        self.btn_status.clicked.connect(self.toggleAbsent)
         if marks is None:
             self.input_marks.setValue(0)
             self.setStatus("Not Attempted")
@@ -49,11 +49,20 @@ class StudentMarksRowController(QFrame, Ui_student_marks_row):
                 font-size: 11px;""")
         else:
             self.btn_status.setStyleSheet("""
-        background-color: rgb(220, 220, 220);
-        color: rgb(104, 104, 104);""")
+                background-color: rgb(220, 220, 220);
+                color: rgb(104, 104, 104);
+                font-weight: bold;
+                font-size: 11px;""")
 
     def isAttempted(self):
         return self.btn_status.text() != "Not Attempted"
 
     def getMarks(self):
         return self.input_marks.value()
+
+    def toggleAbsent(self):
+        if self.btn_status.text() != "Not Attempted":
+            self.setStatus("Not Attempted")
+            self.input_marks.setValue(0)
+        else:
+            self.updateStatusLogic(self.input_marks.value())

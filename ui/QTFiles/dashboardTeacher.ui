@@ -1,35 +1,516 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>dashboard_page</class>
+ <widget class="QWidget" name="dashboard_page">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1086</width>
+    <height>673</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Teacher Dashboard</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>120</y>
-     <width>311</width>
-     <height>141</height>
-    </rect>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(240, 240, 240);
+font-family: &quot;Segoe UI&quot;;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>15</number>
    </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(47, 255, 64);
-font: 700 36pt &quot;Segoe UI&quot;;</string>
+   <property name="leftMargin">
+    <number>20</number>
    </property>
-   <property name="text">
-    <string>Teacher</string>
+   <property name="topMargin">
+    <number>20</number>
    </property>
-  </widget>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="header_widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QComboBox" name="dropdown_classes">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #333;
+}
+QComboBox::down-arrow {
+    image: url(icons/arrow_down.png); 
+    width: 12px;
+    height: 12px;
+}
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 30px;
+    border-left-width: 1px;
+    border-left-color: #ccc;
+    border-left-style: solid; 
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #f0f0f0; 
+}
+QComboBox QAbstractItemView {
+    background-color: white;
+    border: 1px solid #ccc;
+    selection-color: #159079;
+    outline: 0;
+    color: rgb(0, 0, 0);
+}</string>
+        </property>
+        <property name="placeholderText">
+         <string>Select Class</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layout_main_content" stretch="2,1">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="layout_left_col">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="layout_cards">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="card_total_classes">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
+QFrame:hover { border: 1px solid #2ab79d; }</string>
+           </property>
+           <layout class="QVBoxLayout" name="vbox_card1">
+            <item>
+             <widget class="QLabel" name="label_title_1">
+              <property name="styleSheet">
+               <string notr="true">color: #777; font-size: 13px; border:none;
+  font: 600 11pt &quot;Segoe UI&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Total Classes</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="val_total_classes">
+              <property name="styleSheet">
+               <string notr="true">color: #333; font-size: 25pt; font-weight: bold; border:none;</string>
+              </property>
+              <property name="text">
+               <string>0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="card_present">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
+QFrame:hover { border: 1px solid #2ab79d; }</string>
+           </property>
+           <layout class="QVBoxLayout" name="vbox_card2">
+            <item>
+             <widget class="QLabel" name="label_title_2">
+              <property name="styleSheet">
+               <string notr="true">color: #777; font-size: 13px; border:none;
+  font: 600 11pt &quot;Segoe UI&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Total Present</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="val_present">
+              <property name="styleSheet">
+               <string notr="true">color: #2ab79d; font-size:25pt; font-weight: bold; border:none;</string>
+              </property>
+              <property name="text">
+               <string>0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="card_absent">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
+QFrame:hover { border: 1px solid #2ab79d; }</string>
+           </property>
+           <layout class="QVBoxLayout" name="vbox_card3">
+            <item>
+             <widget class="QLabel" name="label_title_3">
+              <property name="styleSheet">
+               <string notr="true">color: #777; font-size: 13px; border:none;
+  font: 600 11pt &quot;Segoe UI&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Total Absent</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="val_absent">
+              <property name="styleSheet">
+               <string notr="true">color: #ff5252; font-size: 25pt; font-weight: bold; border:none;</string>
+              </property>
+              <property name="text">
+               <string>0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="card_tests">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
+QFrame:hover { border: 1px solid #2ab79d; }</string>
+           </property>
+           <layout class="QVBoxLayout" name="vbox_card4">
+            <item>
+             <widget class="QLabel" name="label_title_4">
+              <property name="styleSheet">
+               <string notr="true">color: #777; font-size: 13px; border:none;
+  font: 600 11pt &quot;Segoe UI&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Tests Conducted</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="val_tests">
+              <property name="styleSheet">
+               <string notr="true">color: #333; font-size: 25pt; font-weight: bold; border:none;</string>
+              </property>
+              <property name="text">
+               <string>0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_weekly">
+         <property name="styleSheet">
+          <string notr="true">background-color: white; border-radius: 10px; border: 1px solid #e0e0e0;</string>
+         </property>
+         <layout class="QVBoxLayout" name="vbox_weekly">
+          <item>
+           <widget class="QLabel" name="label_weekly_title">
+            <property name="styleSheet">
+             <string>font-size: 16px; font-weight: bold; color: #333; border:none;</string>
+            </property>
+            <property name="text">
+             <string>Weekly Attendance Report</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="chart_weekly_container" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>180</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string>border:none;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_monthly">
+         <property name="styleSheet">
+          <string notr="true">background-color: white; border-radius: 10px; border: 1px solid #e0e0e0;</string>
+         </property>
+         <layout class="QVBoxLayout" name="vbox_monthly">
+          <item>
+           <layout class="QHBoxLayout" name="hbox_monthly_header">
+            <item>
+             <widget class="QLabel" name="label_monthly_title">
+              <property name="styleSheet">
+               <string>font-size: 16px; font-weight: bold; color: #333; border:none;</string>
+              </property>
+              <property name="text">
+               <string>6 Month Overview</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_monthly">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="lbl_from">
+              <property name="styleSheet">
+               <string>color:#555; border:none;</string>
+              </property>
+              <property name="text">
+               <string>From:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDateEdit" name="date_picker_monthly">
+              <property name="styleSheet">
+               <string notr="true">
+QDateEdit {
+    padding: 5 10px;
+    font-family: &quot;Segoe UI&quot;;
+    font-size: 12px;
+    color: #111;
+    border: 1px solid rgb(150, 150, 150);
+    background: #fff;
+    border-radius: 4px;
+}
+QDateEdit:focus {
+    border: 1.5px solid #2ab79d;
+}
+QCalendarWidget QWidget { background-color: white; color: black; }
+QCalendarWidget QAbstractItemView:enabled { 
+    color: black; 
+    selection-background-color: #2ab79d; 
+    selection-color: white;
+}
+QCalendarWidget QToolButton { color: black; icon-size: 25px; }
+QCalendarWidget QSpinBox { background-color: white; color: black; }</string>
+              </property>
+              <property name="displayFormat">
+               <string>MMM yyyy</string>
+              </property>
+              <property name="calendarPopup">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QWidget" name="chart_monthly_container" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>180</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string>border:none;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="layout_right_col" stretch="0,0">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="frame_leaderboard">
+         <property name="minimumSize">
+          <size>
+           <width>280</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white; border-radius: 10px; border: 1px solid #e0e0e0;</string>
+         </property>
+         <layout class="QVBoxLayout" name="vbox_leaderboard">
+          <item>
+           <widget class="QLabel" name="label_leaderboard_title">
+            <property name="styleSheet">
+             <string>font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px; border:none;</string>
+            </property>
+            <property name="text">
+             <string>Top Students</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QScrollArea" name="scrollArea_students">
+            <property name="styleSheet">
+             <string>border:none; background:transparent;</string>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scroll_content_students">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>323</width>
+               <height>453</height>
+              </rect>
+             </property>
+             <layout class="QVBoxLayout" name="container_top_students">
+              <property name="spacing">
+               <number>5</number>
+              </property>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_today_pie">
+         <property name="styleSheet">
+          <string notr="true">background-color: white; border-radius: 10px; border: 1px solid #e0e0e0;</string>
+         </property>
+         <layout class="QVBoxLayout" name="vbox_pie">
+          <item>
+           <widget class="QLabel" name="label_pie_title">
+            <property name="styleSheet">
+             <string>font-size: 16px; font-weight: bold; color: #333; border:none;</string>
+            </property>
+            <property name="text">
+             <string>Today's Report</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="chart_pie_container" native="true">
+            <property name="styleSheet">
+             <string>border:none;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

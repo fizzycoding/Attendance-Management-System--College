@@ -71,7 +71,7 @@ class HomeController(QWidget):
     def connect_buttons(self):
         self.ui.btn_std_dashboard.clicked.connect(lambda: self.show("dashboardS"))
         self.ui.btn_std_classes.clicked.connect(lambda: self.show("classesS"))
-        self.ui.btn_teach_dashboard.clicked.connect(lambda: self.show("dashboardT"))
+        self.ui.btn_teach_dashboard.clicked.connect(self.showDashboardTeacher)
         self.ui.btn_teach_classes.clicked.connect(self.showClassesTeacher)
         self.ui.btn_teach_attendance.clicked.connect(self.showAttendance)
         self.ui.btn_results.clicked.connect(self.showTestResults)
@@ -126,3 +126,7 @@ class HomeController(QWidget):
     def showReports(self):
         self.show("reports")
         self.pages["reports"].refresh()
+
+    def showDashboardTeacher(self):
+        self.show("dashboardT")
+        self.pages["dashboardT"].refresh()

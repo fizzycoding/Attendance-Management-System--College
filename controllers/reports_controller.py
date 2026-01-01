@@ -233,20 +233,17 @@ class ReportsController(QWidget):
                 self.exportPdf(data)
 
     def exportExcel(self, data):
-        # 1. Ask where to save
         filename = f"Report_{data['from_date']}_to_{data['to_date']}.xlsx"
         path, _ = QFileDialog.getSaveFileName(self, "Save Excel", filename, "Excel Files (*.xlsx)")
 
         if not path:
             return
 
-        # 2. Get Class Info
         class_data = self.ui.dropdown_classes.currentData()
         if not class_data: return
         class_id = class_data['id']
         class_name = self.ui.dropdown_classes.currentText()
 
-        # 3. Convert string dates to Date objects
         y1, m1, d1 = map(int, data['from_date'].split('-'))
         start_date = date(y1, m1, d1)
 
@@ -254,7 +251,6 @@ class ReportsController(QWidget):
         end_date = date(y2, m2, d2)
 
         try:
-            # 4. Generate
             exporter = ExcelExporter(class_id, class_name, start_date, end_date)
             exporter.generate(
                 filepath=path,

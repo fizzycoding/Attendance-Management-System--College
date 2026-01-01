@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1086</width>
-    <height>673</height>
+    <height>679</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -145,13 +145,23 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card1">
             <item>
-             <widget class="QLabel" name="label_title_1">
+             <widget class="QPushButton" name="pushButton">
               <property name="styleSheet">
                <string notr="true">color: #777; font-size: 13px; border:none;
-  font: 600 11pt &quot;Segoe UI&quot;;</string>
+  font: 600 11pt &quot;Segoe UI&quot;; background-color: transparent; text-align: left</string>
               </property>
               <property name="text">
                <string>Total Classes</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../../icons/total_classes.png</normaloff>../../icons/total_classes.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>18</width>
+                <height>18</height>
+               </size>
               </property>
              </widget>
             </item>
@@ -185,13 +195,23 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card2">
             <item>
-             <widget class="QLabel" name="label_title_2">
+             <widget class="QPushButton" name="pushButton_2">
               <property name="styleSheet">
                <string notr="true">color: #777; font-size: 13px; border:none;
-  font: 600 11pt &quot;Segoe UI&quot;;</string>
+  font: 600 11pt &quot;Segoe UI&quot;; background-color: transparent; text-align: left</string>
               </property>
               <property name="text">
                <string>Total Present</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../../icons/present.png</normaloff>../../icons/present.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>18</width>
+                <height>18</height>
+               </size>
               </property>
              </widget>
             </item>
@@ -225,13 +245,23 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card3">
             <item>
-             <widget class="QLabel" name="label_title_3">
+             <widget class="QPushButton" name="pushButton_3">
               <property name="styleSheet">
                <string notr="true">color: #777; font-size: 13px; border:none;
-  font: 600 11pt &quot;Segoe UI&quot;;</string>
+  font: 600 11pt &quot;Segoe UI&quot;; background-color: transparent; text-align: left</string>
               </property>
               <property name="text">
                <string>Total Absent</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../../icons/absent.png</normaloff>../../icons/absent.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>18</width>
+                <height>18</height>
+               </size>
               </property>
              </widget>
             </item>
@@ -265,13 +295,23 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card4">
             <item>
-             <widget class="QLabel" name="label_title_4">
+             <widget class="QPushButton" name="pushButton_4">
               <property name="styleSheet">
                <string notr="true">color: #777; font-size: 13px; border:none;
-  font: 600 11pt &quot;Segoe UI&quot;;</string>
+  font: 600 11pt &quot;Segoe UI&quot;; background-color: transparent; text-align: left</string>
               </property>
               <property name="text">
                <string>Tests Conducted</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../../icons/total_test.png</normaloff>../../icons/total_test.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>18</width>
+                <height>18</height>
+               </size>
               </property>
              </widget>
             </item>
@@ -300,12 +340,22 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
          </property>
          <layout class="QVBoxLayout" name="vbox_weekly">
           <item>
-           <widget class="QLabel" name="label_weekly_title">
+           <widget class="QPushButton" name="pushButton_5">
             <property name="styleSheet">
-             <string>font-size: 16px; font-weight: bold; color: #333; border:none;</string>
+             <string notr="true">font-size: 16px; font-weight: bold; color: #333; border:none;background-color:transparent; text-align: left</string>
             </property>
             <property name="text">
              <string>Weekly Attendance Report</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../icons/linechart.png</normaloff>../../icons/linechart.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -334,12 +384,16 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
           <item>
            <layout class="QHBoxLayout" name="hbox_monthly_header">
             <item>
-             <widget class="QLabel" name="label_monthly_title">
+             <widget class="QPushButton" name="pushButton_6">
               <property name="styleSheet">
-               <string>font-size: 16px; font-weight: bold; color: #333; border:none;</string>
+               <string notr="true">font-size: 16px; font-weight: bold; color: #333; border:none;background-color:transparent; text-align: left</string>
               </property>
               <property name="text">
                <string>6 Month Overview</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../../icons/barChart.png</normaloff>../../icons/barChart.png</iconset>
               </property>
              </widget>
             </item>
@@ -437,15 +491,22 @@ QCalendarWidget QSpinBox { background-color: white; color: black; }</string>
          </property>
          <layout class="QVBoxLayout" name="vbox_leaderboard">
           <item>
-           <widget class="QLabel" name="label_leaderboard_title">
+           <widget class="QPushButton" name="pushButton_7">
             <property name="styleSheet">
-             <string>font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px; border:none;</string>
+             <string notr="true">font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px; border:none;</string>
             </property>
             <property name="text">
              <string>Top Students</string>
             </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../icons/top_student.png</normaloff>../../icons/top_student.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -463,7 +524,7 @@ QCalendarWidget QSpinBox { background-color: white; color: black; }</string>
                <x>0</x>
                <y>0</y>
                <width>323</width>
-               <height>453</height>
+               <height>459</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="container_top_students">

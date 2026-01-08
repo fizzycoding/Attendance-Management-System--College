@@ -151,7 +151,7 @@ QPushButton:checked {
       <item>
        <widget class="QStackedWidget" name="sidebarStack">
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="studentPage">
          <layout class="QVBoxLayout" name="verticalLayout_student">
@@ -171,21 +171,21 @@ QPushButton:checked {
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="btn_std_dashboard">
+           <widget class="QPushButton" name="btn_std_my_classes">
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="text">
-             <string>Dashboard</string>
+             <string>My Classes</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../icons/dashboard.png</normaloff>../icons/dashboard.png</iconset>
+              <normaloff>../../icons/class.png</normaloff>../../icons/class.png</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>20</width>
-              <height>20</height>
+              <width>18</width>
+              <height>18</height>
              </size>
             </property>
             <property name="checkable">
@@ -200,21 +200,21 @@ QPushButton:checked {
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="btn_std_classes">
+           <widget class="QPushButton" name="btn_std_test_results">
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="text">
-             <string>Classes</string>
+             <string>Test Results</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../icons/class.png</normaloff>../icons/class.png</iconset>
+              <normaloff>../../icons/test_results.png</normaloff>../../icons/test_results.png</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>20</width>
-              <height>20</height>
+              <width>18</width>
+              <height>18</height>
              </size>
             </property>
             <property name="checkable">

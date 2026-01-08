@@ -4,22 +4,22 @@ from PySide6.QtWidgets import QWidget, QMessageBox, QSpacerItem, QSizePolicy
 from controllers.class_card_controller import ClassCardController
 from controllers.join_class_popup_controller import JoinClassPopup
 from database.database import getDB
-from ui.classes_student_ui import Ui_classes_student
+from ui.my_classes_student_ui import Ui_MyClassesStudent
 from utils.constants import ROLE
 from utils.message import showMessage
 
 
-class ClassesStudentController(QWidget):
+class MyClassesStudentController(QWidget):
     def __init__(self, user):
         super().__init__()
-        self.ui = Ui_classes_student()
+        self.ui = Ui_MyClassesStudent()
         self.ui.setupUi(self)
         self.user = user
         self.ui.btn_join_class.clicked.connect(self.showJoinClassPopup)
         self.loadClasses()
-        self.ui.refresh_classes.clicked.connect(self.refreshCass)
+        self.ui.refresh_classes.clicked.connect(self.refresh)
 
-    def refreshCass(self):
+    def refresh(self):
         self.loadClasses()
 
     def showJoinClassPopup(self):
@@ -92,27 +92,27 @@ class ClassesStudentController(QWidget):
         today_str = QDate.currentDate().toString("yyyy-MM-dd")
         try:
             query = """
-            SELECT 
-                c.id,
-                c.class_name,
-                
-                (SELECT COUNT(*) FROM class_members WHERE class_id = c.id) as total_students,
-                
-                (SELECT COUNT(*)
-                        FROM attendance_records r
-                        JOIN attendance_sessions s ON r.session_id = s.id
-                        WHERE s.class_id = c.id AND s.date = ? AND r.status = 'present'
-                ) as total_present,
-                
-                (SELECT COUNT(*) 
-                     FROM attendance_records ar 
-                     JOIN attendance_sessions s ON ar.session_id = s.id 
-                     WHERE s.class_id = c.id AND s.date = ? AND ar.status = 'absent'
-                ) as total_absent
-                
-            FROM classes c
-            JOIN class_members cm ON c.id = cm.class_id 
-            WHERE cm.student_id=?"""
+                SELECT 
+                    c.id,
+                    c.class_name,
+
+                    (SELECT COUNT(*) FROM class_members WHERE class_id = c.id) as total_students,
+
+                    (SELECT COUNT(*)
+                            FROM attendance_records r
+                            JOIN attendance_sessions s ON r.session_id = s.id
+                            WHERE s.class_id = c.id AND s.date = ? AND r.status = 'present'
+                    ) as total_present,
+
+                    (SELECT COUNT(*) 
+                         FROM attendance_records ar 
+                         JOIN attendance_sessions s ON ar.session_id = s.id 
+                         WHERE s.class_id = c.id AND s.date = ? AND ar.status = 'absent'
+                    ) as total_absent
+
+                FROM classes c
+                JOIN class_members cm ON c.id = cm.class_id 
+                WHERE cm.student_id=?"""
             cursor.execute(query, (today_str, today_str, self.user["id"]))
 
             rows = cursor.fetchall()

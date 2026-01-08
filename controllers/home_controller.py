@@ -2,13 +2,13 @@ from PySide6.QtWidgets import QWidget
 
 from controllers.attendance_controller import AttendanceController
 from controllers.class_open_controller import ClassOpenController
-from controllers.classes_student_controller import ClassesStudentController
 from controllers.classes_teacher_controller import ClassesTeacherController
-from controllers.dashboard_student_controller import DashboardStudentController
 from controllers.dashboard_teacher_controller import DashboardTeacherController
+from controllers.my_classes_student_controller import MyClassesStudentController
 from controllers.reports_controller import ReportsController
 from controllers.test_details_controller import TestDetailsController
 from controllers.test_result_controller import TestResultController
+from controllers.test_results_student_controller import TestResultsStudentController
 from ui.home_ui import Ui_HomeWindow
 from utils.constants import ROLE
 
@@ -48,29 +48,29 @@ class HomeController(QWidget):
     def setupPages(self):
         self.pages = {
             "dashboardT": DashboardTeacherController(self.user),
-            "dashboardS": DashboardStudentController(self.user),
+            "myClassesStd": MyClassesStudentController(self.user),
             "classesT": ClassesTeacherController(self.user, self),
-            "classesS": ClassesStudentController(self.user),
+            "testResultsStd": TestResultsStudentController(self.user),
             "attendance": AttendanceController(self.user),
             "testResults": TestResultController(self.user, self.testDetailsOpen),
             "reports": ReportsController(self.user),
         }
         self.pages["classesT"].classModified.connect(self.pages["attendance"].loadClasses)
-        self.pages["classesT"].classModified.connect(self.pages["classesS"].refreshCass)
+        self.pages["classesT"].classModified.connect(self.pages["testResultsStd"].refresh)
 
         for page in self.pages.values():
             self.ui.mainContentStack.addWidget(page)
 
         print(self.user)
         if self.user and self.user["role"] == ROLE.STUDENT:
-            self.show("dashboardS")
+            self.show("myClassesStd")
         else:
             self.show("dashboardT")
 
     # ---------- button wiring ----------
     def connect_buttons(self):
-        self.ui.btn_std_dashboard.clicked.connect(lambda: self.show("dashboardS"))
-        self.ui.btn_std_classes.clicked.connect(lambda: self.show("classesS"))
+        self.ui.btn_std_my_classes.clicked.connect(self.showMyClassesStudent)
+        self.ui.btn_std_test_results.clicked.connect(self.showTestResultsStudent)
         self.ui.btn_teach_dashboard.clicked.connect(self.showDashboardTeacher)
         self.ui.btn_teach_classes.clicked.connect(self.showClassesTeacher)
         self.ui.btn_teach_attendance.clicked.connect(self.showAttendance)
@@ -93,7 +93,7 @@ class HomeController(QWidget):
         if self.user["role"] == ROLE.TEACHER:
             self.show("classesT")
         else:
-            self.show("classesS")
+            self.show("myClassesStd")
 
     def testDetailsOpen(self, testId):
         self.currentTestDetailed = TestDetailsController(self.user, testId, self.closeTestDetails)
@@ -130,3 +130,11 @@ class HomeController(QWidget):
     def showDashboardTeacher(self):
         self.show("dashboardT")
         self.pages["dashboardT"].refresh()
+
+    def showTestResultsStudent(self):
+        self.show("testResultsStd")
+        self.pages["testResultsStd"].refresh()
+
+    def showMyClassesStudent(self):
+        self.show("myClassesStd")
+        self.pages["myClassesStd"].refresh()

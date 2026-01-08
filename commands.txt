@@ -2,8 +2,8 @@ pyside6-uic ui/QTFiles/login.ui -o ui/login_ui.py
 pyside6-uic ui/QTFiles/signup.ui -o ui/signup_ui.py
 pyside6-uic ui/QTFiles/home.ui -o ui/home_ui.py
 pyside6-uic ui/QTFiles/dashboardTeacher.ui -o ui/dashboard_teacher_ui.py
-pyside6-uic ui/QTFiles/dashboardStudent.ui -o ui/dashboard_student_ui.py
-pyside6-uic ui/QTFiles/classesStudent.ui -o ui/classes_student_ui.py
+pyside6-uic ui/QTFiles/myClassesStudent.ui -o ui/my_classes_student_ui.py
+pyside6-uic ui/QTFiles/testResultsStudent.ui -o ui/test_results_student_ui.py
 pyside6-uic ui/QTFiles/classesTeacher.ui -o ui/classes_teacher_ui.py
 pyside6-uic ui/QTFiles/viewReports.ui -o ui/view_reports_ui.py
 pyside6-uic ui/QTFiles/attendance.ui -o ui/attendance_ui.py

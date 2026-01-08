@@ -31,6 +31,9 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;border:none</string>
+     </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QPushButton" name="refresh_classes">
@@ -89,6 +92,9 @@ border-radius: 7px</string>
    </item>
    <item>
     <widget class="QStackedWidget" name="classes_stacked">
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;border:none</string>
+     </property>
      <property name="currentIndex">
       <number>1</number>
      </property>
@@ -152,8 +158,8 @@ border-radius: 7px</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>849</width>
-            <height>474</height>
+            <width>853</width>
+            <height>481</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="classesLayout">

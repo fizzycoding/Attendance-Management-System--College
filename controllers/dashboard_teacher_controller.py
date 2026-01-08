@@ -2,9 +2,9 @@ from datetime import datetime, timedelta
 
 from PySide6.QtCore import Qt, QDate
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QFrame, QHBoxLayout, QSpacerItem, QSizePolicy
-from ui.dashboard_teacher_ui import Ui_dashboard_page
 
 from database.database import getDB
+from ui.dashboard_teacher_ui import Ui_dashboard_page
 from utils.chart_manager import ChartManager
 
 
@@ -88,12 +88,19 @@ class DashboardTeacherController(QWidget):
         cursor = db.cursor()
 
         try:
+            cursor.execute("SELECT COUNT(*) FROM class_members WHERE class_id=?", (class_id,))
+            total_students = cursor.fetchone()[0]
+
+            self.ui.val_total_student.setText(str(total_students))
+
             cursor.execute("SELECT COUNT(*) FROM attendance_sessions WHERE class_id=?", (class_id,))
             total_classes = cursor.fetchone()[0]
+
             self.ui.val_total_classes.setText(str(total_classes))
 
             cursor.execute("SELECT COUNT(*) FROM tests WHERE class_id=?", (class_id,))
             total_tests = cursor.fetchone()[0]
+
             self.ui.val_tests.setText(str(total_tests))
 
             cursor.execute("""
@@ -106,19 +113,22 @@ class DashboardTeacherController(QWidget):
             """, (class_id,))
             stats = cursor.fetchone()
 
-            if stats:
-                self.ui.val_present.setText(str(stats[0]))
-                self.ui.val_absent.setText(str(stats[1]))
-            else:
-                self.ui.val_present.setText("0")
-                self.ui.val_absent.setText("0")
+            present = stats[0] if stats else 0
+            absent = stats[1] if stats else 0
+            total_records = present + absent
+
+            avg_rate = 0
+            if total_records > 0:
+                avg_rate = int((present / total_records) * 100)
+
+            self.ui.val_avg_attendance.setText(f"{avg_rate}%")
 
         except Exception as e:
             print(f"Error loading top cards: {e}")
             self.ui.val_total_classes.setText("0")
-            self.ui.val_tests.setText("0")
             self.ui.val_present.setText("0")
             self.ui.val_absent.setText("0")
+            self.ui.val_tests.setText("0%")
         finally:
             cursor.close()
             db.close()
@@ -292,7 +302,7 @@ class DashboardTeacherController(QWidget):
                 WHERE c.class_id = ?
                 GROUP BY u.id
                 ORDER BY p_count DESC
-                LIMIT 10
+                LIMIT 5
             """
             cursor.execute(query, (class_id, class_id))
             rows = cursor.fetchall()

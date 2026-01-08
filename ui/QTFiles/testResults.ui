@@ -25,6 +25,9 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent</string>
+     </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QComboBox" name="dropdown_classes">
@@ -118,6 +121,9 @@ border-radius: 7px</string>
    </item>
    <item>
     <widget class="QStackedWidget" name="content_stack">
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent</string>
+     </property>
      <property name="currentIndex">
       <number>1</number>
      </property>

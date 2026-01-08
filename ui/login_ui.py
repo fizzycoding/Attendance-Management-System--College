@@ -26,6 +26,7 @@ class Ui_login_form_main_window(object):
         login_form_main_window.resize(850, 580)
         login_form_main_window.setStyleSheet(u"\n"
 "                #login_form_main_window {\n"
+"border:none;\n"
 "                background: white;\n"
 "                }\n"
 "            ")
@@ -50,6 +51,8 @@ class Ui_login_form_main_window(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.formContainer.sizePolicy().hasHeightForWidth())
         self.formContainer.setSizePolicy(sizePolicy)
+        self.formContainer.setStyleSheet(u"border:none;\n"
+"")
         self.verticalLayout_4 = QVBoxLayout(self.formContainer)
         self.verticalLayout_4.setSpacing(10)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -261,7 +264,7 @@ class Ui_login_form_main_window(object):
         font.setPointSize(24)
         font.setBold(True)
         self.helloLabel.setFont(font)
-        self.helloLabel.setStyleSheet(u"")
+        self.helloLabel.setStyleSheet(u"color:white;")
         self.helloLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_7.addWidget(self.helloLabel)
@@ -291,6 +294,7 @@ class Ui_login_form_main_window(object):
         self.signupButton.setFont(font2)
         self.signupButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.signupButton.setStyleSheet(u"#signupButton{\n"
+"							color: white;\n"
 "                                                    border-radius: 18px;\n"
 "                                                    border:1px solid rgba(255, 255, 255, 150);\n"
 "                                                    padding: 7px 0;\n"

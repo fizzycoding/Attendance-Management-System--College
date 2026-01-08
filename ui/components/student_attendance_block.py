@@ -55,19 +55,19 @@ class Ui_student_block(object):
     def setupUi(self, student_block):
         if not student_block.objectName():
             student_block.setObjectName("student_block")
-        student_block.resize(950, 48)
-        student_block.setMinimumSize(QSize(0, 40))
+        student_block.resize(950, 55)
+        student_block.setMinimumSize(QSize(0, 50))
         student_block.setMaximumSize(QSize(16777215, 55))
         student_block.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         student_block.setStyleSheet(
             "QProgressBar {\n"
-            "    border-radius: 6.1px;\n"
+            "    border-radius:4px;\n"
             "	background-color: rgb(208, 208, 208);\n"
             "	text-align: center;\n"
-            "	color: transparent\n"
+            "	color: transparent;\n"
             "}\n"
             "QProgressBar::chunk {\n"
-            "    border-radius: 6.1px;\n"
+            "    border-radius: 4px;\n"
             "    background-color: rgb(42, 183, 157);   }\n"
             "\n"
             "QLabel{\n"
@@ -124,7 +124,7 @@ class Ui_student_block(object):
         self.widget_2.setObjectName("widget_2")
         sizePolicy1.setHeightForWidth(self.widget_2.sizePolicy().hasHeightForWidth())
         self.widget_2.setSizePolicy(sizePolicy1)
-        self.widget_2.setMinimumSize(QSize(0, 5))
+        self.widget_2.setMinimumSize(QSize(0, 8))
         self.widget_2.setMaximumSize(QSize(400, 16777215))
         self.horizontalLayout_3 = QHBoxLayout(self.widget_2)
         self.horizontalLayout_3.setSpacing(10)
@@ -137,7 +137,7 @@ class Ui_student_block(object):
         )
         self.progressBar_attendance_rate.setSizePolicy(sizePolicy1)
         self.progressBar_attendance_rate.setMinimumSize(QSize(0, 0))
-        self.progressBar_attendance_rate.setMaximumSize(QSize(300, 12))
+        self.progressBar_attendance_rate.setMaximumSize(QSize(300, 8))
         self.progressBar_attendance_rate.setStyleSheet("")
         self.progressBar_attendance_rate.setValue(50)
 

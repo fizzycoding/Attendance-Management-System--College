@@ -30,13 +30,13 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QProgressBar {
-    border-radius: 6.1px;
+    border-radius: 4px;
 	background-color: rgb(208, 208, 208);
 	text-align: center;
 	color: transparent
 }
 QProgressBar::chunk {
-    border-radius: 6.1px;
+    border-radius:4px;
     background-color: rgb(42, 183, 157);   }
 
 QLabel{
@@ -170,7 +170,7 @@ border: none</string>
         <property name="maximumSize">
          <size>
           <width>300</width>
-          <height>12</height>
+          <height>8</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -338,7 +338,7 @@ color: rgb(93, 93, 93)
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../icons/delete.png</normaloff>../../icons/delete.png</iconset>
+          <normaloff>../../../icons/delete.png</normaloff>../../../icons/delete.png</iconset>
         </property>
         <property name="iconSize">
          <size>

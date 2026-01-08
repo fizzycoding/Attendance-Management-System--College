@@ -1,9 +1,24 @@
-from PySide6.QtCore import (QCoreApplication, QMetaObject, Qt)
-from PySide6.QtGui import (QCursor)
-from PySide6.QtWidgets import (QAbstractSpinBox, QDateEdit, QFrame, QHBoxLayout, QLabel, QLineEdit,
-                               QPushButton, QSizePolicy, QSpacerItem, QSpinBox,
-                               QVBoxLayout, QWidget)
+# -*- coding: utf-8 -*-
 
+################################################################################
+## Form generated from reading UI file 'createTestPopup.ui'
+##
+## Created by: Qt User Interface Compiler version 6.10.1
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QDateEdit, QDialog,
+    QFrame, QHBoxLayout, QLabel, QLineEdit,
+    QPushButton, QSizePolicy, QSpacerItem, QSpinBox,
+    QVBoxLayout, QWidget)
 
 class Ui_CreateTestPopup(object):
     def setupUi(self, CreateTestPopup):
@@ -18,35 +33,35 @@ class Ui_CreateTestPopup(object):
         self.backgroundFrame = QFrame(CreateTestPopup)
         self.backgroundFrame.setObjectName(u"backgroundFrame")
         self.backgroundFrame.setStyleSheet(u"#backgroundFrame {\n"
-                                           "    background-color: white;\n"
-                                           "}\n"
-                                           "QLabel {\n"
-                                           "    color: #333;\n"
-                                           "    font-family: \"Segoe UI\";\n"
-                                           "    font-size: 14px;\n"
-                                           "    font-weight: 600;\n"
-                                           "    border: none; \n"
-                                           "}\n"
-                                           "\n"
-                                           "/* Green Button Style */\n"
-                                           "QPushButton {\n"
-                                           "    height: 35px;\n"
-                                           "    padding: 0 16px;\n"
-                                           "    background-color: #2ab79d;\n"
-                                           "    color: white;\n"
-                                           "    font-family: \"Segoe UI\";\n"
-                                           "    font-size: 14px;\n"
-                                           "    font-weight: 600;\n"
-                                           "    border: none;\n"
-                                           "    border-radius: 5px;\n"
-                                           "}\n"
-                                           "QPushButton:hover {\n"
-                                           "    background-color: #159079;\n"
-                                           "}\n"
-                                           "QPushButton:pressed {\n"
-                                           "    background-color: #044d40;\n"
-                                           "}\n"
-                                           "")
+"    background-color: white;\n"
+"}\n"
+"QLabel {\n"
+"    color: #333;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 14px;\n"
+"    font-weight: 600;\n"
+"    border: none; \n"
+"}\n"
+"\n"
+"/* Green Button Style */\n"
+"QPushButton {\n"
+"    height: 35px;\n"
+"    padding: 0 16px;\n"
+"    background-color: #2ab79d;\n"
+"    color: white;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 14px;\n"
+"    font-weight: 600;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #159079;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: #044d40;\n"
+"}\n"
+"")
         self.backgroundFrame.setFrameShape(QFrame.Shape.StyledPanel)
         self.backgroundFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.backgroundFrame)
@@ -61,42 +76,42 @@ class Ui_CreateTestPopup(object):
         self.widget_inputs = QWidget(self.backgroundFrame)
         self.widget_inputs.setObjectName(u"widget_inputs")
         self.widget_inputs.setStyleSheet(u"\n"
-                                         "/* General Input Style */\n"
-                                         "QLineEdit, QSpinBox, QDateEdit {\n"
-                                         "    height: 35px;\n"
-                                         "    padding: 0 10px;\n"
-                                         "    font-family: \"Segoe UI\";\n"
-                                         "    font-size: 14px;\n"
-                                         "    color: #111;\n"
-                                         "    border: 1px solid rgb(99, 99, 99);\n"
-                                         "    background: #fff;\n"
-                                         "    border-radius: 4px;\n"
-                                         "}\n"
-                                         "QLineEdit:focus, QSpinBox:focus, QDateEdit:focus {\n"
-                                         "    border: 1.5px solid #2ab79d;\n"
-                                         "}\n"
-                                         "\n"
-                                         "/* --- FIX: Calendar Colors --- */\n"
-                                         "QCalendarWidget QWidget {\n"
-                                         "    background-color: white; \n"
-                                         "    color: black;\n"
-                                         "}\n"
-                                         "QCalendarWidget QAbstractItemView:enabled {\n"
-                                         "    color: black; \n"
-                                         "    background-color: white;\n"
-                                         "    selection-background-color: #2ab79d; \n"
-                                         "    selection-color: white;\n"
-                                         "}\n"
-                                         "QCalendarWidget QToolButton {\n"
-                                         "    color: black;\n"
-                                         "    icon-size: 25px;\n"
-                                         "    background-color: white;\n"
-                                         "}\n"
-                                         "QCalendarWidget QSpinBox {\n"
-                                         "    background-color: white;\n"
-                                         "    color: black;\n"
-                                         "}\n"
-                                         "")
+"/* General Input Style */\n"
+"QLineEdit, QSpinBox, QDateEdit {\n"
+"    height: 35px;\n"
+"    padding: 0 10px;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 14px;\n"
+"    color: #111;\n"
+"    border: 1px solid rgb(99, 99, 99);\n"
+"    background: #fff;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"QLineEdit:focus, QSpinBox:focus, QDateEdit:focus {\n"
+"    border: 1.5px solid #2ab79d;\n"
+"}\n"
+"\n"
+"/* --- FIX: Calendar Colors --- */\n"
+"QCalendarWidget QWidget {\n"
+"    background-color: white; \n"
+"    color: black;\n"
+"}\n"
+"QCalendarWidget QAbstractItemView:enabled {\n"
+"    color: black; \n"
+"    background-color: white;\n"
+"    selection-background-color: #2ab79d; \n"
+"    selection-color: white;\n"
+"}\n"
+"QCalendarWidget QToolButton {\n"
+"    color: black;\n"
+"    icon-size: 25px;\n"
+"    background-color: white;\n"
+"}\n"
+"QCalendarWidget QSpinBox {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"}\n"
+"")
         self.verticalLayout_3 = QVBoxLayout(self.widget_inputs)
         self.verticalLayout_3.setSpacing(15)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
@@ -112,6 +127,7 @@ class Ui_CreateTestPopup(object):
         self.input_test_name.setObjectName(u"input_test_name")
 
         self.layout_name.addWidget(self.input_test_name)
+
 
         self.verticalLayout_3.addLayout(self.layout_name)
 
@@ -134,6 +150,7 @@ class Ui_CreateTestPopup(object):
 
         self.layout_max.addWidget(self.input_max_marks)
 
+
         self.horizontalLayout_marks.addLayout(self.layout_max)
 
         self.layout_pass = QVBoxLayout()
@@ -152,7 +169,9 @@ class Ui_CreateTestPopup(object):
 
         self.layout_pass.addWidget(self.input_pass_marks)
 
+
         self.horizontalLayout_marks.addLayout(self.layout_pass)
+
 
         self.verticalLayout_3.addLayout(self.horizontalLayout_marks)
 
@@ -170,7 +189,9 @@ class Ui_CreateTestPopup(object):
 
         self.layout_date.addWidget(self.input_date)
 
+
         self.verticalLayout_3.addLayout(self.layout_date)
+
 
         self.verticalLayout_2.addWidget(self.widget_inputs)
 
@@ -187,18 +208,18 @@ class Ui_CreateTestPopup(object):
         self.btn_cancel.setObjectName(u"btn_cancel")
         self.btn_cancel.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_cancel.setStyleSheet(u"\n"
-                                      "#btn_cancel {\n"
-                                      "    background-color: rgb(255, 255, 255);\n"
-                                      "    color: #333;\n"
-                                      "    border: 1px solid #333;\n"
-                                      "}\n"
-                                      "#btn_cancel:hover {\n"
-                                      "    background-color: rgba(51, 51, 51, 30);\n"
-                                      "}\n"
-                                      "#btn_cancel:pressed {\n"
-                                      "    background-color: rgba(51, 51, 51, 80);\n"
-                                      "}\n"
-                                      "")
+"#btn_cancel {\n"
+"    background-color: rgb(255, 255, 255);\n"
+"    color: #333;\n"
+"    border: 1px solid #333;\n"
+"}\n"
+"#btn_cancel:hover {\n"
+"    background-color: rgba(51, 51, 51, 30);\n"
+"}\n"
+"#btn_cancel:pressed {\n"
+"    background-color: rgba(51, 51, 51, 80);\n"
+"}\n"
+"")
 
         self.horizontalLayout_btns.addWidget(self.btn_cancel)
 
@@ -208,22 +229,23 @@ class Ui_CreateTestPopup(object):
 
         self.horizontalLayout_btns.addWidget(self.btn_create)
 
+
         self.verticalLayout_2.addWidget(self.widget_footer)
 
+
         self.verticalLayout.addWidget(self.backgroundFrame)
+
 
         self.retranslateUi(CreateTestPopup)
 
         QMetaObject.connectSlotsByName(CreateTestPopup)
-
     # setupUi
 
     def retranslateUi(self, CreateTestPopup):
         CreateTestPopup.setWindowTitle(QCoreApplication.translate("CreateTestPopup", u"Create New Test", None))
         self.label_title.setText(QCoreApplication.translate("CreateTestPopup", u"Create New Test", None))
         self.label_name.setText(QCoreApplication.translate("CreateTestPopup", u"Test Name", None))
-        self.input_test_name.setPlaceholderText(
-            QCoreApplication.translate("CreateTestPopup", u"e.g. Unit Test 1", None))
+        self.input_test_name.setPlaceholderText(QCoreApplication.translate("CreateTestPopup", u"e.g. Unit Test 1", None))
         self.label_max.setText(QCoreApplication.translate("CreateTestPopup", u"Max Marks", None))
         self.label_pass.setText(QCoreApplication.translate("CreateTestPopup", u"Passing Marks", None))
         self.label_date.setText(QCoreApplication.translate("CreateTestPopup", u"Date", None))
@@ -231,3 +253,4 @@ class Ui_CreateTestPopup(object):
         self.btn_cancel.setText(QCoreApplication.translate("CreateTestPopup", u"Cancel", None))
         self.btn_create.setText(QCoreApplication.translate("CreateTestPopup", u"Create", None))
     # retranslateUi
+

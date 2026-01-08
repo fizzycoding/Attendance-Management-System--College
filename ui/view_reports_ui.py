@@ -73,6 +73,7 @@ class Ui_view_reports_page(object):
             self.header_widget.sizePolicy().hasHeightForWidth()
         )
         self.header_widget.setSizePolicy(sizePolicy)
+        self.header_widget.setStyleSheet("background-color: transparent;\n" "")
         self.horizontalLayout_2 = QHBoxLayout(self.header_widget)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.dropdown_classes = QComboBox(self.header_widget)
@@ -138,6 +139,7 @@ class Ui_view_reports_page(object):
 
         self.content_stack = QStackedWidget(view_reports_page)
         self.content_stack.setObjectName("content_stack")
+        self.content_stack.setStyleSheet("background-color: transparent;\n" "")
         self.no_classes = QWidget()
         self.no_classes.setObjectName("no_classes")
         self.verticalLayout_empty = QVBoxLayout(self.no_classes)
@@ -174,6 +176,7 @@ class Ui_view_reports_page(object):
         self.verticalLayout_list.setContentsMargins(0, 0, 0, 0)
         self.main_container = QWidget(self.classes_selected)
         self.main_container.setObjectName("main_container")
+        self.main_container.setStyleSheet("\n" "border:none")
         self.horizontalLayout = QHBoxLayout(self.main_container)
         self.horizontalLayout.setSpacing(20)
         self.horizontalLayout.setObjectName("horizontalLayout")
@@ -230,7 +233,7 @@ class Ui_view_reports_page(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 438, 432))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 464, 436))
         self.all_students_container = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.all_students_container.setSpacing(0)
         self.all_students_container.setObjectName("all_students_container")
@@ -404,7 +407,7 @@ class Ui_view_reports_page(object):
         self.scrollAreaWidgetContents_tests.setObjectName(
             "scrollAreaWidgetContents_tests"
         )
-        self.scrollAreaWidgetContents_tests.setGeometry(QRect(0, 0, 330, 292))
+        self.scrollAreaWidgetContents_tests.setGeometry(QRect(0, 0, 304, 302))
         self.test_results_layout = QVBoxLayout(self.scrollAreaWidgetContents_tests)
         self.test_results_layout.setSpacing(10)
         self.test_results_layout.setObjectName("test_results_layout")

@@ -165,6 +165,7 @@ class Ui_test_details_page(object):
 
         self.scrollArea = QScrollArea(test_details_page)
         self.scrollArea.setObjectName("scrollArea")
+        self.scrollArea.setStyleSheet("background-color: transparent;\n" "")
         self.scrollArea.setFrameShape(QFrame.Shape.NoFrame)
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()

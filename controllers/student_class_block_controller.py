@@ -9,7 +9,6 @@ from utils.message import showMessage, showQuestionMessage
 
 
 class StudentClassBlockController(QFrame, Ui_student_block):
-
     studentModified = Signal()
 
     def __init__(self, id, sNo, name, member_id, attendanceRate=0, status=None, role=ROLE.STUDENT):
@@ -30,26 +29,9 @@ class StudentClassBlockController(QFrame, Ui_student_block):
         if attendanceRate:
             self.attendance_rate_label.setText(f"{round(attendanceRate)}%")
             self.progressBar_attendance_rate.setValue(round(attendanceRate))
-            self.colorProgressBar(round(attendanceRate))
         else:
             self.attendance_rate_label.setText("00%")
             self.progressBar_attendance_rate.setValue(0)
-            self.colorProgressBar(0)
-
-    def colorProgressBar(self, rate):
-        # 1. Determine the color based on the rate
-        if rate >= 75:
-            color = "#4CAF50"  # Green
-        elif rate >= 50:
-            color = "#FF9800"  # Orange
-        else:
-            color = "#F44336"  # Red
-
-        self.progressBar_attendance_rate.setStyleSheet(f"""
-            QProgressBar::chunk {{
-                background-color: {color};
-            }}
-        """)
 
     def updateStatusStyle(self, status):
         if status == ATTENDANCE_STATUS.PRESENT:
@@ -69,7 +51,7 @@ class StudentClassBlockController(QFrame, Ui_student_block):
 
     def removeStudent(self):
         reply = showQuestionMessage(self, "Remove student",
-                                     f"Are you sure you want to remove {self.studentName} from the class?")
+                                    f"Are you sure you want to remove {self.studentName} from the class?")
         if reply == QMessageBox.StandardButton.No:
             return
         db = getDB()

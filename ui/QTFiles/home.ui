@@ -579,7 +579,7 @@ font: 600 9pt &quot;Segoe UI&quot;;</string>
      <item>
       <widget class="QStackedWidget" name="mainContentStack">
        <property name="styleSheet">
-        <string notr="true">background: rgb(240, 240, 240)</string>
+        <string notr="true">background: rgb(248, 248, 248)</string>
        </property>
        <property name="currentIndex">
         <number>0</number>

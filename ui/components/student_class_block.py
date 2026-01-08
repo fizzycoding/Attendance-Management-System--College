@@ -27,13 +27,13 @@ class Ui_student_block(object):
         student_block.setMaximumSize(QSize(16777215, 55))
         student_block.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         student_block.setStyleSheet(u"QProgressBar {\n"
-"    border-radius: 6.1px;\n"
+"    border-radius: 4px;\n"
 "	background-color: rgb(208, 208, 208);\n"
 "	text-align: center;\n"
 "	color: transparent\n"
 "}\n"
 "QProgressBar::chunk {\n"
-"    border-radius: 6.1px;\n"
+"    border-radius:4px;\n"
 "    background-color: rgb(42, 183, 157);   }\n"
 "\n"
 "QLabel{\n"
@@ -94,7 +94,7 @@ class Ui_student_block(object):
         sizePolicy1.setHeightForWidth(self.progressBar_attendance_rate.sizePolicy().hasHeightForWidth())
         self.progressBar_attendance_rate.setSizePolicy(sizePolicy1)
         self.progressBar_attendance_rate.setMinimumSize(QSize(0, 0))
-        self.progressBar_attendance_rate.setMaximumSize(QSize(300, 12))
+        self.progressBar_attendance_rate.setMaximumSize(QSize(300, 8))
         self.progressBar_attendance_rate.setStyleSheet(u"")
         self.progressBar_attendance_rate.setValue(50)
 

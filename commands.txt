@@ -1,5 +1,3 @@
-pip install pandas pyside6 openpyxl reportlab
-
 pyside6-uic ui/QTFiles/login.ui -o ui/login_ui.py
 pyside6-uic ui/QTFiles/signup.ui -o ui/signup_ui.py
 pyside6-uic ui/QTFiles/home.ui -o ui/home_ui.py
@@ -9,9 +7,9 @@ pyside6-uic ui/QTFiles/classesStudent.ui -o ui/classes_student_ui.py
 pyside6-uic ui/QTFiles/classesTeacher.ui -o ui/classes_teacher_ui.py
 pyside6-uic ui/QTFiles/viewReports.ui -o ui/view_reports_ui.py
 pyside6-uic ui/QTFiles/attendance.ui -o ui/attendance_ui.py
-pyside6-uic ui/QTFiles/classOpen.ui -o ui/classopen_ui.py
 pyside6-uic ui/QTFiles/testResults.ui -o ui/test_results_ui.py
 pyside6-uic ui/QTFiles/test_details_page.ui -o ui/test_details_page.py
+ pyside6-uic ui/QTFiles/classOpen.ui -o ui/classopen_ui.py
 
 pyside6-uic ui/QTFiles/components/classCard.ui -o ui/components/class_card_ui.py
 pyside6-uic ui/QTFiles/components/newClassPopup.ui -o ui/components/new_class_popup_ui.py

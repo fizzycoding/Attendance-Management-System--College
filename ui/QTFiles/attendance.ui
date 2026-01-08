@@ -34,6 +34,10 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+border:none</string>
+     </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QComboBox" name="dropdown_classes">
@@ -268,6 +272,10 @@ border-radius: 5px</string>
    </item>
    <item>
     <widget class="QStackedWidget" name="students_stacked">
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+border:none</string>
+     </property>
      <property name="currentIndex">
       <number>1</number>
      </property>
@@ -361,8 +369,7 @@ border-radius: 5px</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">
-</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>S. No.</string>
@@ -439,11 +446,14 @@ border-radius: 5px</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>820</width>
-            <height>448</height>
+            <width>824</width>
+            <height>456</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="studentsLayout" stretch="0">
+           <property name="spacing">
+            <number>0</number>
+           </property>
            <property name="leftMargin">
             <number>9</number>
            </property>

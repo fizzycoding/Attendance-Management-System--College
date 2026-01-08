@@ -111,7 +111,7 @@ QLabel{background-color:transparent}</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(28, 164, 255);
-font: 600 10pt &quot;Segoe UI&quot;;</string>
+font: 700 10pt &quot;Segoe UI&quot;;</string>
      </property>
      <property name="text">
       <string>90%</string>

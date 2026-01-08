@@ -25,11 +25,9 @@ class StudentAttendanceBlockController(QFrame, Ui_student_block):
         if attendanceRate:
             self.attendance_rate_label.setText(f"{round(attendanceRate)}%")
             self.progressBar_attendance_rate.setValue(round(attendanceRate))
-            self.colorProgressBar(round(attendanceRate))
         else:
             self.attendance_rate_label.setText("00%")
             self.progressBar_attendance_rate.setValue(0)
-            self.colorProgressBar(0)
 
         self.btn_present.setIcon(self.presentUncheckedIcon)
         self.btn_absent.setIcon(self.absentUncheckedIcon)
@@ -49,18 +47,3 @@ class StudentAttendanceBlockController(QFrame, Ui_student_block):
             self.btn_present.setIcon(self.presentUncheckedIcon)
             self.btn_absent.setIcon(self.absentIcon)
         self.attendanceChanged.emit(self.member_id, status)
-
-    def colorProgressBar(self, rate):
-        # 1. Determine the color based on the rate
-        if rate >= 75:
-            color = "#4CAF50"  # Green
-        elif rate >= 50:
-            color = "#FF9800"  # Orange
-        else:
-            color = "#F44336"  # Red
-
-        self.progressBar_attendance_rate.setStyleSheet(f"""
-            QProgressBar::chunk {{
-                background-color: {color};
-            }}
-        """)

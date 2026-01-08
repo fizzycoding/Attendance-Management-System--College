@@ -69,7 +69,7 @@ class Ui_reportStudentNameRow(object):
         self.rate.setSizePolicy(sizePolicy2)
         self.rate.setMaximumSize(QSize(70, 16777215))
         self.rate.setStyleSheet(u"color: rgb(28, 164, 255);\n"
-"font: 600 10pt \"Segoe UI\";")
+"font: 700 10pt \"Segoe UI\";")
         self.rate.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout.addWidget(self.rate)

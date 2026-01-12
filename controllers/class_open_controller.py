@@ -135,7 +135,6 @@ class ClassOpenController(QWidget):
                         id=user["member_id"],
                         sNo=i + 1,
                         name=user["name"],
-                        member_id=user["member_id"],
                         attendanceRate=rate,
                         status=currentStatus
                     )
@@ -153,8 +152,8 @@ class ClassOpenController(QWidget):
         self.updateInviteCodeUI()
         self.loadStudents()
 
-    def insertIntoUi(self, id, sNo, name, member_id, attendanceRate, status):
-        block = StudentClassBlockController(id=id, sNo=sNo, name=name, member_id=member_id,
+    def insertIntoUi(self, id, sNo, name, attendanceRate, status):
+        block = StudentClassBlockController(id=id, sNo=sNo, name=name,
                                             attendanceRate=attendanceRate, status=status, role=self.user["role"])
         block.studentModified.connect(self.studentBlockModified)
         self.ui.studentLayout.addWidget(block)

@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ClassOpen</class>
- <widget class="QWidget" name="ClassOpen">
+ <class>ClassOpenStd</class>
+ <widget class="QWidget" name="ClassOpenStd">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>908</width>
-    <height>658</height>
+    <width>1000</width>
+    <height>643</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Class Details</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(240, 240, 240);</string>
+   <string notr="true">background-color: rgb(240, 240, 240); font-family: &quot;Segoe UI&quot;;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>15</number>
+   </property>
+   <property name="leftMargin">
+    <number>20</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
    <item>
-    <widget class="QWidget" name="widget" native="true">
+    <widget class="QWidget" name="header_widget" native="true">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -26,17 +41,24 @@
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: transparent;</string>
+      <string notr="true">background: none;
+border:none</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QPushButton" name="back_btn">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
         <property name="maximumSize">
          <size>
           <width>32</width>
@@ -47,10 +69,7 @@
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
-         <string notr="true">border:none</string>
-        </property>
-        <property name="text">
-         <string/>
+         <string notr="true">border:none; background:transparent;</string>
         </property>
         <property name="icon">
          <iconset>
@@ -58,26 +77,20 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>22</width>
-          <height>22</height>
+          <width>24</width>
+          <height>24</height>
          </size>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLabel" name="class_name">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(34, 34, 34);
 font: 600 16pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="text">
-         <string>BCA 3rd year</string>
+         <string>Class Name</string>
         </property>
        </widget>
       </item>
@@ -94,55 +107,213 @@ font: 600 16pt &quot;Segoe UI&quot;;</string>
         </property>
        </spacer>
       </item>
-      <item>
-       <widget class="QWidget" name="widget_2" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="label_2">
-           <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);
-border: none</string>
-           </property>
-           <property name="text">
-            <string>Invite Code: </string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="invite_code">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: #159079;
-border: none;
-font: 700 12pt &quot;Segoe UI&quot;;</string>
-           </property>
-           <property name="text">
-            <string>23232</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
      </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(29, 29, 29);
+font: 600 9pt &quot;Segoe UI&quot;;</string>
+     </property>
+     <property name="text">
+      <string>My reports</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="cards_layout">
+     <property name="spacing">
+      <number>15</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="card_total">
+       <property name="styleSheet">
+        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #ddd; }
+QFrame:hover { border: 1px solid #2ab79d; }</string>
+       </property>
+       <layout class="QVBoxLayout" name="vbox_c1">
+        <item>
+         <widget class="QLabel" name="lbl_t1">
+          <property name="styleSheet">
+           <string>color: #777; font-weight: bold; font-size: 12px; border:none;</string>
+          </property>
+          <property name="text">
+           <string>Total Classes</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="val_total_classes">
+          <property name="styleSheet">
+           <string>color: #333; font-size: 24px; font-weight: bold; border:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="card_present">
+       <property name="styleSheet">
+        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #ddd; }
+QFrame:hover { border: 1px solid #2ab79d; }</string>
+       </property>
+       <layout class="QVBoxLayout" name="vbox_c2">
+        <item>
+         <widget class="QLabel" name="lbl_t2">
+          <property name="styleSheet">
+           <string>color: #777; font-weight: bold; font-size: 12px; border:none;</string>
+          </property>
+          <property name="text">
+           <string>Present</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="val_present">
+          <property name="styleSheet">
+           <string>color: #2ab79d; font-size: 24px; font-weight: bold; border:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="card_absent">
+       <property name="styleSheet">
+        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #ddd; }
+QFrame:hover { border: 1px solid #2ab79d; }</string>
+       </property>
+       <layout class="QVBoxLayout" name="vbox_c3">
+        <item>
+         <widget class="QLabel" name="lbl_t3">
+          <property name="styleSheet">
+           <string>color: #777; font-weight: bold; font-size: 12px; border:none;</string>
+          </property>
+          <property name="text">
+           <string>Absent</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="val_absent">
+          <property name="styleSheet">
+           <string>color: #ff5252; font-size: 24px; font-weight: bold; border:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="card_rate">
+       <property name="styleSheet">
+        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #ddd; }
+QFrame:hover { border: 1px solid #2ab79d; }</string>
+       </property>
+       <layout class="QVBoxLayout" name="vbox_c4">
+        <item>
+         <widget class="QLabel" name="lbl_t4">
+          <property name="styleSheet">
+           <string>color: #777; font-weight: bold; font-size: 12px; border:none;</string>
+          </property>
+          <property name="text">
+           <string>Attendance Rate</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="val_rate">
+          <property name="styleSheet">
+           <string>color: #333; font-size: 24px; font-weight: bold; border:none;</string>
+          </property>
+          <property name="text">
+           <string>0%</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="card_today">
+       <property name="styleSheet">
+        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #ddd; }
+QFrame:hover { border: 1px solid #2ab79d; }</string>
+       </property>
+       <layout class="QVBoxLayout" name="vbox_c5">
+        <item>
+         <widget class="QLabel" name="lbl_t5">
+          <property name="styleSheet">
+           <string>color: #777; font-weight: bold; font-size: 12px; border:none;</string>
+          </property>
+          <property name="text">
+           <string>Today's Status</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="val_today">
+          <property name="styleSheet">
+           <string>color: #555; font-size: 24px; font-weight: bold; border:none;</string>
+          </property>
+          <property name="text">
+           <string>--</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_7">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(29, 29, 29);
+font: 600 9pt &quot;Segoe UI&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Students</string>
+     </property>
     </widget>
    </item>
    <item>
     <widget class="QStackedWidget" name="student_stack">
      <property name="styleSheet">
-      <string notr="true">background-color: transparent;
-border:none</string>
+      <string>background:transparent;</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
      </property>
      <widget class="QWidget" name="all_students">
       <layout class="QVBoxLayout" name="verticalLayout_2">
-       <property name="spacing">
-        <number>0</number>
-       </property>
        <property name="leftMargin">
         <number>0</number>
        </property>
@@ -157,12 +328,6 @@ border:none</string>
        </property>
        <item>
         <widget class="QFrame" name="frame">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
          <property name="styleSheet">
           <string notr="true">QLabel{
 	color: #383838;
@@ -170,19 +335,7 @@ border:none</string>
 }
 </string>
          </property>
-         <property name="frameShape">
-          <enum>QFrame::Shape::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Shadow::Raised</enum>
-         </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <property name="topMargin">
-           <number>9</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
           <item>
            <widget class="QLabel" name="label_3">
             <property name="sizePolicy">
@@ -193,15 +346,12 @@ border:none</string>
             </property>
             <property name="minimumSize">
              <size>
-              <width>70</width>
+              <width>60</width>
               <height>0</height>
              </size>
             </property>
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
             <property name="text">
-             <string>S. No.</string>
+             <string>S.No</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -217,20 +367,14 @@ border:none</string>
           </item>
           <item>
            <widget class="QLabel" name="label_5">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
             <property name="maximumSize">
              <size>
-              <width>450</width>
-              <height>450</height>
+              <width>150</width>
+              <height>16777215</height>
              </size>
             </property>
             <property name="text">
-             <string>Attendance Rate (in %)</string>
+             <string>Attendance Rate</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -239,18 +383,6 @@ border:none</string>
           </item>
           <item>
            <widget class="QLabel" name="label_6">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>190</width>
-              <height>0</height>
-             </size>
-            </property>
             <property name="maximumSize">
              <size>
               <width>180</width>
@@ -258,7 +390,10 @@ border:none</string>
              </size>
             </property>
             <property name="text">
-             <string>Attendance</string>
+             <string>Status</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -267,6 +402,9 @@ border:none</string>
        </item>
        <item>
         <widget class="QScrollArea" name="scrollArea">
+         <property name="styleSheet">
+          <string>border:none; background:transparent;</string>
+         </property>
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
@@ -275,11 +413,26 @@ border:none</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>890</width>
-            <height>551</height>
+            <width>960</width>
+            <height>367</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="studentLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <spacer name="verticalSpacer">
              <property name="orientation">
@@ -288,7 +441,7 @@ border:none</string>
              <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
-               <height>530</height>
+               <height>40</height>
               </size>
              </property>
             </spacer>
@@ -304,13 +457,10 @@ border:none</string>
        <item>
         <widget class="QLabel" name="label">
          <property name="styleSheet">
-          <string notr="true">QLabel{
-  font: 15pt &quot;Segoe UI&quot;;
-  color: rgb(0, 0, 0);
-}</string>
+          <string>font: 16pt &quot;Segoe UI&quot;; color: #999;</string>
          </property>
          <property name="text">
-          <string>No students, Invite some!</string>
+          <string>No students joined yet.</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>

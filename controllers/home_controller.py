@@ -2,13 +2,14 @@ from PySide6.QtWidgets import QWidget
 
 from controllers.attendance_controller import AttendanceController
 from controllers.class_open_controller import ClassOpenController
+from controllers.class_open_std_controller import ClassOpenStdController
 from controllers.classes_teacher_controller import ClassesTeacherController
 from controllers.dashboard_teacher_controller import DashboardTeacherController
 from controllers.my_classes_student_controller import MyClassesStudentController
 from controllers.reports_controller import ReportsController
 from controllers.test_details_controller import TestDetailsController
 from controllers.test_result_controller import TestResultController
-from controllers.test_results_student_controller import TestResultsStudentController
+from controllers.test_results_student_controller import StudentTestResultController
 from ui.home_ui import Ui_HomeWindow
 from utils.constants import ROLE
 
@@ -48,9 +49,9 @@ class HomeController(QWidget):
     def setupPages(self):
         self.pages = {
             "dashboardT": DashboardTeacherController(self.user),
-            "myClassesStd": MyClassesStudentController(self.user),
+            "myClassesStd": MyClassesStudentController(self.user, self.classOpenStd),
             "classesT": ClassesTeacherController(self.user, self),
-            "testResultsStd": TestResultsStudentController(self.user),
+            "testResultsStd": StudentTestResultController(self.user),
             "attendance": AttendanceController(self.user),
             "testResults": TestResultController(self.user, self.testDetailsOpen),
             "reports": ReportsController(self.user),
@@ -84,6 +85,23 @@ class HomeController(QWidget):
         self.ui.mainContentStack.setCurrentWidget(self.currentClassWidget)
 
     def closeClassOpened(self):
+        # Remove and cleanup
+        if self.currentClassWidget:
+            self.ui.mainContentStack.removeWidget(self.currentClassWidget)
+            self.currentClassWidget.deleteLater()
+            self.currentClassWidget = None
+
+        if self.user["role"] == ROLE.TEACHER:
+            self.show("classesT")
+        else:
+            self.show("myClassesStd")
+
+    def classOpenStd(self, classId):
+        self.currentClassWidget = ClassOpenStdController(self.user, self, classId)
+        self.ui.mainContentStack.addWidget(self.currentClassWidget)
+        self.ui.mainContentStack.setCurrentWidget(self.currentClassWidget)
+
+    def closeClassOpenedStd(self):
         # Remove and cleanup
         if self.currentClassWidget:
             self.ui.mainContentStack.removeWidget(self.currentClassWidget)

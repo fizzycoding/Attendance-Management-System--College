@@ -1,143 +1,120 @@
-from PySide6.QtCore import QDate
-from PySide6.QtWidgets import QWidget, QMessageBox, QSpacerItem, QSizePolicy
+from PySide6.QtWidgets import QWidget, QSpacerItem, QSizePolicy
 
-from controllers.class_card_controller import ClassCardController
-from controllers.join_class_popup_controller import JoinClassPopup
+from controllers.test_result_student_row_controller import StudentTestRowController
 from database.database import getDB
-from ui.test_results_student_ui import Ui_TestResultsStudent
-from utils.constants import ROLE
-from utils.message import showMessage
+from ui.test_results_student_ui import Ui_student_test_results
 
 
-class TestResultsStudentController(QWidget):
+class StudentTestResultController(QWidget):
     def __init__(self, user):
         super().__init__()
-        self.ui = Ui_TestResultsStudent()
+        self.ui = Ui_student_test_results()
         self.ui.setupUi(self)
         self.user = user
-        self.ui.btn_join_class.clicked.connect(self.showJoinClassPopup)
-        self.loadClasses()
-        self.ui.refresh_classes.clicked.connect(self.refresh)
+        self.load_classes()
+        self.ui.classes_drpdown.currentIndexChanged.connect(self.load_tests)
 
     def refresh(self):
-        self.loadClasses()
 
-    def showJoinClassPopup(self):
-        popup = JoinClassPopup()
+        current_class_id = self.ui.classes_drpdown.currentData()
 
-        if popup.exec():
-            code = popup.getCode()
-            self.joinClass(code)
+        self.load_classes()
+        if current_class_id:
+            index = self.ui.classes_drpdown.findData(current_class_id)
+            if index >= 0:
+                self.ui.classes_drpdown.setCurrentIndex(index)
 
-    def joinClass(self, code):
+    def load_classes(self):
+        self.ui.classes_drpdown.blockSignals(True)
+        self.ui.classes_drpdown.clear()
+
         db = getDB()
         cursor = db.cursor()
 
         try:
-            query = "SELECT * FROM classes WHERE invite_code = ?"
-            cursor.execute(query, (code,))
-            classData = cursor.fetchone()
-            if not classData:
-                showMessage(
-                    self, "Error", "Invalid Invite Code!", QMessageBox.Icon.Critical
-                )
-                return
-            if classData["created_by"] == self.user["id"]:
-                showMessage(
-                    self,
-                    "Error",
-                    "Admin cannot join as a student!",
-                    QMessageBox.Icon.Critical,
-                )
-                return
+            cursor.execute("""
+                SELECT c.id, c.class_name 
+                FROM class_members cm
+                JOIN classes c ON cm.class_id = c.id
+                WHERE cm.student_id = ?
+            """, (self.user['id'],))
+            classes = cursor.fetchall()
 
-            query = (
-                "SELECT 1 FROM class_members WHERE student_id=? AND class_id=? LIMIT 1"
-            )
-            cursor.execute(query, (self.user["id"], classData["id"]))
-            if cursor.fetchone():
-                showMessage(
-                    self,
-                    "Error",
-                    "You are already a member of this class.",
-                    QMessageBox.Icon.Critical,
-                )
-                return
+            if classes:
+                for cls in classes:
+                    self.ui.classes_drpdown.addItem(cls[1], cls[0])
+                self.ui.classes_drpdown.blockSignals(False)
+                self.load_tests()
+                if self.ui.classes_drpdown.count() > 0:
+                    self.ui.classes_drpdown.setCurrentIndex(0)
+            else:
+                self.ui.classes_drpdown.addItem("No Classes Joined")
+                self.ui.main_stack.setCurrentWidget(self.ui.page_no_tests)
+                self.ui.label_empty.setText("Join a class to see results.")
 
-            query = "INSERT INTO class_members(class_id, student_id) VALUES(?, ?)"
-            cursor.execute(query, (classData["id"], self.user["id"]))
-            db.commit()
-            showMessage(
-                self,
-                "Success",
-                f"Successfully joined {classData['class_name']}!",
-                QMessageBox.Icon.Information,
-            )
-            self.loadClasses()
         except Exception as e:
-            db.rollback()
-            print(e)
+            print(f"Error loading classes: {e}")
         finally:
             cursor.close()
             db.close()
 
-    def loadClasses(self):
-        while self.ui.classesLayout.count():
-            item = self.ui.classesLayout.takeAt(0)
+    def load_tests(self):
+        """Fetch tests for the selected class."""
+        class_id = self.ui.classes_drpdown.currentData()
+        if not class_id:
+            return
+
+        # Clear existing rows from the scroll area
+        self._clear_layout(self.ui.container_tests)
+
+        db = getDB()
+        cursor = db.cursor()
+
+        try:
+            # Query: Test Info + Student Result (LEFT JOIN)
+            # We need to find the student's 'member_id' for this specific class first
+            cursor.execute("""
+                SELECT 
+                    t.test_name, 
+                    t.test_date, 
+                    t.max_marks, 
+                    t.passing_marks,
+                    tr.marks_obtained
+                FROM tests t
+                LEFT JOIN test_results tr ON tr.test_id = t.id AND tr.member_id = (
+                    SELECT id FROM class_members WHERE class_id = ? AND student_id = ?
+                )
+                WHERE t.class_id = ?
+                ORDER BY t.test_date DESC
+            """, (class_id, self.user['id'], class_id))
+
+            tests = cursor.fetchall()
+
+            if not tests:
+                self.ui.main_stack.setCurrentWidget(self.ui.page_no_tests)
+                self.ui.label_empty.setText("No tests found for this class.")
+            else:
+                self.ui.main_stack.setCurrentWidget(self.ui.page_test_list)
+
+                for t in tests:
+                    # Create Row Controller
+                    row = StudentTestRowController(t)
+                    self.ui.container_tests.addWidget(row)
+
+                # Add Spacer at bottom so rows stick to the top
+                spacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+                self.ui.container_tests.addItem(spacer)
+
+        except Exception as e:
+            print(f"Error loading tests: {e}")
+        finally:
+            cursor.close()
+            db.close()
+
+    def _clear_layout(self, layout):
+        while layout.count():
+            item = layout.takeAt(0)
             if item.widget():
                 item.widget().deleteLater()
-
-        db = getDB()
-        cursor = db.cursor()
-        today_str = QDate.currentDate().toString("yyyy-MM-dd")
-        try:
-            query = """
-            SELECT 
-                c.id,
-                c.class_name,
-                
-                (SELECT COUNT(*) FROM class_members WHERE class_id = c.id) as total_students,
-                
-                (SELECT COUNT(*)
-                        FROM attendance_records r
-                        JOIN attendance_sessions s ON r.session_id = s.id
-                        WHERE s.class_id = c.id AND s.date = ? AND r.status = 'present'
-                ) as total_present,
-                
-                (SELECT COUNT(*) 
-                     FROM attendance_records ar 
-                     JOIN attendance_sessions s ON ar.session_id = s.id 
-                     WHERE s.class_id = c.id AND s.date = ? AND ar.status = 'absent'
-                ) as total_absent
-                
-            FROM classes c
-            JOIN class_members cm ON c.id = cm.class_id 
-            WHERE cm.student_id=?"""
-            cursor.execute(query, (today_str, today_str, self.user["id"]))
-
-            rows = cursor.fetchall()
-            if not rows:
-                self.ui.classes_stacked.setCurrentWidget(self.ui.no_class)
-            else:
-                self.ui.classes_stacked.setCurrentWidget(self.ui.all_class)
-
-                for row in rows:
-                    card = ClassCardController(
-                        classId=str(row["id"]),
-                        className=row["class_name"],
-                        present=row["total_present"],
-                        absent=row["total_absent"],
-                        total=row["total_students"],
-                        role=ROLE.STUDENT
-                    )
-                    self.ui.classesLayout.addWidget(card)
-
-            spacer = QSpacerItem(
-                20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
-            )
-            self.ui.classesLayout.addItem(spacer)
-        except Exception as e:
-            print(e)
-        finally:
-            cursor.close()
-            db.close()
+            elif item.spacerItem():
+                layout.removeItem(item)

@@ -22,18 +22,6 @@ CREATE TABLE IF NOT EXISTS classes (
 );
 """
 
-CLASS_REQUEST_TABLE_QUERY = """
-CREATE TABLE IF NOT EXISTS class_requests (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    class_id INTEGER,
-    student_id INTEGER,
-    status TEXT CHECK(status IN ('pending', 'approved', 'rejected')) DEFAULT 'pending',
-    requested_at TEXT DEFAULT (datetime('now')),
-    FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE,
-    FOREIGN KEY (student_id) REFERENCES users(id) ON DELETE CASCADE
-);
-"""
-
 CLASS_MEMBERS_TABLE_QUERY = """
 CREATE TABLE IF NOT EXISTS class_members (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -96,7 +84,6 @@ queries = [
     USER_TABLE_QUERY,
     CLASSES_TABLE_QUERY,
     CLASS_MEMBERS_TABLE_QUERY,
-    CLASS_REQUEST_TABLE_QUERY,
     ATTENDANCE_SESSIONS_TABLE_QUERY,
     ATTENDANCE_RECORDS_TABLE_QUERY,
     TESTS_TABLE_QUERY,

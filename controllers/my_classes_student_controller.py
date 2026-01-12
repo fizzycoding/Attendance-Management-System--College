@@ -10,11 +10,12 @@ from utils.message import showMessage
 
 
 class MyClassesStudentController(QWidget):
-    def __init__(self, user):
+    def __init__(self, user, openClassfn):
         super().__init__()
         self.ui = Ui_MyClassesStudent()
         self.ui.setupUi(self)
         self.user = user
+        self.openClass = openClassfn
         self.ui.btn_join_class.clicked.connect(self.showJoinClassPopup)
         self.loadClasses()
         self.ui.refresh_classes.clicked.connect(self.refresh)
@@ -130,6 +131,7 @@ class MyClassesStudentController(QWidget):
                         total=row["total_students"],
                         role=ROLE.STUDENT
                     )
+                    card.clicked.connect(self.openClass)
                     self.ui.classesLayout.addWidget(card)
 
             spacer = QSpacerItem(

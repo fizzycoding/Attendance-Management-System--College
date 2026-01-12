@@ -1,6 +1,6 @@
 import sqlite3
 
-db_name = "college_database"
+db_name = "college_database.db"
 
 
 def getDB():

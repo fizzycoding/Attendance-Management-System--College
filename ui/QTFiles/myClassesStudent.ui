@@ -42,7 +42,7 @@
 font: 600 18pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="text">
-         <string>All Classes</string>
+         <string>My Classes</string>
         </property>
        </widget>
       </item>

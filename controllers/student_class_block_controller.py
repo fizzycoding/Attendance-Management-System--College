@@ -11,12 +11,11 @@ from utils.message import showMessage, showQuestionMessage
 class StudentClassBlockController(QFrame, Ui_student_block):
     studentModified = Signal()
 
-    def __init__(self, id, sNo, name, member_id, attendanceRate=0, status=None, role=ROLE.STUDENT):
+    def __init__(self, id, sNo, name, attendanceRate=0, status=None, role=ROLE.STUDENT, isCurrent=False):
         super().__init__()
         self.setupUi(self)
         self.id = id
         self.studentName = name
-        self.member_id = member_id
         self.serial_number.setText(str(sNo))
         self.name.setText(name)
         self.updateStatusStyle(status)
@@ -25,7 +24,8 @@ class StudentClassBlockController(QFrame, Ui_student_block):
         else:
             self.btn_remove_student.show()
             self.btn_remove_student.clicked.connect(self.removeStudent)
-
+        if isCurrent:
+            self.setObjectName("me")
         if attendanceRate:
             self.attendance_rate_label.setText(f"{round(attendanceRate)}%")
             self.progressBar_attendance_rate.setValue(round(attendanceRate))

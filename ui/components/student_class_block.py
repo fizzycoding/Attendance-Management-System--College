@@ -22,8 +22,8 @@ class Ui_student_block(object):
     def setupUi(self, student_block):
         if not student_block.objectName():
             student_block.setObjectName(u"student_block")
-        student_block.resize(950, 48)
-        student_block.setMinimumSize(QSize(0, 40))
+        student_block.resize(950, 55)
+        student_block.setMinimumSize(QSize(0, 50))
         student_block.setMaximumSize(QSize(16777215, 55))
         student_block.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         student_block.setStyleSheet(u"QProgressBar {\n"
@@ -42,6 +42,11 @@ class Ui_student_block(object):
 "\n"
 "#student_block{\n"
 "	border-top: 1px solid rgb(166, 166, 166);\n"
+"}\n"
+"\n"
+"#me{\n"
+"	border-top: 1px solid rgb(166, 166, 166);\n"
+"	background: rgba(42, 183, 157,30)\n"
 "}\n"
 "")
         self.horizontalLayout = QHBoxLayout(student_block)
@@ -179,7 +184,7 @@ class Ui_student_block(object):
         self.btn_remove_student.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_remove_student.setStyleSheet(u"border: none")
         icon = QIcon()
-        icon.addFile(u"icons/delete.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"../../../icons/delete.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_remove_student.setIcon(icon)
         self.btn_remove_student.setIconSize(QSize(20, 20))
 

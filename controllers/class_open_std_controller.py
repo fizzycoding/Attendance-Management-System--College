@@ -1,15 +1,17 @@
+from datetime import datetime
+
 from PySide6.QtCore import QDate
 from PySide6.QtWidgets import QWidget, QSpacerItem, QSizePolicy
 
 from controllers.student_class_block_controller import StudentClassBlockController
 from database.database import getDB
-from ui.classopen_ui import Ui_ClassOpen
+from ui.classopen_std_ui import Ui_ClassOpenStd
 
 
-class ClassOpenController(QWidget):
+class ClassOpenStdController(QWidget):
     def __init__(self, user, home, classId):
         super().__init__()
-        self.ui = Ui_ClassOpen()
+        self.ui = Ui_ClassOpenStd()
         self.ui.setupUi(self)
         self.classId = classId
         self.home = home
@@ -19,16 +21,73 @@ class ClassOpenController(QWidget):
         self.view_date = QDate.currentDate()
         self.loadClass()
         if self.classData:
-            self.updateInviteCodeUI()
+            self.loadUserData()
             self.loadStudents()
         self.ui.back_btn.clicked.connect(self.home.closeClassOpened)
 
-    def updateInviteCodeUI(self):
-        code = self.classData["code"]
-        if code:
-            self.ui.invite_code.setText(code)
-        else:
-            self.ui.invite_code.setText("------")
+    def loadUserData(self):
+        db = getDB()
+        cursor = db.cursor()
+        try:
+            classCountQuery = """
+                    SELECT 
+                        (SELECT COUNT(*) FROM attendance_sessions WHERE class_id = ?) AS total,
+                        (SELECT COUNT(*) FROM attendance_records ar
+                         JOIN attendance_sessions a ON a.id = ar.session_id
+                         JOIN class_members cm ON cm.id = ar.member_id
+                         WHERE a.class_id = ? AND cm.student_id = ? AND ar.status = "present") as present
+                    """
+            cursor.execute(classCountQuery, (self.classId, self.classId, self.user["id"]))
+            result = cursor.fetchone()
+            print(result)
+            if result:
+                total_classes = result[0]
+                total_present = result[1]
+                total_absent = total_classes - total_present
+                self.ui.val_total_classes.setText(str(total_classes))
+                self.ui.val_present.setText(str(max(0, total_present)))
+                self.ui.val_absent.setText(str(max(10, total_absent)))
+
+                if total_classes > 0:
+                    rate = int(round((total_present / total_classes) * 100))
+                else:
+                    rate = 0
+                self.ui.val_rate.setText(f"{rate}%")
+
+                today_str = datetime.now().strftime("%Y-%m-%d")
+                status_query = """
+            SELECT ar.status 
+            FROM attendance_records ar
+            JOIN attendance_sessions s ON s.id = ar.session_id
+            JOIN class_members cm ON cm.id = ar.member_id
+            WHERE s.class_id = ? 
+              AND cm.student_id = ? 
+              AND s.date = ?
+        """
+
+                cursor.execute(status_query, (self.classId, self.user["id"], today_str))
+                result = cursor.fetchone()
+                if result:
+                    status = result[0]  # 'present' or 'absent'
+
+                    if status == 'present':
+                        self.ui.val_today.setText("Present")
+                        self.ui.val_today.setStyleSheet(
+                            "color: #2ab79d; font-size: 24px; font-weight: bold; border:none;")
+                    else:
+                        self.ui.val_today.setText("Absent")
+                        self.ui.val_today.setStyleSheet(
+                            "color: #ff5252; font-size: 24px; font-weight: bold; border:none;")
+                else:
+                    self.ui.val_today.setText("Not Marked")
+                    self.ui.val_today.setStyleSheet("color: #777; font-size: 20px; font-weight: bold; border:none;")
+
+        except Exception as e:
+            print("Failed to load students", e)
+
+        finally:
+            cursor.close()
+            db.close()
 
     def loadClass(self):
         db = getDB()
@@ -71,11 +130,11 @@ class ClassOpenController(QWidget):
         try:
             attendance_map = {}
             mapQuery = """
-                SELECT r.member_id, r.status 
-                FROM attendance_records r
-                JOIN attendance_sessions s ON r.session_id = s.id
-                WHERE s.class_id = ? AND s.date = ?
-            """
+                    SELECT r.member_id, r.status 
+                    FROM attendance_records r
+                    JOIN attendance_sessions s ON r.session_id = s.id
+                    WHERE s.class_id = ? AND s.date = ?
+                """
             cursor.execute(mapQuery, (classId, date_str))
             markedRows = cursor.fetchall()
 
@@ -86,21 +145,21 @@ class ClassOpenController(QWidget):
                     attendance_map[row['member_id']] = row['status']
 
             query = """
-                SELECT 
-                    c.id AS member_id,
-                    u.name,
-                    u.id AS user_id,
-                    (SELECT COUNT(*) FROM attendance_sessions WHERE class_id = ?) AS total_session,
-                    (SELECT COUNT(*)
-                    FROM attendance_records ar
-                    JOIN attendance_sessions s ON ar.session_id = s.id
-                    WHERE s.class_id = ? AND ar.member_id = c.id AND ar.status = 'present'
-                ) AS total_present
-                FROM class_members c 
-                JOIN users u ON c.student_id = u.id 
-                WHERE c.class_id = ?
-                ORDER BY u.name ASC
-            """
+                    SELECT 
+                        c.id AS member_id,
+                        u.name,
+                        u.id AS user_id,
+                        (SELECT COUNT(*) FROM attendance_sessions WHERE class_id = ?) AS total_session,
+                        (SELECT COUNT(*)
+                        FROM attendance_records ar
+                        JOIN attendance_sessions s ON ar.session_id = s.id
+                        WHERE s.class_id = ? AND ar.member_id = c.id AND ar.status = 'present'
+                    ) AS total_present
+                    FROM class_members c 
+                    JOIN users u ON c.student_id = u.id 
+                    WHERE c.class_id = ?
+                    ORDER BY u.name ASC
+                """
             cursor.execute(query, (classId, classId, classId))
             data = cursor.fetchall()
 
@@ -135,9 +194,9 @@ class ClassOpenController(QWidget):
                         id=user["member_id"],
                         sNo=i + 1,
                         name=user["name"],
-                        member_id=user["member_id"],
                         attendanceRate=rate,
-                        status=currentStatus
+                        status=currentStatus,
+                        isCurrent=user["user_id"] == self.user["id"]
                     )
             spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
             self.ui.studentLayout.addItem(spacer)
@@ -150,12 +209,12 @@ class ClassOpenController(QWidget):
     # ----- HELPERS -----
 
     def onClassChanged(self):
-        self.updateInviteCodeUI()
         self.loadStudents()
 
-    def insertIntoUi(self, id, sNo, name, member_id, attendanceRate, status):
-        block = StudentClassBlockController(id=id, sNo=sNo, name=name, member_id=member_id,
-                                            attendanceRate=attendanceRate, status=status, role=self.user["role"])
+    def insertIntoUi(self, id, sNo, name, attendanceRate, status, isCurrent):
+        block = StudentClassBlockController(id=id, sNo=sNo, name=name,
+                                            attendanceRate=attendanceRate, status=status, role=self.user["role"],
+                                            isCurrent=isCurrent)
         block.studentModified.connect(self.studentBlockModified)
         self.ui.studentLayout.addWidget(block)
 

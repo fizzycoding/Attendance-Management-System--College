@@ -200,10 +200,12 @@ class DashboardTeacherController(QWidget):
         try:
             present_data = []
             absent_data = []
+            days_labels = []
 
             for i in range(6, -1, -1):
                 day = datetime.now() - timedelta(days=i)
                 date_str = day.strftime("%Y-%m-%d")
+                days_labels.append(day.strftime("%a"))
 
                 cursor.execute("""
                     SELECT 
@@ -218,7 +220,7 @@ class DashboardTeacherController(QWidget):
                 present_data.append(res[0] if res else 0)
                 absent_data.append(res[1] if res else 0)
 
-            chart_view = self.chart_manager.createWeeklyBarChart(present_data, absent_data)
+            chart_view = self.chart_manager.createWeeklyBarChart(days_labels, present_data, absent_data)
             container.layout().addWidget(chart_view)
 
         except Exception as e:

@@ -52,13 +52,12 @@ class ChartManager:
 
         return self._create_chart_view(chart)
 
-    def createWeeklyBarChart(self, present_data, absent_data):
+    def createWeeklyBarChart(self, categories, present_data, absent_data):
         set_present = QBarSet("Present")
         set_absent = QBarSet("Absent")
 
         set_present.setColor(self.COLOR_PRESENT)
         set_absent.setColor(self.COLOR_ABSENT)
-
         set_present.setBorderColor(Qt.GlobalColor.transparent)
         set_absent.setBorderColor(Qt.GlobalColor.transparent)
 
@@ -68,13 +67,10 @@ class ChartManager:
             set_absent.append(a)
             max_val = max(max_val, p, a)
 
-        set_present.hovered.connect(lambda status, index: self._on_bar_hover(status, index, set_present))
-        set_absent.hovered.connect(lambda status, index: self._on_bar_hover(status, index, set_absent))
-
         series = QBarSeries()
         series.append(set_present)
         series.append(set_absent)
-        series.setBarWidth(0.8)
+        series.setBarWidth(0.5)
 
         chart = QChart()
         chart.addSeries(series)
@@ -85,7 +81,7 @@ class ChartManager:
         chart.setMargins(QMargins(0, 0, 0, 0))
 
         axis_x = QBarCategoryAxis()
-        axis_x.append(["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
+        axis_x.append(categories)
         axis_x.setGridLineVisible(False)
         chart.addAxis(axis_x, Qt.AlignmentFlag.AlignBottom)
         series.attachAxis(axis_x)

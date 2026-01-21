@@ -59,6 +59,8 @@ class DashboardTeacherController(QWidget):
                 if self.ui.dropdown_classes.count() > 0:
                     self.ui.dropdown_classes.setCurrentIndex(0)
                     self.loadDashboardData()
+                else:
+                    self.resetClassData()
             else:
                 self.ui.dropdown_classes.addItem("No Classes Found")
                 self.ui.dropdown_classes.blockSignals(False)
@@ -125,10 +127,10 @@ class DashboardTeacherController(QWidget):
 
         except Exception as e:
             print(f"Error loading top cards: {e}")
+            self.ui.val_total_student.setText("0")
             self.ui.val_total_classes.setText("0")
-            self.ui.val_present.setText("0")
-            self.ui.val_absent.setText("0")
-            self.ui.val_tests.setText("0%")
+            self.ui.val_tests.setText("0")
+            self.ui.val_avg_attendance.setText("0%")
         finally:
             cursor.close()
             db.close()

@@ -46,7 +46,7 @@ class ClassOpenStdController(QWidget):
                 total_absent = total_classes - total_present
                 self.ui.val_total_classes.setText(str(total_classes))
                 self.ui.val_present.setText(str(max(0, total_present)))
-                self.ui.val_absent.setText(str(max(10, total_absent)))
+                self.ui.val_absent.setText(str(max(0, total_absent)))
 
                 if total_classes > 0:
                     rate = int(round((total_present / total_classes) * 100))

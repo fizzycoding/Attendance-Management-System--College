@@ -8,16 +8,13 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLineEdit, QPushButton, QRadioButton, QSizePolicy,
-    QVBoxLayout, QWidget)
+from PySide6.QtCore import (QCoreApplication, QMetaObject, Qt)
+from PySide6.QtGui import (QCursor,
+                           QFont)
+from PySide6.QtWidgets import (QFrame, QHBoxLayout, QLabel,
+                               QLineEdit, QPushButton, QRadioButton, QSizePolicy,
+                               QVBoxLayout, QWidget)
+
 
 class Ui_signup_form_main_window(object):
     def setupUi(self, signup_form_main_window):
@@ -25,10 +22,10 @@ class Ui_signup_form_main_window(object):
             signup_form_main_window.setObjectName(u"signup_form_main_window")
         signup_form_main_window.resize(850, 580)
         signup_form_main_window.setStyleSheet(u"\n"
-"                #signup_form_main_window {\n"
-"                background: white;\n"
-"                }\n"
-"            ")
+                                              "                #signup_form_main_window {\n"
+                                              "                background: white;\n"
+                                              "                }\n"
+                                              "            ")
         self.mainLayout = QHBoxLayout(signup_form_main_window)
         self.mainLayout.setSpacing(0)
         self.mainLayout.setObjectName(u"mainLayout")
@@ -36,10 +33,10 @@ class Ui_signup_form_main_window(object):
         self.leftFrame = QFrame(signup_form_main_window)
         self.leftFrame.setObjectName(u"leftFrame")
         self.leftFrame.setStyleSheet(u"\n"
-"                            #leftFrame {\n"
-"                            background: white;\n"
-"                            }\n"
-"                        ")
+                                     "                            #leftFrame {\n"
+                                     "                            background: white;\n"
+                                     "                            }\n"
+                                     "                        ")
         self.leftFrame.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_2 = QVBoxLayout(self.leftFrame)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -64,11 +61,11 @@ class Ui_signup_form_main_window(object):
         self.signupLabel = QLabel(self.headerWidget)
         self.signupLabel.setObjectName(u"signupLabel")
         self.signupLabel.setStyleSheet(u"\n"
-"                                                                #signupLabel {\n"
-"                                                                font: 700 20pt \"Arial\";\n"
-"                                                                color: black;\n"
-"                                                                }\n"
-"                                                            ")
+                                       "                                                                #signupLabel {\n"
+                                       "                                                                font: 700 20pt \"Arial\";\n"
+                                       "                                                                color: black;\n"
+                                       "                                                                }\n"
+                                       "                                                            ")
         self.signupLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout.addWidget(self.signupLabel)
@@ -76,16 +73,15 @@ class Ui_signup_form_main_window(object):
         self.signupSloganLabel = QLabel(self.headerWidget)
         self.signupSloganLabel.setObjectName(u"signupSloganLabel")
         self.signupSloganLabel.setStyleSheet(u"\n"
-"                                                                #signupSloganLabel {\n"
-"                                                                font-size: 12pt;\n"
-"                                                                color: #555;\n"
-"                                                                }\n"
-"                                                            ")
+                                             "                                                                #signupSloganLabel {\n"
+                                             "                                                                font-size: 12pt;\n"
+                                             "                                                                color: #555;\n"
+                                             "                                                                }\n"
+                                             "                                                            ")
         self.signupSloganLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.signupSloganLabel.setWordWrap(True)
 
         self.verticalLayout.addWidget(self.signupSloganLabel)
-
 
         self.verticalLayout_4.addWidget(self.headerWidget)
 
@@ -102,10 +98,10 @@ class Ui_signup_form_main_window(object):
         sizePolicy.setHeightForWidth(self.nameLabel.sizePolicy().hasHeightForWidth())
         self.nameLabel.setSizePolicy(sizePolicy)
         self.nameLabel.setStyleSheet(u"#nameLabel{\n"
-"                                                                color : rgb(0,0,0);\n"
-"                                                                font: 600 8pt \"Segoe UI\";\n"
-"                                                                }\n"
-"                                                            ")
+                                     "                                                                color : rgb(0,0,0);\n"
+                                     "                                                                font: 600 8pt \"Segoe UI\";\n"
+                                     "                                                                }\n"
+                                     "                                                            ")
 
         self.verticalLayout_name.addWidget(self.nameLabel)
 
@@ -114,21 +110,20 @@ class Ui_signup_form_main_window(object):
         sizePolicy.setHeightForWidth(self.nameInputBox.sizePolicy().hasHeightForWidth())
         self.nameInputBox.setSizePolicy(sizePolicy)
         self.nameInputBox.setStyleSheet(u"#nameInputBox {\n"
-"                                                                height: 20px;\n"
-"                                                                padding: 8px 10px;\n"
-"                                                                font-size: 14px;\n"
-"                                                                color: #111;\n"
-"                                                                border: 1px solid rgb(99, 99, 99);\n"
-"                                                                background: #fff;\n"
-"                                                                border-radius: 4px;\n"
-"                                                                }\n"
-"                                                                #nameInputBox:focus {\n"
-"                                                                border: 1.5px solid #2ab79d;\n"
-"                                                                }\n"
-"                                                            ")
+                                        "                                                                height: 20px;\n"
+                                        "                                                                padding: 8px 10px;\n"
+                                        "                                                                font-size: 14px;\n"
+                                        "                                                                color: #111;\n"
+                                        "                                                                border: 1px solid rgb(99, 99, 99);\n"
+                                        "                                                                background: #fff;\n"
+                                        "                                                                border-radius: 4px;\n"
+                                        "                                                                }\n"
+                                        "                                                                #nameInputBox:focus {\n"
+                                        "                                                                border: 1.5px solid #2ab79d;\n"
+                                        "                                                                }\n"
+                                        "                                                            ")
 
         self.verticalLayout_name.addWidget(self.nameInputBox)
-
 
         self.verticalLayout_4.addWidget(self.nameWidget)
 
@@ -145,32 +140,31 @@ class Ui_signup_form_main_window(object):
         sizePolicy.setHeightForWidth(self.inputLabel.sizePolicy().hasHeightForWidth())
         self.inputLabel.setSizePolicy(sizePolicy)
         self.inputLabel.setStyleSheet(u"#inputLabel{\n"
-"                                                                color : rgb(0,0,0);\n"
-"                                                                font: 600 8pt \"Segoe UI\";\n"
-"                                                                }\n"
-"                                                            ")
+                                      "                                                                color : rgb(0,0,0);\n"
+                                      "                                                                font: 600 8pt \"Segoe UI\";\n"
+                                      "                                                                }\n"
+                                      "                                                            ")
 
         self.verticalLayout_user.addWidget(self.inputLabel)
 
         self.usernameInputBox = QLineEdit(self.userWidget)
         self.usernameInputBox.setObjectName(u"usernameInputBox")
         self.usernameInputBox.setStyleSheet(u"#usernameInputBox {\n"
-"                                                                height: 20px;\n"
-"                                                                padding: 8px 10px;\n"
-"                                                                font-size: 14px;\n"
-"                                                                color: #111;\n"
-"                                                                border: 1px solid rgb(99, 99, 99);\n"
-"                                                                background: #fff;\n"
-"                                                                border-radius: 4px;\n"
-"                                                                }\n"
-"                                                                #usernameInputBox:focus {\n"
-"                                                                border: 1.5px solid #2ab79d;\n"
-"                                                                }\n"
-"                                                          "
-                        "  ")
+                                            "                                                                height: 20px;\n"
+                                            "                                                                padding: 8px 10px;\n"
+                                            "                                                                font-size: 14px;\n"
+                                            "                                                                color: #111;\n"
+                                            "                                                                border: 1px solid rgb(99, 99, 99);\n"
+                                            "                                                                background: #fff;\n"
+                                            "                                                                border-radius: 4px;\n"
+                                            "                                                                }\n"
+                                            "                                                                #usernameInputBox:focus {\n"
+                                            "                                                                border: 1.5px solid #2ab79d;\n"
+                                            "                                                                }\n"
+                                            "                                                          "
+                                            "  ")
 
         self.verticalLayout_user.addWidget(self.usernameInputBox)
-
 
         self.verticalLayout_4.addWidget(self.userWidget)
 
@@ -187,33 +181,32 @@ class Ui_signup_form_main_window(object):
         sizePolicy.setHeightForWidth(self.passLabel.sizePolicy().hasHeightForWidth())
         self.passLabel.setSizePolicy(sizePolicy)
         self.passLabel.setStyleSheet(u"#passLabel{\n"
-"                                                                color : rgb(0,0,0);\n"
-"                                                                font: 600 8pt \"Segoe UI\";\n"
-"                                                                }\n"
-"                                                            ")
+                                     "                                                                color : rgb(0,0,0);\n"
+                                     "                                                                font: 600 8pt \"Segoe UI\";\n"
+                                     "                                                                }\n"
+                                     "                                                            ")
 
         self.verticalLayout_pass.addWidget(self.passLabel)
 
         self.passwordInputBox = QLineEdit(self.passWidget)
         self.passwordInputBox.setObjectName(u"passwordInputBox")
         self.passwordInputBox.setStyleSheet(u"#passwordInputBox {\n"
-"                                                                height: 20px;\n"
-"                                                                padding: 8px 10px;\n"
-"                                                                font-size: 14px;\n"
-"                                                                color: #111;\n"
-"                                                                border: 1px solid rgb(99, 99, 99);\n"
-"                                                                background: #fff;\n"
-"                                                                border-radius: 4px;\n"
-"                                                                }\n"
-"                                                                #passwordInputBox:focus {\n"
-"                                                                border: 1.5px solid #2ab79d;\n"
-"                                                                }\n"
-"                                                          "
-                        "  ")
+                                            "                                                                height: 20px;\n"
+                                            "                                                                padding: 8px 10px;\n"
+                                            "                                                                font-size: 14px;\n"
+                                            "                                                                color: #111;\n"
+                                            "                                                                border: 1px solid rgb(99, 99, 99);\n"
+                                            "                                                                background: #fff;\n"
+                                            "                                                                border-radius: 4px;\n"
+                                            "                                                                }\n"
+                                            "                                                                #passwordInputBox:focus {\n"
+                                            "                                                                border: 1.5px solid #2ab79d;\n"
+                                            "                                                                }\n"
+                                            "                                                          "
+                                            "  ")
         self.passwordInputBox.setEchoMode(QLineEdit.EchoMode.Password)
 
         self.verticalLayout_pass.addWidget(self.passwordInputBox)
-
 
         self.verticalLayout_4.addWidget(self.passWidget)
 
@@ -230,10 +223,10 @@ class Ui_signup_form_main_window(object):
         sizePolicy.setHeightForWidth(self.roleLabel.sizePolicy().hasHeightForWidth())
         self.roleLabel.setSizePolicy(sizePolicy)
         self.roleLabel.setStyleSheet(u"#roleLabel{\n"
-"                                                                color : rgb(0,0,0);\n"
-"                                                                font: 600 8pt \"Segoe UI\";\n"
-"                                                                }\n"
-"                                                            ")
+                                     "                                                                color : rgb(0,0,0);\n"
+                                     "                                                                font: 600 8pt \"Segoe UI\";\n"
+                                     "                                                                }\n"
+                                     "                                                            ")
 
         self.verticalLayout_role.addWidget(self.roleLabel)
 
@@ -251,22 +244,22 @@ class Ui_signup_form_main_window(object):
         self.studentRadioButton.setSizePolicy(sizePolicy)
         self.studentRadioButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.studentRadioButton.setStyleSheet(u"\n"
-"                                                                            QRadioButton {\n"
-"                                                                            font-size: 14px;\n"
-"                                                                            color: #333;\n"
-"                                                                            }\n"
-"                                                                            QRadioButton::indicator {\n"
-"                                                                            width: 14px;\n"
-"                                                                            height: 14px;\n"
-"                                                                            border-radius: 7px;\n"
-"                                                                            border: 1px solid #999;\n"
-"                                                                            }\n"
-"                                                                          "
-                        "  QRadioButton::indicator:checked {\n"
-"                                                                            background-color: #159079;\n"
-"                                                                            border: 1px solid #067d68;\n"
-"                                                                            }\n"
-"                                                                        ")
+                                              "                                                                            QRadioButton {\n"
+                                              "                                                                            font-size: 14px;\n"
+                                              "                                                                            color: #333;\n"
+                                              "                                                                            }\n"
+                                              "                                                                            QRadioButton::indicator {\n"
+                                              "                                                                            width: 14px;\n"
+                                              "                                                                            height: 14px;\n"
+                                              "                                                                            border-radius: 7px;\n"
+                                              "                                                                            border: 1px solid #999;\n"
+                                              "                                                                            }\n"
+                                              "                                                                          "
+                                              "  QRadioButton::indicator:checked {\n"
+                                              "                                                                            background-color: #159079;\n"
+                                              "                                                                            border: 1px solid #067d68;\n"
+                                              "                                                                            }\n"
+                                              "                                                                        ")
         self.studentRadioButton.setChecked(True)
 
         self.horizontalLayout_role.addWidget(self.studentRadioButton)
@@ -275,28 +268,26 @@ class Ui_signup_form_main_window(object):
         self.teacherRadioButton.setObjectName(u"teacherRadioButton")
         self.teacherRadioButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.teacherRadioButton.setStyleSheet(u"\n"
-"                                                                            QRadioButton {\n"
-"                                                                            font-size: 14px;\n"
-"                                                                            color: #333;\n"
-"                                                                            }\n"
-"                                                                            QRadioButton::indicator {\n"
-"                                                                            width: 14px;\n"
-"                                                                            height: 14px;\n"
-"                                                                            border-radius: 7px;\n"
-"                                                                            border: 1px solid #999;\n"
-"                                                                            }\n"
-"                                                                          "
-                        "  QRadioButton::indicator:checked {\n"
-"                                                                            background-color: #159079;\n"
-"                                                                            border: 1px solid #067d68;\n"
-"                                                                            }\n"
-"                                                                        ")
+                                              "                                                                            QRadioButton {\n"
+                                              "                                                                            font-size: 14px;\n"
+                                              "                                                                            color: #333;\n"
+                                              "                                                                            }\n"
+                                              "                                                                            QRadioButton::indicator {\n"
+                                              "                                                                            width: 14px;\n"
+                                              "                                                                            height: 14px;\n"
+                                              "                                                                            border-radius: 7px;\n"
+                                              "                                                                            border: 1px solid #999;\n"
+                                              "                                                                            }\n"
+                                              "                                                                          "
+                                              "  QRadioButton::indicator:checked {\n"
+                                              "                                                                            background-color: #159079;\n"
+                                              "                                                                            border: 1px solid #067d68;\n"
+                                              "                                                                            }\n"
+                                              "                                                                        ")
 
         self.horizontalLayout_role.addWidget(self.teacherRadioButton)
 
-
         self.verticalLayout_role.addWidget(self.radioContainer)
-
 
         self.verticalLayout_4.addWidget(self.roleWidget)
 
@@ -305,10 +296,10 @@ class Ui_signup_form_main_window(object):
         sizePolicy.setHeightForWidth(self.erroLabel.sizePolicy().hasHeightForWidth())
         self.erroLabel.setSizePolicy(sizePolicy)
         self.erroLabel.setStyleSheet(u"#erroLabel{\n"
-"                                                    color : rgb(255,0,0);\n"
-"                                                    font: 600 8pt \"Segoe UI\";\n"
-"                                                    }\n"
-"                                                ")
+                                     "                                                    color : rgb(255,0,0);\n"
+                                     "                                                    font: 600 8pt \"Segoe UI\";\n"
+                                     "                                                    }\n"
+                                     "                                                ")
 
         self.verticalLayout_4.addWidget(self.erroLabel)
 
@@ -316,26 +307,24 @@ class Ui_signup_form_main_window(object):
         self.registerButton.setObjectName(u"registerButton")
         self.registerButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.registerButton.setStyleSheet(u"#registerButton {\n"
-"                                                    height: 44px;\n"
-"                                                    padding: 0 16px;\n"
-"                                                    background-color: #2ab79d;\n"
-"                                                    color: white;\n"
-"                                                    font-size: 14px;\n"
-"                                                    font-weight: 600;\n"
-"                                                    border: none;\n"
-"                                                    border-radius: 8px;\n"
-"                                                    }\n"
-"\n"
-"                                                    #registerButton:hover {\n"
-"                                                    background-color: #159079;\n"
-"                                                    }\n"
-"                                                ")
+                                          "                                                    height: 44px;\n"
+                                          "                                                    padding: 0 16px;\n"
+                                          "                                                    background-color: #2ab79d;\n"
+                                          "                                                    color: white;\n"
+                                          "                                                    font-size: 14px;\n"
+                                          "                                                    font-weight: 600;\n"
+                                          "                                                    border: none;\n"
+                                          "                                                    border-radius: 8px;\n"
+                                          "                                                    }\n"
+                                          "\n"
+                                          "                                                    #registerButton:hover {\n"
+                                          "                                                    background-color: #159079;\n"
+                                          "                                                    }\n"
+                                          "                                                ")
 
         self.verticalLayout_4.addWidget(self.registerButton)
 
-
         self.verticalLayout_2.addWidget(self.formContainer)
-
 
         self.mainLayout.addWidget(self.leftFrame)
 
@@ -347,15 +336,15 @@ class Ui_signup_form_main_window(object):
         sizePolicy1.setHeightForWidth(self.rightFrame.sizePolicy().hasHeightForWidth())
         self.rightFrame.setSizePolicy(sizePolicy1)
         self.rightFrame.setStyleSheet(u"\n"
-"                            #rightFrame {\n"
-"                            background: qlineargradient(\n"
-"                            x1:0, y1:0,\n"
-"                            x2:0, y2:1,\n"
-"                            stop:0 #50d5b7,\n"
-"                            stop:1 #067d68\n"
-"                            );\n"
-"                            }\n"
-"                        ")
+                                      "                            #rightFrame {\n"
+                                      "                            background: qlineargradient(\n"
+                                      "                            x1:0, y1:0,\n"
+                                      "                            x2:0, y2:1,\n"
+                                      "                            stop:0 #50d5b7,\n"
+                                      "                            stop:1 #067d68\n"
+                                      "                            );\n"
+                                      "                            }\n"
+                                      "                        ")
         self.verticalLayout_5 = QVBoxLayout(self.rightFrame)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.contentContainer = QWidget(self.rightFrame)
@@ -392,13 +381,12 @@ class Ui_signup_form_main_window(object):
         font1.setPointSize(11)
         self.subTextLabel.setFont(font1)
         self.subTextLabel.setStyleSheet(u"#subTextLabel{\n"
-"                                                                color: rgba(255, 255, 255, 192)}\n"
-"                                                            ")
+                                        "                                                                color: rgba(255, 255, 255, 192)}\n"
+                                        "                                                            ")
         self.subTextLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.subTextLabel.setWordWrap(True)
 
         self.verticalLayout_7.addWidget(self.subTextLabel)
-
 
         self.verticalLayout_6.addWidget(self.textWidget)
 
@@ -410,23 +398,21 @@ class Ui_signup_form_main_window(object):
         self.switchLoginButton.setFont(font2)
         self.switchLoginButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.switchLoginButton.setStyleSheet(u"#switchLoginButton{\n"
-"                                                    border-radius: 18px;\n"
-"                                                    border:1px solid rgba(255, 255, 255, 150);\n"
-"                                                    padding: 7px 0;\n"
-"                                                    color: white;\n"
-"                                                    }\n"
-"\n"
-"                                                    #switchLoginButton:hover{\n"
-"                                                    border:1px solid #fff;\n"
-"                                                    background: rgba(255, 255, 255, 30);\n"
-"                                                    }\n"
-"                                                ")
+                                             "                                                    border-radius: 18px;\n"
+                                             "                                                    border:1px solid rgba(255, 255, 255, 150);\n"
+                                             "                                                    padding: 7px 0;\n"
+                                             "                                                    color: white;\n"
+                                             "                                                    }\n"
+                                             "\n"
+                                             "                                                    #switchLoginButton:hover{\n"
+                                             "                                                    border:1px solid #fff;\n"
+                                             "                                                    background: rgba(255, 255, 255, 30);\n"
+                                             "                                                    }\n"
+                                             "                                                ")
 
         self.verticalLayout_6.addWidget(self.switchLoginButton)
 
-
         self.verticalLayout_5.addWidget(self.contentContainer)
-
 
         self.mainLayout.addWidget(self.rightFrame)
 
@@ -436,12 +422,14 @@ class Ui_signup_form_main_window(object):
         self.retranslateUi(signup_form_main_window)
 
         QMetaObject.connectSlotsByName(signup_form_main_window)
+
     # setupUi
 
     def retranslateUi(self, signup_form_main_window):
         signup_form_main_window.setWindowTitle(QCoreApplication.translate("signup_form_main_window", u"Sign Up", None))
         self.signupLabel.setText(QCoreApplication.translate("signup_form_main_window", u"Create Account", None))
-        self.signupSloganLabel.setText(QCoreApplication.translate("signup_form_main_window", u"Fill in your details to join us", None))
+        self.signupSloganLabel.setText(
+            QCoreApplication.translate("signup_form_main_window", u"Fill in your details to join us", None))
         self.nameLabel.setText(QCoreApplication.translate("signup_form_main_window", u"Full Name", None))
         self.inputLabel.setText(QCoreApplication.translate("signup_form_main_window", u"Username", None))
         self.passLabel.setText(QCoreApplication.translate("signup_form_main_window", u"Password", None))
@@ -450,11 +438,11 @@ class Ui_signup_form_main_window(object):
         self.teacherRadioButton.setText(QCoreApplication.translate("signup_form_main_window", u"Teacher", None))
         self.erroLabel.setText("")
         self.registerButton.setText(QCoreApplication.translate("signup_form_main_window", u"Sign Up", None))
-        self.welcomeBackLabel.setStyleSheet(QCoreApplication.translate("signup_form_main_window", u"color: white;", None))
+        self.welcomeBackLabel.setStyleSheet(
+            QCoreApplication.translate("signup_form_main_window", u"color: white;", None))
         self.welcomeBackLabel.setText(QCoreApplication.translate("signup_form_main_window", u"Welcome Back!", None))
-        self.subTextLabel.setText(QCoreApplication.translate("signup_form_main_window", u"Already have an account? Login with your personal\n"
-"                                                                info.\n"
-"                                                            ", None))
+        self.subTextLabel.setText(QCoreApplication.translate("signup_form_main_window",
+                                                             u"Already have an account? Login with your personal info.\n""                                                            ",
+                                                             None))
         self.switchLoginButton.setText(QCoreApplication.translate("signup_form_main_window", u"Log In", None))
     # retranslateUi
-

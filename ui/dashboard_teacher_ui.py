@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QFrame,
-    QHBoxLayout, QLabel, QPushButton, QScrollArea,
-    QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
+    QLabel, QPushButton, QScrollArea, QSizePolicy,
+    QSpacerItem, QVBoxLayout, QWidget)
 
 class Ui_dashboard_page(object):
     def setupUi(self, dashboard_page):
@@ -106,7 +106,7 @@ class Ui_dashboard_page(object):
         self.pushButton_2.setStyleSheet(u"color: #777; font-size: 13px; border:none;\n"
 "  font: 600 11pt \"Segoe UI\"; background-color: transparent; text-align: left")
         icon = QIcon()
-        icon.addFile(u"icons/users.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"C:/Users/sanju/icons/users.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_2.setIcon(icon)
         self.pushButton_2.setIconSize(QSize(18, 18))
 
@@ -134,7 +134,7 @@ class Ui_dashboard_page(object):
         self.pushButton.setStyleSheet(u"color: #777; font-size: 13px; border:none;\n"
 "  font: 600 11pt \"Segoe UI\"; background-color: transparent; text-align: left")
         icon1 = QIcon()
-        icon1.addFile(u"icons/board.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"C:/Users/sanju/icons/board.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton.setIcon(icon1)
         self.pushButton.setIconSize(QSize(18, 18))
 
@@ -162,7 +162,7 @@ class Ui_dashboard_page(object):
         self.pushButton_4.setStyleSheet(u"color: #777; font-size: 13px; border:none;\n"
 "  font: 600 11pt \"Segoe UI\"; background-color: transparent; text-align: left")
         icon2 = QIcon()
-        icon2.addFile(u"icons/total_test.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"C:/Users/sanju/icons/total_test.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_4.setIcon(icon2)
         self.pushButton_4.setIconSize(QSize(18, 18))
 
@@ -190,7 +190,7 @@ class Ui_dashboard_page(object):
         self.pushButton_3.setStyleSheet(u"color: #777; font-size: 13px; border:none;\n"
 "  font: 600 11pt \"Segoe UI\"; background-color: transparent; text-align: left")
         icon3 = QIcon()
-        icon3.addFile(u"icons/absent.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"C:/Users/sanju/icons/absent.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_3.setIcon(icon3)
         self.pushButton_3.setIconSize(QSize(18, 18))
 
@@ -218,7 +218,7 @@ class Ui_dashboard_page(object):
         self.pushButton_5.setObjectName(u"pushButton_5")
         self.pushButton_5.setStyleSheet(u"font-size: 16px; font-weight: bold; color: #333; border:none;background-color:transparent; text-align: left")
         icon4 = QIcon()
-        icon4.addFile(u"icons/linechart.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u"../../icons/barChart.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_5.setIcon(icon4)
         self.pushButton_5.setIconSize(QSize(20, 20))
 
@@ -233,70 +233,7 @@ class Ui_dashboard_page(object):
 
         self.layout_left_col.addWidget(self.frame_weekly)
 
-        self.frame_monthly = QFrame(dashboard_page)
-        self.frame_monthly.setObjectName(u"frame_monthly")
-        self.frame_monthly.setStyleSheet(u"background-color: white; border-radius: 10px; border: 1px solid #e0e0e0;")
-        self.vbox_monthly = QVBoxLayout(self.frame_monthly)
-        self.vbox_monthly.setObjectName(u"vbox_monthly")
-        self.hbox_monthly_header = QHBoxLayout()
-        self.hbox_monthly_header.setObjectName(u"hbox_monthly_header")
-        self.pushButton_6 = QPushButton(self.frame_monthly)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setStyleSheet(u"font-size: 16px; font-weight: bold; color: #333; border:none;background-color:transparent; text-align: left")
-        icon5 = QIcon()
-        icon5.addFile(u"icons/barChart.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_6.setIcon(icon5)
-
-        self.hbox_monthly_header.addWidget(self.pushButton_6)
-
-        self.hs_monthly = QSpacerItem(0, 0, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.hbox_monthly_header.addItem(self.hs_monthly)
-
-        self.lbl_from = QLabel(self.frame_monthly)
-        self.lbl_from.setObjectName(u"lbl_from")
-
-        self.hbox_monthly_header.addWidget(self.lbl_from)
-
-        self.date_picker_monthly = QDateEdit(self.frame_monthly)
-        self.date_picker_monthly.setObjectName(u"date_picker_monthly")
-        self.date_picker_monthly.setStyleSheet(u"\n"
-"QDateEdit {\n"
-"    padding: 5 10px;\n"
-"    font-family: \"Segoe UI\";\n"
-"    font-size: 12px;\n"
-"    color: #111;\n"
-"    border: 1px solid rgb(150, 150, 150);\n"
-"    background: #fff;\n"
-"    border-radius: 4px;\n"
-"}\n"
-"QDateEdit:focus {\n"
-"    border: 1.5px solid #2ab79d;\n"
-"}\n"
-"QCalendarWidget QWidget { background-color: white; color: black; }\n"
-"QCalendarWidget QAbstractItemView:enabled { \n"
-"    color: black; \n"
-"    selection-background-color: #2ab79d; \n"
-"    selection-color: white;\n"
-"}\n"
-"QCalendarWidget QToolButton { color: black; icon-size: 25px; }\n"
-"QCalendarWidget QSpinBox { background-color: white; color: black; }")
-        self.date_picker_monthly.setCalendarPopup(True)
-
-        self.hbox_monthly_header.addWidget(self.date_picker_monthly)
-
-
-        self.vbox_monthly.addLayout(self.hbox_monthly_header)
-
-        self.chart_monthly_container = QWidget(self.frame_monthly)
-        self.chart_monthly_container.setObjectName(u"chart_monthly_container")
-        self.chart_monthly_container.setMinimumSize(QSize(0, 180))
-
-        self.vbox_monthly.addWidget(self.chart_monthly_container)
-
-
-        self.layout_left_col.addWidget(self.frame_monthly)
-
+        self.layout_left_col.setStretch(1, 1)
 
         self.layout_main_content.addLayout(self.layout_left_col)
 
@@ -312,9 +249,9 @@ class Ui_dashboard_page(object):
         self.pushButton_7 = QPushButton(self.frame_leaderboard)
         self.pushButton_7.setObjectName(u"pushButton_7")
         self.pushButton_7.setStyleSheet(u"font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px; border:none;")
-        icon6 = QIcon()
-        icon6.addFile(u"icons/top_student.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_7.setIcon(icon6)
+        icon5 = QIcon()
+        icon5.addFile(u"C:/Users/sanju/icons/top_student.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton_7.setIcon(icon5)
         self.pushButton_7.setIconSize(QSize(16, 16))
 
         self.vbox_leaderboard.addWidget(self.pushButton_7)
@@ -379,20 +316,15 @@ class Ui_dashboard_page(object):
         dashboard_page.setWindowTitle(QCoreApplication.translate("dashboard_page", u"Teacher Dashboard", None))
         self.dropdown_classes.setPlaceholderText(QCoreApplication.translate("dashboard_page", u"Select Class", None))
         self.pushButton_2.setText(QCoreApplication.translate("dashboard_page", u"Total Students", None))
-        self.val_total_student.setText(QCoreApplication.translate("dashboard_page", u"0", None))
+        self.val_total_student.setText(QCoreApplication.translate("dashboard_page", u"00", None))
         self.pushButton.setText(QCoreApplication.translate("dashboard_page", u"Total Classes", None))
-        self.val_total_classes.setText(QCoreApplication.translate("dashboard_page", u"0", None))
+        self.val_total_classes.setText(QCoreApplication.translate("dashboard_page", u"00", None))
         self.pushButton_4.setText(QCoreApplication.translate("dashboard_page", u"Tests Conducted", None))
-        self.val_tests.setText(QCoreApplication.translate("dashboard_page", u"0", None))
+        self.val_tests.setText(QCoreApplication.translate("dashboard_page", u"00", None))
         self.pushButton_3.setText(QCoreApplication.translate("dashboard_page", u"Avg. Attendace", None))
-        self.val_avg_attendance.setText(QCoreApplication.translate("dashboard_page", u"75%", None))
+        self.val_avg_attendance.setText(QCoreApplication.translate("dashboard_page", u"00%", None))
         self.pushButton_5.setText(QCoreApplication.translate("dashboard_page", u"Weekly Attendance Report", None))
         self.chart_weekly_container.setStyleSheet(QCoreApplication.translate("dashboard_page", u"border:none;", None))
-        self.pushButton_6.setText(QCoreApplication.translate("dashboard_page", u"6 Month Overview", None))
-        self.lbl_from.setStyleSheet(QCoreApplication.translate("dashboard_page", u"color:#555; border:none;", None))
-        self.lbl_from.setText(QCoreApplication.translate("dashboard_page", u"From:", None))
-        self.date_picker_monthly.setDisplayFormat(QCoreApplication.translate("dashboard_page", u"MMM yyyy", None))
-        self.chart_monthly_container.setStyleSheet(QCoreApplication.translate("dashboard_page", u"border:none;", None))
         self.pushButton_7.setText(QCoreApplication.translate("dashboard_page", u"Top Students", None))
         self.scrollArea_students.setStyleSheet(QCoreApplication.translate("dashboard_page", u"border:none; background:transparent;", None))
         self.label_pie_title.setStyleSheet(QCoreApplication.translate("dashboard_page", u"font-size: 16px; font-weight: bold; color: #333; border:none;", None))

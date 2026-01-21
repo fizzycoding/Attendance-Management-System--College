@@ -125,7 +125,7 @@ QComboBox QAbstractItemView {
       <number>10</number>
      </property>
      <item>
-      <layout class="QVBoxLayout" name="layout_left_col">
+      <layout class="QVBoxLayout" name="layout_left_col" stretch="0,1">
        <property name="spacing">
         <number>10</number>
        </property>
@@ -174,7 +174,7 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
                <string notr="true">color:rgb(0, 0, 0); font-size:25pt; font-weight: bold; border:none;</string>
               </property>
               <property name="text">
-               <string>0</string>
+               <string>00</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -224,7 +224,7 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
                <string notr="true">color: #333; font-size: 25pt; font-weight: bold; border:none;</string>
               </property>
               <property name="text">
-               <string>0</string>
+               <string>00</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -274,7 +274,7 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
                <string notr="true">color: #333; font-size: 25pt; font-weight: bold; border:none;</string>
               </property>
               <property name="text">
-               <string>0</string>
+               <string>00</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -324,7 +324,7 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
                <string notr="true">color: rgb(11, 161, 255); font-size: 25pt; font-weight: bold; border:none;</string>
               </property>
               <property name="text">
-               <string>75%</string>
+               <string>00%</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -352,7 +352,7 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>C:/Users/sanju/icons/linechart.png</normaloff>C:/Users/sanju/icons/linechart.png</iconset>
+              <normaloff>../../icons/barChart.png</normaloff>../../icons/barChart.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -364,102 +364,6 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
           </item>
           <item>
            <widget class="QWidget" name="chart_weekly_container" native="true">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>180</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string>border:none;</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QFrame" name="frame_monthly">
-         <property name="styleSheet">
-          <string notr="true">background-color: white; border-radius: 10px; border: 1px solid #e0e0e0;</string>
-         </property>
-         <layout class="QVBoxLayout" name="vbox_monthly">
-          <item>
-           <layout class="QHBoxLayout" name="hbox_monthly_header">
-            <item>
-             <widget class="QPushButton" name="pushButton_6">
-              <property name="styleSheet">
-               <string notr="true">font-size: 16px; font-weight: bold; color: #333; border:none;background-color:transparent; text-align: left</string>
-              </property>
-              <property name="text">
-               <string>6 Month Overview</string>
-              </property>
-              <property name="icon">
-               <iconset>
-                <normaloff>C:/Users/sanju/icons/barChart.png</normaloff>C:/Users/sanju/icons/barChart.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="hs_monthly">
-              <property name="orientation">
-               <enum>Qt::Orientation::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>0</width>
-                <height>0</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QLabel" name="lbl_from">
-              <property name="styleSheet">
-               <string>color:#555; border:none;</string>
-              </property>
-              <property name="text">
-               <string>From:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QDateEdit" name="date_picker_monthly">
-              <property name="styleSheet">
-               <string notr="true">
-QDateEdit {
-    padding: 5 10px;
-    font-family: &quot;Segoe UI&quot;;
-    font-size: 12px;
-    color: #111;
-    border: 1px solid rgb(150, 150, 150);
-    background: #fff;
-    border-radius: 4px;
-}
-QDateEdit:focus {
-    border: 1.5px solid #2ab79d;
-}
-QCalendarWidget QWidget { background-color: white; color: black; }
-QCalendarWidget QAbstractItemView:enabled { 
-    color: black; 
-    selection-background-color: #2ab79d; 
-    selection-color: white;
-}
-QCalendarWidget QToolButton { color: black; icon-size: 25px; }
-QCalendarWidget QSpinBox { background-color: white; color: black; }</string>
-              </property>
-              <property name="displayFormat">
-               <string>MMM yyyy</string>
-              </property>
-              <property name="calendarPopup">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <widget class="QWidget" name="chart_monthly_container" native="true">
             <property name="minimumSize">
              <size>
               <width>0</width>

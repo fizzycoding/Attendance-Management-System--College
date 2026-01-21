@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from PySide6.QtCore import Qt, QDate
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QFrame, QHBoxLayout, QSpacerItem, QSizePolicy
 
 from database.database import getDB
@@ -17,11 +17,7 @@ class DashboardTeacherController(QWidget):
 
         self.chart_manager = ChartManager()
 
-        self.ui.date_picker_monthly.setDate(QDate.currentDate().addMonths(-6))
-        self.ui.date_picker_monthly.setMaximumDate(QDate.currentDate())
-
         self.ui.dropdown_classes.currentIndexChanged.connect(self.loadDashboardData)
-        self.ui.date_picker_monthly.dateChanged.connect(self.loadMonthlyChart)
 
         self.loadClasses()
 
@@ -80,7 +76,7 @@ class DashboardTeacherController(QWidget):
             self.loadTopCards(class_id)
             self.loadTodayReport(class_id)
             self.loadWeeklyReport(class_id)
-            self.loadMonthlyChart()
+
             self.loadLeaderboard(class_id)
         except Exception as e:
             print(f"Error loading dashboard data: {e}")
@@ -222,7 +218,7 @@ class DashboardTeacherController(QWidget):
                 present_data.append(res[0] if res else 0)
                 absent_data.append(res[1] if res else 0)
 
-            chart_view = self.chart_manager.createWeeklyLineChart(present_data, absent_data)
+            chart_view = self.chart_manager.createWeeklyBarChart(present_data, absent_data)
             container.layout().addWidget(chart_view)
 
         except Exception as e:
@@ -230,59 +226,6 @@ class DashboardTeacherController(QWidget):
         finally:
             cursor.close()
             db.close()
-
-    def loadMonthlyChart(self):
-        try:
-            class_id = self.ui.dropdown_classes.currentData()
-            if not class_id: return
-
-            container = self.ui.chart_monthly_container
-            if not container.layout():
-                l = QVBoxLayout()
-                l.setContentsMargins(0, 0, 0, 0)
-                container.setLayout(l)
-            self._clear_layout(container.layout())
-
-            start_date_qt = self.ui.date_picker_monthly.date()
-            start_date = datetime(start_date_qt.year(), start_date_qt.month(), 1)
-            end_date = datetime.now()
-
-            db = getDB()
-            cursor = db.cursor()
-
-            data_map = {}
-            current = start_date
-            while current <= end_date:
-                month_str = current.strftime("%Y-%m")
-                display_name = current.strftime("%b")
-
-                cursor.execute("""
-                    SELECT 
-                        COUNT(CASE WHEN r.status='present' THEN 1 END),
-                        COUNT(CASE WHEN r.status='absent' THEN 1 END)
-                    FROM attendance_records r
-                    JOIN attendance_sessions s ON r.session_id = s.id
-                    WHERE s.class_id = ? AND strftime('%Y-%m', s.date) = ?
-                """, (class_id, month_str))
-
-                res = cursor.fetchone()
-                data_map[display_name] = [res[0] if res else 0, res[1] if res else 0]
-
-                if current.month == 12:
-                    current = current.replace(year=current.year + 1, month=1)
-                else:
-                    current = current.replace(month=current.month + 1)
-
-            chart_view = self.chart_manager.createMonthlyBarChart(data_map)
-            container.layout().addWidget(chart_view)
-
-            cursor.close()
-            db.close()
-
-        except Exception as e:
-            print(f"Error loading monthly chart: {e}")
-            if 'db' in locals() and db:
-                db.close()
 
     def loadLeaderboard(self, class_id):
         layout = self.ui.container_top_students

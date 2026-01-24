@@ -50,42 +50,39 @@
      </property>
      <property name="maximumSize">
       <size>
-       <width>220</width>
+       <width>250</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="styleSheet">
       <string notr="true">#sidebarFrame {
-    background: qlineargradient(
-        x1:0, y1:0,
-        x2:0, y2:1,
-        stop:0 #50d5b7,
-        stop:1 #067d68
-    );
+    background: white;
+    border-right: 1px solid #e0e0e0;
 }
 
 /* Base style for all sidebar buttons */
 QPushButton {
     background-color: transparent;
-    color: white;
+    color: rgb(65, 65, 65);
     text-align: left;
-    padding-left: 20px;
+    padding-left: 14px;
     border: none;
     font-size: 14px;
-    font-weight: 500;
-    height: 45px;
+    font-weight: 600;
+    height: 40px;
     border-left: 5px solid transparent;
 	qproperty-cursor: PointingHandCursor;
+border-radius: 8px
 }
 
 QPushButton:hover {
-    background-color: #159079;
+	color: black
 }
 
 QPushButton:checked {
-    background-color: #159079;
-    border-left: 5px solid #ffffff;
-    font-weight: bold;
+    background-color: rgba(0, 85, 255, 35);
+    font-weight: 700;
+color: #3388FF
 }</string>
      </property>
      <property name="frameShape">
@@ -99,13 +96,13 @@ QPushButton:checked {
        <number>0</number>
       </property>
       <property name="leftMargin">
-       <number>0</number>
+       <number>15</number>
       </property>
       <property name="topMargin">
        <number>0</number>
       </property>
       <property name="rightMargin">
-       <number>0</number>
+       <number>15</number>
       </property>
       <property name="bottomMargin">
        <number>20</number>
@@ -115,33 +112,59 @@ QPushButton:checked {
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>100</height>
+          <height>80</height>
          </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#logoFrame{
 	background: transparent;
-	border: 1px solid transparent;
-	border-bottom-color: rgba(255, 255, 255, 158)
 }</string>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item>
-          <widget class="QLabel" name="appTitle">
-           <property name="font">
-            <font>
-             <pointsize>16</pointsize>
-             <bold>true</bold>
-            </font>
+          <widget class="QPushButton" name="pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LayoutDirection::LeftToRight</enum>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: white;</string>
+            <string notr="true">color: rgb(0, 0, 0);
+font: 700 15pt &quot;Segoe UI&quot;;
+border: none;
+   padding-left: 0px;</string>
            </property>
            <property name="text">
             <string>Academic Tracker</string>
            </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../icons/logo.png</normaloff>../../icons/logo.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
            </property>
           </widget>
          </item>
@@ -151,7 +174,7 @@ QPushButton:checked {
       <item>
        <widget class="QStackedWidget" name="sidebarStack">
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="studentPage">
          <layout class="QVBoxLayout" name="verticalLayout_student">
@@ -180,7 +203,8 @@ QPushButton:checked {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/class.png</normaloff>../../icons/class.png</iconset>
+              <normaloff>../../icons/class_unchecked.png</normaloff>
+              <activeon>../../icons/class.png</activeon>../../icons/class_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -209,12 +233,13 @@ QPushButton:checked {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/test_results.png</normaloff>../../icons/test_results.png</iconset>
+              <normaloff>../../icons/test_unchecked.png</normaloff>
+              <activeon>../../icons/test.png</activeon>../../icons/test_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>18</width>
-              <height>18</height>
+              <width>20</width>
+              <height>20</height>
              </size>
             </property>
             <property name="checkable">
@@ -262,12 +287,16 @@ QPushButton:checked {
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
+            <property name="layoutDirection">
+             <enum>Qt::LayoutDirection::LeftToRight</enum>
+            </property>
             <property name="text">
              <string>Dashboard</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../icons/dashboard.png</normaloff>../icons/dashboard.png</iconset>
+              <normaloff>../../icons/dashboard_unchecked.png</normaloff>
+              <activeon>../../icons/dashboard.png</activeon>../../icons/dashboard_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -296,7 +325,8 @@ QPushButton:checked {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../icons/class.png</normaloff>../icons/class.png</iconset>
+              <normaloff>../../icons/class_unchecked.png</normaloff>
+              <activeon>../../icons/class.png</activeon>../../icons/class_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -322,7 +352,8 @@ QPushButton:checked {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../icons/attendance.png</normaloff>../icons/attendance.png</iconset>
+              <normaloff>../../icons/attendance_unchecked.png</normaloff>
+              <activeon>../../icons/attendance.png</activeon>../../icons/attendance_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -348,7 +379,8 @@ QPushButton:checked {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../icons/test.png</normaloff>../icons/test.png</iconset>
+              <normaloff>../../icons/test_unchecked.png</normaloff>
+              <activeon>../../icons/test.png</activeon>../../icons/test_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -380,7 +412,8 @@ QPushButton:checked {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../icons/reports.png</normaloff>../icons/reports.png</iconset>
+              <normaloff>../../icons/barChart_unchecked.png</normaloff>
+              <activeon>../../icons/barChart.png</activeon>../../icons/barChart_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -421,18 +454,22 @@ QPushButton:checked {
       </item>
       <item>
        <widget class="QPushButton" name="logoutButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">
 QPushButton {
-    background-color: rgba(0,0,0,0.1);
-    color: #e0e0e0;
-}
-QPushButton:hover {
-    background-color: #c0392b; /* Red for logout */
-    color: white;
+    color: #ff1c57;
 }
 </string>
         </property>
@@ -441,7 +478,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../icons/logout.png</normaloff>../icons/logout.png</iconset>
+          <normaloff>../../icons/logout.png</normaloff>../../icons/logout.png</iconset>
         </property>
         <property name="iconSize">
          <size>

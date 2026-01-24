@@ -6,9 +6,9 @@ from PySide6.QtWidgets import QToolTip, QSizePolicy
 
 class ChartManager:
     def __init__(self):
-        self.COLOR_PRESENT = QColor("#2ab79d")  # Teal
-        self.COLOR_ABSENT = QColor("#ff5252")  # Red
-        self.COLOR_OTHER = QColor("#e0e0e0")  # Grey
+        self.COLOR_PRESENT = QColor("#80BDFF")
+        self.COLOR_ABSENT = QColor("#ff4f4f")
+        self.COLOR_OTHER = QColor("#e0e0e0")
 
     def _create_chart_view(self, chart):
         chart_view = QChartView(chart)

@@ -1,9 +1,11 @@
 from PySide6.QtCore import QDate
 from PySide6.QtWidgets import QWidget, QSpacerItem, QSizePolicy
 
+from controllers.add_student_popup_controller import AddStudentPopupController
 from controllers.student_class_block_controller import StudentClassBlockController
 from database.database import getDB
 from ui.classopen_ui import Ui_ClassOpen
+from utils.message import showMessage
 
 
 class ClassOpenController(QWidget):
@@ -22,6 +24,7 @@ class ClassOpenController(QWidget):
             self.updateInviteCodeUI()
             self.loadStudents()
         self.ui.back_btn.clicked.connect(self.home.closeClassOpened)
+        self.ui.add_student_btn.clicked.connect(self.addNewStudent)
 
     def updateInviteCodeUI(self):
         code = self.classData["code"]
@@ -88,7 +91,7 @@ class ClassOpenController(QWidget):
             query = """
                 SELECT 
                     c.id AS member_id,
-                    u.name,
+                    COALESCE(u.name, c.guest_name) as name,
                     u.id AS user_id,
                     (SELECT COUNT(*) FROM attendance_sessions WHERE class_id = ?) AS total_session,
                     (SELECT COUNT(*)
@@ -97,9 +100,9 @@ class ClassOpenController(QWidget):
                     WHERE s.class_id = ? AND ar.member_id = c.id AND ar.status = 'present'
                 ) AS total_present
                 FROM class_members c 
-                JOIN users u ON c.student_id = u.id 
+                LEFT JOIN users u ON c.student_id = u.id 
                 WHERE c.class_id = ?
-                ORDER BY u.name ASC
+                ORDER BY COALESCE(u.name, c.guest_name) ASC
             """
             cursor.execute(query, (classId, classId, classId))
             data = cursor.fetchall()
@@ -145,6 +148,32 @@ class ClassOpenController(QWidget):
         finally:
             cursor.close()
             db.close()
+
+    def addNewStudent(self):
+        popup = AddStudentPopupController(parent=self)
+
+        if (popup.exec()):
+            name = popup.getName()
+            if not name or name.strip() == "":
+                showMessage(self, "Input Error", "Student name cannot be empty.")
+                return
+
+            db = getDB()
+            cursor = db.cursor()
+            try:
+                query = """
+                    INSERT INTO class_members (class_id, guest_name, student_id) 
+                    VALUES (?, ?, NULL)
+                """
+                cursor.execute(query, (self.classId, name))
+                db.commit()
+                self.loadStudents()
+            except Exception as e:
+                print(f"Database Error: {e}")
+                showMessage(self, "Error", f"Could not add student: {e}")
+            finally:
+                cursor.close()
+                db.close()
 
     # ----- HELPERS -----
 

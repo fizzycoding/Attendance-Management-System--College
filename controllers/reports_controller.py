@@ -73,7 +73,7 @@ class ReportsController(QWidget):
             query = """
                 SELECT 
                     c.id AS member_id,
-                    u.name,
+                    COALESCE(u.name, c.guest_name) as name,
                     u.id AS student_id,
                     (SELECT COUNT(*) FROM attendance_sessions WHERE class_id = ?) AS total_session,
                     (SELECT COUNT(*)
@@ -82,9 +82,9 @@ class ReportsController(QWidget):
                         WHERE s.class_id = ? AND ar.member_id = c.id AND ar.status = 'present'
                     ) AS total_present
                 FROM class_members c 
-                JOIN users u ON c.student_id = u.id 
+                LEFT JOIN users u ON c.student_id = u.id 
                 WHERE c.class_id = ?
-                ORDER BY u.name ASC
+                ORDER BY COALESCE(u.name, c.guest_name) ASC
             """
             cursor.execute(query, (classId, classId, classId))
             data = cursor.fetchall()

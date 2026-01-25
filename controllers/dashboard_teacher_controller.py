@@ -237,17 +237,17 @@ class DashboardTeacherController(QWidget):
         try:
             query = """
                 SELECT 
-                    u.name,
+                    COALESCE(u.name, c.guest_name) as name,
                     COUNT(CASE WHEN r.status='present' THEN 1 END) as p_count,
                     (SELECT COUNT(*) FROM attendance_sessions WHERE class_id = ?) as total_sessions
                 FROM class_members c
-                JOIN users u ON c.student_id = u.id
+                LEFT JOIN users u ON c.student_id = u.id
                 LEFT JOIN attendance_records r ON r.member_id = c.id
                 LEFT JOIN attendance_sessions s ON r.session_id = s.id AND s.class_id = ?
                 WHERE c.class_id = ?
                 GROUP BY u.id
                 ORDER BY p_count DESC
-                LIMIT 5
+                LIMIT 6
             """
             cursor.execute(query, (class_id, class_id, class_id))
             rows = cursor.fetchall()
@@ -282,8 +282,8 @@ class DashboardTeacherController(QWidget):
             lbl_name.setStyleSheet("font-weight: 700; color: #333; font-family: 'Segoe UI';")
 
             lbl_rate = QLabel(f"{rate}%")
-            color = "#80BDFF" if rate >= 75 else "#ffbf00" if rate >= 50 else "#ff5252"
-            lbl_rate.setStyleSheet(f"font-weight: bold; color: {color}; font-family: 'Segoe UI';")
+            color = "#3388FF" if rate >= 75 else "#ffbf00" if rate >= 50 else "#ff5252"
+            lbl_rate.setStyleSheet(f"font-weight: 800; color: {color}; font-family: 'Segoe UI'; font-size: 10pt")
             lbl_rate.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
 
             row_layout.addWidget(lbl_name)

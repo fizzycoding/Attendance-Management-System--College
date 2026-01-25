@@ -42,8 +42,8 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
-          <height>0</height>
+          <width>200</width>
+          <height>40</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -101,18 +101,18 @@ QComboBox QAbstractItemView {
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff;
-background : qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(42, 183, 157), stop:1 #067d68);;
+background : #3388FF;
 border: none;
 padding: 10px 20px;
-font: 800 14px &quot;Segoe UI&quot;;
+font: 600 14px &quot;Segoe UI&quot;;
 border-radius: 7px</string>
         </property>
         <property name="text">
-         <string>Create New Test</string>
+         <string>New Test</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../icons/add.png</normaloff>../../icons/add.png</iconset>
+          <normaloff>icons/add.png</normaloff>icons/add.png</iconset>
         </property>
        </widget>
       </item>
@@ -172,7 +172,7 @@ border-radius: 7px</string>
             <x>0</x>
             <y>0</y>
             <width>824</width>
-            <height>481</height>
+            <height>480</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="testsLayout">

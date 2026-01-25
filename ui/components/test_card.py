@@ -117,8 +117,8 @@ class Ui_test_card(object):
         self.btn_open.setSizePolicy(sizePolicy)
         self.btn_open.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_open.setStyleSheet(
-            '#btn_open{background-color: #E0F2F1; color: #009688; border: none; padding: 5px 18px; border-radius: 4px; font-weight: bold; font-family: "Segoe UI";}\n'
-            "#btn_open:hover{background-color: rgb(167, 221, 199);}"
+            '#btn_open{background-color: rgba(51, 143, 255,10); color: #338fff; border: none; padding: 5px 18px; border-radius: 4px; font-weight: bold; font-family: "Segoe UI";}\n'
+            "#btn_open:hover{background-color: rgba(51, 143, 255,20); }"
         )
 
         self.horizontalLayout.addWidget(self.btn_open)

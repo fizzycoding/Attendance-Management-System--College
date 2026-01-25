@@ -35,7 +35,7 @@
    <string notr="true">#reportStudentNameRow{border-top: 1px solid;
 border-top-color: rgb(200,200,200);}
 #reportStudentNameRow:hover{
-background-color: rgb(231, 255, 243)}
+background-color: rgba(51, 143, 255,10)}
 QLabel{background-color:transparent}</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">

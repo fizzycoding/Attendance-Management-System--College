@@ -158,7 +158,7 @@ QFrame:hover { border: 1px solid #57e700; }</string>
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>../../icons/students.png</normaloff>../../icons/students.png</iconset>
+                <normaloff>icons/students.png</normaloff>icons/students.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -209,7 +209,7 @@ QFrame:hover { border: 1px solid #3388FF; }</string>
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>../../icons/board.png</normaloff>../../icons/board.png</iconset>
+                <normaloff>icons/board.png</normaloff>icons/board.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -259,7 +259,7 @@ QFrame:hover { border: 1px solid #d400e7; }</string>
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>../../icons/total_test.png</normaloff>../../icons/total_test.png</iconset>
+                <normaloff>icons/total_test.png</normaloff>icons/total_test.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -309,7 +309,7 @@ QFrame:hover { border: 1px solid #e7c100; }</string>
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>../../icons/average_attendance.png</normaloff>../../icons/average_attendance.png</iconset>
+                <normaloff>icons/average_attendance.png</normaloff>icons/average_attendance.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -353,7 +353,7 @@ QFrame:hover { border: 1px solid #e7c100; }</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/barChart.png</normaloff>../../icons/barChart.png</iconset>
+              <normaloff>icons/barChart.png</normaloff>icons/barChart.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -408,7 +408,7 @@ QFrame:hover { border: 1px solid #e7c100; }</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/top_student.png</normaloff>../../icons/top_student.png</iconset>
+              <normaloff>icons/top_student.png</normaloff>icons/top_student.png</iconset>
             </property>
             <property name="iconSize">
              <size>

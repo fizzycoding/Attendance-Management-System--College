@@ -29,3 +29,14 @@ Text (On Light): #111827 (Near Black)
 
 
 SOFT: #80BDFF
+
+
+background-color: rgba(24, 203, 20,20);
+color: #18CB14;
+
+color: #fff;
+background : #3388FF;
+border: none;
+padding: 10px 20px;
+font: 600 14px "Segoe UI";
+border-radius: 7px

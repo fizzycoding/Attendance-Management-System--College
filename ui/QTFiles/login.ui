@@ -196,7 +196,7 @@ border-radius: 4px;
                                                                 }
 
                                                                 #usernameInputBox:focus {
-                                                                border: 1.5px solid #0055FF;
+                                                                border: 1.5px solid #3388FF;
                                                                 }
                                                             </string>
               </property>
@@ -263,7 +263,7 @@ border-radius: 4px;
                                                                 }
 
                                                                 #passwordInputBox:focus {
-                                                                border: 1.5px solid #0055FF;
+                                                                border: 1.5px solid #3388FF;
                                                                 }
                                                             </string>
               </property>
@@ -304,7 +304,7 @@ border-radius: 4px;
             <string notr="true">#loginButton {
 height: 44px;
 padding: 0 16px;
-background-color:#0055FF;
+background-color:#3388FF;
 color: white;
 font-size: 14px;
 font-weight: 600;
@@ -312,7 +312,7 @@ border: none;
 border-radius: 8px;
 }
 #loginButton:hover {
-background-color: #3388FF
+background-color: #0055FF
 }</string>
            </property>
            <property name="text">

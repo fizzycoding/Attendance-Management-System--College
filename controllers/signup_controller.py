@@ -15,6 +15,7 @@ class SignupController(QWidget):
         self.ui.setupUi(self)
 
         self.ui.registerButton.clicked.connect(self.handle_signup)
+        self.ui.passwordInputBox.returnPressed.connect(self.handle_signup)
         self.ui.switchLoginButton.clicked.connect(self.switchToLogin)
 
     def handle_signup(self):

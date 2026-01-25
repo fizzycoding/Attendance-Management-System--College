@@ -98,10 +98,10 @@ class Ui_classes_teacher(object):
         self.btn_new_class.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_new_class.setStyleSheet(
             "color: #fff;\n"
-            "background : qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(42, 183, 157), stop:1 #067d68);;\n"
+            "background : #3388FF;\n"
             "border: none;\n"
             "padding: 10px 20px;\n"
-            'font: 800 14px "Segoe UI";\n'
+            'font: 600 14px "Segoe UI";\n'
             "border-radius: 7px"
         )
         icon = QIcon()

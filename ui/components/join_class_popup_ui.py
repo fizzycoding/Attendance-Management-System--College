@@ -52,25 +52,19 @@ class Ui_JoinClassPopup(object):
 "    border: none; }\n"
 "\n"
 "QPushButton {\n"
-"                                                    height: 35px;\n"
-"                                                    padding: 0 16px;\n"
-"                                                    background-color: #2ab79d;\n"
-"                                                    color: white;\n"
-"                                                    font-size: 14px;\n"
-"                                                    font-weight: 600;\n"
-"                                                    border: none;\n"
-"                                                    border-radius: 5px;\n"
-"                                                    }\n"
-"\n"
-"                                                    QPushButton:hover {\n"
-"                                                    background-colo"
-                        "r: #159079;\n"
-"                                                    }\n"
-"                                                \n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #044d40;\n"
-"}")
+"height: 35px;\n"
+"padding: 0 16px;\n"
+"background-color: #3388FF;\n"
+"color: white;\n"
+"font-size: 14px;\n"
+"font-weight: 600;\n"
+"border: none;\n"
+"border-radius: 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"background-color: #0055FF;\n"
+"}\n"
+"                                                ")
         self.backgroundFrame.setFrameShape(QFrame.Shape.StyledPanel)
         self.backgroundFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.backgroundFrame)
@@ -98,7 +92,7 @@ class Ui_JoinClassPopup(object):
 "                                                                border-radius: 4px;\n"
 "                                                                }\n"
 "QLineEdit:focus {\n"
-"border: 1.5px solid #2ab79d;}")
+"border: 1.5px solid #3388FF;}")
         self.verticalLayout_3 = QVBoxLayout(self.widget)
         self.verticalLayout_3.setSpacing(5)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")

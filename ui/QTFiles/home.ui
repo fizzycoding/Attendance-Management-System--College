@@ -158,7 +158,7 @@ border: none;
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>../../icons/logo.png</normaloff>../../icons/logo.png</iconset>
+             <normaloff>icons/logo.png</normaloff>icons/logo.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -203,8 +203,8 @@ border: none;
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/class_unchecked.png</normaloff>
-              <activeon>../../icons/class.png</activeon>../../icons/class_unchecked.png</iconset>
+              <normaloff>icons/class_unchecked.png</normaloff>
+              <activeon>icons/class.png</activeon>icons/class_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -233,8 +233,8 @@ border: none;
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/test_unchecked.png</normaloff>
-              <activeon>../../icons/test.png</activeon>../../icons/test_unchecked.png</iconset>
+              <normaloff>icons/test_unchecked.png</normaloff>
+              <activeon>icons/test.png</activeon>icons/test_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -295,8 +295,8 @@ border: none;
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/dashboard_unchecked.png</normaloff>
-              <activeon>../../icons/dashboard.png</activeon>../../icons/dashboard_unchecked.png</iconset>
+              <normaloff>icons/dashboard_unchecked.png</normaloff>
+              <activeon>icons/dashboard.png</activeon>icons/dashboard_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -325,8 +325,8 @@ border: none;
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/class_unchecked.png</normaloff>
-              <activeon>../../icons/class.png</activeon>../../icons/class_unchecked.png</iconset>
+              <normaloff>icons/class_unchecked.png</normaloff>
+              <activeon>icons/class.png</activeon>icons/class_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -352,8 +352,8 @@ border: none;
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/attendance_unchecked.png</normaloff>
-              <activeon>../../icons/attendance.png</activeon>../../icons/attendance_unchecked.png</iconset>
+              <normaloff>icons/attendance_unchecked.png</normaloff>
+              <activeon>icons/attendance.png</activeon>icons/attendance_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -379,8 +379,8 @@ border: none;
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/test_unchecked.png</normaloff>
-              <activeon>../../icons/test.png</activeon>../../icons/test_unchecked.png</iconset>
+              <normaloff>icons/test_unchecked.png</normaloff>
+              <activeon>icons/test.png</activeon>icons/test_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -412,8 +412,8 @@ border: none;
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/barChart_unchecked.png</normaloff>
-              <activeon>../../icons/barChart.png</activeon>../../icons/barChart_unchecked.png</iconset>
+              <normaloff>icons/barChart_unchecked.png</normaloff>
+              <activeon>icons/barChart.png</activeon>icons/barChart_unchecked.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -478,7 +478,7 @@ QPushButton {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../icons/logout.png</normaloff>../../icons/logout.png</iconset>
+          <normaloff>icons/logout.png</normaloff>icons/logout.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -603,7 +603,7 @@ font: 600 9pt &quot;Segoe UI&quot;;</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>../icons/pfp.png</pixmap>
+           <pixmap>icons/pfp.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>

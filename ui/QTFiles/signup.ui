@@ -184,7 +184,7 @@
                                                                 border-radius: 4px;
                                                                 }
                                                                 #nameInputBox:focus {
-                                                               border: 1.5px solid #0055FF;
+                                                               border: 1.5px solid #3388FF;
                                                                 }
                                                             </string>
               </property>
@@ -251,7 +251,7 @@
                                                                 }
                                                                 #usernameInputBox:focus {
                                                                 
-                                                               border: 1.5px solid #0055FF;;
+                                                               border: 1.5px solid #3388FF;;
                                                                 }
                                                             </string>
               </property>
@@ -318,7 +318,7 @@
                                                                 }
                                                                 #passwordInputBox:focus {
                                                                 
-                                                               border: 1.5px solid #0055FF;;
+                                                               border: 1.5px solid #3388FF;;
                                                                 }
                                                             </string>
               </property>
@@ -415,7 +415,7 @@ border-radius: 7px;
 border: 1px solid #999;
 }
 QRadioButton::indicator:checked {
-background-color: #0055FF;
+background-color: #3388FF;
 border: 1px solid #067d68;
 }</string>
                  </property>
@@ -445,7 +445,7 @@ border: 1px solid #067d68;
                                                                             border: 1px solid #999;
                                                                             }
                                                                             QRadioButton::indicator:checked {
-                                                                            background-color: #0055FF;
+                                                                            background-color: #3388FF;
                                                                             border: 1px solid #067d68;
                                                                             }
                                                                         </string>
@@ -490,7 +490,7 @@ border: 1px solid #067d68;
             <string notr="true">#registerButton {
 height: 44px;
 padding: 0 16px;
-background-color:#0055FF;
+background-color:#3388FF;
 color: white;
 font-size: 14px;
 font-weight: 600;
@@ -498,7 +498,7 @@ border: none;
 border-radius: 8px;
 }
 #registerButton:hover {
-background-color: #3388FF
+background-color: #0055FF
 }
                                                 </string>
            </property>

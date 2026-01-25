@@ -97,11 +97,12 @@ class Ui_MyClassesStudent(object):
         self.btn_join_class.setObjectName("btn_join_class")
         self.btn_join_class.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_join_class.setStyleSheet(
+            "\n"
             "color: #fff;\n"
-            "background : qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(42, 183, 157), stop:1 #067d68);;\n"
+            "background : #3388FF;\n"
             "border: none;\n"
             "padding: 10px 20px;\n"
-            'font: 800 14px "Segoe UI";\n'
+            'font: 600 14px "Segoe UI";\n'
             "border-radius: 7px"
         )
         icon = QIcon()
@@ -192,7 +193,7 @@ class Ui_MyClassesStudent(object):
             QCoreApplication.translate("MyClassesStudent", "Form", None)
         )
         self.refresh_classes.setText(
-            QCoreApplication.translate("MyClassesStudent", "All Classes", None)
+            QCoreApplication.translate("MyClassesStudent", "My Classes", None)
         )
         self.btn_join_class.setText(
             QCoreApplication.translate("MyClassesStudent", "Join Class", None)

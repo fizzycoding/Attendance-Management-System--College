@@ -50,7 +50,7 @@ QLabel {
 QPushButton {
     height: 35px;
     padding: 0 16px;
-    background-color: #2ab79d;
+background-color : #3388FF;
     color: white;
     font-family: &quot;Segoe UI&quot;;
     font-size: 14px;
@@ -59,10 +59,7 @@ QPushButton {
     border-radius: 5px;
 }
 QPushButton:hover {
-    background-color: #159079;
-}
-QPushButton:pressed {
-    background-color: #044d40;
+    background-color: #0055FF;
 }
 </string>
      </property>
@@ -89,9 +86,7 @@ QPushButton:pressed {
       <item>
        <widget class="QWidget" name="widget_inputs" native="true">
         <property name="styleSheet">
-         <string notr="true">
-/* General Input Style */
-QLineEdit, QSpinBox, QDateEdit {
+         <string notr="true">QLineEdit, QSpinBox, QDateEdit {
     height: 35px;
     padding: 0 10px;
     font-family: &quot;Segoe UI&quot;;
@@ -102,10 +97,8 @@ QLineEdit, QSpinBox, QDateEdit {
     border-radius: 4px;
 }
 QLineEdit:focus, QSpinBox:focus, QDateEdit:focus {
-    border: 1.5px solid #2ab79d;
+    border: 1.5px solid #3388FF;
 }
-
-/* --- FIX: Calendar Colors --- */
 QCalendarWidget QWidget {
     background-color: white; 
     color: black;

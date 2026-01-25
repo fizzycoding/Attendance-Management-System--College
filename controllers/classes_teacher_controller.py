@@ -44,7 +44,6 @@ class ClassesTeacherController(QWidget):
             code = self.generateInviteCode()
             try:
                 query = "INSERT INTO classes(class_name, invite_code, created_by) VALUES (?, ?, ?)"
-                print(code)
                 cursor.execute(query, (name, code, user_id))
                 db.commit()
                 new_class_id = cursor.lastrowid
@@ -66,6 +65,7 @@ class ClassesTeacherController(QWidget):
         if new_class_id:
             self.insertClassToUi(new_class_id, name, 0, 0, 0)
             self.classModified.emit()
+        self.loadClasses()
 
     def generateInviteCode(self, length=6):
         chars = string.digits

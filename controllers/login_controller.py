@@ -12,6 +12,7 @@ class LoginController(QWidget):
         self.ui.setupUi(self)
         self.ui.loginButton.clicked.connect(self.handleLogin)
         self.ui.signupButton.clicked.connect(self.switchToSignUp)
+        self.ui.passwordInputBox.returnPressed.connect(self.handleLogin)
 
     def handleLogin(self):
         username = self.ui.usernameInputBox.text().strip().lower()

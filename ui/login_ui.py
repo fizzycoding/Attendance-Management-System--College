@@ -135,7 +135,7 @@ class Ui_login_form_main_window(object):
 "                                                                }\n"
 "\n"
 "                                                                #usernameInputBox:focus {\n"
-"                                                                border: 1.5px solid #0055FF;\n"
+"                                                                border: 1.5px solid #3388FF;\n"
 "                                                                }\n"
 "                                                            ")
 
@@ -177,7 +177,7 @@ class Ui_login_form_main_window(object):
 "                                                                }\n"
 "\n"
 "                                                                #passwordInputBox:focus {\n"
-"                                                                border: 1.5px solid #0055FF;\n"
+"                                                                border: 1.5px solid #3388FF;\n"
 "                                                                }\n"
 "                                                     "
                         "       ")
@@ -206,7 +206,7 @@ class Ui_login_form_main_window(object):
         self.loginButton.setStyleSheet(u"#loginButton {\n"
 "height: 44px;\n"
 "padding: 0 16px;\n"
-"background-color:#0055FF;\n"
+"background-color:#3388FF;\n"
 "color: white;\n"
 "font-size: 14px;\n"
 "font-weight: 600;\n"
@@ -214,7 +214,7 @@ class Ui_login_form_main_window(object):
 "border-radius: 8px;\n"
 "}\n"
 "#loginButton:hover {\n"
-"background-color: #3388FF\n"
+"background-color: #0055FF\n"
 "}")
 
         self.verticalLayout_4.addWidget(self.loginButton)

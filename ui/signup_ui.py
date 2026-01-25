@@ -123,7 +123,7 @@ class Ui_signup_form_main_window(object):
 "                                                                border-radius: 4px;\n"
 "                                                                }\n"
 "                                                                #nameInputBox:focus {\n"
-"                                                               border: 1.5px solid #0055FF;\n"
+"                                                               border: 1.5px solid #3388FF;\n"
 "                                                                }\n"
 "                                                            ")
 
@@ -165,7 +165,7 @@ class Ui_signup_form_main_window(object):
 "                                                                }\n"
 "                                                                #usernameInputBox:focus {\n"
 "                                                                \n"
-"                                                               border: 1.5px solid #0055FF;;\n"
+"                                                               border: 1.5px solid #3388FF;;\n"
 "                                                           "
                         "     }\n"
 "                                                            ")
@@ -208,7 +208,7 @@ class Ui_signup_form_main_window(object):
 "                                                                }\n"
 "                                                                #passwordInputBox:focus {\n"
 "                                                                \n"
-"                                                               border: 1.5px solid #0055FF;;\n"
+"                                                               border: 1.5px solid #3388FF;;\n"
 "                                                           "
                         "     }\n"
 "                                                            ")
@@ -263,7 +263,7 @@ class Ui_signup_form_main_window(object):
 "border: 1px solid #999;\n"
 "}\n"
 "QRadioButton::indicator:checked {\n"
-"background-color: #0055FF;\n"
+"background-color: #3388FF;\n"
 "border: 1px solid #067d68;\n"
 "}")
         self.studentRadioButton.setChecked(True)
@@ -286,7 +286,7 @@ class Ui_signup_form_main_window(object):
 "                                                                            }\n"
 "                                                                          "
                         "  QRadioButton::indicator:checked {\n"
-"                                                                            background-color: #0055FF;\n"
+"                                                                            background-color: #3388FF;\n"
 "                                                                            border: 1px solid #067d68;\n"
 "                                                                            }\n"
 "                                                                        ")
@@ -317,7 +317,7 @@ class Ui_signup_form_main_window(object):
         self.registerButton.setStyleSheet(u"#registerButton {\n"
 "height: 44px;\n"
 "padding: 0 16px;\n"
-"background-color:#0055FF;\n"
+"background-color:#3388FF;\n"
 "color: white;\n"
 "font-size: 14px;\n"
 "font-weight: 600;\n"
@@ -325,7 +325,7 @@ class Ui_signup_form_main_window(object):
 "border-radius: 8px;\n"
 "}\n"
 "#registerButton:hover {\n"
-"background-color: #3388FF\n"
+"background-color: #0055FF\n"
 "}\n"
 "                                                ")
 

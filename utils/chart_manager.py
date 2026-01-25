@@ -71,7 +71,7 @@ class ChartManager:
         series.append(set_present)
         series.append(set_absent)
         series.setBarWidth(0.5)
-
+        series.hovered.connect(self._on_bar_hover)
         chart = QChart()
         chart.addSeries(series)
         chart.legend().setVisible(True)
@@ -88,7 +88,7 @@ class ChartManager:
 
         remainder = max_val % 5
         if remainder != 0: max_val += (5 - remainder)
-        top_bound = max_val + 5
+        top_bound = max_val
 
         axis_y = QValueAxis()
         axis_y.setRange(0, top_bound)

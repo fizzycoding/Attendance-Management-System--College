@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS class_members (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     class_id INTEGER,
     student_id INTEGER,
+    guest_name TEXT,
     joined_at TEXT DEFAULT (datetime('now')),
     FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE,
     FOREIGN KEY (student_id) REFERENCES users(id) ON DELETE CASCADE

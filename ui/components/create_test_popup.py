@@ -47,7 +47,7 @@ class Ui_CreateTestPopup(object):
 "QPushButton {\n"
 "    height: 35px;\n"
 "    padding: 0 16px;\n"
-"    background-color: #2ab79d;\n"
+"background-color : #3388FF;\n"
 "    color: white;\n"
 "    font-family: \"Segoe UI\";\n"
 "    font-size: 14px;\n"
@@ -56,10 +56,7 @@ class Ui_CreateTestPopup(object):
 "    border-radius: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"    background-color: #159079;\n"
-"}\n"
-"QPushButton:pressed {\n"
-"    background-color: #044d40;\n"
+"    background-color: #0055FF;\n"
 "}\n"
 "")
         self.backgroundFrame.setFrameShape(QFrame.Shape.StyledPanel)
@@ -75,9 +72,7 @@ class Ui_CreateTestPopup(object):
 
         self.widget_inputs = QWidget(self.backgroundFrame)
         self.widget_inputs.setObjectName(u"widget_inputs")
-        self.widget_inputs.setStyleSheet(u"\n"
-"/* General Input Style */\n"
-"QLineEdit, QSpinBox, QDateEdit {\n"
+        self.widget_inputs.setStyleSheet(u"QLineEdit, QSpinBox, QDateEdit {\n"
 "    height: 35px;\n"
 "    padding: 0 10px;\n"
 "    font-family: \"Segoe UI\";\n"
@@ -88,10 +83,8 @@ class Ui_CreateTestPopup(object):
 "    border-radius: 4px;\n"
 "}\n"
 "QLineEdit:focus, QSpinBox:focus, QDateEdit:focus {\n"
-"    border: 1.5px solid #2ab79d;\n"
+"    border: 1.5px solid #3388FF;\n"
 "}\n"
-"\n"
-"/* --- FIX: Calendar Colors --- */\n"
 "QCalendarWidget QWidget {\n"
 "    background-color: white; \n"
 "    color: black;\n"

@@ -114,8 +114,8 @@ QLabel {
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true">#btn_open{background-color: #E0F2F1; color: #009688; border: none; padding: 5px 18px; border-radius: 4px; font-weight: bold; font-family: &quot;Segoe UI&quot;;}
-#btn_open:hover{background-color: rgb(167, 221, 199);}</string>
+      <string notr="true">#btn_open{background-color: rgba(51, 143, 255,10); color: #338fff; border: none; padding: 5px 18px; border-radius: 4px; font-weight: bold; font-family: &quot;Segoe UI&quot;;}
+#btn_open:hover{background-color: rgba(51, 143, 255,20); }</string>
      </property>
      <property name="text">
       <string>Open</string>
@@ -135,7 +135,7 @@ QLabel {
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>../../../icons/delete.png</normaloff>../../../icons/delete.png</iconset>
+       <normaloff>icons/delete.png</normaloff>icons/delete.png</iconset>
      </property>
      <property name="iconSize">
       <size>

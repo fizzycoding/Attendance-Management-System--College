@@ -148,11 +148,12 @@ class Ui_test_details_page(object):
         self.btn_save_marks.setObjectName("btn_save_marks")
         self.btn_save_marks.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_save_marks.setStyleSheet(
+            "\n"
             "color: #fff;\n"
-            "background : qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(42, 183, 157), stop:1 #067d68);;\n"
+            "background : #3388FF;\n"
             "border: none;\n"
-            "padding: 10px 25px;\n"
-            'font: 700 14px "Segoe UI";\n'
+            "padding: 10px 20px;\n"
+            'font: 600 14px "Segoe UI";\n'
             "border-radius: 7px"
         )
         icon1 = QIcon()

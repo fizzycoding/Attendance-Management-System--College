@@ -45,9 +45,8 @@ QLabel {
     font-weight: 600;
     border: none; 
 }
-/* Class Name Label Specific Style */
 #label_class_name {
-    color: #2ab79d;
+    color: #3388FF;
     font-size: 16px;
     font-weight: 700;
 }
@@ -67,9 +66,9 @@ QCheckBox::indicator {
     background: white;
 }
 QCheckBox::indicator:checked {
-    background-color: #2ab79d;
-    border: 1px solid #2ab79d;
-    image: url(:/icons/checked.png); /* Ensure you handle the icon or remove this line if strictly relying on color */
+    background-color: #3388FF;
+    border: 1px solid #3388FF;
+    image: url(icons/checked.png); /* Ensure you handle the icon or remove this line if strictly relying on color */
 }
 
 /* General Input Style */
@@ -84,19 +83,17 @@ QDateEdit {
     border-radius: 4px;
 }
 QDateEdit:focus {
-    border: 1.5px solid #2ab79d;
+    border: 1.5px solid #3388FF;
 }
-/* Calendar Widget Styling */
 QCalendarWidget QWidget { background-color: white; color: black; }
 QCalendarWidget QAbstractItemView:enabled { 
     color: black; 
-    selection-background-color: #2ab79d; 
+    selection-background-color: #3388FF; 
     selection-color: white;
 }
 QCalendarWidget QToolButton { color: black; icon-size: 25px; }
 QCalendarWidget QSpinBox { background-color: white; color: black; }
 
-/* Button Styles */
 QPushButton {
     height: 40px;
     padding: 0 16px;
@@ -108,21 +105,11 @@ QPushButton {
     color: white;
 }
 
-/* Excel Button (Green) */
 #btn_excel {
-    background-color: #2ab79d;
+    background-color: #3388FF;
 }
-#btn_excel:hover { background-color: #159079; }
-#btn_excel:pressed { background-color: #044d40; }
+#btn_excel:hover { background-color: #0055FF; }
 
-/* PDF Button (Redish/Orange to differentiate) */
-#btn_pdf {
-    background-color: #E53935;
-}
-#btn_pdf:hover { background-color: #C62828; }
-#btn_pdf:pressed { background-color: #B71C1C; }
-
-/* Close Button (Outlined) */
 #btn_close {
     background-color: transparent;
     color: #555;

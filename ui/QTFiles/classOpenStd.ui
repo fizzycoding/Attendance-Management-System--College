@@ -73,7 +73,7 @@ border:none</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../icons/back.png</normaloff>../icons/back.png</iconset>
+          <normaloff>icons/back.png</normaloff>icons/back.png</iconset>
         </property>
         <property name="iconSize">
          <size>

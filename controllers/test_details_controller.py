@@ -67,13 +67,13 @@ class TestDetailsController(QWidget):
             query = """
                 SELECT 
                     c.id as member_id, 
-                    u.name, 
+                    COALESCE(u.name, c.guest_name) as name, 
                     tr.marks_obtained
                 FROM class_members c
-                JOIN users u ON c.student_id = u.id
+                LEFT JOIN users u ON c.student_id = u.id
                 LEFT JOIN test_results tr ON tr.member_id = c.id AND tr.test_id = ?
                 WHERE c.class_id = (SELECT class_id FROM tests WHERE id = ?)
-                ORDER BY u.name ASC
+                ORDER BY COALESCE(u.name, c.guest_name) ASC
             """
             cursor.execute(query, (self.test_id, self.test_id))
             rows = cursor.fetchall()

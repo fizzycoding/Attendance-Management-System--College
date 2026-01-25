@@ -14,4 +14,29 @@
 
 colors
 #2ab79d
-hover #159079   
+hover #159079
+
+
+purple
+rgb(147, 52, 255)
+
+
+Main (Primary/Default): #0055FF (A vibrant, clear blue)
+Hover (Brightened): #3388FF (Lighter blue for interaction)
+Active (Darkened): #0033CC (Deep blue for click)
+Text (On Blue/Dark): #FFFFFF (White)
+Text (On Light): #111827 (Near Black)
+
+
+SOFT: #80BDFF
+
+
+background-color: rgba(24, 203, 20,20);
+color: #18CB14;
+
+color: #fff;
+background : #3388FF;
+border: none;
+padding: 10px 20px;
+font: 600 14px "Segoe UI";
+border-radius: 7px

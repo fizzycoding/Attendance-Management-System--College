@@ -24,8 +24,8 @@ class ReportStudentNamesRowController(QFrame, Ui_reportStudentNameRow):
             # Highlight Color (Light Green/Teal to match your theme)
             self.setStyleSheet("""
                 QFrame {
-                    background-color: #E0F2F1; 
-                    border-left: 4px solid #009688;
+                    background-color: rgba(51, 143, 255,20); 
+                    border-left: 4px solid #3388FF;
                 }
                 QLabel { background-color: transparent;border-left: none; }
             """)

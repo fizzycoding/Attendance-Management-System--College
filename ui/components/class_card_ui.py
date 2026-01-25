@@ -71,8 +71,7 @@ class Ui_class_card(object):
             "}\n"
             "\n"
             "#class_card:hover{\n"
-            "  border: 1px solid rgba(21, 144, 121, 177);\n"
-            "  background-color: rgba(0, 255, 191, 20);\n"
+            "  background-color: rgba(51, 143, 255, 20);\n"
             "}"
         )
         self.horizontalLayout = QHBoxLayout(class_card)

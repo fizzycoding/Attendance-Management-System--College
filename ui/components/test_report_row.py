@@ -31,7 +31,7 @@ class Ui_test_report_row(object):
 "    border: 1px solid #e0e0e0;\n"
 "}\n"
 "QFrame#test_report_row:hover {\n"
-"    border: 1px solid #2ab79d;\n"
+"    border: 1px solid #3388FF;\n"
 "    background-color: #fcfcfc;\n"
 "}\n"
 "QLabel {\n"

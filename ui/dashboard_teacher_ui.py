@@ -59,7 +59,7 @@ class Ui_dashboard_page(object):
     def setupUi(self, dashboard_page):
         if not dashboard_page.objectName():
             dashboard_page.setObjectName("dashboard_page")
-        dashboard_page.resize(1086, 679)
+        dashboard_page.resize(1029, 652)
         dashboard_page.setStyleSheet(
             "background-color: rgb(240, 240, 240);\n" 'font-family: "Segoe UI";'
         )
@@ -141,23 +141,18 @@ class Ui_dashboard_page(object):
         self.card_present.setMaximumSize(QSize(16777215, 120))
         self.card_present.setStyleSheet(
             "QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }\n"
-            "QFrame:hover { border: 1px solid #2ab79d; }"
+            "QFrame:hover { border: 1px solid #57e700; }"
         )
         self.vbox_card2 = QVBoxLayout(self.card_present)
         self.vbox_card2.setObjectName("vbox_card2")
         self.pushButton_2 = QPushButton(self.card_present)
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.setStyleSheet(
-            "color: #777; font-size: 13px; border:none;\n"
-            '  font: 600 11pt "Segoe UI"; background-color: transparent; text-align: left'
+            "color: #777; font-size: 11px; border:none;\n"
+            "  font: 600 11pt; background-color: transparent; text-align: left"
         )
         icon = QIcon()
-        icon.addFile(
-            "icons/users.png",
-            QSize(),
-            QIcon.Mode.Normal,
-            QIcon.State.Off,
-        )
+        icon.addFile("icons/students.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_2.setIcon(icon)
         self.pushButton_2.setIconSize(QSize(18, 18))
 
@@ -166,11 +161,11 @@ class Ui_dashboard_page(object):
         self.val_total_student = QLabel(self.card_present)
         self.val_total_student.setObjectName("val_total_student")
         self.val_total_student.setStyleSheet(
-            "color:rgb(0, 0, 0); font-size:25pt; font-weight: bold; border:none;"
+            "color: #333;\n" "font-size:25pt; font-weight: bold; border:none;"
         )
         self.val_total_student.setAlignment(
-            Qt.AlignmentFlag.AlignRight
-            | Qt.AlignmentFlag.AlignTrailing
+            Qt.AlignmentFlag.AlignLeading
+            | Qt.AlignmentFlag.AlignLeft
             | Qt.AlignmentFlag.AlignVCenter
         )
 
@@ -183,25 +178,20 @@ class Ui_dashboard_page(object):
         self.card_total_classes.setMaximumSize(QSize(16777215, 120))
         self.card_total_classes.setStyleSheet(
             "QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }\n"
-            "QFrame:hover { border: 1px solid #2ab79d; }"
+            "QFrame:hover { border: 1px solid #3388FF; }"
         )
         self.vbox_card1 = QVBoxLayout(self.card_total_classes)
         self.vbox_card1.setObjectName("vbox_card1")
         self.pushButton = QPushButton(self.card_total_classes)
         self.pushButton.setObjectName("pushButton")
         self.pushButton.setStyleSheet(
-            "color: #777; font-size: 13px; border:none;\n"
-            '  font: 600 11pt "Segoe UI"; background-color: transparent; text-align: left'
+            "color: #777; font-size: 11px; border:none;\n"
+            "  font: 600 11pt; background-color: transparent; text-align: left"
         )
         icon1 = QIcon()
-        icon1.addFile(
-            "icons/board.png",
-            QSize(),
-            QIcon.Mode.Normal,
-            QIcon.State.Off,
-        )
+        icon1.addFile("icons/board.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton.setIcon(icon1)
-        self.pushButton.setIconSize(QSize(18, 18))
+        self.pushButton.setIconSize(QSize(16, 16))
 
         self.vbox_card1.addWidget(self.pushButton)
 
@@ -211,8 +201,8 @@ class Ui_dashboard_page(object):
             "color: #333; font-size: 25pt; font-weight: bold; border:none;"
         )
         self.val_total_classes.setAlignment(
-            Qt.AlignmentFlag.AlignRight
-            | Qt.AlignmentFlag.AlignTrailing
+            Qt.AlignmentFlag.AlignLeading
+            | Qt.AlignmentFlag.AlignLeft
             | Qt.AlignmentFlag.AlignVCenter
         )
 
@@ -225,22 +215,19 @@ class Ui_dashboard_page(object):
         self.card_tests.setMaximumSize(QSize(16777215, 120))
         self.card_tests.setStyleSheet(
             "QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }\n"
-            "QFrame:hover { border: 1px solid #2ab79d; }"
+            "QFrame:hover { border: 1px solid #d400e7; }"
         )
         self.vbox_card4 = QVBoxLayout(self.card_tests)
         self.vbox_card4.setObjectName("vbox_card4")
         self.pushButton_4 = QPushButton(self.card_tests)
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_4.setStyleSheet(
-            "color: #777; font-size: 13px; border:none;\n"
-            '  font: 600 11pt "Segoe UI"; background-color: transparent; text-align: left'
+            "color: #777; font-size: 11px; border:none;\n"
+            "  font: 600 11pt; background-color: transparent; text-align: left"
         )
         icon2 = QIcon()
         icon2.addFile(
-            "icons/total_test.png",
-            QSize(),
-            QIcon.Mode.Normal,
-            QIcon.State.Off,
+            "icons/total_test.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off
         )
         self.pushButton_4.setIcon(icon2)
         self.pushButton_4.setIconSize(QSize(18, 18))
@@ -253,8 +240,8 @@ class Ui_dashboard_page(object):
             "color: #333; font-size: 25pt; font-weight: bold; border:none;"
         )
         self.val_tests.setAlignment(
-            Qt.AlignmentFlag.AlignRight
-            | Qt.AlignmentFlag.AlignTrailing
+            Qt.AlignmentFlag.AlignLeading
+            | Qt.AlignmentFlag.AlignLeft
             | Qt.AlignmentFlag.AlignVCenter
         )
 
@@ -262,47 +249,44 @@ class Ui_dashboard_page(object):
 
         self.layout_cards.addWidget(self.card_tests)
 
-        self.card_absent = QFrame(dashboard_page)
-        self.card_absent.setObjectName("card_absent")
-        self.card_absent.setMaximumSize(QSize(16777215, 120))
-        self.card_absent.setStyleSheet(
+        self.card_average_attendance = QFrame(dashboard_page)
+        self.card_average_attendance.setObjectName("card_average_attendance")
+        self.card_average_attendance.setMaximumSize(QSize(16777215, 120))
+        self.card_average_attendance.setStyleSheet(
             "QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }\n"
-            "QFrame:hover { border: 1px solid #2ab79d; }"
+            "QFrame:hover { border: 1px solid #e7c100; }"
         )
-        self.vbox_card3 = QVBoxLayout(self.card_absent)
+        self.vbox_card3 = QVBoxLayout(self.card_average_attendance)
         self.vbox_card3.setObjectName("vbox_card3")
-        self.pushButton_3 = QPushButton(self.card_absent)
+        self.pushButton_3 = QPushButton(self.card_average_attendance)
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_3.setStyleSheet(
-            "color: #777; font-size: 13px; border:none;\n"
-            '  font: 600 11pt "Segoe UI"; background-color: transparent; text-align: left'
+            "color: #777; font-size: 11px; border:none;\n"
+            "  font: 600 11pt; background-color: transparent; text-align: left"
         )
         icon3 = QIcon()
         icon3.addFile(
-            "icons/absent.png",
-            QSize(),
-            QIcon.Mode.Normal,
-            QIcon.State.Off,
+            "icons/average_attendance.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off
         )
         self.pushButton_3.setIcon(icon3)
         self.pushButton_3.setIconSize(QSize(18, 18))
 
         self.vbox_card3.addWidget(self.pushButton_3)
 
-        self.val_avg_attendance = QLabel(self.card_absent)
+        self.val_avg_attendance = QLabel(self.card_average_attendance)
         self.val_avg_attendance.setObjectName("val_avg_attendance")
         self.val_avg_attendance.setStyleSheet(
-            "color: rgb(11, 161, 255); font-size: 25pt; font-weight: bold; border:none;"
+            "color: #333; font-size: 25pt; font-weight: bold; border:none;"
         )
         self.val_avg_attendance.setAlignment(
-            Qt.AlignmentFlag.AlignRight
-            | Qt.AlignmentFlag.AlignTrailing
+            Qt.AlignmentFlag.AlignLeading
+            | Qt.AlignmentFlag.AlignLeft
             | Qt.AlignmentFlag.AlignVCenter
         )
 
         self.vbox_card3.addWidget(self.val_avg_attendance)
 
-        self.layout_cards.addWidget(self.card_absent)
+        self.layout_cards.addWidget(self.card_average_attendance)
 
         self.layout_left_col.addLayout(self.layout_cards)
 
@@ -355,10 +339,7 @@ class Ui_dashboard_page(object):
         )
         icon5 = QIcon()
         icon5.addFile(
-            "icons/top_student.png",
-            QSize(),
-            QIcon.Mode.Normal,
-            QIcon.State.Off,
+            "icons/top_student.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off
         )
         self.pushButton_7.setIcon(icon5)
         self.pushButton_7.setIconSize(QSize(16, 16))
@@ -379,7 +360,7 @@ class Ui_dashboard_page(object):
         self.scrollArea_students.setWidgetResizable(True)
         self.scroll_content_students = QWidget()
         self.scroll_content_students.setObjectName("scroll_content_students")
-        self.scroll_content_students.setGeometry(QRect(0, 0, 323, 232))
+        self.scroll_content_students.setGeometry(QRect(0, 0, 304, 219))
         self.container_top_students = QVBoxLayout(self.scroll_content_students)
         self.container_top_students.setSpacing(5)
         self.container_top_students.setObjectName("container_top_students")

@@ -1,7 +1,6 @@
 from PySide6.QtCore import QDate
 from PySide6.QtWidgets import QDialog, QMessageBox
 
-# Adjust this import based on where you saved the UI file
 from ui.components.create_test_popup import Ui_CreateTestPopup
 from utils.message import showMessage
 
@@ -15,8 +14,12 @@ class CreateTestPopup(QDialog, Ui_CreateTestPopup):
         self.btn_cancel.clicked.connect(self.reject)
         self.btn_create.clicked.connect(self.validateAndAccept)
 
+        self.input_test_name.returnPressed.connect(self.validateAndAccept)
+        self.input_pass_marks.returnPressed.connect(self.validateAndAccept)
+        self.input_max_marks.returnPressed.connect(self.validateAndAccept)
+        self.input_date.returnPressed.connect(self.validateAndAccept)
+
     def validateAndAccept(self):
-        """Checks inputs before closing"""
         name = self.input_test_name.text().strip()
         max_marks = self.input_max_marks.value()
         pass_marks = self.input_pass_marks.value()

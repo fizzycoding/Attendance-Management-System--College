@@ -60,7 +60,7 @@ QLabel {
 QPushButton {
                                                     height: 35px;
                                                     padding: 0 16px;
-                                                    background-color: #2ab79d;
+                                                    background-color: #3388FF;
                                                     color: white;
                                                     font-size: 14px;
                                                     font-weight: 600;
@@ -69,13 +69,9 @@ QPushButton {
                                                     }
 
                                                     QPushButton:hover {
-                                                    background-color: #159079;
+                                                    background-color: #0055FF;
                                                     }
-                                                
-
-QPushButton:pressed {
-    background-color: #044d40;
-}</string>
+                                                </string>
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::StyledPanel</enum>
@@ -120,7 +116,7 @@ QLineEdit {
                                                                 border-radius: 4px;
                                                                 }
 QLineEdit:focus {
-border: 1.5px solid #2ab79d;}</string>
+border: 1.5px solid #3388FF;}</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <property name="spacing">

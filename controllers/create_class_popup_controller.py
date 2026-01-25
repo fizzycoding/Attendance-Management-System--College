@@ -9,6 +9,7 @@ class CreateClassPopup(QDialog, Ui_CreateClassPopup):
         self.setupUi(self)
         self.setWindowTitle("Create new class")
         self.btn_close.clicked.connect(self.reject)
+        self.class_name_input.returnPressed.connect(self.createBTNHandler)
         self.btn_create.clicked.connect(self.createBTNHandler)
         self.setFixedSize(400, 250)
 

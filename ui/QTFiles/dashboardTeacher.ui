@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1086</width>
-    <height>679</height>
+    <width>1029</width>
+    <height>652</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -144,21 +144,21 @@ QComboBox QAbstractItemView {
            </property>
            <property name="styleSheet">
             <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
-QFrame:hover { border: 1px solid #2ab79d; }</string>
+QFrame:hover { border: 1px solid #57e700; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card2">
             <item>
              <widget class="QPushButton" name="pushButton_2">
               <property name="styleSheet">
-               <string notr="true">color: #777; font-size: 13px; border:none;
-  font: 600 11pt &quot;Segoe UI&quot;; background-color: transparent; text-align: left</string>
+               <string notr="true">color: #777; font-size: 11px; border:none;
+  font: 600 11pt; background-color: transparent; text-align: left</string>
               </property>
               <property name="text">
                <string>Total Students</string>
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>icons/users.png</normaloff>icons/users.png</iconset>
+                <normaloff>icons/students.png</normaloff>icons/students.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -171,13 +171,14 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
             <item>
              <widget class="QLabel" name="val_total_student">
               <property name="styleSheet">
-               <string notr="true">color:rgb(0, 0, 0); font-size:25pt; font-weight: bold; border:none;</string>
+               <string notr="true">color: #333;
+font-size:25pt; font-weight: bold; border:none;</string>
               </property>
               <property name="text">
                <string>00</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+               <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
               </property>
              </widget>
             </item>
@@ -194,14 +195,14 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
            </property>
            <property name="styleSheet">
             <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
-QFrame:hover { border: 1px solid #2ab79d; }</string>
+QFrame:hover { border: 1px solid #3388FF; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card1">
             <item>
              <widget class="QPushButton" name="pushButton">
               <property name="styleSheet">
-               <string notr="true">color: #777; font-size: 13px; border:none;
-  font: 600 11pt &quot;Segoe UI&quot;; background-color: transparent; text-align: left</string>
+               <string notr="true">color: #777; font-size: 11px; border:none;
+  font: 600 11pt; background-color: transparent; text-align: left</string>
               </property>
               <property name="text">
                <string>Total Classes</string>
@@ -212,8 +213,8 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
               </property>
               <property name="iconSize">
                <size>
-                <width>18</width>
-                <height>18</height>
+                <width>16</width>
+                <height>16</height>
                </size>
               </property>
              </widget>
@@ -227,7 +228,7 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
                <string>00</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+               <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
               </property>
              </widget>
             </item>
@@ -244,14 +245,14 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
            </property>
            <property name="styleSheet">
             <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
-QFrame:hover { border: 1px solid #2ab79d; }</string>
+QFrame:hover { border: 1px solid #d400e7; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card4">
             <item>
              <widget class="QPushButton" name="pushButton_4">
               <property name="styleSheet">
-               <string notr="true">color: #777; font-size: 13px; border:none;
-  font: 600 11pt &quot;Segoe UI&quot;; background-color: transparent; text-align: left</string>
+               <string notr="true">color: #777; font-size: 11px; border:none;
+  font: 600 11pt; background-color: transparent; text-align: left</string>
               </property>
               <property name="text">
                <string>Tests Conducted</string>
@@ -277,7 +278,7 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
                <string>00</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+               <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
               </property>
              </widget>
             </item>
@@ -285,7 +286,7 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
           </widget>
          </item>
          <item>
-          <widget class="QFrame" name="card_absent">
+          <widget class="QFrame" name="card_average_attendance">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -294,21 +295,21 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
            </property>
            <property name="styleSheet">
             <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
-QFrame:hover { border: 1px solid #2ab79d; }</string>
+QFrame:hover { border: 1px solid #e7c100; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card3">
             <item>
              <widget class="QPushButton" name="pushButton_3">
               <property name="styleSheet">
-               <string notr="true">color: #777; font-size: 13px; border:none;
-  font: 600 11pt &quot;Segoe UI&quot;; background-color: transparent; text-align: left</string>
+               <string notr="true">color: #777; font-size: 11px; border:none;
+  font: 600 11pt; background-color: transparent; text-align: left</string>
               </property>
               <property name="text">
                <string>Avg. Attendace</string>
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>icons/absent.png</normaloff>icons/absent.png</iconset>
+                <normaloff>icons/average_attendance.png</normaloff>icons/average_attendance.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -321,13 +322,13 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
             <item>
              <widget class="QLabel" name="val_avg_attendance">
               <property name="styleSheet">
-               <string notr="true">color: rgb(11, 161, 255); font-size: 25pt; font-weight: bold; border:none;</string>
+               <string notr="true">color: #333; font-size: 25pt; font-weight: bold; border:none;</string>
               </property>
               <property name="text">
                <string>00%</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+               <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
               </property>
              </widget>
             </item>
@@ -352,7 +353,7 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../../icons/barChart.png</normaloff>../../icons/barChart.png</iconset>
+              <normaloff>icons/barChart.png</normaloff>icons/barChart.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -436,8 +437,8 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>323</width>
-               <height>232</height>
+               <width>304</width>
+               <height>219</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="container_top_students">

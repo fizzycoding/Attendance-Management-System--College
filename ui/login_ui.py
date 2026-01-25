@@ -125,20 +125,19 @@ class Ui_login_form_main_window(object):
         self.usernameInputBox = QLineEdit(self.usernameWidget)
         self.usernameInputBox.setObjectName(u"usernameInputBox")
         self.usernameInputBox.setStyleSheet(u"#usernameInputBox {\n"
-"                                                                height: 20px;\n"
-"                                                                padding: 8px 10px;\n"
-"                                                                font-size: 14px;\n"
-"                                                                color: #111;\n"
-"                                                                border: 1px solid rgb(99, 99, 99);\n"
-"                                                                background: #fff;\n"
-"                                                                border-radius: 4px;\n"
+"height: 20px;\n"
+"padding: 8px 10px;\n"
+"font-size: 14px;\n"
+"color: #111;\n"
+"border: 1px solid rgb(99, 99, 99);\n"
+"background: #fff;\n"
+"border-radius: 4px;\n"
 "                                                                }\n"
 "\n"
 "                                                                #usernameInputBox:focus {\n"
-"                                                                border: 1.5px solid #2ab79d;\n"
+"                                                                border: 1.5px solid #3388FF;\n"
 "                                                                }\n"
-"                                                     "
-                        "       ")
+"                                                            ")
 
         self.verticalLayout_3.addWidget(self.usernameInputBox)
 
@@ -178,7 +177,7 @@ class Ui_login_form_main_window(object):
 "                                                                }\n"
 "\n"
 "                                                                #passwordInputBox:focus {\n"
-"                                                                border: 1.5px solid #2ab79d;\n"
+"                                                                border: 1.5px solid #3388FF;\n"
 "                                                                }\n"
 "                                                     "
                         "       ")
@@ -205,20 +204,18 @@ class Ui_login_form_main_window(object):
         self.loginButton.setObjectName(u"loginButton")
         self.loginButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.loginButton.setStyleSheet(u"#loginButton {\n"
-"                                                    height: 44px;\n"
-"                                                    padding: 0 16px;\n"
-"                                                    background-color: #2ab79d;\n"
-"                                                    color: white;\n"
-"                                                    font-size: 14px;\n"
-"                                                    font-weight: 600;\n"
-"                                                    border: none;\n"
-"                                                    border-radius: 8px;\n"
-"                                                    }\n"
-"\n"
-"                                                    #loginButton:hover {\n"
-"                                                    background-color: #159079;\n"
-"                                                    }\n"
-"                                                ")
+"height: 44px;\n"
+"padding: 0 16px;\n"
+"background-color:#3388FF;\n"
+"color: white;\n"
+"font-size: 14px;\n"
+"font-weight: 600;\n"
+"border: none;\n"
+"border-radius: 8px;\n"
+"}\n"
+"#loginButton:hover {\n"
+"background-color: #0055FF\n"
+"}")
 
         self.verticalLayout_4.addWidget(self.loginButton)
 
@@ -230,15 +227,14 @@ class Ui_login_form_main_window(object):
 
         self.rightFrame = QFrame(login_form_main_window)
         self.rightFrame.setObjectName(u"rightFrame")
-        self.rightFrame.setStyleSheet(u"\n"
-"                            #rightFrame {\n"
-"                            background: qlineargradient(\n"
-"                            x1:0, y1:0,\n"
-"                            x2:0, y2:1,\n"
-"                            stop:0 #50d5b7,\n"
-"                            stop:1 #067d68\n"
-"                            );\n"
-"                            }\n"
+        self.rightFrame.setStyleSheet(u"#rightFrame {\n"
+"background: qlineargradient(\n"
+"x1:0, y1:0,\n"
+"x2:0, y2:1,\n"
+"stop:0 #3388FF,\n"
+"stop:1 #0055FF\n"
+");\n"
+"}\n"
 "                        ")
         self.verticalLayout_5 = QVBoxLayout(self.rightFrame)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")

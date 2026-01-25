@@ -67,10 +67,10 @@ border: none</string>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff;
-background : qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(42, 183, 157), stop:1 #067d68);;
+background : #3388FF;
 border: none;
 padding: 10px 20px;
-font: 800 14px &quot;Segoe UI&quot;;
+font: 600 14px &quot;Segoe UI&quot;;
 border-radius: 7px</string>
         </property>
         <property name="text">
@@ -78,7 +78,7 @@ border-radius: 7px</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../icons/add.png</normaloff>../icons/add.png</iconset>
+          <normaloff>icons/add.png</normaloff>icons/add.png</iconset>
         </property>
         <property name="iconSize">
          <size>

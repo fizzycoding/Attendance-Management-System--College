@@ -33,7 +33,7 @@ class Ui_reportStudentNameRow(object):
         reportStudentNameRow.setStyleSheet(u"#reportStudentNameRow{border-top: 1px solid;\n"
 "border-top-color: rgb(200,200,200);}\n"
 "#reportStudentNameRow:hover{\n"
-"background-color: rgb(231, 255, 243)}\n"
+"background-color: rgba(51, 143, 255,10)}\n"
 "QLabel{background-color:transparent}")
         self.horizontalLayout = QHBoxLayout(reportStudentNameRow)
         self.horizontalLayout.setSpacing(0)

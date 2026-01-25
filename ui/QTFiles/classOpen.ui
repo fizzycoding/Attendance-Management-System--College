@@ -54,7 +54,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../icons/back.png</normaloff>../icons/back.png</iconset>
+          <normaloff>icons/back.png</normaloff>icons/back.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -95,6 +95,31 @@ font: 600 16pt &quot;Segoe UI&quot;;</string>
        </spacer>
       </item>
       <item>
+       <widget class="QPushButton" name="add_student_btn">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#add_student_btn{color: #fff;
+background : #3388FF;
+border: none;
+padding: 10px 20px;
+font: 600 14px &quot;Segoe UI&quot;;
+border-radius: 7px}
+
+#add_student_btn:hover{
+background : #0055FF;}</string>
+        </property>
+        <property name="text">
+         <string>Add Student</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>add.png</normaloff>icons/g</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QWidget" name="widget_2" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
@@ -117,7 +142,7 @@ border: none</string>
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #159079;
+            <string notr="true">color: #3388FF;
 border: none;
 font: 700 12pt &quot;Segoe UI&quot;;</string>
            </property>

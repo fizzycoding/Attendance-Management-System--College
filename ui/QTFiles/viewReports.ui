@@ -37,8 +37,8 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>150</width>
-          <height>0</height>
+          <width>200</width>
+          <height>40</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -95,10 +95,11 @@ QComboBox QAbstractItemView {
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
-         <string notr="true">color :  #067d68;
+         <string notr="true">color: #fff;
+background : #3388FF;
 border: none;
-padding: 10px 20px;
-font: 800 14px &quot;Segoe UI&quot;;
+padding: 7px 20px;
+font: 600 14px &quot;Segoe UI&quot;;
 border-radius: 7px</string>
         </property>
         <property name="text">
@@ -283,7 +284,7 @@ border:none</string>
                   <x>0</x>
                   <y>0</y>
                   <width>464</width>
-                  <height>436</height>
+                  <height>435</height>
                  </rect>
                 </property>
                 <layout class="QVBoxLayout" name="all_students_container">
@@ -344,7 +345,7 @@ border:none</string>
   border:1px solid rgb(200,200,200);
 }
 #card1:hover ,#card2:hover ,#card3:hover {
-    border: 1px solid #2ab79d;
+    border: 1px solid #3388FF;
     background-color: #fcfcfc;
 }
 
@@ -392,7 +393,7 @@ QLabel{
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../icons/board.png</normaloff>../../icons/board.png</iconset>
+                       <normaloff>icons/board.png</normaloff>icons/board.png</iconset>
                      </property>
                     </widget>
                    </item>
@@ -428,7 +429,7 @@ QLabel{
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../icons/present.png</normaloff>../../icons/present.png</iconset>
+                       <normaloff>icons/present.png</normaloff>icons/present.png</iconset>
                      </property>
                     </widget>
                    </item>
@@ -464,7 +465,7 @@ QLabel{
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../icons/absent.png</normaloff>../../icons/absent.png</iconset>
+                       <normaloff>icons/absent.png</normaloff>icons/absent.png</iconset>
                      </property>
                     </widget>
                    </item>
@@ -556,7 +557,7 @@ QLabel{
                          <x>0</x>
                          <y>0</y>
                          <width>304</width>
-                         <height>302</height>
+                         <height>301</height>
                         </rect>
                        </property>
                        <layout class="QVBoxLayout" name="test_results_layout">

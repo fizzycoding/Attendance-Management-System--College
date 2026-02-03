@@ -81,6 +81,21 @@ CREATE TABLE IF NOT EXISTS test_results (
     UNIQUE(test_id, member_id) 
 );
 """
+
+FEES_TABLE_QUERY = """
+CREATE TABLE IF NOT EXISTS fees (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    class_id INTEGER NOT NULL,
+    member_id INTEGER NOT NULL,
+    total_fee REAL NOT NULL DEFAULT 0,
+    paid_fee REAL NOT NULL DEFAULT 0,
+    CHECK(total_fee >= 0),
+    CHECK(paid_fee >= 0),
+    FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE,
+    FOREIGN KEY (member_id) REFERENCES class_members(id) ON DELETE CASCADE,
+    UNIQUE(class_id, member_id)
+);
+"""
 queries = [
     USER_TABLE_QUERY,
     CLASSES_TABLE_QUERY,
@@ -88,7 +103,8 @@ queries = [
     ATTENDANCE_SESSIONS_TABLE_QUERY,
     ATTENDANCE_RECORDS_TABLE_QUERY,
     TESTS_TABLE_QUERY,
-    TEST_RESULTS_TABLE_QUERY
+    TEST_RESULTS_TABLE_QUERY,
+    FEES_TABLE_QUERY
 ]
 
 

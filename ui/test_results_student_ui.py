@@ -23,7 +23,7 @@ class Ui_student_test_results(object):
     def setupUi(self, student_test_results):
         if not student_test_results.objectName():
             student_test_results.setObjectName(u"student_test_results")
-        student_test_results.resize(1000, 700)
+        student_test_results.resize(790, 700)
         student_test_results.setStyleSheet(u"background-color: rgb(240, 240, 240); font-family: \"Segoe UI\";")
         self.verticalLayout = QVBoxLayout(student_test_results)
         self.verticalLayout.setSpacing(20)
@@ -104,6 +104,11 @@ class Ui_student_test_results(object):
         self.hbox_header.setContentsMargins(20, -1, 20, -1)
         self.h_name = QLabel(self.frame_header)
         self.h_name.setObjectName(u"h_name")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.h_name.sizePolicy().hasHeightForWidth())
+        self.h_name.setSizePolicy(sizePolicy)
         self.h_name.setMinimumSize(QSize(200, 0))
 
         self.hbox_header.addWidget(self.h_name)
@@ -147,10 +152,11 @@ class Ui_student_test_results(object):
 
         self.scrollArea = QScrollArea(self.page_test_list)
         self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setMinimumSize(QSize(740, 0))
         self.scrollArea.setWidgetResizable(True)
         self.scrollContent = QWidget()
         self.scrollContent.setObjectName(u"scrollContent")
-        self.scrollContent.setGeometry(QRect(0, 0, 940, 546))
+        self.scrollContent.setGeometry(QRect(0, 0, 740, 546))
         self.container_tests = QVBoxLayout(self.scrollContent)
         self.container_tests.setSpacing(0)
         self.container_tests.setObjectName(u"container_tests")

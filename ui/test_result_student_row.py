@@ -22,7 +22,7 @@ class Ui_student_test_card(object):
     def setupUi(self, student_test_card):
         if not student_test_card.objectName():
             student_test_card.setObjectName(u"student_test_card")
-        student_test_card.resize(950, 50)
+        student_test_card.resize(732, 50)
         student_test_card.setMinimumSize(QSize(0, 50))
         student_test_card.setMaximumSize(QSize(16777215, 60))
         student_test_card.setStyleSheet(u"#student_test_card {\n"

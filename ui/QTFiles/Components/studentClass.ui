@@ -44,12 +44,12 @@ QLabel{
 }
 
 #student_block{
-	border-top: 1px solid rgb(166, 166, 166);
+	border-top: 1px  solid #bbb
 }
-
 #me{
-	border-top: 1px solid rgb(166, 166, 166);
-	background: rgba(51, 143, 255,20)
+
+	border-top: 1px  solid #bbb;
+	background: rgba(51, 143, 255,50)
 }
 </string>
   </property>
@@ -296,17 +296,17 @@ background-color: rgba(93, 93, 93, 50);
 color: rgb(93, 93, 93)
 }
 #status_present{
-background-color: rgba(24, 203, 20, 20);
+background-color: rgba(24, 203, 20, 40);
 color: #18CB14;
 }
 
 #status_absent{
-background-color: rgba(255, 23, 23, 20);
+background-color: rgba(255, 23, 23, 40);
 color: #FF1717;
 }
 
 #status_not_marked{
-background-color: rgba(175, 175, 175, 20);
+background-color: rgba(175, 175, 175, 40);
 color: #AFAFAF;
 }</string>
            </property>

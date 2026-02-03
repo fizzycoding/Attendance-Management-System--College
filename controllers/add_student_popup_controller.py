@@ -9,7 +9,7 @@ class AddStudentPopupController(QDialog, Ui_AddStudentPopup):
         self.setupUi(self)
         self.btn_add.clicked.connect(self.onAddClick)
         self.setWindowTitle("Add new student")
-        self.student_name_input.returnPressed.connect(self.onAddClick())
+        self.student_name_input.returnPressed.connect(self.onAddClick)
 
     def onAddClick(self):
         name = self.student_name_input.text()

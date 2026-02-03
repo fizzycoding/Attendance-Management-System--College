@@ -101,21 +101,20 @@ class DashboardTeacherController(QWidget):
 
             cursor.execute("""
                 SELECT 
-                    COUNT(CASE WHEN r.status = 'present' THEN 1 END),
-                    COUNT(CASE WHEN r.status = 'absent' THEN 1 END)
+                    COUNT(*) as total_records,
+                    SUM(CASE WHEN r.status = 'present' THEN 1 ELSE 0 END) as total_present
                 FROM attendance_records r
                 JOIN attendance_sessions s ON r.session_id = s.id
                 WHERE s.class_id = ?
             """, (class_id,))
-            stats = cursor.fetchone()
 
-            present = stats[0] if stats else 0
-            absent = stats[1] if stats else 0
-            total_records = present + absent
+            row = cursor.fetchone()
+            total_records = row[0] if row and row[0] else 0
+            total_present = row[1] if row and row[1] else 0
 
             avg_rate = 0
             if total_records > 0:
-                avg_rate = int((present / total_records) * 100)
+                avg_rate = round((total_present / total_records) * 100)
 
             self.ui.val_avg_attendance.setText(f"{avg_rate}%")
 
@@ -245,7 +244,7 @@ class DashboardTeacherController(QWidget):
                 LEFT JOIN attendance_records r ON r.member_id = c.id
                 LEFT JOIN attendance_sessions s ON r.session_id = s.id AND s.class_id = ?
                 WHERE c.class_id = ?
-                GROUP BY u.id
+                GROUP BY c.id
                 ORDER BY p_count DESC
                 LIMIT 6
             """

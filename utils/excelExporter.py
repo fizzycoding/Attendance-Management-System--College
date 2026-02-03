@@ -60,7 +60,7 @@ class ExcelExporter:
 
         # Fetch Students & Data
         cursor.execute(
-            "SELECT c.id, u.name FROM class_members c JOIN users u ON c.student_id = u.id WHERE c.class_id = ? ORDER BY u.name ASC",
+            "SELECT c.id, COALESCE(u.name, c.guest_name) FROM class_members c LEFT JOIN users u ON c.student_id = u.id WHERE c.class_id = ? ORDER BY COALESCE(u.name, c.guest_name) ASC",
             (self.class_id,))
         members = cursor.fetchall()
 
@@ -139,7 +139,7 @@ class ExcelExporter:
         ws.append(headers)
 
         cursor.execute(
-            "SELECT c.id, u.name FROM class_members c JOIN users u ON c.student_id = u.id WHERE c.class_id = ? ORDER BY u.name ASC",
+            "SELECT c.id, COALESCE(u.name, c.guest_name) FROM class_members c LEFT JOIN users u ON c.student_id = u.id WHERE c.class_id = ? ORDER BY COALESCE(u.name, c.guest_name) ASC",
             (self.class_id,))
         members = cursor.fetchall()
 

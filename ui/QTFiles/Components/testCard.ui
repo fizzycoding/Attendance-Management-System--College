@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>950</width>
-    <height>48</height>
+    <height>50</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>0</width>
-    <height>40</height>
+    <height>50</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -23,9 +23,10 @@
    </size>
   </property>
   <property name="styleSheet">
-   <string notr="true">#test_card {
-    border-top: 1px solid rgb(166, 166, 166);
-    background-color: transparent;
+   <string notr="true">#test_card{
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    border: 1px solid rgb(166, 166, 166);
 }
 QLabel {
     color: rgb(30, 30, 30);

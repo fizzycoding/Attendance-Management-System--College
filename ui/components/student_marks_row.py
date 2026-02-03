@@ -26,23 +26,21 @@ class Ui_student_marks_row(object):
         student_marks_row.resize(750, 48)
         student_marks_row.setMinimumSize(QSize(0, 48))
         student_marks_row.setMaximumSize(QSize(16777215, 55))
-        student_marks_row.setStyleSheet(u"\n"
-"    QFrame#student_marks_row {\n"
-"        border-top: 1px solid ;\n"
-"	border-color: rgb(124, 124, 124);\n"
-"        border-bottom: none;\n"
-"    }\n"
+        student_marks_row.setStyleSheet(u"#student_marks_row{\n"
+"	border-top: 1px solid #bbb\n"
+"}\n"
 "   QLabel{\n"
 "	background-color: transparent;\n"
 "}")
         self.horizontalLayout = QHBoxLayout(student_marks_row)
         self.horizontalLayout.setSpacing(15)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(15, 5, 15, 5)
+        self.horizontalLayout.setContentsMargins(20, 5, 20, 5)
         self.serial_no = QLabel(student_marks_row)
         self.serial_no.setObjectName(u"serial_no")
-        self.serial_no.setStyleSheet(u"color: #777; font-size: 14px;")
-        self.serial_no.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.serial_no.setMinimumSize(QSize(50, 0))
+        self.serial_no.setStyleSheet(u"color: #444; font-size: 13px;")
+        self.serial_no.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.serial_no.setProperty(u"fixedSize", QSize(50, 16777215))
 
         self.horizontalLayout.addWidget(self.serial_no)

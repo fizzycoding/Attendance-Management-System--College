@@ -17,14 +17,14 @@ class ExcelExporter:
         self.from_date = from_date
         self.to_date = to_date
 
-        self.COLOR_HEADER_BG = "2AB79D"
+        self.COLOR_HEADER_BG = "3388FF"
         self.COLOR_HEADER_TXT = "FFFFFF"
 
         self.FILL_GREEN = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
         self.FILL_RED = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
         self.FILL_GREY = PatternFill(start_color="E0E0E0", end_color="E0E0E0", fill_type="solid")
 
-    def generate(self, filepath, include_attendance=True, include_tests=True):
+    def generate(self, filepath, include_attendance=True, include_tests=True, include_fees=True):
         wb = Workbook()
         wb.remove(wb.active)
 
@@ -42,6 +42,9 @@ class ExcelExporter:
         # 2. TEST REPORT SHEET
         if include_tests:
             self._add_test_report_sheet(wb)
+
+        if include_fees:
+            self._add_fees_report_sheet(wb)
 
         wb.save(filepath)
 
@@ -166,6 +169,64 @@ class ExcelExporter:
                     cell.fill = self.FILL_GREY
 
         self._style_headers(ws)
+        cursor.close()
+        db.close()
+
+    def _add_fees_report_sheet(self, wb):
+        ws = wb.create_sheet(title="Fees Report")
+
+        db = getDB()
+        cursor = db.cursor()
+
+        title = f"{self.class_name} - Fees Report"
+        ws.merge_cells(start_row=1, start_column=1, end_row=1, end_column=6)
+        cell = ws.cell(row=1, column=1, value=title)
+        cell.font = Font(size=18, bold=True, color="333333")
+        cell.alignment = Alignment(horizontal="center")
+
+        headers = ["S.No", "Name", "Total Fee", "Paid Fee", "Pending Fee", "Status"]
+        ws.append(headers)
+
+        cursor.execute("""
+            SELECT 
+                c.id as member_id,
+                COALESCE(c.guest_name, u.name) as name,
+                COALESCE(f.total_fee, 0) as total_fee,
+                COALESCE(f.paid_fee, 0) as paid_fee
+            FROM class_members c
+            LEFT JOIN users u ON c.student_id = u.id
+            LEFT JOIN fees f ON f.member_id = c.id AND f.class_id = c.class_id
+            WHERE c.class_id = ?
+            ORDER BY name ASC
+        """, (self.class_id,))
+
+        members = cursor.fetchall()
+
+        for idx, (member_id, name, total_fee, paid_fee) in enumerate(members):
+            pending = float(total_fee) - float(paid_fee)
+            if pending < 0:
+                pending = 0
+
+            if float(total_fee) == 0 and float(paid_fee) == 0:
+                status = "No Fee Set"
+            elif pending == 0:
+                status = "Paid"
+            else:
+                status = "Pending"
+
+            ws.append([idx + 1, name, total_fee, paid_fee, pending, status])
+
+        for row in ws.iter_rows(min_row=3, min_col=6, max_col=6):
+            for cell in row:
+                if cell.value == "Paid":
+                    cell.fill = self.FILL_GREEN
+                elif cell.value == "Pending":
+                    cell.fill = self.FILL_RED
+                elif cell.value == "No Fee Set":
+                    cell.fill = self.FILL_GREY
+
+        self._style_headers(ws)
+
         cursor.close()
         db.close()
 

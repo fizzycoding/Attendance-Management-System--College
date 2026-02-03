@@ -215,6 +215,13 @@ class Ui_ExportReportPopup(object):
 
         self.verticalLayout_checks.addWidget(self.check_tests)
 
+        self.check_fees = QCheckBox(self.widget_checks)
+        self.check_fees.setObjectName(u"check_fees")
+        self.check_fees.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.check_fees.setChecked(True)
+
+        self.verticalLayout_checks.addWidget(self.check_fees)
+
 
         self.verticalLayout_2.addWidget(self.widget_checks)
 
@@ -260,6 +267,7 @@ class Ui_ExportReportPopup(object):
         self.label_include.setText(QCoreApplication.translate("ExportReportPopup", u"Include in Report:", None))
         self.check_attendance.setText(QCoreApplication.translate("ExportReportPopup", u"Attendance Records", None))
         self.check_tests.setText(QCoreApplication.translate("ExportReportPopup", u"Test Results", None))
+        self.check_fees.setText(QCoreApplication.translate("ExportReportPopup", u"Fees Payments", None))
         self.btn_close.setText(QCoreApplication.translate("ExportReportPopup", u"Close", None))
         self.btn_excel.setText(QCoreApplication.translate("ExportReportPopup", u"Excel", None))
     # retranslateUi

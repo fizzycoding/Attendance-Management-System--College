@@ -29,3 +29,4 @@ pyside6-uic ui/QTFiles/components/testResultStudentRow.ui -o ui/test_result_stud
 pyside6-uic ui/QTFiles/components/addStudentPopup.ui -o ui/components/add_student_popup.py
 pyside6-uic ui/QTFiles/components/setFeePopup.ui -o ui/components/set_fee_popup.py
 pyside6-uic ui/QTFiles/components/recordPaymentPopup.ui -o ui/components/record_payment_popup.py
+pyside6-uic ui/QTFiles/components/editNamePopup.ui -o ui/components/edit_name_popup.py

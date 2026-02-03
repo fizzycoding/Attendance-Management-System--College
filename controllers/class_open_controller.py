@@ -183,7 +183,8 @@ class ClassOpenController(QWidget):
 
     def insertIntoUi(self, id, sNo, name, attendanceRate, status):
         block = StudentClassBlockController(id=id, sNo=sNo, name=name,
-                                            attendanceRate=attendanceRate, status=status, role=self.user["role"])
+                                            attendanceRate=attendanceRate, status=status, role=self.user["role"],
+                                            classId=self.classId)
         block.studentModified.connect(self.studentBlockModified)
         self.ui.studentLayout.addWidget(block)
 

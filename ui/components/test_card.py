@@ -1,22 +1,9 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QSize, Qt)
+from PySide6.QtGui import (QCursor,
+                           QIcon)
+from PySide6.QtWidgets import (QHBoxLayout, QLabel,
+                               QPushButton, QSizePolicy, QSpacerItem)
 
-################################################################################
-## Form generated from reading UI file 'testCard.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QPushButton, QSizePolicy, QSpacerItem, QWidget)
 
 class Ui_test_card(object):
     def setupUi(self, test_card):
@@ -26,15 +13,15 @@ class Ui_test_card(object):
         test_card.setMinimumSize(QSize(0, 50))
         test_card.setMaximumSize(QSize(16777215, 55))
         test_card.setStyleSheet(u"#test_card{\n"
-"    background-color: rgb(255, 255, 255);\n"
-"    border-radius: 7px;\n"
-"    border: 1px solid rgb(166, 166, 166);\n"
-"}\n"
-"QLabel {\n"
-"    color: rgb(30, 30, 30);\n"
-"    border: none;\n"
-"	background-color: transparent;\n"
-"}")
+                                "    background-color: rgb(255, 255, 255);\n"
+                                "    border-radius: 7px;\n"
+                                "    border: 1px solid rgb(166, 166, 166);\n"
+                                "}\n"
+                                "QLabel {\n"
+                                "    color: rgb(30, 30, 30);\n"
+                                "    border: none;\n"
+                                "	background-color: transparent;\n"
+                                "}")
         self.horizontalLayout = QHBoxLayout(test_card)
         self.horizontalLayout.setSpacing(20)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -75,8 +62,9 @@ class Ui_test_card(object):
         sizePolicy.setHeightForWidth(self.btn_open.sizePolicy().hasHeightForWidth())
         self.btn_open.setSizePolicy(sizePolicy)
         self.btn_open.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_open.setStyleSheet(u"#btn_open{background-color: rgba(51, 143, 255,10); color: #338fff; border: none; padding: 5px 18px; border-radius: 4px; font-weight: bold; font-family: \"Segoe UI\";}\n"
-"#btn_open:hover{background-color: rgba(51, 143, 255,20); }")
+        self.btn_open.setStyleSheet(
+            u"#btn_open{background-color: rgba(51, 143, 255,10); color: #338fff; border: none; padding: 5px 18px; border-radius: 4px; font-weight: bold; font-family: \"Segoe UI\";}\n"
+            "#btn_open:hover{background-color: rgba(51, 143, 255,20); }")
 
         self.horizontalLayout.addWidget(self.btn_open)
 
@@ -91,10 +79,10 @@ class Ui_test_card(object):
 
         self.horizontalLayout.addWidget(self.btn_delete)
 
-
         self.retranslateUi(test_card)
 
         QMetaObject.connectSlotsByName(test_card)
+
     # setupUi
 
     def retranslateUi(self, test_card):
@@ -106,4 +94,3 @@ class Ui_test_card(object):
         self.btn_delete.setText("")
         pass
     # retranslateUi
-

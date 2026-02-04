@@ -1,23 +1,11 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect,
+                            QSize, Qt)
+from PySide6.QtGui import (QCursor,
+                           QIcon)
+from PySide6.QtWidgets import (QFrame, QHBoxLayout, QLabel,
+                               QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
+                               QStackedWidget, QVBoxLayout, QWidget)
 
-################################################################################
-## Form generated from reading UI file 'classOpenStd.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
-    QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_ClassOpenStd(object):
     def setupUi(self, ClassOpenStd):
@@ -37,7 +25,7 @@ class Ui_ClassOpenStd(object):
         sizePolicy.setHeightForWidth(self.header_widget.sizePolicy().hasHeightForWidth())
         self.header_widget.setSizePolicy(sizePolicy)
         self.header_widget.setStyleSheet(u"background: none;\n"
-"border:none")
+                                         "border:none")
         self.horizontalLayout = QHBoxLayout(self.header_widget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -56,7 +44,7 @@ class Ui_ClassOpenStd(object):
         self.class_name = QLabel(self.header_widget)
         self.class_name.setObjectName(u"class_name")
         self.class_name.setStyleSheet(u"color: rgb(34, 34, 34);\n"
-"font: 600 16pt \"Segoe UI\";")
+                                      "font: 600 16pt \"Segoe UI\";")
 
         self.horizontalLayout.addWidget(self.class_name)
 
@@ -64,13 +52,12 @@ class Ui_ClassOpenStd(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
-
         self.verticalLayout.addWidget(self.header_widget)
 
         self.label_2 = QLabel(ClassOpenStd)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setStyleSheet(u"color: rgb(29, 29, 29);\n"
-"font: 600 9pt \"Segoe UI\";")
+                                   "font: 600 9pt \"Segoe UI\";")
 
         self.verticalLayout.addWidget(self.label_2)
 
@@ -79,8 +66,9 @@ class Ui_ClassOpenStd(object):
         self.cards_layout.setObjectName(u"cards_layout")
         self.card_total = QFrame(ClassOpenStd)
         self.card_total.setObjectName(u"card_total")
-        self.card_total.setStyleSheet(u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
-"QFrame:hover { border: 1px solid #3388FF; }")
+        self.card_total.setStyleSheet(
+            u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
+            "QFrame:hover { border: 1px solid #3388FF; }")
         self.vbox_c1 = QVBoxLayout(self.card_total)
         self.vbox_c1.setObjectName(u"vbox_c1")
         self.lbl_t1 = QLabel(self.card_total)
@@ -90,17 +78,18 @@ class Ui_ClassOpenStd(object):
 
         self.val_total_classes = QLabel(self.card_total)
         self.val_total_classes.setObjectName(u"val_total_classes")
-        self.val_total_classes.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.val_total_classes.setAlignment(
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing | Qt.AlignmentFlag.AlignVCenter)
 
         self.vbox_c1.addWidget(self.val_total_classes)
-
 
         self.cards_layout.addWidget(self.card_total)
 
         self.card_present = QFrame(ClassOpenStd)
         self.card_present.setObjectName(u"card_present")
-        self.card_present.setStyleSheet(u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
-"QFrame:hover { border: 1px solid #3388FF; }")
+        self.card_present.setStyleSheet(
+            u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
+            "QFrame:hover { border: 1px solid #3388FF; }")
         self.vbox_c2 = QVBoxLayout(self.card_present)
         self.vbox_c2.setObjectName(u"vbox_c2")
         self.lbl_t2 = QLabel(self.card_present)
@@ -111,17 +100,18 @@ class Ui_ClassOpenStd(object):
         self.val_present = QLabel(self.card_present)
         self.val_present.setObjectName(u"val_present")
         self.val_present.setStyleSheet(u"color: #18CB14; font-size: 24px; font-weight: bold; border:none;")
-        self.val_present.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.val_present.setAlignment(
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing | Qt.AlignmentFlag.AlignVCenter)
 
         self.vbox_c2.addWidget(self.val_present)
-
 
         self.cards_layout.addWidget(self.card_present)
 
         self.card_absent = QFrame(ClassOpenStd)
         self.card_absent.setObjectName(u"card_absent")
-        self.card_absent.setStyleSheet(u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
-"QFrame:hover { border: 1px solid #3388FF; }")
+        self.card_absent.setStyleSheet(
+            u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
+            "QFrame:hover { border: 1px solid #3388FF; }")
         self.vbox_c3 = QVBoxLayout(self.card_absent)
         self.vbox_c3.setObjectName(u"vbox_c3")
         self.lbl_t3 = QLabel(self.card_absent)
@@ -131,17 +121,18 @@ class Ui_ClassOpenStd(object):
 
         self.val_absent = QLabel(self.card_absent)
         self.val_absent.setObjectName(u"val_absent")
-        self.val_absent.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.val_absent.setAlignment(
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing | Qt.AlignmentFlag.AlignVCenter)
 
         self.vbox_c3.addWidget(self.val_absent)
-
 
         self.cards_layout.addWidget(self.card_absent)
 
         self.card_rate = QFrame(ClassOpenStd)
         self.card_rate.setObjectName(u"card_rate")
-        self.card_rate.setStyleSheet(u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
-"QFrame:hover { border: 1px solid #3388FF; }")
+        self.card_rate.setStyleSheet(
+            u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
+            "QFrame:hover { border: 1px solid #3388FF; }")
         self.vbox_c4 = QVBoxLayout(self.card_rate)
         self.vbox_c4.setObjectName(u"vbox_c4")
         self.lbl_t4 = QLabel(self.card_rate)
@@ -151,17 +142,18 @@ class Ui_ClassOpenStd(object):
 
         self.val_rate = QLabel(self.card_rate)
         self.val_rate.setObjectName(u"val_rate")
-        self.val_rate.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.val_rate.setAlignment(
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing | Qt.AlignmentFlag.AlignVCenter)
 
         self.vbox_c4.addWidget(self.val_rate)
-
 
         self.cards_layout.addWidget(self.card_rate)
 
         self.card_today = QFrame(ClassOpenStd)
         self.card_today.setObjectName(u"card_today")
-        self.card_today.setStyleSheet(u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
-"QFrame:hover { border: 1px solid #3388FF; }")
+        self.card_today.setStyleSheet(
+            u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
+            "QFrame:hover { border: 1px solid #3388FF; }")
         self.vbox_c5 = QVBoxLayout(self.card_today)
         self.vbox_c5.setObjectName(u"vbox_c5")
         self.lbl_t5 = QLabel(self.card_today)
@@ -171,20 +163,19 @@ class Ui_ClassOpenStd(object):
 
         self.val_today = QLabel(self.card_today)
         self.val_today.setObjectName(u"val_today")
-        self.val_today.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.val_today.setAlignment(
+            Qt.AlignmentFlag.AlignLeading | Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         self.vbox_c5.addWidget(self.val_today)
 
-
         self.cards_layout.addWidget(self.card_today)
-
 
         self.verticalLayout.addLayout(self.cards_layout)
 
         self.label_7 = QLabel(ClassOpenStd)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setStyleSheet(u"color: rgb(29, 29, 29);\n"
-"font: 600 9pt \"Segoe UI\";")
+                                   "font: 600 9pt \"Segoe UI\";")
 
         self.verticalLayout.addWidget(self.label_7)
 
@@ -193,18 +184,18 @@ class Ui_ClassOpenStd(object):
         self.all_students = QWidget()
         self.all_students.setObjectName(u"all_students")
         self.all_students.setStyleSheet(u"#all_students\n"
-"{background-color: rgb(255, 255, 255);\n"
-"border:1px solid rgb(187, 187, 187); border-radius: 10px}")
+                                        "{background-color: rgb(255, 255, 255);\n"
+                                        "border:1px solid rgb(187, 187, 187); border-radius: 10px}")
         self.verticalLayout_2 = QVBoxLayout(self.all_students)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.frame = QFrame(self.all_students)
         self.frame.setObjectName(u"frame")
         self.frame.setStyleSheet(u"QLabel{\n"
-"	color: #383838;\n"
-"	font: 600 9pt \"Segoe UI\";\n"
-"}\n"
-"")
+                                 "	color: #383838;\n"
+                                 "	font: 600 9pt \"Segoe UI\";\n"
+                                 "}\n"
+                                 "")
         self.horizontalLayout_2 = QHBoxLayout(self.frame)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.label_3 = QLabel(self.frame)
@@ -237,7 +228,6 @@ class Ui_ClassOpenStd(object):
         self.label_6.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_2.addWidget(self.label_6)
-
 
         self.verticalLayout_2.addWidget(self.frame)
 
@@ -274,37 +264,54 @@ class Ui_ClassOpenStd(object):
 
         self.verticalLayout.addWidget(self.student_stack)
 
-
         self.retranslateUi(ClassOpenStd)
 
         self.student_stack.setCurrentIndex(0)
 
-
         QMetaObject.connectSlotsByName(ClassOpenStd)
+
     # setupUi
 
     def retranslateUi(self, ClassOpenStd):
         ClassOpenStd.setWindowTitle(QCoreApplication.translate("ClassOpenStd", u"Class Details", None))
         self.class_name.setText(QCoreApplication.translate("ClassOpenStd", u"Class Name", None))
         self.label_2.setText(QCoreApplication.translate("ClassOpenStd", u"My reports", None))
-        self.lbl_t1.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"color: #777; font-weight: bold; font-size: 12px; border:none;", None))
+        self.lbl_t1.setStyleSheet(
+            QCoreApplication.translate("ClassOpenStd", u"color: #777; font-weight: bold; font-size: 12px; border:none;",
+                                       None))
         self.lbl_t1.setText(QCoreApplication.translate("ClassOpenStd", u"Total Classes", None))
-        self.val_total_classes.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"color: #333; font-size: 24px; font-weight: bold; border:none;", None))
+        self.val_total_classes.setStyleSheet(
+            QCoreApplication.translate("ClassOpenStd", u"color: #333; font-size: 24px; font-weight: bold; border:none;",
+                                       None))
         self.val_total_classes.setText(QCoreApplication.translate("ClassOpenStd", u"0", None))
-        self.lbl_t2.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"color: #777; font-weight: bold; font-size: 12px; border:none;", None))
+        self.lbl_t2.setStyleSheet(
+            QCoreApplication.translate("ClassOpenStd", u"color: #777; font-weight: bold; font-size: 12px; border:none;",
+                                       None))
         self.lbl_t2.setText(QCoreApplication.translate("ClassOpenStd", u"Present", None))
         self.val_present.setText(QCoreApplication.translate("ClassOpenStd", u"0", None))
-        self.lbl_t3.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"color: #777; font-weight: bold; font-size: 12px; border:none;", None))
+        self.lbl_t3.setStyleSheet(
+            QCoreApplication.translate("ClassOpenStd", u"color: #777; font-weight: bold; font-size: 12px; border:none;",
+                                       None))
         self.lbl_t3.setText(QCoreApplication.translate("ClassOpenStd", u"Absent", None))
-        self.val_absent.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"color: #ff5252; font-size: 24px; font-weight: bold; border:none;", None))
+        self.val_absent.setStyleSheet(QCoreApplication.translate("ClassOpenStd",
+                                                                 u"color: #ff5252; font-size: 24px; font-weight: bold; border:none;",
+                                                                 None))
         self.val_absent.setText(QCoreApplication.translate("ClassOpenStd", u"0", None))
-        self.lbl_t4.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"color: #777; font-weight: bold; font-size: 12px; border:none;", None))
+        self.lbl_t4.setStyleSheet(
+            QCoreApplication.translate("ClassOpenStd", u"color: #777; font-weight: bold; font-size: 12px; border:none;",
+                                       None))
         self.lbl_t4.setText(QCoreApplication.translate("ClassOpenStd", u"Attendance Rate", None))
-        self.val_rate.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"color: #333; font-size: 24px; font-weight: bold; border:none;", None))
+        self.val_rate.setStyleSheet(
+            QCoreApplication.translate("ClassOpenStd", u"color: #333; font-size: 24px; font-weight: bold; border:none;",
+                                       None))
         self.val_rate.setText(QCoreApplication.translate("ClassOpenStd", u"0%", None))
-        self.lbl_t5.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"color: #777; font-weight: bold; font-size: 12px; border:none;", None))
+        self.lbl_t5.setStyleSheet(
+            QCoreApplication.translate("ClassOpenStd", u"color: #777; font-weight: bold; font-size: 12px; border:none;",
+                                       None))
         self.lbl_t5.setText(QCoreApplication.translate("ClassOpenStd", u"Today's Status", None))
-        self.val_today.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"color: #555; font-size: 24px; font-weight: bold; border:none;", None))
+        self.val_today.setStyleSheet(
+            QCoreApplication.translate("ClassOpenStd", u"color: #555; font-size: 24px; font-weight: bold; border:none;",
+                                       None))
         self.val_today.setText(QCoreApplication.translate("ClassOpenStd", u"--", None))
         self.label_7.setText(QCoreApplication.translate("ClassOpenStd", u"Students", None))
         self.student_stack.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"background:transparent;", None))
@@ -312,8 +319,9 @@ class Ui_ClassOpenStd(object):
         self.label_4.setText(QCoreApplication.translate("ClassOpenStd", u"Name", None))
         self.label_5.setText(QCoreApplication.translate("ClassOpenStd", u"Attendance Rate", None))
         self.label_6.setText(QCoreApplication.translate("ClassOpenStd", u"Status", None))
-        self.scrollArea.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"border:none; background:transparent;", None))
-        self.label.setStyleSheet(QCoreApplication.translate("ClassOpenStd", u"font: 16pt \"Segoe UI\"; color: #999;", None))
+        self.scrollArea.setStyleSheet(
+            QCoreApplication.translate("ClassOpenStd", u"border:none; background:transparent;", None))
+        self.label.setStyleSheet(
+            QCoreApplication.translate("ClassOpenStd", u"font: 16pt \"Segoe UI\"; color: #999;", None))
         self.label.setText(QCoreApplication.translate("ClassOpenStd", u"No students joined yet.", None))
     # retranslateUi
-

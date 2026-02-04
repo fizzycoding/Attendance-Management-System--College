@@ -1,23 +1,9 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect,
+                            QSize, Qt)
+from PySide6.QtWidgets import (QComboBox, QFrame, QHBoxLayout,
+                               QLabel, QScrollArea, QSizePolicy, QSpacerItem,
+                               QStackedWidget, QVBoxLayout, QWidget)
 
-################################################################################
-## Form generated from reading UI file 'testResultsStudent.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QLabel, QScrollArea, QSizePolicy, QSpacerItem,
-    QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_student_test_results(object):
     def setupUi(self, student_test_results):
@@ -53,36 +39,36 @@ class Ui_student_test_results(object):
         self.classes_drpdown.setObjectName(u"classes_drpdown")
         self.classes_drpdown.setMinimumSize(QSize(150, 35))
         self.classes_drpdown.setStyleSheet(u"QComboBox {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    border-radius: 5px;\n"
-"    padding: 5px 10px;\n"
-"    font-size: 14px;\n"
-"    color: #333;\n"
-"}\n"
-"QComboBox::down-arrow {\n"
-"    image: url(icons/arrow_down.png); \n"
-"    width: 12px;\n"
-"    height: 12px;\n"
-"}\n"
-"QComboBox::drop-down {\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    width: 30px;\n"
-"    border-left-width: 1px;\n"
-"    border-left-color: #ccc;\n"
-"    border-left-style: solid; \n"
-"    border-top-right-radius: 5px;\n"
-"    border-bottom-right-radius: 5px;\n"
-"    background: #f0f0f0; \n"
-"}\n"
-"QComboBox QAbstractItemView {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    selection-color: #159079;\n"
-"    outline: 0;\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                           "    background-color: white;\n"
+                                           "    border: 1px solid #ccc;\n"
+                                           "    border-radius: 5px;\n"
+                                           "    padding: 5px 10px;\n"
+                                           "    font-size: 14px;\n"
+                                           "    color: #333;\n"
+                                           "}\n"
+                                           "QComboBox::down-arrow {\n"
+                                           "    image: url(icons/arrow_down.png); \n"
+                                           "    width: 12px;\n"
+                                           "    height: 12px;\n"
+                                           "}\n"
+                                           "QComboBox::drop-down {\n"
+                                           "    subcontrol-origin: padding;\n"
+                                           "    subcontrol-position: top right;\n"
+                                           "    width: 30px;\n"
+                                           "    border-left-width: 1px;\n"
+                                           "    border-left-color: #ccc;\n"
+                                           "    border-left-style: solid; \n"
+                                           "    border-top-right-radius: 5px;\n"
+                                           "    border-bottom-right-radius: 5px;\n"
+                                           "    background: #f0f0f0; \n"
+                                           "}\n"
+                                           "QComboBox QAbstractItemView {\n"
+                                           "    background-color: white;\n"
+                                           "    border: 1px solid #ccc;\n"
+                                           "    selection-color: #159079;\n"
+                                           "    outline: 0;\n"
+                                           "    color: rgb(0, 0, 0);\n"
+                                           "}")
 
         self.hbox_filter.addWidget(self.classes_drpdown)
 
@@ -90,14 +76,13 @@ class Ui_student_test_results(object):
 
         self.hbox_filter.addItem(self.hs_filter)
 
-
         self.vbox_list.addLayout(self.hbox_filter)
 
         self.frame_header = QFrame(self.page_test_list)
         self.frame_header.setObjectName(u"frame_header")
         self.frame_header.setMinimumSize(QSize(0, 45))
         self.frame_header.setStyleSheet(u"\n"
-"QLabel { border: none; font-weight: 600; color: #555; font-size: 13px; }")
+                                        "QLabel { border: none; font-weight: 600; color: #555; font-size: 13px; }")
         self.hbox_header = QHBoxLayout(self.frame_header)
         self.hbox_header.setSpacing(10)
         self.hbox_header.setObjectName(u"hbox_header")
@@ -147,7 +132,6 @@ class Ui_student_test_results(object):
 
         self.hbox_header.addWidget(self.h_status)
 
-
         self.vbox_list.addWidget(self.frame_header)
 
         self.scrollArea = QScrollArea(self.page_test_list)
@@ -173,27 +157,31 @@ class Ui_student_test_results(object):
 
         self.verticalLayout.addWidget(self.main_stack)
 
-
         self.retranslateUi(student_test_results)
 
         self.main_stack.setCurrentIndex(1)
 
-
         QMetaObject.connectSlotsByName(student_test_results)
+
     # setupUi
 
     def retranslateUi(self, student_test_results):
-        self.main_stack.setStyleSheet(QCoreApplication.translate("student_test_results", u"background:transparent;", None))
-        self.label_empty.setStyleSheet(QCoreApplication.translate("student_test_results", u"font-size: 18px; color: #999;", None))
-        self.label_empty.setText(QCoreApplication.translate("student_test_results", u"No test results available yet.", None))
-        self.classes_drpdown.setPlaceholderText(QCoreApplication.translate("student_test_results", u"Select class", None))
+        self.main_stack.setStyleSheet(
+            QCoreApplication.translate("student_test_results", u"background:transparent;", None))
+        self.label_empty.setStyleSheet(
+            QCoreApplication.translate("student_test_results", u"font-size: 18px; color: #999;", None))
+        self.label_empty.setText(
+            QCoreApplication.translate("student_test_results", u"No test results available yet.", None))
+        self.classes_drpdown.setPlaceholderText(
+            QCoreApplication.translate("student_test_results", u"Select class", None))
         self.h_name.setText(QCoreApplication.translate("student_test_results", u"Test Name", None))
         self.h_date.setText(QCoreApplication.translate("student_test_results", u"Date", None))
         self.h_max.setText(QCoreApplication.translate("student_test_results", u"Max Marks", None))
         self.h_pass.setText(QCoreApplication.translate("student_test_results", u"Pass Marks", None))
         self.h_obt.setText(QCoreApplication.translate("student_test_results", u"Obtained", None))
         self.h_status.setText(QCoreApplication.translate("student_test_results", u"Status", None))
-        self.scrollArea.setStyleSheet(QCoreApplication.translate("student_test_results", u"QScrollArea { border: none; background: transparent; } QWidget { background: transparent; }", None))
+        self.scrollArea.setStyleSheet(QCoreApplication.translate("student_test_results",
+                                                                 u"QScrollArea { border: none; background: transparent; } QWidget { background: transparent; }",
+                                                                 None))
         pass
     # retranslateUi
-

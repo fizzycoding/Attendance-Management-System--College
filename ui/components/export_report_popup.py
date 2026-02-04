@@ -1,24 +1,9 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QDate, QMetaObject, Qt)
+from PySide6.QtGui import (QCursor)
+from PySide6.QtWidgets import (QCheckBox, QDateEdit, QFrame, QGroupBox, QHBoxLayout, QLabel,
+                               QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
+                               QWidget)
 
-################################################################################
-## Form generated from reading UI file 'exportReportPopup.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QDateEdit, QDialog,
-    QFrame, QGroupBox, QHBoxLayout, QLabel,
-    QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
-    QWidget)
 
 class Ui_ExportReportPopup(object):
     def setupUi(self, ExportReportPopup):
@@ -33,89 +18,89 @@ class Ui_ExportReportPopup(object):
         self.backgroundFrame = QFrame(ExportReportPopup)
         self.backgroundFrame.setObjectName(u"backgroundFrame")
         self.backgroundFrame.setStyleSheet(u"#backgroundFrame {\n"
-"    background-color: white;\n"
-"}\n"
-"QLabel {\n"
-"    color: #333;\n"
-"    font-family: \"Segoe UI\";\n"
-"    font-size: 14px;\n"
-"    font-weight: 600;\n"
-"    border: none; \n"
-"}\n"
-"#label_class_name {\n"
-"    color: #3388FF;\n"
-"    font-size: 16px;\n"
-"    font-weight: 700;\n"
-"}\n"
-"\n"
-"/* Checkbox Style */\n"
-"QCheckBox {\n"
-"    font-family: \"Segoe UI\";\n"
-"    font-size: 14px;\n"
-"    color: #333;\n"
-"    spacing: 8px;\n"
-"}\n"
-"QCheckBox::indicator {\n"
-"    width: 20px;\n"
-"    height: 20px;\n"
-"    border: 1px solid #999;\n"
-"    border-radius: 4px;\n"
-"    background: white;\n"
-"}\n"
-"QCheckBox::indicator:checked {\n"
-"    background-color: #3388FF;\n"
-"    border: 1px solid #3388FF;\n"
-"    image: url(icons/checked.png); /* Ensure you handle the icon or remove this line if strictly relying on color */\n"
-"}\n"
-"\n"
-"/* General Input Style */\n"
-"QDateEdit {\n"
-"    height: 35px;\n"
-"    padding: 0 10px;\n"
-"    font-family: \"Segoe UI\";\n"
-"    font-size: 14px;\n"
-" "
-                        "   color: #111;\n"
-"    border: 1px solid rgb(150, 150, 150);\n"
-"    background: #fff;\n"
-"    border-radius: 4px;\n"
-"}\n"
-"QDateEdit:focus {\n"
-"    border: 1.5px solid #3388FF;\n"
-"}\n"
-"QCalendarWidget QWidget { background-color: white; color: black; }\n"
-"QCalendarWidget QAbstractItemView:enabled { \n"
-"    color: black; \n"
-"    selection-background-color: #3388FF; \n"
-"    selection-color: white;\n"
-"}\n"
-"QCalendarWidget QToolButton { color: black; icon-size: 25px; }\n"
-"QCalendarWidget QSpinBox { background-color: white; color: black; }\n"
-"\n"
-"QPushButton {\n"
-"    height: 40px;\n"
-"    padding: 0 16px;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    font-family: \"Segoe UI\";\n"
-"    font-size: 14px;\n"
-"    font-weight: 700;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"#btn_excel {\n"
-"    background-color: #3388FF;\n"
-"}\n"
-"#btn_excel:hover { background-color: #0055FF; }\n"
-"\n"
-"#btn_close {\n"
-"    background-color: transparent;\n"
-"    color: #555;\n"
-"    border: 1px solid #ccc;\n"
-"}\n"
-""
-                        "#btn_close:hover { background-color: #f0f0f0; }\n"
-"")
+                                           "    background-color: white;\n"
+                                           "}\n"
+                                           "QLabel {\n"
+                                           "    color: #333;\n"
+                                           "    font-family: \"Segoe UI\";\n"
+                                           "    font-size: 14px;\n"
+                                           "    font-weight: 600;\n"
+                                           "    border: none; \n"
+                                           "}\n"
+                                           "#label_class_name {\n"
+                                           "    color: #3388FF;\n"
+                                           "    font-size: 16px;\n"
+                                           "    font-weight: 700;\n"
+                                           "}\n"
+                                           "\n"
+                                           "/* Checkbox Style */\n"
+                                           "QCheckBox {\n"
+                                           "    font-family: \"Segoe UI\";\n"
+                                           "    font-size: 14px;\n"
+                                           "    color: #333;\n"
+                                           "    spacing: 8px;\n"
+                                           "}\n"
+                                           "QCheckBox::indicator {\n"
+                                           "    width: 20px;\n"
+                                           "    height: 20px;\n"
+                                           "    border: 1px solid #999;\n"
+                                           "    border-radius: 4px;\n"
+                                           "    background: white;\n"
+                                           "}\n"
+                                           "QCheckBox::indicator:checked {\n"
+                                           "    background-color: #3388FF;\n"
+                                           "    border: 1px solid #3388FF;\n"
+                                           "    image: url(icons/checked.png); /* Ensure you handle the icon or remove this line if strictly relying on color */\n"
+                                           "}\n"
+                                           "\n"
+                                           "/* General Input Style */\n"
+                                           "QDateEdit {\n"
+                                           "    height: 35px;\n"
+                                           "    padding: 0 10px;\n"
+                                           "    font-family: \"Segoe UI\";\n"
+                                           "    font-size: 14px;\n"
+                                           " "
+                                           "   color: #111;\n"
+                                           "    border: 1px solid rgb(150, 150, 150);\n"
+                                           "    background: #fff;\n"
+                                           "    border-radius: 4px;\n"
+                                           "}\n"
+                                           "QDateEdit:focus {\n"
+                                           "    border: 1.5px solid #3388FF;\n"
+                                           "}\n"
+                                           "QCalendarWidget QWidget { background-color: white; color: black; }\n"
+                                           "QCalendarWidget QAbstractItemView:enabled { \n"
+                                           "    color: black; \n"
+                                           "    selection-background-color: #3388FF; \n"
+                                           "    selection-color: white;\n"
+                                           "}\n"
+                                           "QCalendarWidget QToolButton { color: black; icon-size: 25px; }\n"
+                                           "QCalendarWidget QSpinBox { background-color: white; color: black; }\n"
+                                           "\n"
+                                           "QPushButton {\n"
+                                           "    height: 40px;\n"
+                                           "    padding: 0 16px;\n"
+                                           "    border: none;\n"
+                                           "    border-radius: 5px;\n"
+                                           "    font-family: \"Segoe UI\";\n"
+                                           "    font-size: 14px;\n"
+                                           "    font-weight: 700;\n"
+                                           "    color: white;\n"
+                                           "}\n"
+                                           "\n"
+                                           "#btn_excel {\n"
+                                           "    background-color: #3388FF;\n"
+                                           "}\n"
+                                           "#btn_excel:hover { background-color: #0055FF; }\n"
+                                           "\n"
+                                           "#btn_close {\n"
+                                           "    background-color: transparent;\n"
+                                           "    color: #555;\n"
+                                           "    border: 1px solid #ccc;\n"
+                                           "}\n"
+                                           ""
+                                           "#btn_close:hover { background-color: #f0f0f0; }\n"
+                                           "")
         self.backgroundFrame.setFrameShape(QFrame.Shape.StyledPanel)
         self.backgroundFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.backgroundFrame)
@@ -161,7 +146,6 @@ class Ui_ExportReportPopup(object):
 
         self.layout_from.addWidget(self.date_from)
 
-
         self.horizontalLayout_dates.addLayout(self.layout_from)
 
         self.layout_to = QVBoxLayout()
@@ -179,9 +163,7 @@ class Ui_ExportReportPopup(object):
 
         self.layout_to.addWidget(self.date_to)
 
-
         self.horizontalLayout_dates.addLayout(self.layout_to)
-
 
         self.verticalLayout_2.addWidget(self.group_date)
 
@@ -222,7 +204,6 @@ class Ui_ExportReportPopup(object):
 
         self.verticalLayout_checks.addWidget(self.check_fees)
 
-
         self.verticalLayout_2.addWidget(self.widget_checks)
 
         self.verticalSpacer_bottom = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
@@ -244,22 +225,21 @@ class Ui_ExportReportPopup(object):
 
         self.horizontalLayout_actions.addWidget(self.btn_excel)
 
-
         self.verticalLayout_2.addLayout(self.horizontalLayout_actions)
 
-
         self.verticalLayout.addWidget(self.backgroundFrame)
-
 
         self.retranslateUi(ExportReportPopup)
 
         QMetaObject.connectSlotsByName(ExportReportPopup)
+
     # setupUi
 
     def retranslateUi(self, ExportReportPopup):
         ExportReportPopup.setWindowTitle(QCoreApplication.translate("ExportReportPopup", u"Export Reports", None))
         self.label_title.setText(QCoreApplication.translate("ExportReportPopup", u"Export Data", None))
-        self.label_class_name.setText(QCoreApplication.translate("ExportReportPopup", u"Class: Class X - Science", None))
+        self.label_class_name.setText(
+            QCoreApplication.translate("ExportReportPopup", u"Class: Class X - Science", None))
         self.label_from.setText(QCoreApplication.translate("ExportReportPopup", u"From Month", None))
         self.date_from.setDisplayFormat(QCoreApplication.translate("ExportReportPopup", u"MMM yyyy", None))
         self.label_to.setText(QCoreApplication.translate("ExportReportPopup", u"To Month", None))
@@ -271,4 +251,3 @@ class Ui_ExportReportPopup(object):
         self.btn_close.setText(QCoreApplication.translate("ExportReportPopup", u"Close", None))
         self.btn_excel.setText(QCoreApplication.translate("ExportReportPopup", u"Excel", None))
     # retranslateUi
-

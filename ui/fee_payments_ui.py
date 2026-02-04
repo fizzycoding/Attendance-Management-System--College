@@ -1,24 +1,10 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect,
+                            QSize, Qt)
+from PySide6.QtWidgets import (QComboBox, QFrame, QHBoxLayout,
+                               QLabel, QLineEdit, QPushButton, QScrollArea,
+                               QSizePolicy, QSpacerItem, QStackedWidget, QVBoxLayout,
+                               QWidget)
 
-################################################################################
-## Form generated from reading UI file 'feePayments.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QLabel, QLineEdit, QPushButton, QScrollArea,
-    QSizePolicy, QSpacerItem, QStackedWidget, QVBoxLayout,
-    QWidget)
 
 class Ui_FeesPaymentPage(object):
     def setupUi(self, FeesPaymentPage):
@@ -26,9 +12,9 @@ class Ui_FeesPaymentPage(object):
             FeesPaymentPage.setObjectName(u"FeesPaymentPage")
         FeesPaymentPage.resize(900, 595)
         FeesPaymentPage.setStyleSheet(u"\n"
-"background-color: rgb(235, 235, 235);\n"
-"font-family: \"Segoe UI\";\n"
-"   ")
+                                      "background-color: rgb(235, 235, 235);\n"
+                                      "font-family: \"Segoe UI\";\n"
+                                      "   ")
         self.mainLayout = QVBoxLayout(FeesPaymentPage)
         self.mainLayout.setSpacing(12)
         self.mainLayout.setObjectName(u"mainLayout")
@@ -49,36 +35,36 @@ class Ui_FeesPaymentPage(object):
         self.dropdown_classes.setObjectName(u"dropdown_classes")
         self.dropdown_classes.setMinimumSize(QSize(200, 40))
         self.dropdown_classes.setStyleSheet(u"QComboBox {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    border-radius: 5px;\n"
-"    padding: 5px 10px;\n"
-"    font-size: 14px;\n"
-"    color: #333;\n"
-"}\n"
-"QComboBox::down-arrow {\n"
-"    image: url(icons/arrow_down.png); \n"
-"    width: 12px;\n"
-"    height: 12px;\n"
-"}\n"
-"QComboBox::drop-down {\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    width: 30px;\n"
-"    border-left-width: 1px;\n"
-"    border-left-color: #ccc;\n"
-"    border-left-style: solid; \n"
-"    border-top-right-radius: 5px;\n"
-"    border-bottom-right-radius: 5px;\n"
-"    background: #f0f0f0; \n"
-"}\n"
-"QComboBox QAbstractItemView {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    selection-color: #159079;\n"
-"    outline: 0;\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                            "    background-color: white;\n"
+                                            "    border: 1px solid #ccc;\n"
+                                            "    border-radius: 5px;\n"
+                                            "    padding: 5px 10px;\n"
+                                            "    font-size: 14px;\n"
+                                            "    color: #333;\n"
+                                            "}\n"
+                                            "QComboBox::down-arrow {\n"
+                                            "    image: url(icons/arrow_down.png); \n"
+                                            "    width: 12px;\n"
+                                            "    height: 12px;\n"
+                                            "}\n"
+                                            "QComboBox::drop-down {\n"
+                                            "    subcontrol-origin: padding;\n"
+                                            "    subcontrol-position: top right;\n"
+                                            "    width: 30px;\n"
+                                            "    border-left-width: 1px;\n"
+                                            "    border-left-color: #ccc;\n"
+                                            "    border-left-style: solid; \n"
+                                            "    border-top-right-radius: 5px;\n"
+                                            "    border-bottom-right-radius: 5px;\n"
+                                            "    background: #f0f0f0; \n"
+                                            "}\n"
+                                            "QComboBox QAbstractItemView {\n"
+                                            "    background-color: white;\n"
+                                            "    border: 1px solid #ccc;\n"
+                                            "    selection-color: #159079;\n"
+                                            "    outline: 0;\n"
+                                            "    color: rgb(0, 0, 0);\n"
+                                            "}")
 
         self.headerLayout.addWidget(self.dropdown_classes)
 
@@ -89,14 +75,14 @@ class Ui_FeesPaymentPage(object):
         self.pageTitle = QLabel(self.header_widget)
         self.pageTitle.setObjectName(u"pageTitle")
         self.pageTitle.setStyleSheet(u"\n"
-"font-size: 18px;\n"
-"font-weight: 600;\n"
-"color: #222;\n"
-"         ")
-        self.pageTitle.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+                                     "font-size: 18px;\n"
+                                     "font-weight: 600;\n"
+                                     "color: #222;\n"
+                                     "         ")
+        self.pageTitle.setAlignment(
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing | Qt.AlignmentFlag.AlignVCenter)
 
         self.headerLayout.addWidget(self.pageTitle)
-
 
         self.mainLayout.addWidget(self.header_widget)
 
@@ -114,13 +100,13 @@ class Ui_FeesPaymentPage(object):
         self.card_totalFees.setSizePolicy(sizePolicy)
         self.card_totalFees.setMinimumSize(QSize(0, 0))
         self.card_totalFees.setStyleSheet(u"QFrame {\n"
-"    background-color: white;\n"
-"    border: 1px solid #bbb;\n"
-"    border-radius: 12px;\n"
-"}\n"
-"QFrame:hover{\n"
-"	border: 1px solid #3388FF;\n"
-"}         ")
+                                          "    background-color: white;\n"
+                                          "    border: 1px solid #bbb;\n"
+                                          "    border-radius: 12px;\n"
+                                          "}\n"
+                                          "QFrame:hover{\n"
+                                          "	border: 1px solid #3388FF;\n"
+                                          "}         ")
         self.totalFeesLayout = QVBoxLayout(self.card_totalFees)
         self.totalFeesLayout.setObjectName(u"totalFeesLayout")
         self.totalFeesLayout.setContentsMargins(14, 12, 14, 12)
@@ -140,7 +126,6 @@ class Ui_FeesPaymentPage(object):
 
         self.totalFeesLayout.addWidget(self.label_totalFeesValue)
 
-
         self.cardsLayout.addWidget(self.card_totalFees)
 
         self.card_paidAmount = QFrame(self.cards_widget)
@@ -149,15 +134,15 @@ class Ui_FeesPaymentPage(object):
         self.card_paidAmount.setSizePolicy(sizePolicy)
         self.card_paidAmount.setMinimumSize(QSize(0, 0))
         self.card_paidAmount.setStyleSheet(u"\n"
-"QFrame {\n"
-"    background-color: white;\n"
-"    border: 1px solid #bbb;\n"
-"    border-radius: 12px;\n"
-"}\n"
-"         \n"
-"QFrame:hover{\n"
-"	border: 1px solid #3388FF;\n"
-"}   ")
+                                           "QFrame {\n"
+                                           "    background-color: white;\n"
+                                           "    border: 1px solid #bbb;\n"
+                                           "    border-radius: 12px;\n"
+                                           "}\n"
+                                           "         \n"
+                                           "QFrame:hover{\n"
+                                           "	border: 1px solid #3388FF;\n"
+                                           "}   ")
         self.paidAmountLayout = QVBoxLayout(self.card_paidAmount)
         self.paidAmountLayout.setSpacing(6)
         self.paidAmountLayout.setObjectName(u"paidAmountLayout")
@@ -178,7 +163,6 @@ class Ui_FeesPaymentPage(object):
 
         self.paidAmountLayout.addWidget(self.label_paidAmountValue)
 
-
         self.cardsLayout.addWidget(self.card_paidAmount)
 
         self.card_pendingAmount = QFrame(self.cards_widget)
@@ -187,15 +171,15 @@ class Ui_FeesPaymentPage(object):
         self.card_pendingAmount.setSizePolicy(sizePolicy)
         self.card_pendingAmount.setMinimumSize(QSize(0, 0))
         self.card_pendingAmount.setStyleSheet(u"\n"
-"QFrame {\n"
-"    background-color: white;\n"
-"    border: 1px solid #bbb;\n"
-"    border-radius: 12px;\n"
-"}\n"
-"         \n"
-"QFrame:hover{\n"
-"	border: 1px solid #3388FF;\n"
-"}   ")
+                                              "QFrame {\n"
+                                              "    background-color: white;\n"
+                                              "    border: 1px solid #bbb;\n"
+                                              "    border-radius: 12px;\n"
+                                              "}\n"
+                                              "         \n"
+                                              "QFrame:hover{\n"
+                                              "	border: 1px solid #3388FF;\n"
+                                              "}   ")
         self.pendingAmountLayout = QVBoxLayout(self.card_pendingAmount)
         self.pendingAmountLayout.setObjectName(u"pendingAmountLayout")
         self.pendingAmountLayout.setContentsMargins(14, 12, 14, 12)
@@ -215,9 +199,7 @@ class Ui_FeesPaymentPage(object):
 
         self.pendingAmountLayout.addWidget(self.label_pendingAmountValue)
 
-
         self.cardsLayout.addWidget(self.card_pendingAmount)
-
 
         self.mainLayout.addWidget(self.cards_widget)
 
@@ -256,19 +238,19 @@ class Ui_FeesPaymentPage(object):
         self.input_searchStudent.setSizePolicy(sizePolicy)
         self.input_searchStudent.setMinimumSize(QSize(300, 40))
         self.input_searchStudent.setStyleSheet(u"\n"
-"QLineEdit {\n"
-"    background-color: white;\n"
-"    border: 1px solid #bbb;\n"
-"    border-radius: 10px;\n"
-"    padding: 8px 12px;\n"
-"    font-size: 14px;\n"
-"    color: #333;\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid #3388FF\n"
-";\n"
-"}\n"
-"             ")
+                                               "QLineEdit {\n"
+                                               "    background-color: white;\n"
+                                               "    border: 1px solid #bbb;\n"
+                                               "    border-radius: 10px;\n"
+                                               "    padding: 8px 12px;\n"
+                                               "    font-size: 14px;\n"
+                                               "    color: #333;\n"
+                                               "}\n"
+                                               "QLineEdit:focus {\n"
+                                               "    border: 2px solid #3388FF\n"
+                                               ";\n"
+                                               "}\n"
+                                               "             ")
 
         self.searchBarLayout.addWidget(self.input_searchStudent)
 
@@ -282,27 +264,27 @@ class Ui_FeesPaymentPage(object):
         self.dropdown_statusFilter.setSizePolicy(sizePolicy)
         self.dropdown_statusFilter.setMinimumSize(QSize(0, 40))
         self.dropdown_statusFilter.setStyleSheet(u"\n"
-"QComboBox {\n"
-"    background-color: white;\n"
-"    border: 1px solid #bbb\n"
-";\n"
-"    border-radius: 10px;\n"
-"    padding: 6px 10px;\n"
-"    font-size: 14px;\n"
-"    color: #333;\n"
-"}\n"
-"QComboBox::drop-down {\n"
-"    border: none;\n"
-"}\n"
-"QComboBox QAbstractItemView {\n"
-"    background-color: white;\n"
-"    border: 1px solid #d0d0d0;\n"
-"    selection-background-color: #e8f4ff;\n"
-"    selection-color: #222;\n"
-"    outline: 0;\n"
-"color: #333\n"
-"}\n"
-"             ")
+                                                 "QComboBox {\n"
+                                                 "    background-color: white;\n"
+                                                 "    border: 1px solid #bbb\n"
+                                                 ";\n"
+                                                 "    border-radius: 10px;\n"
+                                                 "    padding: 6px 10px;\n"
+                                                 "    font-size: 14px;\n"
+                                                 "    color: #333;\n"
+                                                 "}\n"
+                                                 "QComboBox::drop-down {\n"
+                                                 "    border: none;\n"
+                                                 "}\n"
+                                                 "QComboBox QAbstractItemView {\n"
+                                                 "    background-color: white;\n"
+                                                 "    border: 1px solid #d0d0d0;\n"
+                                                 "    selection-background-color: #e8f4ff;\n"
+                                                 "    selection-color: #222;\n"
+                                                 "    outline: 0;\n"
+                                                 "color: #333\n"
+                                                 "}\n"
+                                                 "             ")
 
         self.searchBarLayout.addWidget(self.dropdown_statusFilter)
 
@@ -313,17 +295,16 @@ class Ui_FeesPaymentPage(object):
         self.set_fees_btn = QPushButton(self.searchBarWidget)
         self.set_fees_btn.setObjectName(u"set_fees_btn")
         self.set_fees_btn.setStyleSheet(u"#set_fees_btn{color: #fff;\n"
-"background : #3388FF;\n"
-"border: none;\n"
-"padding: 10px 20px;\n"
-"font: 600 14px \"Segoe UI\";\n"
-"border-radius: 7px}\n"
-"\n"
-"#set_fees_btn:hover{\n"
-"background : #0055FF;}")
+                                        "background : #3388FF;\n"
+                                        "border: none;\n"
+                                        "padding: 10px 20px;\n"
+                                        "font: 600 14px \"Segoe UI\";\n"
+                                        "border-radius: 7px}\n"
+                                        "\n"
+                                        "#set_fees_btn:hover{\n"
+                                        "background : #0055FF;}")
 
         self.searchBarLayout.addWidget(self.set_fees_btn)
-
 
         self.verticalLayout_list.addWidget(self.searchBarWidget)
 
@@ -335,7 +316,7 @@ class Ui_FeesPaymentPage(object):
         sizePolicy1.setHeightForWidth(self.container.sizePolicy().hasHeightForWidth())
         self.container.setSizePolicy(sizePolicy1)
         self.container.setStyleSheet(u"#container{background-color: rgb(255, 255, 255);\n"
-"border:1px solid rgb(187, 187, 187); border-radius: 10px}")
+                                     "border:1px solid rgb(187, 187, 187); border-radius: 10px}")
         self.verticalLayout = QVBoxLayout(self.container)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -346,15 +327,15 @@ class Ui_FeesPaymentPage(object):
         self.tableHeader.setSizePolicy(sizePolicy)
         self.tableHeader.setMinimumSize(QSize(0, 0))
         self.tableHeader.setStyleSheet(u"QFrame{boder:none}\n"
-"\n"
-"QLabel {\n"
-"    font-size: 12px;\n"
-"    color: #555;\n"
-"    font-weight: 600;\n"
-"border: none\n"
-"\n"
-"}\n"
-"          ")
+                                       "\n"
+                                       "QLabel {\n"
+                                       "    font-size: 12px;\n"
+                                       "    color: #555;\n"
+                                       "    font-weight: 600;\n"
+                                       "border: none\n"
+                                       "\n"
+                                       "}\n"
+                                       "          ")
         self.headerRowLayout = QHBoxLayout(self.tableHeader)
         self.headerRowLayout.setObjectName(u"headerRowLayout")
         self.headerRowLayout.setContentsMargins(12, 12, 12, 12)
@@ -398,10 +379,10 @@ class Ui_FeesPaymentPage(object):
 
         self.head_action = QLabel(self.tableHeader)
         self.head_action.setObjectName(u"head_action")
-        self.head_action.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.head_action.setAlignment(
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing | Qt.AlignmentFlag.AlignVCenter)
 
         self.headerRowLayout.addWidget(self.head_action)
-
 
         self.verticalLayout.addWidget(self.tableHeader)
 
@@ -410,7 +391,7 @@ class Ui_FeesPaymentPage(object):
         sizePolicy1.setHeightForWidth(self.students_list_container.sizePolicy().hasHeightForWidth())
         self.students_list_container.setSizePolicy(sizePolicy1)
         self.students_list_container.setStyleSheet(u"border:none\n"
-"")
+                                                   "")
         self.students_list_container.setFrameShape(QFrame.Shape.NoFrame)
         self.students_list_container.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
@@ -428,20 +409,18 @@ class Ui_FeesPaymentPage(object):
 
         self.verticalLayout.addWidget(self.students_list_container)
 
-
         self.verticalLayout_list.addWidget(self.container)
 
         self.content_stack.addWidget(self.page_list)
 
         self.mainLayout.addWidget(self.content_stack)
 
-
         self.retranslateUi(FeesPaymentPage)
 
         self.content_stack.setCurrentIndex(1)
 
-
         QMetaObject.connectSlotsByName(FeesPaymentPage)
+
     # setupUi
 
     def retranslateUi(self, FeesPaymentPage):
@@ -454,7 +433,8 @@ class Ui_FeesPaymentPage(object):
         self.label_pendingAmountTitle.setText(QCoreApplication.translate("FeesPaymentPage", u"Pending Amount", None))
         self.label_pendingAmountValue.setText(QCoreApplication.translate("FeesPaymentPage", u"\u20b90", None))
         self.label_no_student.setText(QCoreApplication.translate("FeesPaymentPage", u"No Students", None))
-        self.input_searchStudent.setPlaceholderText(QCoreApplication.translate("FeesPaymentPage", u"Search student name...", None))
+        self.input_searchStudent.setPlaceholderText(
+            QCoreApplication.translate("FeesPaymentPage", u"Search student name...", None))
         self.dropdown_statusFilter.setItemText(0, QCoreApplication.translate("FeesPaymentPage", u"All", None))
         self.dropdown_statusFilter.setItemText(1, QCoreApplication.translate("FeesPaymentPage", u"Paid", None))
         self.dropdown_statusFilter.setItemText(2, QCoreApplication.translate("FeesPaymentPage", u"Partial", None))
@@ -469,4 +449,3 @@ class Ui_FeesPaymentPage(object):
         self.head_status.setText(QCoreApplication.translate("FeesPaymentPage", u"Status", None))
         self.head_action.setText(QCoreApplication.translate("FeesPaymentPage", u"Action", None))
     # retranslateUi
-

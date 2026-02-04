@@ -1,22 +1,8 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QSize, Qt)
+from PySide6.QtGui import (QCursor)
+from PySide6.QtWidgets import (QHBoxLayout, QLabel,
+                               QPushButton, QSizePolicy, QWidget)
 
-################################################################################
-## Form generated from reading UI file 'studentFeeRow.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QPushButton, QSizePolicy, QWidget)
 
 class Ui_StudentFeeRow(object):
     def setupUi(self, StudentFeeRow):
@@ -26,28 +12,28 @@ class Ui_StudentFeeRow(object):
         StudentFeeRow.setMinimumSize(QSize(0, 50))
         StudentFeeRow.setMaximumSize(QSize(16777215, 56))
         StudentFeeRow.setStyleSheet(u"\n"
-"\n"
-"                QLabel {\n"
-"                border: none;\n"
-"                color: #222;\n"
-"                font-size: 14px;\n"
-"font-weight: 600\n"
-"                }\n"
-"\n"
-"                QPushButton {\n"
-"                border: none;\n"
-"                padding: 8px 14px;\n"
-"                border-radius: 8px;\n"
-"                background-color: #2d8cff;\n"
-"                color: white;\n"
-"                font-size: 13px;\n"
-"                font-weight: 600;\n"
-"                }\n"
-"\n"
-"                QPushButton:hover {\n"
-"                background-color: #1f7ae6;\n"
-"                }\n"
-"            ")
+                                    "\n"
+                                    "                QLabel {\n"
+                                    "                border: none;\n"
+                                    "                color: #222;\n"
+                                    "                font-size: 14px;\n"
+                                    "font-weight: 600\n"
+                                    "                }\n"
+                                    "\n"
+                                    "                QPushButton {\n"
+                                    "                border: none;\n"
+                                    "                padding: 8px 14px;\n"
+                                    "                border-radius: 8px;\n"
+                                    "                background-color: #2d8cff;\n"
+                                    "                color: white;\n"
+                                    "                font-size: 13px;\n"
+                                    "                font-weight: 600;\n"
+                                    "                }\n"
+                                    "\n"
+                                    "                QPushButton:hover {\n"
+                                    "                background-color: #1f7ae6;\n"
+                                    "                }\n"
+                                    "            ")
         self.rowLayout = QHBoxLayout(StudentFeeRow)
         self.rowLayout.setSpacing(12)
         self.rowLayout.setObjectName(u"rowLayout")
@@ -73,21 +59,24 @@ class Ui_StudentFeeRow(object):
         self.label_totalFee = QLabel(StudentFeeRow)
         self.label_totalFee.setObjectName(u"label_totalFee")
         self.label_totalFee.setMinimumSize(QSize(90, 0))
-        self.label_totalFee.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.label_totalFee.setAlignment(
+            Qt.AlignmentFlag.AlignLeading | Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         self.rowLayout.addWidget(self.label_totalFee)
 
         self.label_paidFee = QLabel(StudentFeeRow)
         self.label_paidFee.setObjectName(u"label_paidFee")
         self.label_paidFee.setMinimumSize(QSize(90, 0))
-        self.label_paidFee.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.label_paidFee.setAlignment(
+            Qt.AlignmentFlag.AlignLeading | Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         self.rowLayout.addWidget(self.label_paidFee)
 
         self.label_pendingFee = QLabel(StudentFeeRow)
         self.label_pendingFee.setObjectName(u"label_pendingFee")
         self.label_pendingFee.setMinimumSize(QSize(90, 0))
-        self.label_pendingFee.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.label_pendingFee.setAlignment(
+            Qt.AlignmentFlag.AlignLeading | Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         self.rowLayout.addWidget(self.label_pendingFee)
 
@@ -102,19 +91,18 @@ class Ui_StudentFeeRow(object):
         self.label_status.setMinimumSize(QSize(90, 28))
         self.label_status.setMaximumSize(QSize(120, 28))
         self.label_status.setStyleSheet(u"\n"
-"                            QLabel {\n"
-"                            background-color: rgba(218, 55, 0, 40);\n"
-"                            color: rgb(255, 37, 41);\n"
-"                            border-radius: 5px;\n"
-"                            padding: 4px 10px;\n"
-"                            font-size: 12px;\n"
-"                            font-weight: 600;\n"
-"                            }\n"
-"                        ")
+                                        "                            QLabel {\n"
+                                        "                            background-color: rgba(218, 55, 0, 40);\n"
+                                        "                            color: rgb(255, 37, 41);\n"
+                                        "                            border-radius: 5px;\n"
+                                        "                            padding: 4px 10px;\n"
+                                        "                            font-size: 12px;\n"
+                                        "                            font-weight: 600;\n"
+                                        "                            }\n"
+                                        "                        ")
         self.label_status.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_2.addWidget(self.label_status)
-
 
         self.rowLayout.addWidget(self.widget_2)
 
@@ -131,13 +119,12 @@ class Ui_StudentFeeRow(object):
 
         self.horizontalLayout.addWidget(self.btn_recordPayment)
 
-
         self.rowLayout.addWidget(self.widget)
-
 
         self.retranslateUi(StudentFeeRow)
 
         QMetaObject.connectSlotsByName(StudentFeeRow)
+
     # setupUi
 
     def retranslateUi(self, StudentFeeRow):
@@ -150,4 +137,3 @@ class Ui_StudentFeeRow(object):
         self.btn_recordPayment.setText(QCoreApplication.translate("StudentFeeRow", u"Record Payment", None))
         pass
     # retranslateUi
-

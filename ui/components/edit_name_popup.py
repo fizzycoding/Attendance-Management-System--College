@@ -1,23 +1,8 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, Qt)
+from PySide6.QtGui import (QCursor)
+from PySide6.QtWidgets import (QFrame, QHBoxLayout,
+                               QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget)
 
-################################################################################
-## Form generated from reading UI file 'editNamePopup.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHBoxLayout,
-    QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QVBoxLayout, QWidget)
 
 class Ui_EditNamePopup(object):
     def setupUi(self, EditNamePopup):
@@ -32,31 +17,31 @@ class Ui_EditNamePopup(object):
         self.backgroundFrame = QFrame(EditNamePopup)
         self.backgroundFrame.setObjectName(u"backgroundFrame")
         self.backgroundFrame.setStyleSheet(u"#backgroundFrame {\n"
-"    background-color: white;\n"
-"}\n"
-"\n"
-"QLabel {\n"
-"    color: #333;\n"
-"    font-family: \"Segoe UI\";\n"
-"    font-size: 20px;\n"
-"    font-weight: bold;\n"
-"    border: none;\n"
-"}\n"
-"\n"
-"QPushButton {\n"
-"    height: 35px;\n"
-"    padding: 0 16px;\n"
-"    background-color: #3388FF;\n"
-"    color: white;\n"
-"    font-size: 14px;\n"
-"    font-weight: 600;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0055FF;\n"
-"}")
+                                           "    background-color: white;\n"
+                                           "}\n"
+                                           "\n"
+                                           "QLabel {\n"
+                                           "    color: #333;\n"
+                                           "    font-family: \"Segoe UI\";\n"
+                                           "    font-size: 20px;\n"
+                                           "    font-weight: bold;\n"
+                                           "    border: none;\n"
+                                           "}\n"
+                                           "\n"
+                                           "QPushButton {\n"
+                                           "    height: 35px;\n"
+                                           "    padding: 0 16px;\n"
+                                           "    background-color: #3388FF;\n"
+                                           "    color: white;\n"
+                                           "    font-size: 14px;\n"
+                                           "    font-weight: 600;\n"
+                                           "    border: none;\n"
+                                           "    border-radius: 5px;\n"
+                                           "}\n"
+                                           "\n"
+                                           "QPushButton:hover {\n"
+                                           "    background-color: #0055FF;\n"
+                                           "}")
         self.verticalLayout_2 = QVBoxLayout(self.backgroundFrame)
         self.verticalLayout_2.setSpacing(16)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -70,18 +55,18 @@ class Ui_EditNamePopup(object):
         self.form_container = QWidget(self.backgroundFrame)
         self.form_container.setObjectName(u"form_container")
         self.form_container.setStyleSheet(u"QLabel{color : rgb(0,0,0);font: 600 8pt \"Segoe UI\";}\n"
-"QLineEdit {\n"
-"    height: 20px;\n"
-"    padding: 8px 10px;\n"
-"    font-size: 14px;\n"
-"    color: #111;\n"
-"    border: 1px solid rgb(99, 99, 99);\n"
-"    background: #fff;\n"
-"    border-radius: 4px;\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 1.5px solid #3388FF;\n"
-"}")
+                                          "QLineEdit {\n"
+                                          "    height: 20px;\n"
+                                          "    padding: 8px 10px;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #111;\n"
+                                          "    border: 1px solid rgb(99, 99, 99);\n"
+                                          "    background: #fff;\n"
+                                          "    border-radius: 4px;\n"
+                                          "}\n"
+                                          "QLineEdit:focus {\n"
+                                          "    border: 1.5px solid #3388FF;\n"
+                                          "}")
         self.verticalLayout_3 = QVBoxLayout(self.form_container)
         self.verticalLayout_3.setSpacing(6)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
@@ -102,7 +87,6 @@ class Ui_EditNamePopup(object):
 
         self.verticalLayout_3.addWidget(self.error_label)
 
-
         self.verticalLayout_2.addWidget(self.form_container)
 
         self.buttons_container = QWidget(self.backgroundFrame)
@@ -114,19 +98,19 @@ class Ui_EditNamePopup(object):
         self.btn_close.setObjectName(u"btn_close")
         self.btn_close.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_close.setStyleSheet(u"#btn_close{\n"
-"    background-color: rgb(255, 255, 255);\n"
-"    color: #333;\n"
-"    border: 1px solid #333;\n"
-"    border-radius: 5px;\n"
-"}\n"
-"\n"
-"#btn_close:hover{\n"
-"    background-color: rgba(51, 51, 51, 30);\n"
-"}\n"
-"\n"
-"#btn_close:pressed{\n"
-"    background-color: rgba(51, 51, 51, 80);\n"
-"}")
+                                     "    background-color: rgb(255, 255, 255);\n"
+                                     "    color: #333;\n"
+                                     "    border: 1px solid #333;\n"
+                                     "    border-radius: 5px;\n"
+                                     "}\n"
+                                     "\n"
+                                     "#btn_close:hover{\n"
+                                     "    background-color: rgba(51, 51, 51, 30);\n"
+                                     "}\n"
+                                     "\n"
+                                     "#btn_close:pressed{\n"
+                                     "    background-color: rgba(51, 51, 51, 80);\n"
+                                     "}")
 
         self.horizontalLayout.addWidget(self.btn_close)
 
@@ -136,16 +120,14 @@ class Ui_EditNamePopup(object):
 
         self.horizontalLayout.addWidget(self.btn_save)
 
-
         self.verticalLayout_2.addWidget(self.buttons_container)
 
-
         self.verticalLayout.addWidget(self.backgroundFrame)
-
 
         self.retranslateUi(EditNamePopup)
 
         QMetaObject.connectSlotsByName(EditNamePopup)
+
     # setupUi
 
     def retranslateUi(self, EditNamePopup):
@@ -156,4 +138,3 @@ class Ui_EditNamePopup(object):
         self.btn_close.setText(QCoreApplication.translate("EditNamePopup", u"Close", None))
         self.btn_save.setText(QCoreApplication.translate("EditNamePopup", u"Save", None))
     # retranslateUi
-

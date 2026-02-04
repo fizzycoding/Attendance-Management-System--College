@@ -1,22 +1,9 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QSize, Qt)
+from PySide6.QtGui import (QCursor,
+                           QIcon)
+from PySide6.QtWidgets import (QHBoxLayout, QLabel, QProgressBar,
+                               QPushButton, QSizePolicy, QWidget)
 
-################################################################################
-## Form generated from reading UI file 'studentClass.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QProgressBar,
-    QPushButton, QSizePolicy, QWidget)
 
 class Ui_student_block(object):
     def setupUi(self, student_block):
@@ -27,28 +14,28 @@ class Ui_student_block(object):
         student_block.setMaximumSize(QSize(16777215, 55))
         student_block.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         student_block.setStyleSheet(u"QProgressBar {\n"
-"    border-radius: 4px;\n"
-"	background-color: rgb(208, 208, 208);\n"
-"	text-align: center;\n"
-"	color: transparent\n"
-"}\n"
-"QProgressBar::chunk {\n"
-"    border-radius:4px;\n"
-"    background-color: #18CB14;   }\n"
-"\n"
-"QLabel{\n"
-"	color: rgb(0, 0, 0);\n"
-"}\n"
-"\n"
-"#student_block{\n"
-"	border-top: 1px  solid #bbb\n"
-"}\n"
-"#me{\n"
-"\n"
-"	border-top: 1px  solid #bbb;\n"
-"	background: rgba(51, 143, 255,50)\n"
-"}\n"
-"")
+                                    "    border-radius: 4px;\n"
+                                    "	background-color: rgb(208, 208, 208);\n"
+                                    "	text-align: center;\n"
+                                    "	color: transparent\n"
+                                    "}\n"
+                                    "QProgressBar::chunk {\n"
+                                    "    border-radius:4px;\n"
+                                    "    background-color: #18CB14;   }\n"
+                                    "\n"
+                                    "QLabel{\n"
+                                    "	color: rgb(0, 0, 0);\n"
+                                    "}\n"
+                                    "\n"
+                                    "#student_block{\n"
+                                    "	border-top: 1px  solid #bbb\n"
+                                    "}\n"
+                                    "#me{\n"
+                                    "\n"
+                                    "	border-top: 1px  solid #bbb;\n"
+                                    "	background: rgba(51, 143, 255,50)\n"
+                                    "}\n"
+                                    "")
         self.horizontalLayout = QHBoxLayout(student_block)
         self.horizontalLayout.setSpacing(7)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -63,8 +50,8 @@ class Ui_student_block(object):
         self.serial_number.setMinimumSize(QSize(70, 0))
         self.serial_number.setMaximumSize(QSize(60, 16777215))
         self.serial_number.setStyleSheet(u"\n"
-"color: rgb(47, 47, 47);\n"
-"font: 600 12pt \"Segoe UI\";")
+                                         "color: rgb(47, 47, 47);\n"
+                                         "font: 600 12pt \"Segoe UI\";")
         self.serial_number.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout.addWidget(self.serial_number)
@@ -77,10 +64,10 @@ class Ui_student_block(object):
         sizePolicy1.setHeightForWidth(self.name.sizePolicy().hasHeightForWidth())
         self.name.setSizePolicy(sizePolicy1)
         self.name.setStyleSheet(u"color: rgb(15, 15, 15);\n"
-"font: 600 12pt \"Segoe UI\";\n"
-"text-align: left;\n"
-"padding: 0px;\n"
-"border: none")
+                                "font: 600 12pt \"Segoe UI\";\n"
+                                "text-align: left;\n"
+                                "padding: 0px;\n"
+                                "border: none")
 
         self.horizontalLayout.addWidget(self.name)
 
@@ -111,10 +98,9 @@ class Ui_student_block(object):
         self.attendance_rate_label.setSizePolicy(sizePolicy)
         self.attendance_rate_label.setMaximumSize(QSize(60, 16777215))
         self.attendance_rate_label.setStyleSheet(u"font: 600 12pt \"Segoe UI\";\n"
-"color: rgb(36, 36, 36);")
+                                                 "color: rgb(36, 36, 36);")
 
         self.horizontalLayout_3.addWidget(self.attendance_rate_label)
-
 
         self.horizontalLayout.addWidget(self.widget_2)
 
@@ -136,8 +122,8 @@ class Ui_student_block(object):
         self.widget.setSizePolicy(sizePolicy2)
         self.widget.setMaximumSize(QSize(100, 30))
         self.widget.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}")
+                                  "	border: none\n"
+                                  "}")
         self.horizontalLayout_2 = QHBoxLayout(self.widget)
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
@@ -151,29 +137,28 @@ class Ui_student_block(object):
         self.btn_status.setSizePolicy(sizePolicy3)
         self.btn_status.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_status.setStyleSheet(u"QPushButton{\n"
-"border-radius: 6px;\n"
-"font: 700 10pt \"Segoe UI\";\n"
-"background-color: rgba(93, 93, 93, 50);\n"
-"color: rgb(93, 93, 93)\n"
-"}\n"
-"#status_present{\n"
-"background-color: rgba(24, 203, 20, 40);\n"
-"color: #18CB14;\n"
-"}\n"
-"\n"
-"#status_absent{\n"
-"background-color: rgba(255, 23, 23, 40);\n"
-"color: #FF1717;\n"
-"}\n"
-"\n"
-"#status_not_marked{\n"
-"background-color: rgba(175, 175, 175, 40);\n"
-"color: #AFAFAF;\n"
-"}")
+                                      "border-radius: 6px;\n"
+                                      "font: 700 10pt \"Segoe UI\";\n"
+                                      "background-color: rgba(93, 93, 93, 50);\n"
+                                      "color: rgb(93, 93, 93)\n"
+                                      "}\n"
+                                      "#status_present{\n"
+                                      "background-color: rgba(24, 203, 20, 40);\n"
+                                      "color: #18CB14;\n"
+                                      "}\n"
+                                      "\n"
+                                      "#status_absent{\n"
+                                      "background-color: rgba(255, 23, 23, 40);\n"
+                                      "color: #FF1717;\n"
+                                      "}\n"
+                                      "\n"
+                                      "#status_not_marked{\n"
+                                      "background-color: rgba(175, 175, 175, 40);\n"
+                                      "color: #AFAFAF;\n"
+                                      "}")
         self.btn_status.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_2.addWidget(self.btn_status)
-
 
         self.horizontalLayout_4.addWidget(self.widget)
 
@@ -209,16 +194,14 @@ class Ui_student_block(object):
 
         self.horizontalLayout_5.addWidget(self.btn_remove_student)
 
-
         self.horizontalLayout_4.addWidget(self.widget_4)
 
-
         self.horizontalLayout.addWidget(self.widget_3)
-
 
         self.retranslateUi(student_block)
 
         QMetaObject.connectSlotsByName(student_block)
+
     # setupUi
 
     def retranslateUi(self, student_block):
@@ -230,4 +213,3 @@ class Ui_student_block(object):
         self.btn_edit.setText("")
         self.btn_remove_student.setText("")
     # retranslateUi
-

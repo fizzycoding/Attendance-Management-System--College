@@ -1,23 +1,11 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QSize, Qt)
+from PySide6.QtGui import (QCursor,
+                           QFont, QIcon,
+                           QPixmap)
+from PySide6.QtWidgets import (QFrame, QHBoxLayout, QLabel,
+                               QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
+                               QVBoxLayout, QWidget)
 
-################################################################################
-## Form generated from reading UI file 'home.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
-    QVBoxLayout, QWidget)
 
 class Ui_HomeWindow(object):
     def setupUi(self, HomeWindow):
@@ -25,8 +13,8 @@ class Ui_HomeWindow(object):
             HomeWindow.setObjectName(u"HomeWindow")
         HomeWindow.resize(1024, 700)
         HomeWindow.setStyleSheet(u"#HomeWindow {\n"
-"   background-color: #f5f7fa;\n"
-"}")
+                                 "   background-color: #f5f7fa;\n"
+                                 "}")
         self.horizontalLayout = QHBoxLayout(HomeWindow)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -41,34 +29,34 @@ class Ui_HomeWindow(object):
         self.sidebarFrame.setMinimumSize(QSize(220, 0))
         self.sidebarFrame.setMaximumSize(QSize(250, 16777215))
         self.sidebarFrame.setStyleSheet(u"#sidebarFrame {\n"
-"    background: white;\n"
-"    border-right: 1px solid #ccc;\n"
-"}\n"
-"\n"
-"/* Base style for all sidebar buttons */\n"
-"QPushButton {\n"
-"    background-color: transparent;\n"
-"    color: rgb(65, 65, 65);\n"
-"    text-align: left;\n"
-"    padding-left: 14px;\n"
-"    border: none;\n"
-"    font-size: 14px;\n"
-"    font-weight: 600;\n"
-"    height: 40px;\n"
-"    border-left: 5px solid transparent;\n"
-"	qproperty-cursor: PointingHandCursor;\n"
-"border-radius: 8px\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	color: black\n"
-"}\n"
-"\n"
-"QPushButton:checked {\n"
-"    background-color: rgba(0, 85, 255, 35);\n"
-"    font-weight: 700;\n"
-"color: #3388FF\n"
-"}")
+                                        "    background: white;\n"
+                                        "    border-right: 1px solid #ccc;\n"
+                                        "}\n"
+                                        "\n"
+                                        "/* Base style for all sidebar buttons */\n"
+                                        "QPushButton {\n"
+                                        "    background-color: transparent;\n"
+                                        "    color: rgb(65, 65, 65);\n"
+                                        "    text-align: left;\n"
+                                        "    padding-left: 14px;\n"
+                                        "    border: none;\n"
+                                        "    font-size: 14px;\n"
+                                        "    font-weight: 600;\n"
+                                        "    height: 40px;\n"
+                                        "    border-left: 5px solid transparent;\n"
+                                        "	qproperty-cursor: PointingHandCursor;\n"
+                                        "border-radius: 8px\n"
+                                        "}\n"
+                                        "\n"
+                                        "QPushButton:hover {\n"
+                                        "	color: black\n"
+                                        "}\n"
+                                        "\n"
+                                        "QPushButton:checked {\n"
+                                        "    background-color: rgba(0, 85, 255, 35);\n"
+                                        "    font-weight: 700;\n"
+                                        "color: #3388FF\n"
+                                        "}")
         self.sidebarFrame.setFrameShape(QFrame.Shape.NoFrame)
         self.sidebarFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout = QVBoxLayout(self.sidebarFrame)
@@ -80,8 +68,8 @@ class Ui_HomeWindow(object):
         self.logoFrame.setMinimumSize(QSize(0, 80))
         self.logoFrame.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.logoFrame.setStyleSheet(u"#logoFrame{\n"
-"	background: transparent;\n"
-"}")
+                                     "	background: transparent;\n"
+                                     "}")
         self.horizontalLayout_2 = QHBoxLayout(self.logoFrame)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -94,16 +82,15 @@ class Ui_HomeWindow(object):
         self.pushButton.setSizePolicy(sizePolicy1)
         self.pushButton.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.pushButton.setStyleSheet(u"color: rgb(0, 0, 0);\n"
-"font: 700 15pt \"Segoe UI\";\n"
-"border: none;\n"
-"   padding-left: 0px;")
+                                      "font: 700 15pt \"Segoe UI\";\n"
+                                      "border: none;\n"
+                                      "   padding-left: 0px;")
         icon = QIcon()
         icon.addFile(u"icons/logo.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton.setIcon(icon)
         self.pushButton.setIconSize(QSize(30, 30))
 
         self.horizontalLayout_2.addWidget(self.pushButton)
-
 
         self.verticalLayout.addWidget(self.logoFrame)
 
@@ -259,17 +246,16 @@ class Ui_HomeWindow(object):
         self.logoutButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.logoutButton.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.logoutButton.setStyleSheet(u"\n"
-"QPushButton {\n"
-"    color: #ff1c57;\n"
-"}\n"
-"")
+                                        "QPushButton {\n"
+                                        "    color: #ff1c57;\n"
+                                        "}\n"
+                                        "")
         icon8 = QIcon()
         icon8.addFile(u"icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.logoutButton.setIcon(icon8)
         self.logoutButton.setIconSize(QSize(20, 20))
 
         self.verticalLayout.addWidget(self.logoutButton)
-
 
         self.horizontalLayout.addWidget(self.sidebarFrame)
 
@@ -280,9 +266,9 @@ class Ui_HomeWindow(object):
         self.headerFrame.setObjectName(u"headerFrame")
         self.headerFrame.setMinimumSize(QSize(0, 60))
         self.headerFrame.setStyleSheet(u"#headerFrame {\n"
-"    background-color: white;\n"
-"    border-bottom: 1px solid #ccc;\n"
-"}")
+                                       "    background-color: white;\n"
+                                       "    border-bottom: 1px solid #ccc;\n"
+                                       "}")
         self.horizontalLayout_3 = QHBoxLayout(self.headerFrame)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
@@ -303,7 +289,7 @@ class Ui_HomeWindow(object):
         font.setItalic(False)
         self.nameLabel.setFont(font)
         self.nameLabel.setStyleSheet(u"color: rgb(29, 29, 29);\n"
-"font: 600 11pt \"Segoe UI\";")
+                                     "font: 600 11pt \"Segoe UI\";")
 
         self.verticalLayout_2.addWidget(self.nameLabel)
 
@@ -313,10 +299,9 @@ class Ui_HomeWindow(object):
         self.usernameLabel.setSizePolicy(sizePolicy1)
         self.usernameLabel.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
         self.usernameLabel.setStyleSheet(u"color: rgb(75, 75, 75);\n"
-"font: 600 9pt \"Segoe UI\";")
+                                         "font: 600 9pt \"Segoe UI\";")
 
         self.verticalLayout_2.addWidget(self.usernameLabel)
-
 
         self.horizontalLayout_3.addLayout(self.verticalLayout_2)
 
@@ -331,7 +316,6 @@ class Ui_HomeWindow(object):
 
         self.horizontalLayout_3.addWidget(self.label_2)
 
-
         self.mainContentLayout.addWidget(self.headerFrame)
 
         self.mainContentStack = QStackedWidget(HomeWindow)
@@ -345,9 +329,7 @@ class Ui_HomeWindow(object):
 
         self.mainContentLayout.addWidget(self.mainContentStack)
 
-
         self.horizontalLayout.addLayout(self.mainContentLayout)
-
 
         self.retranslateUi(HomeWindow)
 
@@ -355,8 +337,8 @@ class Ui_HomeWindow(object):
         self.btn_teach_reports.setDefault(False)
         self.mainContentStack.setCurrentIndex(0)
 
-
         QMetaObject.connectSlotsByName(HomeWindow)
+
     # setupUi
 
     def retranslateUi(self, HomeWindow):
@@ -376,4 +358,3 @@ class Ui_HomeWindow(object):
         self.usernameLabel.setText(QCoreApplication.translate("HomeWindow", u"sanju789", None))
         self.label_2.setText("")
     # retranslateUi
-

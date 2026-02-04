@@ -1,23 +1,11 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect,
+                            QSize, Qt)
+from PySide6.QtGui import (QCursor,
+                           QIcon)
+from PySide6.QtWidgets import (QComboBox, QFrame, QHBoxLayout,
+                               QLabel, QPushButton, QScrollArea, QSizePolicy,
+                               QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
 
-################################################################################
-## Form generated from reading UI file 'attendance.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QLabel, QPushButton, QScrollArea, QSizePolicy,
-    QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_attendance_page(object):
     def setupUi(self, attendance_page):
@@ -42,7 +30,7 @@ class Ui_attendance_page(object):
         sizePolicy1.setHeightForWidth(self.widget.sizePolicy().hasHeightForWidth())
         self.widget.setSizePolicy(sizePolicy1)
         self.widget.setStyleSheet(u"background-color: transparent;\n"
-"border:none")
+                                  "border:none")
         self.horizontalLayout_2 = QHBoxLayout(self.widget)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, -1, 0, 9)
@@ -50,36 +38,36 @@ class Ui_attendance_page(object):
         self.dropdown_classes.setObjectName(u"dropdown_classes")
         self.dropdown_classes.setMinimumSize(QSize(200, 40))
         self.dropdown_classes.setStyleSheet(u"QComboBox {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    border-radius: 5px;\n"
-"    padding: 5px 10px;\n"
-"    font-size: 14px;\n"
-"    color: #333;\n"
-"}\n"
-"QComboBox::down-arrow {\n"
-"    image: url(icons/arrow_down.png); \n"
-"    width: 12px;\n"
-"    height: 12px;\n"
-"}\n"
-"QComboBox::drop-down {\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    width: 30px;\n"
-"    border-left-width: 1px;\n"
-"    border-left-color: #ccc;\n"
-"    border-left-style: solid; \n"
-"    border-top-right-radius: 5px;\n"
-"    border-bottom-right-radius: 5px;\n"
-"    background: #f0f0f0; \n"
-"}\n"
-"QComboBox QAbstractItemView {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    selection-color: #159079;\n"
-"    outline: 0;\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                            "    background-color: white;\n"
+                                            "    border: 1px solid #ccc;\n"
+                                            "    border-radius: 5px;\n"
+                                            "    padding: 5px 10px;\n"
+                                            "    font-size: 14px;\n"
+                                            "    color: #333;\n"
+                                            "}\n"
+                                            "QComboBox::down-arrow {\n"
+                                            "    image: url(icons/arrow_down.png); \n"
+                                            "    width: 12px;\n"
+                                            "    height: 12px;\n"
+                                            "}\n"
+                                            "QComboBox::drop-down {\n"
+                                            "    subcontrol-origin: padding;\n"
+                                            "    subcontrol-position: top right;\n"
+                                            "    width: 30px;\n"
+                                            "    border-left-width: 1px;\n"
+                                            "    border-left-color: #ccc;\n"
+                                            "    border-left-style: solid; \n"
+                                            "    border-top-right-radius: 5px;\n"
+                                            "    border-bottom-right-radius: 5px;\n"
+                                            "    background: #f0f0f0; \n"
+                                            "}\n"
+                                            "QComboBox QAbstractItemView {\n"
+                                            "    background-color: white;\n"
+                                            "    border: 1px solid #ccc;\n"
+                                            "    selection-color: #159079;\n"
+                                            "    outline: 0;\n"
+                                            "    color: rgb(0, 0, 0);\n"
+                                            "}")
 
         self.horizontalLayout_2.addWidget(self.dropdown_classes)
 
@@ -114,7 +102,7 @@ class Ui_attendance_page(object):
         self.btn_date_picker.setMaximumSize(QSize(48544, 54545))
         self.btn_date_picker.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_date_picker.setStyleSheet(u"font: 600 12pt \"Segoe UI\";\n"
-"color: rgb(0, 0, 0);")
+                                           "color: rgb(0, 0, 0);")
 
         self.horizontalLayout_3.addWidget(self.btn_date_picker)
 
@@ -131,7 +119,6 @@ class Ui_attendance_page(object):
 
         self.horizontalLayout_3.addWidget(self.btn_next_date)
 
-
         self.horizontalLayout_2.addWidget(self.date_control_container)
 
         self.horizontalSpacer_Right = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
@@ -141,8 +128,8 @@ class Ui_attendance_page(object):
         self.label = QLabel(self.widget)
         self.label.setObjectName(u"label")
         self.label.setStyleSheet(u"color: rgb(30, 30, 30);\n"
-"font: 600 11pt \"Segoe UI\";\n"
-"")
+                                 "font: 600 11pt \"Segoe UI\";\n"
+                                 "")
 
         self.horizontalLayout_2.addWidget(self.label)
 
@@ -150,22 +137,21 @@ class Ui_attendance_page(object):
         self.invteCode_box.setObjectName(u"invteCode_box")
         self.invteCode_box.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.invteCode_box.setStyleSheet(u"color: #fff;\n"
-"background : #3388FF;\n"
-"border: none;\n"
-"padding: 5px 10px;\n"
-"font: 700 12px \"Segoe UI\";\n"
-"border-radius: 7px")
+                                         "background : #3388FF;\n"
+                                         "border: none;\n"
+                                         "padding: 5px 10px;\n"
+                                         "font: 700 12px \"Segoe UI\";\n"
+                                         "border-radius: 7px")
         self.invteCode_box.setIconSize(QSize(15, 15))
 
         self.horizontalLayout_2.addWidget(self.invteCode_box)
-
 
         self.verticalLayout.addWidget(self.widget)
 
         self.students_stacked = QStackedWidget(attendance_page)
         self.students_stacked.setObjectName(u"students_stacked")
         self.students_stacked.setStyleSheet(u"background-color: transparent;\n"
-"border:none")
+                                            "border:none")
         self.no_student = QWidget()
         self.no_student.setObjectName(u"no_student")
         self.verticalLayout_5 = QVBoxLayout(self.no_student)
@@ -173,10 +159,10 @@ class Ui_attendance_page(object):
         self.widget_2 = QWidget(self.no_student)
         self.widget_2.setObjectName(u"widget_2")
         self.widget_2.setStyleSheet(u"QLabel{\n"
-"  \n"
-"  font: 15pt \"Segoe UI\";\n"
-"  color: rgb(0, 0, 0);\n"
-"}")
+                                    "  \n"
+                                    "  font: 15pt \"Segoe UI\";\n"
+                                    "  color: rgb(0, 0, 0);\n"
+                                    "}")
         self.verticalLayout_4 = QVBoxLayout(self.widget_2)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.label_2 = QLabel(self.widget_2)
@@ -190,15 +176,14 @@ class Ui_attendance_page(object):
 
         self.verticalLayout_4.addWidget(self.label_2)
 
-
         self.verticalLayout_5.addWidget(self.widget_2)
 
         self.students_stacked.addWidget(self.no_student)
         self.all_student = QWidget()
         self.all_student.setObjectName(u"all_student")
         self.all_student.setStyleSheet(u"\n"
-"#all_student{background-color: rgb(255, 255, 255);\n"
-"border:1px solid rgb(187, 187, 187); border-radius: 10px}")
+                                       "#all_student{background-color: rgb(255, 255, 255);\n"
+                                       "border:1px solid rgb(187, 187, 187); border-radius: 10px}")
         self.verticalLayout_3 = QVBoxLayout(self.all_student)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -210,10 +195,10 @@ class Ui_attendance_page(object):
         sizePolicy3.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
         self.frame.setSizePolicy(sizePolicy3)
         self.frame.setStyleSheet(u"QLabel{\n"
-"	color: #383838;\n"
-"	font: 600 9pt \"Segoe UI\";\n"
-"}\n"
-"")
+                                 "	color: #383838;\n"
+                                 "	font: 600 9pt \"Segoe UI\";\n"
+                                 "}\n"
+                                 "")
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame)
@@ -255,7 +240,6 @@ class Ui_attendance_page(object):
 
         self.horizontalLayout.addWidget(self.label_6)
 
-
         self.verticalLayout_3.addWidget(self.frame)
 
         self.scrollArea = QScrollArea(self.all_student)
@@ -280,13 +264,12 @@ class Ui_attendance_page(object):
 
         self.verticalLayout.addWidget(self.students_stacked)
 
-
         self.retranslateUi(attendance_page)
 
         self.students_stacked.setCurrentIndex(1)
 
-
         QMetaObject.connectSlotsByName(attendance_page)
+
     # setupUi
 
     def retranslateUi(self, attendance_page):
@@ -302,4 +285,3 @@ class Ui_attendance_page(object):
         self.label_5.setText(QCoreApplication.translate("attendance_page", u"Attendance Rate (in %)", None))
         self.label_6.setText("")
     # retranslateUi
-

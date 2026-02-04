@@ -1,23 +1,9 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QSize, Qt)
+from PySide6.QtGui import (QCursor)
+from PySide6.QtWidgets import (QAbstractSpinBox, QHBoxLayout,
+                               QLabel, QPushButton, QSizePolicy, QSpacerItem,
+                               QSpinBox)
 
-################################################################################
-## Form generated from reading UI file 'studentMarksRow.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QFrame, QHBoxLayout,
-    QLabel, QPushButton, QSizePolicy, QSpacerItem,
-    QSpinBox, QWidget)
 
 class Ui_student_marks_row(object):
     def setupUi(self, student_marks_row):
@@ -27,11 +13,11 @@ class Ui_student_marks_row(object):
         student_marks_row.setMinimumSize(QSize(0, 48))
         student_marks_row.setMaximumSize(QSize(16777215, 55))
         student_marks_row.setStyleSheet(u"#student_marks_row{\n"
-"	border-top: 1px solid #bbb\n"
-"}\n"
-"   QLabel{\n"
-"	background-color: transparent;\n"
-"}")
+                                        "	border-top: 1px solid #bbb\n"
+                                        "}\n"
+                                        "   QLabel{\n"
+                                        "	background-color: transparent;\n"
+                                        "}")
         self.horizontalLayout = QHBoxLayout(student_marks_row)
         self.horizontalLayout.setSpacing(15)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -40,7 +26,8 @@ class Ui_student_marks_row(object):
         self.serial_no.setObjectName(u"serial_no")
         self.serial_no.setMinimumSize(QSize(50, 0))
         self.serial_no.setStyleSheet(u"color: #444; font-size: 13px;")
-        self.serial_no.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.serial_no.setAlignment(
+            Qt.AlignmentFlag.AlignLeading | Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
         self.serial_no.setProperty(u"fixedSize", QSize(50, 16777215))
 
         self.horizontalLayout.addWidget(self.serial_no)
@@ -64,20 +51,20 @@ class Ui_student_marks_row(object):
         self.input_marks = QSpinBox(student_marks_row)
         self.input_marks.setObjectName(u"input_marks")
         self.input_marks.setStyleSheet(u"\n"
-"       QSpinBox {\n"
-"        border: none; \n"
-"        color: #333;\n"
-"        border-radius: 4px; \n"
-"        padding: 0px; \n"
-"        background: transparent;\n"
-"        font-size: 14px;\n"
-"        font-weight: bold;\n"
-"       }\n"
-"       QSpinBox:focus, QSpinBox:hover {\n"
-"        border: 1px solid #2ab79d;\n"
-"        background: white;\n"
-"       }\n"
-"      ")
+                                       "       QSpinBox {\n"
+                                       "        border: none; \n"
+                                       "        color: #333;\n"
+                                       "        border-radius: 4px; \n"
+                                       "        padding: 0px; \n"
+                                       "        background: transparent;\n"
+                                       "        font-size: 14px;\n"
+                                       "        font-weight: bold;\n"
+                                       "       }\n"
+                                       "       QSpinBox:focus, QSpinBox:hover {\n"
+                                       "        border: 1px solid #2ab79d;\n"
+                                       "        background: white;\n"
+                                       "       }\n"
+                                       "      ")
         self.input_marks.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.input_marks.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.NoButtons)
         self.input_marks.setMaximum(1000)
@@ -96,23 +83,23 @@ class Ui_student_marks_row(object):
         self.btn_status.setMinimumSize(QSize(100, 0))
         self.btn_status.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_status.setStyleSheet(u"       QPushButton {\n"
-"        border: none;\n"
-"        border-radius: 4px;\n"
-"        padding: 4px 8px;\n"
-"        font-weight: bold;\n"
-"        font-size: 11px;\n"
-"        background-color: rgb(176, 176, 176);\n"
-"        color: rgb(104, 104, 104);\n"
-"       }\n"
-"      ")
+                                      "        border: none;\n"
+                                      "        border-radius: 4px;\n"
+                                      "        padding: 4px 8px;\n"
+                                      "        font-weight: bold;\n"
+                                      "        font-size: 11px;\n"
+                                      "        background-color: rgb(176, 176, 176);\n"
+                                      "        color: rgb(104, 104, 104);\n"
+                                      "       }\n"
+                                      "      ")
         self.btn_status.setProperty(u"fixedSize", QSize(110, 28))
 
         self.horizontalLayout.addWidget(self.btn_status)
 
-
         self.retranslateUi(student_marks_row)
 
         QMetaObject.connectSlotsByName(student_marks_row)
+
     # setupUi
 
     def retranslateUi(self, student_marks_row):
@@ -122,4 +109,3 @@ class Ui_student_marks_row(object):
         self.btn_status.setText(QCoreApplication.translate("student_marks_row", u"Not Attempted", None))
         pass
     # retranslateUi
-

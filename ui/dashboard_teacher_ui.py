@@ -1,23 +1,10 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect,
+                            QSize, Qt)
+from PySide6.QtGui import (QIcon)
+from PySide6.QtWidgets import (QComboBox, QFrame, QHBoxLayout,
+                               QLabel, QPushButton, QScrollArea, QSizePolicy,
+                               QSpacerItem, QVBoxLayout, QWidget)
 
-################################################################################
-## Form generated from reading UI file 'dashboardTeacher.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QLabel, QPushButton, QScrollArea, QSizePolicy,
-    QSpacerItem, QVBoxLayout, QWidget)
 
 class Ui_dashboard_page(object):
     def setupUi(self, dashboard_page):
@@ -25,7 +12,7 @@ class Ui_dashboard_page(object):
             dashboard_page.setObjectName(u"dashboard_page")
         dashboard_page.resize(1029, 652)
         dashboard_page.setStyleSheet(u"background-color: rgb(240, 240, 240);\n"
-"font-family: \"Segoe UI\";")
+                                     "font-family: \"Segoe UI\";")
         self.verticalLayout = QVBoxLayout(dashboard_page)
         self.verticalLayout.setSpacing(15)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -45,43 +32,42 @@ class Ui_dashboard_page(object):
         self.dropdown_classes.setObjectName(u"dropdown_classes")
         self.dropdown_classes.setMinimumSize(QSize(200, 40))
         self.dropdown_classes.setStyleSheet(u"QComboBox {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    border-radius: 5px;\n"
-"    padding: 5px 10px;\n"
-"    font-size: 14px;\n"
-"    color: #333;\n"
-"}\n"
-"QComboBox::down-arrow {\n"
-"    image: url(icons/arrow_down.png); \n"
-"    width: 12px;\n"
-"    height: 12px;\n"
-"}\n"
-"QComboBox::drop-down {\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    width: 30px;\n"
-"    border-left-width: 1px;\n"
-"    border-left-color: #ccc;\n"
-"    border-left-style: solid; \n"
-"    border-top-right-radius: 5px;\n"
-"    border-bottom-right-radius: 5px;\n"
-"    background: #f0f0f0; \n"
-"}\n"
-"QComboBox QAbstractItemView {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    selection-color: #159079;\n"
-"    outline: 0;\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                            "    background-color: white;\n"
+                                            "    border: 1px solid #ccc;\n"
+                                            "    border-radius: 5px;\n"
+                                            "    padding: 5px 10px;\n"
+                                            "    font-size: 14px;\n"
+                                            "    color: #333;\n"
+                                            "}\n"
+                                            "QComboBox::down-arrow {\n"
+                                            "    image: url(icons/arrow_down.png); \n"
+                                            "    width: 12px;\n"
+                                            "    height: 12px;\n"
+                                            "}\n"
+                                            "QComboBox::drop-down {\n"
+                                            "    subcontrol-origin: padding;\n"
+                                            "    subcontrol-position: top right;\n"
+                                            "    width: 30px;\n"
+                                            "    border-left-width: 1px;\n"
+                                            "    border-left-color: #ccc;\n"
+                                            "    border-left-style: solid; \n"
+                                            "    border-top-right-radius: 5px;\n"
+                                            "    border-bottom-right-radius: 5px;\n"
+                                            "    background: #f0f0f0; \n"
+                                            "}\n"
+                                            "QComboBox QAbstractItemView {\n"
+                                            "    background-color: white;\n"
+                                            "    border: 1px solid #ccc;\n"
+                                            "    selection-color: #159079;\n"
+                                            "    outline: 0;\n"
+                                            "    color: rgb(0, 0, 0);\n"
+                                            "}")
 
         self.horizontalLayout_2.addWidget(self.dropdown_classes)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer)
-
 
         self.verticalLayout.addWidget(self.header_widget)
 
@@ -97,14 +83,15 @@ class Ui_dashboard_page(object):
         self.card_present = QFrame(dashboard_page)
         self.card_present.setObjectName(u"card_present")
         self.card_present.setMaximumSize(QSize(16777215, 120))
-        self.card_present.setStyleSheet(u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
-"QFrame:hover { border: 1px solid #57e700; }")
+        self.card_present.setStyleSheet(
+            u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
+            "QFrame:hover { border: 1px solid #57e700; }")
         self.vbox_card2 = QVBoxLayout(self.card_present)
         self.vbox_card2.setObjectName(u"vbox_card2")
         self.pushButton_2 = QPushButton(self.card_present)
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setStyleSheet(u"color: #777; font-size: 11px; border:none;\n"
-"  font: 600 11pt; background-color: transparent; text-align: left")
+                                        "  font: 600 11pt; background-color: transparent; text-align: left")
         icon = QIcon()
         icon.addFile(u"icons/students.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_2.setIcon(icon)
@@ -115,25 +102,26 @@ class Ui_dashboard_page(object):
         self.val_total_student = QLabel(self.card_present)
         self.val_total_student.setObjectName(u"val_total_student")
         self.val_total_student.setStyleSheet(u"color: #333;\n"
-"font-size:25pt; font-weight: bold; border:none;")
-        self.val_total_student.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+                                             "font-size:25pt; font-weight: bold; border:none;")
+        self.val_total_student.setAlignment(
+            Qt.AlignmentFlag.AlignLeading | Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         self.vbox_card2.addWidget(self.val_total_student)
-
 
         self.layout_cards.addWidget(self.card_present)
 
         self.card_total_classes = QFrame(dashboard_page)
         self.card_total_classes.setObjectName(u"card_total_classes")
         self.card_total_classes.setMaximumSize(QSize(16777215, 120))
-        self.card_total_classes.setStyleSheet(u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
-"QFrame:hover { border: 1px solid #3388FF; }")
+        self.card_total_classes.setStyleSheet(
+            u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
+            "QFrame:hover { border: 1px solid #3388FF; }")
         self.vbox_card1 = QVBoxLayout(self.card_total_classes)
         self.vbox_card1.setObjectName(u"vbox_card1")
         self.pushButton = QPushButton(self.card_total_classes)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setStyleSheet(u"color: #777; font-size: 11px; border:none;\n"
-"  font: 600 11pt; background-color: transparent; text-align: left")
+                                      "  font: 600 11pt; background-color: transparent; text-align: left")
         icon1 = QIcon()
         icon1.addFile(u"icons/board.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton.setIcon(icon1)
@@ -144,24 +132,25 @@ class Ui_dashboard_page(object):
         self.val_total_classes = QLabel(self.card_total_classes)
         self.val_total_classes.setObjectName(u"val_total_classes")
         self.val_total_classes.setStyleSheet(u"color: #333; font-size: 25pt; font-weight: bold; border:none;")
-        self.val_total_classes.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.val_total_classes.setAlignment(
+            Qt.AlignmentFlag.AlignLeading | Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         self.vbox_card1.addWidget(self.val_total_classes)
-
 
         self.layout_cards.addWidget(self.card_total_classes)
 
         self.card_tests = QFrame(dashboard_page)
         self.card_tests.setObjectName(u"card_tests")
         self.card_tests.setMaximumSize(QSize(16777215, 120))
-        self.card_tests.setStyleSheet(u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
-"QFrame:hover { border: 1px solid #d400e7; }")
+        self.card_tests.setStyleSheet(
+            u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
+            "QFrame:hover { border: 1px solid #d400e7; }")
         self.vbox_card4 = QVBoxLayout(self.card_tests)
         self.vbox_card4.setObjectName(u"vbox_card4")
         self.pushButton_4 = QPushButton(self.card_tests)
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setStyleSheet(u"color: #777; font-size: 11px; border:none;\n"
-"  font: 600 11pt; background-color: transparent; text-align: left")
+                                        "  font: 600 11pt; background-color: transparent; text-align: left")
         icon2 = QIcon()
         icon2.addFile(u"icons/total_test.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_4.setIcon(icon2)
@@ -172,24 +161,25 @@ class Ui_dashboard_page(object):
         self.val_tests = QLabel(self.card_tests)
         self.val_tests.setObjectName(u"val_tests")
         self.val_tests.setStyleSheet(u"color: #333; font-size: 25pt; font-weight: bold; border:none;")
-        self.val_tests.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.val_tests.setAlignment(
+            Qt.AlignmentFlag.AlignLeading | Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         self.vbox_card4.addWidget(self.val_tests)
-
 
         self.layout_cards.addWidget(self.card_tests)
 
         self.card_average_attendance = QFrame(dashboard_page)
         self.card_average_attendance.setObjectName(u"card_average_attendance")
         self.card_average_attendance.setMaximumSize(QSize(16777215, 120))
-        self.card_average_attendance.setStyleSheet(u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
-"QFrame:hover { border: 1px solid #e7c100; }")
+        self.card_average_attendance.setStyleSheet(
+            u"QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }\n"
+            "QFrame:hover { border: 1px solid #e7c100; }")
         self.vbox_card3 = QVBoxLayout(self.card_average_attendance)
         self.vbox_card3.setObjectName(u"vbox_card3")
         self.pushButton_3 = QPushButton(self.card_average_attendance)
         self.pushButton_3.setObjectName(u"pushButton_3")
         self.pushButton_3.setStyleSheet(u"color: #777; font-size: 11px; border:none;\n"
-"  font: 600 11pt; background-color: transparent; text-align: left")
+                                        "  font: 600 11pt; background-color: transparent; text-align: left")
         icon3 = QIcon()
         icon3.addFile(u"icons/average_attendance.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_3.setIcon(icon3)
@@ -200,13 +190,12 @@ class Ui_dashboard_page(object):
         self.val_avg_attendance = QLabel(self.card_average_attendance)
         self.val_avg_attendance.setObjectName(u"val_avg_attendance")
         self.val_avg_attendance.setStyleSheet(u"color: #333; font-size: 25pt; font-weight: bold; border:none;")
-        self.val_avg_attendance.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.val_avg_attendance.setAlignment(
+            Qt.AlignmentFlag.AlignLeading | Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         self.vbox_card3.addWidget(self.val_avg_attendance)
 
-
         self.layout_cards.addWidget(self.card_average_attendance)
-
 
         self.layout_left_col.addLayout(self.layout_cards)
 
@@ -217,7 +206,8 @@ class Ui_dashboard_page(object):
         self.vbox_weekly.setObjectName(u"vbox_weekly")
         self.pushButton_5 = QPushButton(self.frame_weekly)
         self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setStyleSheet(u"font-size: 16px; font-weight: bold; color: #333; border:none;background-color:transparent; text-align: left")
+        self.pushButton_5.setStyleSheet(
+            u"font-size: 16px; font-weight: bold; color: #333; border:none;background-color:transparent; text-align: left")
         icon4 = QIcon()
         icon4.addFile(u"icons/barChart.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_5.setIcon(icon4)
@@ -230,7 +220,6 @@ class Ui_dashboard_page(object):
         self.chart_weekly_container.setMinimumSize(QSize(0, 180))
 
         self.vbox_weekly.addWidget(self.chart_weekly_container)
-
 
         self.layout_left_col.addWidget(self.frame_weekly)
 
@@ -249,7 +238,8 @@ class Ui_dashboard_page(object):
         self.vbox_leaderboard.setObjectName(u"vbox_leaderboard")
         self.pushButton_7 = QPushButton(self.frame_leaderboard)
         self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setStyleSheet(u"font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px; border:none;")
+        self.pushButton_7.setStyleSheet(
+            u"font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px; border:none;")
         icon5 = QIcon()
         icon5.addFile(u"icons/top_student.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_7.setIcon(icon5)
@@ -275,7 +265,6 @@ class Ui_dashboard_page(object):
 
         self.vbox_leaderboard.addWidget(self.scrollArea_students)
 
-
         self.layout_right_col.addWidget(self.frame_leaderboard)
 
         self.frame_today_pie = QFrame(dashboard_page)
@@ -296,9 +285,7 @@ class Ui_dashboard_page(object):
 
         self.vbox_pie.addWidget(self.chart_pie_container)
 
-
         self.layout_right_col.addWidget(self.frame_today_pie)
-
 
         self.layout_main_content.addLayout(self.layout_right_col)
 
@@ -307,10 +294,10 @@ class Ui_dashboard_page(object):
 
         self.verticalLayout.addLayout(self.layout_main_content)
 
-
         self.retranslateUi(dashboard_page)
 
         QMetaObject.connectSlotsByName(dashboard_page)
+
     # setupUi
 
     def retranslateUi(self, dashboard_page):
@@ -327,9 +314,11 @@ class Ui_dashboard_page(object):
         self.pushButton_5.setText(QCoreApplication.translate("dashboard_page", u"Weekly Attendance Report", None))
         self.chart_weekly_container.setStyleSheet(QCoreApplication.translate("dashboard_page", u"border:none;", None))
         self.pushButton_7.setText(QCoreApplication.translate("dashboard_page", u"Top Students", None))
-        self.scrollArea_students.setStyleSheet(QCoreApplication.translate("dashboard_page", u"border:none; background:transparent;", None))
-        self.label_pie_title.setStyleSheet(QCoreApplication.translate("dashboard_page", u"font-size: 16px; font-weight: bold; color: #333; border:none;", None))
+        self.scrollArea_students.setStyleSheet(
+            QCoreApplication.translate("dashboard_page", u"border:none; background:transparent;", None))
+        self.label_pie_title.setStyleSheet(QCoreApplication.translate("dashboard_page",
+                                                                      u"font-size: 16px; font-weight: bold; color: #333; border:none;",
+                                                                      None))
         self.label_pie_title.setText(QCoreApplication.translate("dashboard_page", u"Today's Report", None))
         self.chart_pie_container.setStyleSheet(QCoreApplication.translate("dashboard_page", u"border:none;", None))
     # retranslateUi
-

@@ -1,23 +1,11 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect,
+                            QSize, Qt)
+from PySide6.QtGui import (QCursor,
+                           QIcon)
+from PySide6.QtWidgets import (QFrame, QHBoxLayout, QLabel,
+                               QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
+                               QVBoxLayout, QWidget)
 
-################################################################################
-## Form generated from reading UI file 'test_details_page.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
-    QVBoxLayout, QWidget)
 
 class Ui_test_details_page(object):
     def setupUi(self, test_details_page):
@@ -39,15 +27,15 @@ class Ui_test_details_page(object):
         self.btn_back.setObjectName(u"btn_back")
         self.btn_back.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_back.setStyleSheet(u"\n"
-"          QPushButton {\n"
-"           border: none;\n"
-"           border-radius: 20px;\n"
-"           padding: 5px;\n"
-"          }\n"
-"          QPushButton:hover {\n"
-"           background-color: #e0e0e0;\n"
-"          }\n"
-"         ")
+                                    "          QPushButton {\n"
+                                    "           border: none;\n"
+                                    "           border-radius: 20px;\n"
+                                    "           padding: 5px;\n"
+                                    "          }\n"
+                                    "          QPushButton:hover {\n"
+                                    "           background-color: #e0e0e0;\n"
+                                    "          }\n"
+                                    "         ")
         icon = QIcon()
         icon.addFile(u"icons/back.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_back.setIcon(icon)
@@ -96,9 +84,7 @@ class Ui_test_details_page(object):
 
         self.horizontalLayout_details.addItem(self.horizontalSpacer_details)
 
-
         self.verticalLayout_info.addWidget(self.details_row)
-
 
         self.horizontalLayout_header.addWidget(self.info_container)
 
@@ -110,25 +96,24 @@ class Ui_test_details_page(object):
         self.btn_save_marks.setObjectName(u"btn_save_marks")
         self.btn_save_marks.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_save_marks.setStyleSheet(u"\n"
-"color: #fff;\n"
-"background : #3388FF;\n"
-"border: none;\n"
-"padding: 10px 20px;\n"
-"font: 600 14px \"Segoe UI\";\n"
-"border-radius: 7px")
+                                          "color: #fff;\n"
+                                          "background : #3388FF;\n"
+                                          "border: none;\n"
+                                          "padding: 10px 20px;\n"
+                                          "font: 600 14px \"Segoe UI\";\n"
+                                          "border-radius: 7px")
         icon1 = QIcon()
         icon1.addFile(u"icons/save.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_save_marks.setIcon(icon1)
 
         self.horizontalLayout_header.addWidget(self.btn_save_marks)
 
-
         self.verticalLayout.addWidget(self.header_widget)
 
         self.container = QWidget(test_details_page)
         self.container.setObjectName(u"container")
         self.container.setStyleSheet(u"#container{background-color: rgb(255, 255, 255);\n"
-"border:1px solid rgb(187, 187, 187); border-radius: 10px}")
+                                     "border:1px solid rgb(187, 187, 187); border-radius: 10px}")
         self.verticalLayout_2 = QVBoxLayout(self.container)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -142,15 +127,15 @@ class Ui_test_details_page(object):
         self.tableHeader.setSizePolicy(sizePolicy)
         self.tableHeader.setMinimumSize(QSize(0, 0))
         self.tableHeader.setStyleSheet(u"QFrame{boder:none; background-color:transparent;}\n"
-"\n"
-"QLabel {\n"
-"    font-size: 12px;\n"
-"    color: #555;\n"
-"    font-weight: 600;\n"
-"border: none\n"
-"\n"
-"}\n"
-"          ")
+                                       "\n"
+                                       "QLabel {\n"
+                                       "    font-size: 12px;\n"
+                                       "    color: #555;\n"
+                                       "    font-weight: 600;\n"
+                                       "border: none\n"
+                                       "\n"
+                                       "}\n"
+                                       "          ")
         self.headerRowLayout = QHBoxLayout(self.tableHeader)
         self.headerRowLayout.setObjectName(u"headerRowLayout")
         self.headerRowLayout.setContentsMargins(17, 12, 17, 12)
@@ -185,17 +170,17 @@ class Ui_test_details_page(object):
         sizePolicy1.setHeightForWidth(self.head_action.sizePolicy().hasHeightForWidth())
         self.head_action.setSizePolicy(sizePolicy1)
         self.head_action.setMinimumSize(QSize(100, 0))
-        self.head_action.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.head_action.setAlignment(
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing | Qt.AlignmentFlag.AlignVCenter)
 
         self.headerRowLayout.addWidget(self.head_action)
-
 
         self.verticalLayout_2.addWidget(self.tableHeader)
 
         self.scrollArea = QScrollArea(self.container)
         self.scrollArea.setObjectName(u"scrollArea")
         self.scrollArea.setStyleSheet(u"background-color: transparent;\n"
-"")
+                                      "")
         self.scrollArea.setFrameShape(QFrame.Shape.NoFrame)
         self.scrollArea.setWidgetResizable(True)
         self.widget_2 = QWidget()
@@ -214,13 +199,12 @@ class Ui_test_details_page(object):
 
         self.verticalLayout_2.addWidget(self.scrollArea)
 
-
         self.verticalLayout.addWidget(self.container)
-
 
         self.retranslateUi(test_details_page)
 
         QMetaObject.connectSlotsByName(test_details_page)
+
     # setupUi
 
     def retranslateUi(self, test_details_page):
@@ -236,4 +220,3 @@ class Ui_test_details_page(object):
         self.head_status.setText(QCoreApplication.translate("test_details_page", u"Marks", None))
         self.head_action.setText(QCoreApplication.translate("test_details_page", u"Result", None))
     # retranslateUi
-

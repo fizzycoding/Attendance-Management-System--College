@@ -1,23 +1,11 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect,
+                            QSize, Qt)
+from PySide6.QtGui import (QCursor,
+                           QIcon)
+from PySide6.QtWidgets import (QComboBox, QFrame, QHBoxLayout,
+                               QLabel, QPushButton, QScrollArea, QSizePolicy,
+                               QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
 
-################################################################################
-## Form generated from reading UI file 'viewReports.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QLabel, QPushButton, QScrollArea, QSizePolicy,
-    QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_view_reports_page(object):
     def setupUi(self, view_reports_page):
@@ -35,7 +23,7 @@ class Ui_view_reports_page(object):
         sizePolicy.setHeightForWidth(self.header_widget.sizePolicy().hasHeightForWidth())
         self.header_widget.setSizePolicy(sizePolicy)
         self.header_widget.setStyleSheet(u"background-color: transparent;\n"
-"")
+                                         "")
         self.horizontalLayout_2 = QHBoxLayout(self.header_widget)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.dropdown_classes = QComboBox(self.header_widget)
@@ -43,36 +31,36 @@ class Ui_view_reports_page(object):
         self.dropdown_classes.setEnabled(True)
         self.dropdown_classes.setMinimumSize(QSize(200, 40))
         self.dropdown_classes.setStyleSheet(u"QComboBox {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    border-radius: 5px;\n"
-"    padding: 5px 10px;\n"
-"    font-size: 14px;\n"
-"    color: #333;\n"
-"}\n"
-"QComboBox::down-arrow {\n"
-"    image: url(icons/arrow_down.png); \n"
-"    width: 12px;\n"
-"    height: 12px;\n"
-"}\n"
-"QComboBox::drop-down {\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    width: 30px;\n"
-"    border-left-width: 1px;\n"
-"    border-left-color: #ccc;\n"
-"    border-left-style: solid; \n"
-"    border-top-right-radius: 5px;\n"
-"    border-bottom-right-radius: 5px;\n"
-"    background: #f0f0f0; \n"
-"}\n"
-"QComboBox QAbstractItemView {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    selection-color: #159079;\n"
-"    outline: 0;\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                            "    background-color: white;\n"
+                                            "    border: 1px solid #ccc;\n"
+                                            "    border-radius: 5px;\n"
+                                            "    padding: 5px 10px;\n"
+                                            "    font-size: 14px;\n"
+                                            "    color: #333;\n"
+                                            "}\n"
+                                            "QComboBox::down-arrow {\n"
+                                            "    image: url(icons/arrow_down.png); \n"
+                                            "    width: 12px;\n"
+                                            "    height: 12px;\n"
+                                            "}\n"
+                                            "QComboBox::drop-down {\n"
+                                            "    subcontrol-origin: padding;\n"
+                                            "    subcontrol-position: top right;\n"
+                                            "    width: 30px;\n"
+                                            "    border-left-width: 1px;\n"
+                                            "    border-left-color: #ccc;\n"
+                                            "    border-left-style: solid; \n"
+                                            "    border-top-right-radius: 5px;\n"
+                                            "    border-bottom-right-radius: 5px;\n"
+                                            "    background: #f0f0f0; \n"
+                                            "}\n"
+                                            "QComboBox QAbstractItemView {\n"
+                                            "    background-color: white;\n"
+                                            "    border: 1px solid #ccc;\n"
+                                            "    selection-color: #159079;\n"
+                                            "    outline: 0;\n"
+                                            "    color: rgb(0, 0, 0);\n"
+                                            "}")
 
         self.horizontalLayout_2.addWidget(self.dropdown_classes)
 
@@ -84,21 +72,20 @@ class Ui_view_reports_page(object):
         self.btn_export.setObjectName(u"btn_export")
         self.btn_export.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_export.setStyleSheet(u"color: #fff;\n"
-"background : #3388FF;\n"
-"border: none;\n"
-"padding: 7px 20px;\n"
-"font: 600 14px \"Segoe UI\";\n"
-"border-radius: 7px")
+                                      "background : #3388FF;\n"
+                                      "border: none;\n"
+                                      "padding: 7px 20px;\n"
+                                      "font: 600 14px \"Segoe UI\";\n"
+                                      "border-radius: 7px")
 
         self.horizontalLayout_2.addWidget(self.btn_export)
-
 
         self.verticalLayout.addWidget(self.header_widget)
 
         self.content_stack = QStackedWidget(view_reports_page)
         self.content_stack.setObjectName(u"content_stack")
         self.content_stack.setStyleSheet(u"background-color: transparent;\n"
-"")
+                                         "")
         self.no_classes = QWidget()
         self.no_classes.setObjectName(u"no_classes")
         self.verticalLayout_empty = QVBoxLayout(self.no_classes)
@@ -132,7 +119,7 @@ class Ui_view_reports_page(object):
         self.main_container = QWidget(self.classes_selected)
         self.main_container.setObjectName(u"main_container")
         self.main_container.setStyleSheet(u"\n"
-"border:none")
+                                          "border:none")
         self.horizontalLayout = QHBoxLayout(self.main_container)
         self.horizontalLayout.setSpacing(20)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -177,7 +164,6 @@ class Ui_view_reports_page(object):
 
         self.horizontalLayout_3.addWidget(self.label_5)
 
-
         self.verticalLayout_2.addWidget(self.frame)
 
         self.scrollArea = QScrollArea(self.left_container)
@@ -199,7 +185,6 @@ class Ui_view_reports_page(object):
 
         self.verticalLayout_2.addWidget(self.scrollArea)
 
-
         self.horizontalLayout.addWidget(self.left_container)
 
         self.right_container = QWidget(self.main_container)
@@ -215,26 +200,26 @@ class Ui_view_reports_page(object):
         self.top_cards_container = QWidget(self.right_container)
         self.top_cards_container.setObjectName(u"top_cards_container")
         self.top_cards_container.setStyleSheet(u"#card1, #card2, #card3{\n"
-"  background-color: rgb(255, 255, 255);\n"
-"  border-radius: 8px;\n"
-"  border:1px solid rgb(200,200,200);\n"
-"}\n"
-"#card1:hover ,#card2:hover ,#card3:hover {\n"
-"    border: 1px solid #3388FF;\n"
-"    background-color: #fcfcfc;\n"
-"}\n"
-"\n"
-"QPushButton{\n"
-"  background-color: transparent;\n"
-"  color: rgb(88, 88, 88);\n"
-"  font: 600 11pt \"Segoe UI\";\n"
-"text-align: left\n"
-"}\n"
-"QLabel{\n"
-"  background-color: transparent;\n"
-"  color: rgb(34, 34, 34);\n"
-"  font: 800 25pt \"Segoe UI\";\n"
-"}")
+                                               "  background-color: rgb(255, 255, 255);\n"
+                                               "  border-radius: 8px;\n"
+                                               "  border:1px solid rgb(200,200,200);\n"
+                                               "}\n"
+                                               "#card1:hover ,#card2:hover ,#card3:hover {\n"
+                                               "    border: 1px solid #3388FF;\n"
+                                               "    background-color: #fcfcfc;\n"
+                                               "}\n"
+                                               "\n"
+                                               "QPushButton{\n"
+                                               "  background-color: transparent;\n"
+                                               "  color: rgb(88, 88, 88);\n"
+                                               "  font: 600 11pt \"Segoe UI\";\n"
+                                               "text-align: left\n"
+                                               "}\n"
+                                               "QLabel{\n"
+                                               "  background-color: transparent;\n"
+                                               "  color: rgb(34, 34, 34);\n"
+                                               "  font: 800 25pt \"Segoe UI\";\n"
+                                               "}")
         self.horizontalLayout_4 = QHBoxLayout(self.top_cards_container)
         self.horizontalLayout_4.setSpacing(10)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
@@ -255,10 +240,10 @@ class Ui_view_reports_page(object):
         self.classes_attended_count = QLabel(self.card1)
         self.classes_attended_count.setObjectName(u"classes_attended_count")
         self.classes_attended_count.setStyleSheet(u"color: rgb(28, 164, 255);")
-        self.classes_attended_count.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing)
+        self.classes_attended_count.setAlignment(
+            Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing)
 
         self.verticalLayout_4.addWidget(self.classes_attended_count)
-
 
         self.horizontalLayout_4.addWidget(self.card1)
 
@@ -278,10 +263,10 @@ class Ui_view_reports_page(object):
         self.present_count = QLabel(self.card3)
         self.present_count.setObjectName(u"present_count")
         self.present_count.setStyleSheet(u"color: rgb(86, 213, 86);")
-        self.present_count.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing)
+        self.present_count.setAlignment(
+            Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing)
 
         self.verticalLayout_5.addWidget(self.present_count)
-
 
         self.horizontalLayout_4.addWidget(self.card3)
 
@@ -301,13 +286,12 @@ class Ui_view_reports_page(object):
         self.absent_count = QLabel(self.card2)
         self.absent_count.setObjectName(u"absent_count")
         self.absent_count.setStyleSheet(u"color:rgb(255, 82, 52)")
-        self.absent_count.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing)
+        self.absent_count.setAlignment(
+            Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing)
 
         self.verticalLayout_6.addWidget(self.absent_count)
 
-
         self.horizontalLayout_4.addWidget(self.card2)
-
 
         self.verticalLayout_3.addWidget(self.top_cards_container)
 
@@ -364,9 +348,7 @@ class Ui_view_reports_page(object):
 
         self.verticalLayout_8.addWidget(self.stackedWidget)
 
-
         self.verticalLayout_3.addWidget(self.test_conttainer)
-
 
         self.horizontalLayout.addWidget(self.right_container)
 
@@ -379,20 +361,20 @@ class Ui_view_reports_page(object):
 
         self.verticalLayout.addWidget(self.content_stack)
 
-
         self.retranslateUi(view_reports_page)
 
         self.content_stack.setCurrentIndex(2)
         self.stackedWidget.setCurrentIndex(1)
 
-
         QMetaObject.connectSlotsByName(view_reports_page)
+
     # setupUi
 
     def retranslateUi(self, view_reports_page):
         view_reports_page.setWindowTitle(QCoreApplication.translate("view_reports_page", u"Tests Dashboard", None))
         self.btn_export.setText(QCoreApplication.translate("view_reports_page", u"Export", None))
-        self.label_no_test.setText(QCoreApplication.translate("view_reports_page", u"Select Any Class Or Create A New class", None))
+        self.label_no_test.setText(
+            QCoreApplication.translate("view_reports_page", u"Select Any Class Or Create A New class", None))
         self.label_2.setText(QCoreApplication.translate("view_reports_page", u"No Students, Invite some", None))
         self.label_3.setText(QCoreApplication.translate("view_reports_page", u"S. No.", None))
         self.label_4.setText(QCoreApplication.translate("view_reports_page", u"Name", None))
@@ -407,4 +389,3 @@ class Ui_view_reports_page(object):
         self.label_8.setText(QCoreApplication.translate("view_reports_page", u"Recent test results", None))
         self.label.setText(QCoreApplication.translate("view_reports_page", u"No Test Found", None))
     # retranslateUi
-

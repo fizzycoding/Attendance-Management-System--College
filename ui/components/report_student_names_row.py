@@ -1,22 +1,6 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QSize, Qt)
+from PySide6.QtWidgets import (QHBoxLayout, QLabel, QSizePolicy)
 
-################################################################################
-## Form generated from reading UI file 'reportStudentNamesRow.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QSizePolicy,
-    QWidget)
 
 class Ui_reportStudentNameRow(object):
     def setupUi(self, reportStudentNameRow):
@@ -31,12 +15,12 @@ class Ui_reportStudentNameRow(object):
         reportStudentNameRow.setMinimumSize(QSize(0, 50))
         reportStudentNameRow.setMaximumSize(QSize(16777215, 50))
         reportStudentNameRow.setStyleSheet(u"#reportStudentNameRow{border-top: 1px solid;\n"
-"border-top-color: rgb(200,200,200);}\n"
-"#reportStudentNameRow:hover{\n"
-"background-color: rgba(51, 143, 255,10)}\n"
-"QLabel{background-color:transparent;\n"
-"\n"
-"font: 10pt \"Segoe UI\";}")
+                                           "border-top-color: rgb(200,200,200);}\n"
+                                           "#reportStudentNameRow:hover{\n"
+                                           "background-color: rgba(51, 143, 255,10)}\n"
+                                           "QLabel{background-color:transparent;\n"
+                                           "\n"
+                                           "font: 10pt \"Segoe UI\";}")
         self.horizontalLayout = QHBoxLayout(reportStudentNameRow)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -50,7 +34,8 @@ class Ui_reportStudentNameRow(object):
         self.sNumber.setSizePolicy(sizePolicy1)
         self.sNumber.setMinimumSize(QSize(60, 0))
         self.sNumber.setStyleSheet(u"color: #383838; font: 600 10pt \"Segoe UI\";")
-        self.sNumber.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.sNumber.setAlignment(
+            Qt.AlignmentFlag.AlignLeading | Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout.addWidget(self.sNumber)
 
@@ -71,15 +56,15 @@ class Ui_reportStudentNameRow(object):
         self.rate.setSizePolicy(sizePolicy2)
         self.rate.setMaximumSize(QSize(75, 16777215))
         self.rate.setStyleSheet(u"color: rgb(28, 164, 255);\n"
-"font: 700 12pt \"Segoe UI\";")
+                                "font: 700 12pt \"Segoe UI\";")
         self.rate.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout.addWidget(self.rate)
 
-
         self.retranslateUi(reportStudentNameRow)
 
         QMetaObject.connectSlotsByName(reportStudentNameRow)
+
     # setupUi
 
     def retranslateUi(self, reportStudentNameRow):
@@ -88,4 +73,3 @@ class Ui_reportStudentNameRow(object):
         self.name.setText(QCoreApplication.translate("reportStudentNameRow", u"Rahul", None))
         self.rate.setText(QCoreApplication.translate("reportStudentNameRow", u"90%", None))
     # retranslateUi
-

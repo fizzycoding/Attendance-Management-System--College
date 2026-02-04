@@ -1,23 +1,11 @@
-# -*- coding: utf-8 -*-
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect,
+                            QSize, Qt)
+from PySide6.QtGui import (QCursor,
+                           QIcon)
+from PySide6.QtWidgets import (QComboBox, QFrame, QHBoxLayout,
+                               QLabel, QPushButton, QScrollArea, QSizePolicy,
+                               QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
 
-################################################################################
-## Form generated from reading UI file 'testResults.ui'
-##
-## Created by: Qt User Interface Compiler version 6.10.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QLabel, QPushButton, QScrollArea, QSizePolicy,
-    QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_tests_page(object):
     def setupUi(self, tests_page):
@@ -47,36 +35,36 @@ class Ui_tests_page(object):
         self.dropdown_classes.setSizePolicy(sizePolicy1)
         self.dropdown_classes.setMinimumSize(QSize(200, 40))
         self.dropdown_classes.setStyleSheet(u"QComboBox {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    border-radius: 5px;\n"
-"    padding: 5px 10px;\n"
-"    font-size: 14px;\n"
-"    color: #333;\n"
-"}\n"
-"QComboBox::down-arrow {\n"
-"    image: url(icons/arrow_down.png); \n"
-"    width: 12px;\n"
-"    height: 12px;\n"
-"}\n"
-"QComboBox::drop-down {\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    width: 30px;\n"
-"    border-left-width: 1px;\n"
-"    border-left-color: #ccc;\n"
-"    border-left-style: solid; \n"
-"    border-top-right-radius: 5px;\n"
-"    border-bottom-right-radius: 5px;\n"
-"    background: #f0f0f0; \n"
-"}\n"
-"QComboBox QAbstractItemView {\n"
-"    background-color: white;\n"
-"    border: 1px solid #ccc;\n"
-"    selection-color: #159079;\n"
-"    outline: 0;\n"
-"    color: rgb(0, 0, 0);\n"
-"}")
+                                            "    background-color: white;\n"
+                                            "    border: 1px solid #ccc;\n"
+                                            "    border-radius: 5px;\n"
+                                            "    padding: 5px 10px;\n"
+                                            "    font-size: 14px;\n"
+                                            "    color: #333;\n"
+                                            "}\n"
+                                            "QComboBox::down-arrow {\n"
+                                            "    image: url(icons/arrow_down.png); \n"
+                                            "    width: 12px;\n"
+                                            "    height: 12px;\n"
+                                            "}\n"
+                                            "QComboBox::drop-down {\n"
+                                            "    subcontrol-origin: padding;\n"
+                                            "    subcontrol-position: top right;\n"
+                                            "    width: 30px;\n"
+                                            "    border-left-width: 1px;\n"
+                                            "    border-left-color: #ccc;\n"
+                                            "    border-left-style: solid; \n"
+                                            "    border-top-right-radius: 5px;\n"
+                                            "    border-bottom-right-radius: 5px;\n"
+                                            "    background: #f0f0f0; \n"
+                                            "}\n"
+                                            "QComboBox QAbstractItemView {\n"
+                                            "    background-color: white;\n"
+                                            "    border: 1px solid #ccc;\n"
+                                            "    selection-color: #159079;\n"
+                                            "    outline: 0;\n"
+                                            "    color: rgb(0, 0, 0);\n"
+                                            "}")
 
         self.horizontalLayout_2.addWidget(self.dropdown_classes)
 
@@ -88,17 +76,16 @@ class Ui_tests_page(object):
         self.btn_new_test.setObjectName(u"btn_new_test")
         self.btn_new_test.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_new_test.setStyleSheet(u"color: #fff;\n"
-"background : #3388FF;\n"
-"border: none;\n"
-"padding: 10px 20px;\n"
-"font: 600 14px \"Segoe UI\";\n"
-"border-radius: 7px")
+                                        "background : #3388FF;\n"
+                                        "border: none;\n"
+                                        "padding: 10px 20px;\n"
+                                        "font: 600 14px \"Segoe UI\";\n"
+                                        "border-radius: 7px")
         icon = QIcon()
         icon.addFile(u"icons/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_new_test.setIcon(icon)
 
         self.horizontalLayout_2.addWidget(self.btn_new_test)
-
 
         self.verticalLayout.addWidget(self.header_widget)
 
@@ -143,13 +130,12 @@ class Ui_tests_page(object):
 
         self.verticalLayout.addWidget(self.content_stack)
 
-
         self.retranslateUi(tests_page)
 
         self.content_stack.setCurrentIndex(1)
 
-
         QMetaObject.connectSlotsByName(tests_page)
+
     # setupUi
 
     def retranslateUi(self, tests_page):
@@ -157,4 +143,3 @@ class Ui_tests_page(object):
         self.btn_new_test.setText(QCoreApplication.translate("tests_page", u"New Test", None))
         self.label_no_test.setText(QCoreApplication.translate("tests_page", u"No Tests Created Yet!", None))
     # retranslateUi
-

@@ -10,6 +10,7 @@ class JoinClassPopup(QDialog, Ui_JoinClassPopup):
         self.setWindowTitle("Join class")
         self.btn_close.clicked.connect(self.reject)
         self.btn_create.clicked.connect(self.joinBTNHandler)
+        self.class_name_input.returnPressed.connect(self.joinBTNHandler)
         self.setFixedSize(400, 250)
 
     def joinBTNHandler(self):

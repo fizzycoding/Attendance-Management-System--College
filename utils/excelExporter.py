@@ -20,11 +20,19 @@ class ExcelExporter:
         self.COLOR_HEADER_BG = "3388FF"
         self.COLOR_HEADER_TXT = "FFFFFF"
 
-        self.FILL_GREEN = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
-        self.FILL_RED = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
-        self.FILL_GREY = PatternFill(start_color="E0E0E0", end_color="E0E0E0", fill_type="solid")
+        self.FILL_GREEN = PatternFill(
+            start_color="C6EFCE", end_color="C6EFCE", fill_type="solid"
+        )
+        self.FILL_RED = PatternFill(
+            start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"
+        )
+        self.FILL_GREY = PatternFill(
+            start_color="E0E0E0", end_color="E0E0E0", fill_type="solid"
+        )
 
-    def generate(self, filepath, include_attendance=True, include_tests=True, include_fees=True):
+    def generate(
+        self, filepath, include_attendance=True, include_tests=True, include_fees=True
+    ):
         wb = Workbook()
         wb.remove(wb.active)
 
@@ -63,27 +71,39 @@ class ExcelExporter:
 
         # Fetch Students & Data
         cursor.execute(
-            "SELECT c.id, COALESCE(u.name, c.guest_name) FROM class_members c LEFT JOIN users u ON c.student_id = u.id WHERE c.class_id = ? ORDER BY COALESCE(u.name, c.guest_name) ASC",
-            (self.class_id,))
+            "SELECT c.id, COALESCE(c.guest_name, u.name) FROM class_members c LEFT JOIN users u ON c.student_id = u.id WHERE c.class_id = ? ORDER BY COALESCE(c.guest_name, u.name) ASC",
+            (self.class_id,),
+        )
         members = cursor.fetchall()
 
         start_date = f"{year}-{month:02d}-01"
         end_date = f"{year}-{month:02d}-{monthrange(year, month)[1]}"
 
-        cursor.execute("""
+        cursor.execute(
+            """
             SELECT r.member_id, strftime('%d', s.date) as day, r.status 
             FROM attendance_records r JOIN attendance_sessions s ON r.session_id = s.id
             WHERE s.class_id = ? AND s.date BETWEEN ? AND ?
-        """, (self.class_id, start_date, end_date))
+        """,
+            (self.class_id, start_date, end_date),
+        )
 
         att_map = {}
         for row in cursor.fetchall():
             m_id, day, status = row[0], int(row[1]), row[2]
-            code = "P" if status == ATTENDANCE_STATUS.PRESENT else "A" if status == ATTENDANCE_STATUS.ABSENT else "-"
+            code = (
+                "P"
+                if status == ATTENDANCE_STATUS.PRESENT
+                else "A" if status == ATTENDANCE_STATUS.ABSENT else "-"
+            )
             att_map.setdefault(m_id, {})[day] = code
 
         days_in_month = monthrange(year, month)[1]
-        headers = ["S.No", "Name"] + [str(d) for d in range(1, days_in_month + 1)] + ["Total Present", "Total Absent"]
+        headers = (
+            ["S.No", "Name"]
+            + [str(d) for d in range(1, days_in_month + 1)]
+            + ["Total Present", "Total Absent"]
+        )
         ws.append(headers)
 
         for idx, (mem_id, name) in enumerate(members):
@@ -121,7 +141,8 @@ class ExcelExporter:
 
         cursor.execute(
             "SELECT id, test_name, max_marks, passing_marks, test_date FROM tests WHERE class_id = ? ORDER BY test_date ASC",
-            (self.class_id,))
+            (self.class_id,),
+        )
         tests = cursor.fetchall()
 
         if not tests:
@@ -142,15 +163,18 @@ class ExcelExporter:
         ws.append(headers)
 
         cursor.execute(
-            "SELECT c.id, COALESCE(u.name, c.guest_name) FROM class_members c LEFT JOIN users u ON c.student_id = u.id WHERE c.class_id = ? ORDER BY COALESCE(u.name, c.guest_name) ASC",
-            (self.class_id,))
+            "SELECT c.id, COALESCE(c.guest_name, u.name) FROM class_members c LEFT JOIN users u ON c.student_id = u.id WHERE c.class_id = ? ORDER BY COALESCE(c.guest_name, u.name) ASC",
+            (self.class_id,),
+        )
         members = cursor.fetchall()
 
         for idx, (mem_id, name) in enumerate(members):
             row = [idx + 1, name]
             for t in tests:
-                cursor.execute("SELECT marks_obtained FROM test_results WHERE test_id=? AND member_id=?",
-                               (t[0], mem_id))
+                cursor.execute(
+                    "SELECT marks_obtained FROM test_results WHERE test_id=? AND member_id=?",
+                    (t[0], mem_id),
+                )
                 res = cursor.fetchone()
                 if res:
                     status = "Pass" if res[0] >= t[3] else "Fail"
@@ -187,7 +211,8 @@ class ExcelExporter:
         headers = ["S.No", "Name", "Total Fee", "Paid Fee", "Pending Fee", "Status"]
         ws.append(headers)
 
-        cursor.execute("""
+        cursor.execute(
+            """
             SELECT 
                 c.id as member_id,
                 COALESCE(c.guest_name, u.name) as name,
@@ -198,7 +223,9 @@ class ExcelExporter:
             LEFT JOIN fees f ON f.member_id = c.id AND f.class_id = c.class_id
             WHERE c.class_id = ?
             ORDER BY name ASC
-        """, (self.class_id,))
+        """,
+            (self.class_id,),
+        )
 
         members = cursor.fetchall()
 
@@ -231,10 +258,18 @@ class ExcelExporter:
         db.close()
 
     def _style_headers(self, ws):
-        thin_border = Border(left=Side(style="thin"), right=Side(style="thin"), top=Side(style="thin"),
-                             bottom=Side(style="thin"))
+        thin_border = Border(
+            left=Side(style="thin"),
+            right=Side(style="thin"),
+            top=Side(style="thin"),
+            bottom=Side(style="thin"),
+        )
         header_font = Font(bold=True, color=self.COLOR_HEADER_TXT)
-        header_fill = PatternFill(start_color=self.COLOR_HEADER_BG, end_color=self.COLOR_HEADER_BG, fill_type="solid")
+        header_fill = PatternFill(
+            start_color=self.COLOR_HEADER_BG,
+            end_color=self.COLOR_HEADER_BG,
+            fill_type="solid",
+        )
 
         for cell in ws[2]:
             cell.font = header_font
@@ -252,9 +287,10 @@ class ExcelExporter:
             col_letter = get_column_letter(col[0].column)
             for cell in col:
                 try:
-                    if cell.value: max_len = max(max_len, len(str(cell.value)))
+                    if cell.value:
+                        max_len = max(max_len, len(str(cell.value)))
                 except:
                     pass
             ws.column_dimensions[col_letter].width = max_len + 3
 
-        ws.column_dimensions['A'].width = 10
+        ws.column_dimensions["A"].width = 10

@@ -141,7 +141,7 @@ class Ui_test_details_page(object):
         sizePolicy.setHeightForWidth(self.tableHeader.sizePolicy().hasHeightForWidth())
         self.tableHeader.setSizePolicy(sizePolicy)
         self.tableHeader.setMinimumSize(QSize(0, 0))
-        self.tableHeader.setStyleSheet(u"QFrame{boder:none}\n"
+        self.tableHeader.setStyleSheet(u"QFrame{boder:none; background-color:transparent;}\n"
 "\n"
 "QLabel {\n"
 "    font-size: 12px;\n"

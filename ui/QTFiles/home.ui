@@ -174,7 +174,7 @@ border: none;
       <item>
        <widget class="QStackedWidget" name="sidebarStack">
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="studentPage">
          <layout class="QVBoxLayout" name="verticalLayout_student">
@@ -241,6 +241,24 @@ border: none;
               <width>20</width>
               <height>20</height>
              </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_std_fees">
+            <property name="text">
+             <string>Fees Payments</string>
+            </property>
+            <property name="icon">  
+             <iconset>
+              <normaloff>fee_unchecked.png</normaloff>
+              <activeon>fee.png</activeon>icons/checked.png</iconset>
             </property>
             <property name="checkable">
              <bool>true</bool>

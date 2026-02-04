@@ -37,7 +37,12 @@ class TestDetailsController(QWidget):
             row = cursor.fetchone()
             if row:
                 if isinstance(row, tuple):
-                    data = {"test_name": row[0], "max_marks": row[1], "passing_marks": row[2], "test_date": row[3]}
+                    data = {
+                        "test_name": row[0],
+                        "max_marks": row[1],
+                        "passing_marks": row[2],
+                        "test_date": row[3],
+                    }
                 else:
                     data = row
 
@@ -67,13 +72,13 @@ class TestDetailsController(QWidget):
             query = """
                 SELECT 
                     c.id as member_id, 
-                    COALESCE(u.name, c.guest_name) as name, 
+                    COALESCE(c.guest_name, u.name) as name, 
                     tr.marks_obtained
                 FROM class_members c
                 LEFT JOIN users u ON c.student_id = u.id
                 LEFT JOIN test_results tr ON tr.member_id = c.id AND tr.test_id = ?
                 WHERE c.class_id = (SELECT class_id FROM tests WHERE id = ?)
-                ORDER BY COALESCE(u.name, c.guest_name) ASC
+                ORDER BY COALESCE(c.guest_name, u.name) ASC
             """
             cursor.execute(query, (self.test_id, self.test_id))
             rows = cursor.fetchall()
@@ -84,9 +89,9 @@ class TestDetailsController(QWidget):
                     name = row[1]
                     marks = row[2]
                 else:
-                    member_id = row['member_id']
-                    name = row['name']
-                    marks = row['marks_obtained']
+                    member_id = row["member_id"]
+                    name = row["name"]
+                    marks = row["marks_obtained"]
 
                 row_widget = StudentMarksRowController(
                     sNo=i + 1,
@@ -94,12 +99,15 @@ class TestDetailsController(QWidget):
                     member_id=member_id,
                     marks=marks,
                     max_marks=self.max_marks,
-                    passing_marks=self.passing_marks
+                    passing_marks=self.passing_marks,
                 )
                 self.ui.studentsLayout.addWidget(row_widget)
 
             self.ui.studentsLayout.addItem(
-                QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding))
+                QSpacerItem(
+                    20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+                )
+            )
 
         except Exception as e:
             print(f"Error loading students: {e}")

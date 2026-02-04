@@ -37,7 +37,9 @@ class ClassOpenStdController(QWidget):
                          JOIN class_members cm ON cm.id = ar.member_id
                          WHERE a.class_id = ? AND cm.student_id = ? AND ar.status = "present") as present
                     """
-            cursor.execute(classCountQuery, (self.classId, self.classId, self.user["id"]))
+            cursor.execute(
+                classCountQuery, (self.classId, self.classId, self.user["id"])
+            )
             result = cursor.fetchone()
             print(result)
             if result:
@@ -70,17 +72,21 @@ class ClassOpenStdController(QWidget):
                 if result:
                     status = result[0]  # 'present' or 'absent'
 
-                    if status == 'present':
+                    if status == "present":
                         self.ui.val_today.setText("Present")
                         self.ui.val_today.setStyleSheet(
-                            "color: #2ab79d; font-size: 24px; font-weight: bold; border:none;")
+                            "color: #2ab79d; font-size: 24px; font-weight: bold; border:none;"
+                        )
                     else:
                         self.ui.val_today.setText("Absent")
                         self.ui.val_today.setStyleSheet(
-                            "color: #ff5252; font-size: 24px; font-weight: bold; border:none;")
+                            "color: #ff5252; font-size: 24px; font-weight: bold; border:none;"
+                        )
                 else:
                     self.ui.val_today.setText("Not Marked")
-                    self.ui.val_today.setStyleSheet("color: #777; font-size: 20px; font-weight: bold; border:none;")
+                    self.ui.val_today.setStyleSheet(
+                        "color: #777; font-size: 20px; font-weight: bold; border:none;"
+                    )
 
         except Exception as e:
             print("Failed to load students", e)
@@ -121,7 +127,8 @@ class ClassOpenStdController(QWidget):
                 item.widget().deleteLater()
 
         data = self.classData
-        if not data: return
+        if not data:
+            return
 
         classId = data["id"]
         date_str = self.view_date.toString("yyyy-MM-dd")
@@ -142,12 +149,12 @@ class ClassOpenStdController(QWidget):
                 if isinstance(row, tuple):
                     attendance_map[row[0]] = row[1]
                 else:
-                    attendance_map[row['member_id']] = row['status']
+                    attendance_map[row["member_id"]] = row["status"]
 
             query = """
                     SELECT 
                         c.id AS member_id,
-                        COALESCE(u.name, c.guest_name) as name,
+                        COALESCE(c.guest_name, u.name) as name,
                         u.id AS user_id,
                         (SELECT COUNT(*) FROM attendance_sessions WHERE class_id = ?) AS total_session,
                         (SELECT COUNT(*)
@@ -158,7 +165,7 @@ class ClassOpenStdController(QWidget):
                     FROM class_members c 
                     LEFT JOIN users u ON c.student_id = u.id 
                     WHERE c.class_id = ?
-                    ORDER BY COALESCE(u.name, c.guest_name) ASC
+                    ORDER BY COALESCE(c.guest_name, u.name) ASC
                 """
             cursor.execute(query, (classId, classId, classId))
             data = cursor.fetchall()
@@ -174,11 +181,11 @@ class ClassOpenStdController(QWidget):
                             "name": d[1],
                             "user_id": d[2],
                             "total_session": d[3],
-                            "total_present": d[4]
+                            "total_present": d[4],
                         }
                     else:
                         user = dict(d)
-                    s_id = user['member_id']
+                    s_id = user["member_id"]
 
                     totalClasses = user.get("total_session", 0)
                     totalPresent = user.get("total_present", 0)
@@ -196,9 +203,11 @@ class ClassOpenStdController(QWidget):
                         name=user["name"],
                         attendanceRate=rate,
                         status=currentStatus,
-                        isCurrent=user["user_id"] == self.user["id"]
+                        isCurrent=user["user_id"] == self.user["id"],
                     )
-            spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+            spacer = QSpacerItem(
+                20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
             self.ui.studentLayout.addItem(spacer)
         except Exception as e:
             print(f"Error loading students: {e}")
@@ -212,9 +221,15 @@ class ClassOpenStdController(QWidget):
         self.loadStudents()
 
     def insertIntoUi(self, id, sNo, name, attendanceRate, status, isCurrent):
-        block = StudentClassBlockController(id=id, sNo=sNo, name=name,
-                                            attendanceRate=attendanceRate, status=status, role=self.user["role"],
-                                            isCurrent=isCurrent)
+        block = StudentClassBlockController(
+            id=id,
+            sNo=sNo,
+            name=name,
+            attendanceRate=attendanceRate,
+            status=status,
+            role=self.user["role"],
+            isCurrent=isCurrent,
+        )
         block.studentModified.connect(self.studentBlockModified)
         self.ui.studentLayout.addWidget(block)
 

@@ -65,7 +65,8 @@ class ClassOpenController(QWidget):
                 item.widget().deleteLater()
 
         data = self.classData
-        if not data: return
+        if not data:
+            return
 
         classId = data["id"]
         date_str = self.view_date.toString("yyyy-MM-dd")
@@ -86,12 +87,12 @@ class ClassOpenController(QWidget):
                 if isinstance(row, tuple):
                     attendance_map[row[0]] = row[1]
                 else:
-                    attendance_map[row['member_id']] = row['status']
+                    attendance_map[row["member_id"]] = row["status"]
 
             query = """
                 SELECT 
                     c.id AS member_id,
-                    COALESCE(u.name, c.guest_name) as name,
+                    COALESCE(c.guest_name, u.name) as name,
                     u.id AS user_id,
                     (SELECT COUNT(*) FROM attendance_sessions WHERE class_id = ?) AS total_session,
                     (SELECT COUNT(*)
@@ -102,7 +103,7 @@ class ClassOpenController(QWidget):
                 FROM class_members c 
                 LEFT JOIN users u ON c.student_id = u.id 
                 WHERE c.class_id = ?
-                ORDER BY COALESCE(u.name, c.guest_name) ASC
+                ORDER BY COALESCE(c.guest_name, u.name) ASC
             """
             cursor.execute(query, (classId, classId, classId))
             data = cursor.fetchall()
@@ -118,11 +119,11 @@ class ClassOpenController(QWidget):
                             "name": d[1],
                             "user_id": d[2],
                             "total_session": d[3],
-                            "total_present": d[4]
+                            "total_present": d[4],
                         }
                     else:
                         user = dict(d)
-                    s_id = user['member_id']
+                    s_id = user["member_id"]
 
                     totalClasses = user.get("total_session", 0)
                     totalPresent = user.get("total_present", 0)
@@ -139,9 +140,11 @@ class ClassOpenController(QWidget):
                         sNo=i + 1,
                         name=user["name"],
                         attendanceRate=rate,
-                        status=currentStatus
+                        status=currentStatus,
                     )
-            spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+            spacer = QSpacerItem(
+                20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
             self.ui.studentLayout.addItem(spacer)
         except Exception as e:
             print(f"Error loading students: {e}")
@@ -152,7 +155,7 @@ class ClassOpenController(QWidget):
     def addNewStudent(self):
         popup = AddStudentPopupController(parent=self)
 
-        if (popup.exec()):
+        if popup.exec():
             name = popup.getName()
             if not name or name.strip() == "":
                 showMessage(self, "Input Error", "Student name cannot be empty.")
@@ -182,9 +185,15 @@ class ClassOpenController(QWidget):
         self.loadStudents()
 
     def insertIntoUi(self, id, sNo, name, attendanceRate, status):
-        block = StudentClassBlockController(id=id, sNo=sNo, name=name,
-                                            attendanceRate=attendanceRate, status=status, role=self.user["role"],
-                                            classId=self.classId)
+        block = StudentClassBlockController(
+            id=id,
+            sNo=sNo,
+            name=name,
+            attendanceRate=attendanceRate,
+            status=status,
+            role=self.user["role"],
+            classId=self.classId,
+        )
         block.studentModified.connect(self.studentBlockModified)
         self.ui.studentLayout.addWidget(block)
 

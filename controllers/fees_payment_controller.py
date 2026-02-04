@@ -168,7 +168,7 @@ class FeesPaymentController(QWidget):
             total_sum = 0
             paid_sum = 0
 
-            for i,s in enumerate(students):
+            for i, s in enumerate(students):
                 total_fee = float(s["total_fee"])
                 paid_fee = float(s["paid_fee"])
 
@@ -178,7 +178,7 @@ class FeesPaymentController(QWidget):
                 row = StudentFeeRowController()
 
                 row.setData(
-                    sNo=i+1,
+                    sNo=i + 1,
                     student_id=str(s["member_id"]),
                     student_name=s["student_name"] if s["student_name"] else "Guest Student",
                     total_fee=total_fee,
@@ -250,6 +250,9 @@ class FeesPaymentController(QWidget):
         )
 
         def save_payment(amount_paid: float):
+            if amount_paid <= 0:
+                showErrorMessage(self, "Error", "Amount must be greater than 0.")
+                return
             db = getDB()
             cursor = db.cursor()
             try:
@@ -258,16 +261,29 @@ class FeesPaymentController(QWidget):
                     VALUES (?, ?, 0, 0)
                 """, (class_id, member_id))
 
+                cursor.execute("SELECT id FROM fees WHERE class_id = ? AND member_id = ?", (class_id, member_id))
+                row = cursor.fetchone()
+
+                if not row:
+                    raise Exception("Fees row not found even after insert.")
+
+                fee_id = row[0]
+
                 cursor.execute("""
                     UPDATE fees
                     SET paid_fee = paid_fee + ?
-                    WHERE class_id = ? AND member_id = ?
-                """, (amount_paid, class_id, member_id))
+                    WHERE id = ?
+                """, (amount_paid, fee_id))
+
+                cursor.execute("""
+                    INSERT INTO fee_transactions (fee_id, amount) VALUES (?, ?)
+                """, (fee_id, amount_paid))
 
                 db.commit()
                 self.loadStudents()
 
             except Exception as e:
+                db.rollback()
                 print("Record payment error:", e)
                 showErrorMessage(self, "Error", "Failed to record payment.")
             finally:

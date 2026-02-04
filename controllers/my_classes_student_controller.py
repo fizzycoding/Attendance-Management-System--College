@@ -24,7 +24,7 @@ class MyClassesStudentController(QWidget):
         self.loadClasses()
 
     def showJoinClassPopup(self):
-        popup = JoinClassPopup()
+        popup = JoinClassPopup(parent=self)
 
         if popup.exec():
             code = popup.getCode()

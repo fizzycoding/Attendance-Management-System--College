@@ -146,12 +146,25 @@ class Ui_class_card(object):
 
         self.horizontalLayout_3.addWidget(self.absent_label)
 
+        self.btn_edit = QPushButton(self.status_container)
+        self.btn_edit.setObjectName("btn_edit")
+        sizePolicy1.setHeightForWidth(self.btn_edit.sizePolicy().hasHeightForWidth())
+        self.btn_edit.setSizePolicy(sizePolicy1)
+        self.btn_edit.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_edit.setStyleSheet("")
+        icon3 = QIcon()
+        icon3.addFile("icons/edit.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_edit.setIcon(icon3)
+        self.btn_edit.setIconSize(QSize(18, 18))
+
+        self.horizontalLayout_3.addWidget(self.btn_edit)
+
         self.btn_delete = QPushButton(self.status_container)
         self.btn_delete.setObjectName("btn_delete")
         self.btn_delete.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon3 = QIcon()
-        icon3.addFile("icons/delete.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_delete.setIcon(icon3)
+        icon4 = QIcon()
+        icon4.addFile("icons/delete.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_delete.setIcon(icon4)
         self.btn_delete.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_3.addWidget(self.btn_delete)
@@ -175,6 +188,7 @@ class Ui_class_card(object):
             QCoreApplication.translate("class_card", "150", None)
         )
         self.absent_label.setText(QCoreApplication.translate("class_card", "200", None))
+        self.btn_edit.setText("")
         self.btn_delete.setText("")
         pass
 

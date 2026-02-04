@@ -17,6 +17,12 @@
    <string notr="true">background-color: rgb(240, 240, 240);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>18</number>
+   </property>
+   <property name="rightMargin">
+    <number>18</number>
+   </property>
    <item>
     <widget class="QWidget" name="widget" native="true">
      <property name="sizePolicy">
@@ -29,6 +35,12 @@
       <string notr="true">background-color: transparent;</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QPushButton" name="back_btn">
         <property name="sizePolicy">
@@ -115,7 +127,7 @@ background : #0055FF;}</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>add.png</normaloff>icons/g</iconset>
+          <normaloff>add.png</normaloff>add.png</iconset>
         </property>
        </widget>
       </item>
@@ -164,6 +176,11 @@ font: 700 12pt &quot;Segoe UI&quot;;</string>
 border:none</string>
      </property>
      <widget class="QWidget" name="all_students">
+      <property name="styleSheet">
+       <string notr="true">
+#all_students{background-color: rgb(255, 255, 255);
+border:1px solid rgb(187, 187, 187); border-radius: 10px}</string>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="spacing">
         <number>0</number>
@@ -203,10 +220,10 @@ border:none</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <property name="topMargin">
-           <number>9</number>
+           <number>12</number>
           </property>
           <property name="bottomMargin">
-           <number>0</number>
+           <number>9</number>
           </property>
           <item>
            <widget class="QLabel" name="label_3">
@@ -300,11 +317,26 @@ border:none</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>890</width>
-            <height>551</height>
+            <width>872</width>
+            <height>539</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="studentLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <spacer name="verticalSpacer">
              <property name="orientation">

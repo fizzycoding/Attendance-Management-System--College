@@ -129,8 +129,8 @@ font: 600 9pt &quot;Segoe UI&quot;;</string>
      <item>
       <widget class="QFrame" name="card_total">
        <property name="styleSheet">
-        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #ddd; }
-QFrame:hover { border: 1px solid #2ab79d; }</string>
+        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }
+QFrame:hover { border: 1px solid #3388FF; }</string>
        </property>
        <layout class="QVBoxLayout" name="vbox_c1">
         <item>
@@ -162,8 +162,8 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
      <item>
       <widget class="QFrame" name="card_present">
        <property name="styleSheet">
-        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #ddd; }
-QFrame:hover { border: 1px solid #2ab79d; }</string>
+        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }
+QFrame:hover { border: 1px solid #3388FF; }</string>
        </property>
        <layout class="QVBoxLayout" name="vbox_c2">
         <item>
@@ -179,7 +179,7 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
         <item>
          <widget class="QLabel" name="val_present">
           <property name="styleSheet">
-           <string>color: #2ab79d; font-size: 24px; font-weight: bold; border:none;</string>
+           <string notr="true">color: #18CB14; font-size: 24px; font-weight: bold; border:none;</string>
           </property>
           <property name="text">
            <string>0</string>
@@ -195,8 +195,8 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
      <item>
       <widget class="QFrame" name="card_absent">
        <property name="styleSheet">
-        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #ddd; }
-QFrame:hover { border: 1px solid #2ab79d; }</string>
+        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }
+QFrame:hover { border: 1px solid #3388FF; }</string>
        </property>
        <layout class="QVBoxLayout" name="vbox_c3">
         <item>
@@ -228,8 +228,8 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
      <item>
       <widget class="QFrame" name="card_rate">
        <property name="styleSheet">
-        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #ddd; }
-QFrame:hover { border: 1px solid #2ab79d; }</string>
+        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }
+QFrame:hover { border: 1px solid #3388FF; }</string>
        </property>
        <layout class="QVBoxLayout" name="vbox_c4">
         <item>
@@ -261,8 +261,8 @@ QFrame:hover { border: 1px solid #2ab79d; }</string>
      <item>
       <widget class="QFrame" name="card_today">
        <property name="styleSheet">
-        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #ddd; }
-QFrame:hover { border: 1px solid #2ab79d; }</string>
+        <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }
+QFrame:hover { border: 1px solid #3388FF; }</string>
        </property>
        <layout class="QVBoxLayout" name="vbox_c5">
         <item>
@@ -313,6 +313,11 @@ font: 600 9pt &quot;Segoe UI&quot;;</string>
       <number>0</number>
      </property>
      <widget class="QWidget" name="all_students">
+      <property name="styleSheet">
+       <string notr="true">#all_students
+{background-color: rgb(255, 255, 255);
+border:1px solid rgb(187, 187, 187); border-radius: 10px}</string>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="leftMargin">
         <number>0</number>

@@ -15,7 +15,7 @@
 colors
 #2ab79d
 hover #159079
-
+18CB14
 
 purple
 rgb(147, 52, 255)
@@ -40,3 +40,26 @@ border: none;
 padding: 10px 20px;
 font: 600 14px "Segoe UI";
 border-radius: 7px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#container{background-color: rgb(255, 255, 255);
+border:1px solid rgb(187, 187, 187); border-radius: 10px}

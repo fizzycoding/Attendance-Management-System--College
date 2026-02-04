@@ -33,6 +33,7 @@ class Ui_attendance_page(object):
         self.verticalLayout = QVBoxLayout(attendance_page)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(18, -1, 18, -1)
         self.widget = QWidget(attendance_page)
         self.widget.setObjectName(u"widget")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
@@ -44,6 +45,7 @@ class Ui_attendance_page(object):
 "border:none")
         self.horizontalLayout_2 = QHBoxLayout(self.widget)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, -1, 0, 9)
         self.dropdown_classes = QComboBox(self.widget)
         self.dropdown_classes.setObjectName(u"dropdown_classes")
         self.dropdown_classes.setMinimumSize(QSize(200, 40))
@@ -194,6 +196,9 @@ class Ui_attendance_page(object):
         self.students_stacked.addWidget(self.no_student)
         self.all_student = QWidget()
         self.all_student.setObjectName(u"all_student")
+        self.all_student.setStyleSheet(u"\n"
+"#all_student{background-color: rgb(255, 255, 255);\n"
+"border:1px solid rgb(187, 187, 187); border-radius: 10px}")
         self.verticalLayout_3 = QVBoxLayout(self.all_student)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -213,7 +218,7 @@ class Ui_attendance_page(object):
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(-1, 9, -1, 0)
+        self.horizontalLayout.setContentsMargins(-1, 12, -1, 9)
         self.label_3 = QLabel(self.frame)
         self.label_3.setObjectName(u"label_3")
         sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
@@ -258,11 +263,11 @@ class Ui_attendance_page(object):
         self.scrollArea.setWidgetResizable(True)
         self.widget_3 = QWidget()
         self.widget_3.setObjectName(u"widget_3")
-        self.widget_3.setGeometry(QRect(0, 0, 100, 30))
+        self.widget_3.setGeometry(QRect(0, 0, 806, 432))
         self.studentsLayout = QVBoxLayout(self.widget_3)
         self.studentsLayout.setSpacing(0)
         self.studentsLayout.setObjectName(u"studentsLayout")
-        self.studentsLayout.setContentsMargins(9, 4, 9, 9)
+        self.studentsLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalSpacer = QSpacerItem(20, 418, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.studentsLayout.addItem(self.verticalSpacer)
@@ -278,7 +283,7 @@ class Ui_attendance_page(object):
 
         self.retranslateUi(attendance_page)
 
-        self.students_stacked.setCurrentIndex(0)
+        self.students_stacked.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(attendance_page)

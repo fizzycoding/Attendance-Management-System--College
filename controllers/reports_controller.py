@@ -73,7 +73,7 @@ class ReportsController(QWidget):
             query = """
                 SELECT 
                     c.id AS member_id,
-                    COALESCE(u.name, c.guest_name) as name,
+                    COALESCE(c.guest_name, u.name) as name,
                     u.id AS student_id,
                     (SELECT COUNT(*) FROM attendance_sessions WHERE class_id = ?) AS total_session,
                     (SELECT COUNT(*)
@@ -84,7 +84,7 @@ class ReportsController(QWidget):
                 FROM class_members c 
                 LEFT JOIN users u ON c.student_id = u.id 
                 WHERE c.class_id = ?
-                ORDER BY COALESCE(u.name, c.guest_name) ASC
+                ORDER BY COALESCE(c.guest_name, u.name) ASC
             """
             cursor.execute(query, (classId, classId, classId))
             data = cursor.fetchall()
@@ -255,7 +255,8 @@ class ReportsController(QWidget):
             exporter.generate(
                 filepath=path,
                 include_attendance=data['include_attendance'],
-                include_tests=data['include_tests']
+                include_tests=data['include_tests'],
+                include_fees=data['include_fees'],
             )
 
             showMessage(self, "Success", "Excel exported successfully!")

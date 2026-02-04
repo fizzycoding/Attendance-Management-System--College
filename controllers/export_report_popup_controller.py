@@ -30,5 +30,6 @@ class ExportReportPopupController(QDialog):
             "from_date": self.ui.date_from.date().toString("yyyy-MM-dd"),
             "to_date": self.ui.date_to.date().toString("yyyy-MM-dd"),
             "include_attendance": self.ui.check_attendance.isChecked(),
-            "include_tests": self.ui.check_tests.isChecked()
+            "include_tests": self.ui.check_tests.isChecked(),
+            "include_fees": self.ui.check_fees.isChecked()
         }

@@ -31,16 +31,19 @@ class MainWindow(QMainWindow):
         self.stack.setCurrentWidget(self.login)
 
     def showLogin(self):
+        self.setMinimumSize(850, 580)
         self.resize(850, 580)
         self.stack.setCurrentWidget(self.login)
 
     def showSignup(self):
+        self.setMinimumSize(850, 580)
         self.resize(850, 580)
         self.stack.setCurrentWidget(self.signup)
 
     def showHome(self, user):
         self.home = HomeController(self, user)
         self.stack.addWidget(self.home)
+        self.setMinimumSize(1000, 580)
         self.resize(1200, 720)
         self.centerWindow()
         self.stack.setCurrentWidget(self.home)

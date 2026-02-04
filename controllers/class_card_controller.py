@@ -1,6 +1,7 @@
 from PySide6.QtCore import Signal
 from PySide6.QtWidgets import QFrame, QMessageBox
 
+from controllers.edit_name_popup_controller import EditNamePopup
 from database.database import getDB
 from ui.components.class_card_ui import Ui_class_card
 from utils.constants import ROLE
@@ -23,9 +24,54 @@ class ClassCardController(QFrame, Ui_class_card):
         self.absent_label.setText(str(absent))
         if role == ROLE.STUDENT:
             self.btn_delete.hide()
+            self.btn_edit.hide()
         else:
             self.btn_delete.show()
+            self.btn_edit.show()
+            self.btn_edit.clicked.connect(self.editClass)
             self.btn_delete.clicked.connect(self.deleteClass)
+
+    def editClass(self):
+        popup = EditNamePopup(
+            title="Edit Class",
+            field_label="Class name",
+            placeholder="Enter class name",
+            default_value=self.className,
+            min_length=2,
+            max_length=30,
+            parent=self
+        )
+
+        if popup.exec():
+            new_name = popup.get_value().strip()
+            print(new_name)
+            if new_name == self.className:
+                showMessage(self, "Info", "Class name is unchanged.")
+                return
+
+            db = getDB()
+            cursor = db.cursor()
+
+            try:
+                update_query = "UPDATE classes SET class_name = ? WHERE id = ? AND created_by = ?"
+                cursor.execute(update_query, (new_name, self.classId, self.user["id"]))
+                db.commit()
+
+                if cursor.rowcount == 0:
+                    showMessage(self, "Error", "Update failed. Class not found or no permission.")
+                    return
+
+                self.className = new_name
+                self.class_name.setText(new_name)
+
+                showMessage(self, "Success", "Class name updated successfully.")
+
+            except Exception as e:
+                print("Failed to update class name:", e)
+                showMessage(self, "Error", "Failed to update class name.")
+            finally:
+                cursor.close()
+                db.close()
 
     def deleteClass(self):
         reply = showQuestionMessage(

@@ -5,8 +5,10 @@ from controllers.class_open_controller import ClassOpenController
 from controllers.class_open_std_controller import ClassOpenStdController
 from controllers.classes_teacher_controller import ClassesTeacherController
 from controllers.dashboard_teacher_controller import DashboardTeacherController
+from controllers.fees_payment_controller import FeesPaymentController
 from controllers.my_classes_student_controller import MyClassesStudentController
 from controllers.reports_controller import ReportsController
+from controllers.student_fees_page_controller import StudentFeesPageController
 from controllers.test_details_controller import TestDetailsController
 from controllers.test_result_controller import TestResultController
 from controllers.test_results_student_controller import StudentTestResultController
@@ -55,6 +57,8 @@ class HomeController(QWidget):
             "attendance": AttendanceController(self.user),
             "testResults": TestResultController(self.user, self.testDetailsOpen),
             "reports": ReportsController(self.user),
+            "feesPayment": FeesPaymentController(self.user),
+            "studentFeesPayment": StudentFeesPageController(self.user)
         }
         self.pages["classesT"].classModified.connect(self.pages["attendance"].loadClasses)
         self.pages["classesT"].classModified.connect(self.pages["testResultsStd"].refresh)
@@ -77,6 +81,8 @@ class HomeController(QWidget):
         self.ui.btn_teach_attendance.clicked.connect(self.showAttendance)
         self.ui.btn_results.clicked.connect(self.showTestResults)
         self.ui.btn_teach_reports.clicked.connect(self.showReports)
+        self.ui.btn_fees.clicked.connect(self.showFeesPayment)
+        self.ui.btn_std_fees.clicked.connect(self.showStudentFeesPayment)
         self.ui.logoutButton.clicked.connect(lambda: self.mainWindow.showLogin())
 
     def classOpen(self, classId):
@@ -156,3 +162,11 @@ class HomeController(QWidget):
     def showMyClassesStudent(self):
         self.show("myClassesStd")
         self.pages["myClassesStd"].refresh()
+
+    def showFeesPayment(self):
+        self.show("feesPayment")
+        self.pages["feesPayment"].refresh()
+
+    def showStudentFeesPayment(self):
+        self.show("studentFeesPayment")
+        self.pages["studentFeesPayment"].refresh()

@@ -143,7 +143,7 @@ QComboBox QAbstractItemView {
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
+            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }
 QFrame:hover { border: 1px solid #57e700; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card2">
@@ -194,7 +194,7 @@ font-size:25pt; font-weight: bold; border:none;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
+            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }
 QFrame:hover { border: 1px solid #3388FF; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card1">
@@ -244,7 +244,7 @@ QFrame:hover { border: 1px solid #3388FF; }</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
+            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }
 QFrame:hover { border: 1px solid #d400e7; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card4">
@@ -294,7 +294,7 @@ QFrame:hover { border: 1px solid #d400e7; }</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #e0e0e0; }
+            <string notr="true">QFrame { background-color: white; border-radius: 10px; border: 1px solid #bbb; }
 QFrame:hover { border: 1px solid #e7c100; }</string>
            </property>
            <layout class="QVBoxLayout" name="vbox_card3">
@@ -340,7 +340,7 @@ QFrame:hover { border: 1px solid #e7c100; }</string>
        <item>
         <widget class="QFrame" name="frame_weekly">
          <property name="styleSheet">
-          <string notr="true">background-color: white; border-radius: 10px; border: 1px solid #e0e0e0;</string>
+          <string notr="true">background-color: white; border-radius: 10px; border: 1px solid #bbb;</string>
          </property>
          <layout class="QVBoxLayout" name="vbox_weekly">
           <item>
@@ -395,7 +395,7 @@ QFrame:hover { border: 1px solid #e7c100; }</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: white; border-radius: 10px; border: 1px solid #e0e0e0;</string>
+          <string notr="true">background-color: white; border-radius: 10px; border: 1px solid #bbb;</string>
          </property>
          <layout class="QVBoxLayout" name="vbox_leaderboard">
           <item>
@@ -455,7 +455,7 @@ QFrame:hover { border: 1px solid #e7c100; }</string>
        <item>
         <widget class="QFrame" name="frame_today_pie">
          <property name="styleSheet">
-          <string notr="true">background-color: white; border-radius: 10px; border: 1px solid #e0e0e0;</string>
+          <string notr="true">background-color: white; border-radius: 10px; border: 1px solid #bbb;</string>
          </property>
          <layout class="QVBoxLayout" name="vbox_pie">
           <item>

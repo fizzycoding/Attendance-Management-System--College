@@ -41,12 +41,12 @@ class Ui_student_block(object):
 "}\n"
 "\n"
 "#student_block{\n"
-"	border-top: 1px solid rgb(166, 166, 166);\n"
+"	border-top: 1px  solid #bbb\n"
 "}\n"
-"\n"
 "#me{\n"
-"	border-top: 1px solid rgb(166, 166, 166);\n"
-"	background: rgba(51, 143, 255,20)\n"
+"\n"
+"	border-top: 1px  solid #bbb;\n"
+"	background: rgba(51, 143, 255,50)\n"
 "}\n"
 "")
         self.horizontalLayout = QHBoxLayout(student_block)
@@ -125,7 +125,7 @@ class Ui_student_block(object):
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.widget_3.sizePolicy().hasHeightForWidth())
         self.widget_3.setSizePolicy(sizePolicy2)
-        self.widget_3.setMaximumSize(QSize(180, 16777215))
+        self.widget_3.setMaximumSize(QSize(200, 16777215))
         self.horizontalLayout_4 = QHBoxLayout(self.widget_3)
         self.horizontalLayout_4.setSpacing(30)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
@@ -157,17 +157,17 @@ class Ui_student_block(object):
 "color: rgb(93, 93, 93)\n"
 "}\n"
 "#status_present{\n"
-"background-color: rgba(24, 203, 20, 20);\n"
+"background-color: rgba(24, 203, 20, 40);\n"
 "color: #18CB14;\n"
 "}\n"
 "\n"
 "#status_absent{\n"
-"background-color: rgba(255, 23, 23, 20);\n"
+"background-color: rgba(255, 23, 23, 40);\n"
 "color: #FF1717;\n"
 "}\n"
 "\n"
 "#status_not_marked{\n"
-"background-color: rgba(175, 175, 175, 20);\n"
+"background-color: rgba(175, 175, 175, 40);\n"
 "color: #AFAFAF;\n"
 "}")
         self.btn_status.setIconSize(QSize(20, 20))
@@ -177,18 +177,40 @@ class Ui_student_block(object):
 
         self.horizontalLayout_4.addWidget(self.widget)
 
-        self.btn_remove_student = QPushButton(self.widget_3)
+        self.widget_4 = QWidget(self.widget_3)
+        self.widget_4.setObjectName(u"widget_4")
+        sizePolicy.setHeightForWidth(self.widget_4.sizePolicy().hasHeightForWidth())
+        self.widget_4.setSizePolicy(sizePolicy)
+        self.horizontalLayout_5 = QHBoxLayout(self.widget_4)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.btn_edit = QPushButton(self.widget_4)
+        self.btn_edit.setObjectName(u"btn_edit")
+        sizePolicy.setHeightForWidth(self.btn_edit.sizePolicy().hasHeightForWidth())
+        self.btn_edit.setSizePolicy(sizePolicy)
+        self.btn_edit.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_edit.setStyleSheet(u"border: none")
+        icon = QIcon()
+        icon.addFile(u"icons/edit.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_edit.setIcon(icon)
+
+        self.horizontalLayout_5.addWidget(self.btn_edit)
+
+        self.btn_remove_student = QPushButton(self.widget_4)
         self.btn_remove_student.setObjectName(u"btn_remove_student")
         sizePolicy.setHeightForWidth(self.btn_remove_student.sizePolicy().hasHeightForWidth())
         self.btn_remove_student.setSizePolicy(sizePolicy)
         self.btn_remove_student.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_remove_student.setStyleSheet(u"border: none")
-        icon = QIcon()
-        icon.addFile(u"icons/delete.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_remove_student.setIcon(icon)
+        icon1 = QIcon()
+        icon1.addFile(u"icons/delete.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_remove_student.setIcon(icon1)
         self.btn_remove_student.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_4.addWidget(self.btn_remove_student)
+        self.horizontalLayout_5.addWidget(self.btn_remove_student)
+
+
+        self.horizontalLayout_4.addWidget(self.widget_4)
 
 
         self.horizontalLayout.addWidget(self.widget_3)
@@ -205,6 +227,7 @@ class Ui_student_block(object):
         self.name.setText(QCoreApplication.translate("student_block", u"Sanju Patel", None))
         self.attendance_rate_label.setText(QCoreApplication.translate("student_block", u"100%", None))
         self.btn_status.setText(QCoreApplication.translate("student_block", u"Not Marked", None))
+        self.btn_edit.setText("")
         self.btn_remove_student.setText("")
     # retranslateUi
 

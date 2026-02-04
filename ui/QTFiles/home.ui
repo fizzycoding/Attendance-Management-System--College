@@ -57,7 +57,7 @@
      <property name="styleSheet">
       <string notr="true">#sidebarFrame {
     background: white;
-    border-right: 1px solid #e0e0e0;
+    border-right: 1px solid #ccc;
 }
 
 /* Base style for all sidebar buttons */
@@ -174,7 +174,7 @@ border: none;
       <item>
        <widget class="QStackedWidget" name="sidebarStack">
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="studentPage">
          <layout class="QVBoxLayout" name="verticalLayout_student">
@@ -241,6 +241,24 @@ border: none;
               <width>20</width>
               <height>20</height>
              </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_std_fees">
+            <property name="text">
+             <string>Fees Payments</string>
+            </property>
+            <property name="icon">  
+             <iconset>
+              <normaloff>fee_unchecked.png</normaloff>
+              <activeon>fee.png</activeon>icons/checked.png</iconset>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -400,6 +418,33 @@ border: none;
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="btn_fees">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Fee Payments</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>icons/fee_unchecked.png</normaloff>
+              <activeon>icons/fee.png</activeon>icons/fee_unchecked.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="btn_teach_reports">
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
@@ -507,7 +552,7 @@ QPushButton {
        <property name="styleSheet">
         <string notr="true">#headerFrame {
     background-color: white;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #ccc;
 }</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -616,7 +661,7 @@ font: 600 9pt &quot;Segoe UI&quot;;</string>
      <item>
       <widget class="QStackedWidget" name="mainContentStack">
        <property name="styleSheet">
-        <string notr="true">background: rgb(248, 248, 248)</string>
+        <string notr="true">background-color: rgb(237, 237, 237);</string>
        </property>
        <property name="currentIndex">
         <number>0</number>

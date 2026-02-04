@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>569</width>
-    <height>45</height>
+    <height>50</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>0</width>
-    <height>45</height>
+    <height>50</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>16777215</width>
-    <height>45</height>
+    <height>50</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,9 @@
 border-top-color: rgb(200,200,200);}
 #reportStudentNameRow:hover{
 background-color: rgba(51, 143, 255,10)}
-QLabel{background-color:transparent}</string>
+QLabel{background-color:transparent;
+
+font: 10pt &quot;Segoe UI&quot;;}</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
@@ -69,7 +71,7 @@ QLabel{background-color:transparent}</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: #383838; font: 600 9pt &quot;Segoe UI&quot;;</string>
+      <string notr="true">color: #383838; font: 600 10pt &quot;Segoe UI&quot;;</string>
      </property>
      <property name="text">
       <string>1</string>
@@ -88,7 +90,7 @@ QLabel{background-color:transparent}</string>
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(43, 43, 43); font: 600 10pt &quot;Segoe UI&quot;;</string>
+      <string notr="true">color: rgb(43, 43, 43); font: 600 12pt &quot;Segoe UI&quot;;</string>
      </property>
      <property name="text">
       <string>Rahul</string>
@@ -105,13 +107,13 @@ QLabel{background-color:transparent}</string>
      </property>
      <property name="maximumSize">
       <size>
-       <width>70</width>
+       <width>75</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(28, 164, 255);
-font: 700 10pt &quot;Segoe UI&quot;;</string>
+font: 700 12pt &quot;Segoe UI&quot;;</string>
      </property>
      <property name="text">
       <string>90%</string>

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>950</width>
+    <width>732</width>
     <height>50</height>
    </rect>
   </property>
@@ -81,7 +81,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">color: #444; 
-font: 600 10pt &quot;Segoe UI&quot;;</string>
+font: 600 11pt &quot;Segoe UI&quot;;</string>
      </property>
      <property name="text">
       <string>2025-01-28</string>
@@ -98,7 +98,7 @@ font: 600 10pt &quot;Segoe UI&quot;;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: #444; 
-font: 600 10pt &quot;Segoe UI&quot;;</string>
+font: 600 11pt &quot;Segoe UI&quot;;</string>
      </property>
      <property name="text">
       <string>50</string>
@@ -118,7 +118,7 @@ font: 600 10pt &quot;Segoe UI&quot;;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: #444; 
-font: 600 10pt &quot;Segoe UI&quot;;</string>
+font: 600 11pt &quot;Segoe UI&quot;;</string>
      </property>
      <property name="text">
       <string>17</string>
@@ -137,7 +137,8 @@ font: 600 10pt &quot;Segoe UI&quot;;</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 700 10pt &quot;Segoe UI&quot;; color: #333;</string>
+      <string notr="true">color: #444; 
+font: 700 11pt &quot;Segoe UI&quot;;</string>
      </property>
      <property name="text">
       <string>42</string>
@@ -157,13 +158,13 @@ font: 600 10pt &quot;Segoe UI&quot;;</string>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
-       <height>26</height>
+       <width>2566</width>
+       <height>30</height>
       </size>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: #E0F2F1; color: #009688; border-radius: 4px; font-weight:
-                            bold; font-size: 11px;
+                            bold; font-size: 10pt;
                         </string>
      </property>
      <property name="text">
